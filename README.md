@@ -14,6 +14,8 @@ Definition files for creating a singularity container.
  - GCC v14.1.0 : gcc.def (includes openblas, fftw, armpl)
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw, armpl)
  - Arm Compiler for Linux : acfl.def (includes armpl)
+ - llama.cpp : llama.cpp.def (requires GCC v14.1.0 localimage)
+ - PyTorch v2.5.0 : pytorch.def (requires GCC v14.1.0 localimage)
 
 ### Sapphire Rapids
 
