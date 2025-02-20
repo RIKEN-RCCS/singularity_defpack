@@ -1,0 +1,41 @@
+Bootstrap: localimage
+From: gcc_14.1.0.sif
+
+%setup
+
+%environment
+
+%files
+
+%post
+  . /opt/spack/share/spack/setup-env.sh
+
+  spack install -j 32 --add cmake
+  spack load cmake
+
+  cd /opt
+  git clone https://github.com/ggerganov/llama.cpp.git
+  cd llama.cpp
+  sed -i -e 's/GGML_SVE\s*"ggml:\s*enable\s*SVE"\s*OFF/GGML_SVE "ggml: enable SVE" ON/' ggml/CMakeLists.txt 
+  sed -i -e 's/APPEND\s*ARCH_FLAGS\s*-march=armv8.6-a+sve/APPEND ARCH_FLAGS -march=armv8.2-a+sve/' ggml/src/CMakeLists.txt
+  cmake -B build 
+  cd build
+  cmake --build . --verbose -j32
+  cmake --install .
+  cd /opt
+  rm -rf llama.cpp
+
+%runscript
+  ARMPL_DIR=`spack location -i armpl-gcc`/armpl_24.10_gcc
+  OB_DIR=`spack location -i openblas`
+  FFTW_DIR=`spack location -i fftw`
+  GPERF_DIR=`spack location -i gperftools`
+  VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
+
+  export PATH=/usr/local/go/pkg/tool/linux_arm64:${PATH}:/usr/local/bin:${ARMPL_DIR}/bin:${GPERF_DIR}/bin:${FFTW_DIR}/bin
+  export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/lib:/usr/local/lib64:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib:/usr/local/lib64:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  export INCLUDE_PATH=${INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  exec "$@"
