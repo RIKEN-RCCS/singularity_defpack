@@ -9,7 +9,7 @@ Definition files for creating a singularity container.
 
 ## Definition Files
 
-### Neoverse V1,V2
+### Neoverse V1 (Probably, V2 should be fine as well)
 
  - GCC v14.1.0 : gcc.def (includes openblas, fftw, armpl)
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw, armpl)
