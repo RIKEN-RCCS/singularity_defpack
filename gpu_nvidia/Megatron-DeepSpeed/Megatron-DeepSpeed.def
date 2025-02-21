@@ -1,0 +1,47 @@
+Bootstrap: localimage
+From: pytorch.sif
+
+%setup
+
+%post
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+    export NVIDIA_VISIBLE_DEVICES=all
+    export NVIDIA_DRIVER_CAPABILITIES=compute,utilit
+
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
+    . "$HOME/.cargo/env" 
+    rustup update
+
+    pip install --upgrade 'sudachipy<0.6.9'
+    pip install sudachidict_core
+    pip install fugashi ipadic unidic_lite unidic rhoknp
+
+    git clone https://github.com/bitsandbytes-foundation/bitsandbytes.git && cd bitsandbytes/
+#   pip install -r requirements-dev.txt
+    cmake -DCOMPUTE_BACKEND=cuda -S .
+    make
+    pip install -e .
+
+    pip install accelerate transformers deepspeed datasets evaluate hjson huggingface-hub sentencepiece tokenizers wandb ninja packaging pybind11 six trl optimum peft
+
+    pip install --upgrade transformer-engine
+    pip install --upgrade flash-attn
+
+    cd /opt
+    git clone https://github.com/microsoft/Megatron-DeepSpeed
+    cd Megatron-DeepSpeed/megatron/data
+    make
+
+%test
+    python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"
+    python -m bitsandbytes
+
+%environment
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+    export NVIDIA_VISIBLE_DEVICES=all
+    export NVIDIA_DRIVER_CAPABILITIES=compute,utilit
+
+%runscript
+  exec "$@"
