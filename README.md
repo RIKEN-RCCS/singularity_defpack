@@ -28,6 +28,11 @@ Definition files for creating a singularity container.
 
  - AMD Optimizin C/C++ and Fortran compilers : aocc.def (includes amd-aocl, aocl-compression, aocl-da, aocl-utils, aocl-libmem, aocl-sparse)
 
+### NVIDIA GPU
+
+ - PyTorch : pytorch.def
+ - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
+
 ---
 
 ## How to Create Container
