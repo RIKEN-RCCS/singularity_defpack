@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: rocm/pytorch:rocm6.1.3_ubuntu22.04_py3.10_pytorch_release-2.1.2
+
+%setup
+  mkdir ${SINGULARITY_ROOTFS}/lvs0
+
+%post
+    apt-get update && apt-get install -y --no-install-recommends \
+        wget \
+        vim \
+        build-essential \
+        && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+    pip install --no-cache-dir --upgrade pip setuptools wheel
+
+%test
+    python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"

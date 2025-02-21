@@ -30,7 +30,12 @@ Definition files for creating a singularity container.
 
 ### NVIDIA GPU
 
- - PyTorch : pytorch.def
+ - PyTorch v2.2.0 : pytorch.def
+ - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
+
+### AMD GPU
+
+ - PyTorch v2.1.2 : pytorch.def
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
 
 ---
