@@ -1,0 +1,77 @@
+Bootstrap: docker
+From: rockylinux/rockylinux:9.4
+
+%setup
+
+%environment
+
+%files
+
+%post
+  dnf -y group install "Development Tools"
+  dnf -y install wget which perf kernel-tools numactl-devel python3-devel
+  dnf -y install llvm* clang*
+  dnf -y install gcc-gfortran
+  dnf clean all
+
+  cd /opt
+  git clone https://github.com/RIKEN-RCCS/spack.git
+
+  . /opt/spack/share/spack/setup-env.sh
+
+  spack compiler find
+
+  spack env create virtual_fugaku
+
+  spack -e virtual_fugaku install -j 32 --add aocc +license-agreed
+  spack load aocc
+  spack compiler find
+  spack config blame compilers
+
+  spack -e virtual_fugaku add amd-aocl +openmp
+  spack -e virtual_fugaku add aocl-compression +openmp
+  spack -e virtual_fugaku add aocl-da aocl-utils aocl-libmem aocl-sparse
+  spack -e virtual_fugaku add gperftools
+  spack -e virtual_fugaku concretize
+  spack -e virtual_fugaku install -j 32
+
+  spack load aocl-da amd-aocl aocl-utils aocl-libmem aocl-sparse aocl-compression
+
+  # Go for pprof
+  VERSION=1.23.5
+  OS=linux ARCH=amd64
+  wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+  tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
+  rm go$VERSION.$OS-$ARCH.tar.gz
+
+  export CC=clang
+  export FC=flang
+  export OMP="-fopenmp -fPIC -Wall"
+
+  # Perf Helper Library
+  cd /opt
+  git clone https://github.com/RIKEN-RCCS/perf_helper.git
+  cd perf_helper
+  ${CC} -c ${OMP} perf_helper.c -o perf_helper.o
+  ${CC} -c ${OMP} perf_helper_wrapper.c -o perf_helper_wrapper.o
+  ${FC} -c ${OMP} perf_helper_mod.f90 -o perf_helper_mod.o
+  ar r libperf_helper.a perf_helper.o perf_helper_wrapper.o perf_helper_mod.o
+  cp perf_helper.h /usr/local/include
+  cp libperf_helper.a /usr/local/lib
+  cp perf_helper_mod.mod /usr/local/lib
+
+  spack env activate --sh virtual_fugaku >> $SINGULARITY_ENVIRONMENT
+  spack gc -y
+  spack clean --all
+
+%runscript
+  GPERF_DIR=`spack location -i gperftools`
+  VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
+
+  export PATH=/usr/local/go/pkg/tool/linux_amd64:${PATH}:/usr/local/bin:${GPERF_DIR}/bin
+  export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib
+  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib
+  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools
+  export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools
+  export INCLUDE_PATH=${INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools
+  exec "$@"

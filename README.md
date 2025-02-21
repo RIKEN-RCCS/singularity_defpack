@@ -9,7 +9,7 @@ Definition files for creating a singularity container.
 
 ## Definition Files
 
-### Neoverse V1 (Probably, V2 should be fine as well)
+### ARM Neoverse V1 (Probably, V2 should be fine as well)
 
  - GCC v14.1.0 : gcc.def (includes openblas, fftw, armpl)
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw, armpl)
@@ -18,11 +18,15 @@ Definition files for creating a singularity container.
  - PyTorch v2.5.0 : pytorch.def (requires GCC v14.1.0 container image)
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch v2.5.0 container image)
 
-### Sapphire Rapids
+### Intel Sapphire Rapids
 
  - GCC v14.1.0 : gcc.def (includes openblas, fftw)
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw)
  - oneAPI : oneapi.def (includes mkl)
+
+### AMD Zen4 (EPYC 9004 series)
+
+ - AMD Optimizin C/C++ and Fortran compilers : aocc.def (includes amd-aocl, aocl-compression, aocl-da, aocl-utils, aocl-libmem, aocl-sparse)
 
 ---
 
