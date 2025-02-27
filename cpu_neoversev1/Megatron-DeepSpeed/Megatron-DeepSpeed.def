@@ -8,10 +8,6 @@ From: pytorch_2.5.0.sif
 %files
 
 %post
-  . /opt/spack/share/spack/setup-env.sh
-
-  source /opt/llm/bin/activate
-
   cd /opt
   git clone https://github.com/microsoft/Megatron-DeepSpeed
   cd Megatron-DeepSpeed
@@ -30,7 +26,7 @@ wandb
 wheel
 mpi4py
 EOF
-  pip install -r requirements.txt
+  pip install --break-system-packages -r requirements.txt
 
   pip list
 
@@ -40,18 +36,4 @@ EOF
 %runscript
   #!/bin/sh
   export PYTHONPATH="/opt/Megatron-DeepSpeed"
-  ARMPL_DIR=`spack location -i armpl-gcc`/armpl_24.10_gcc
-  OB_DIR=`spack location -i openblas`
-  FFTW_DIR=`spack location -i fftw`
-  GPERF_DIR=`spack location -i gperftools`
-  VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
-
-  export PATH=/usr/local/go/pkg/tool/linux_arm64:${PATH}:/usr/local/bin:${ARMPL_DIR}/bin:${GPERF_DIR}/bin:${FFTW_DIR}/bin
-  export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
-  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
-  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-  export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-  export INCLUDE_PATH=${INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-
-  source /opt/llm/bin/activate
   exec "$@"

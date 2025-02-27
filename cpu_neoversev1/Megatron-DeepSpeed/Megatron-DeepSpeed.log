@@ -22,357 +22,185 @@ WARNING: integrity: signature not found for object group 1
 WARNING: Bootstrap image could not be verified, but build will continue.
 INFO:    Running setup scriptlet
 INFO:    Running post scriptlet
-+ . /opt/spack/share/spack/setup-env.sh
-++ '[' -n '' ']'
-++ export _sp_initializing=true
-++ _sp_initializing=true
-+++ _spack_determine_shell
-+++ '[' -f /proc/354/exe ']'
-++++ readlink /proc/354/exe
-+++ _sp_exe=/usr/bin/bash
-+++ basename /usr/bin/bash
-+++ tr -d 0123456789
-++ _sp_shell=bash
-++ alias 'spacktivate=spack env activate'
-++ '[' bash = bash ']'
-++ _sp_source_file=/opt/spack/share/spack/setup-env.sh
-++ '[' bash = zsh ']'
-++++ dirname /opt/spack/share/spack/setup-env.sh
-+++ cd /opt/spack/share/spack
-+++ pwd
-++ _sp_share_dir=/opt/spack/share/spack
-+++++ dirname /opt/spack/share/spack
-++++ dirname /opt/spack/share
-+++ cd /opt/spack
-+++ pwd
-++ _sp_prefix=/opt/spack
-++ '[' -x /opt/spack/bin/spack ']'
-++ export SPACK_ROOT=/opt/spack
-++ SPACK_ROOT=/opt/spack
-++ _spack_pathadd PATH /opt/spack/bin
-++ _pa_varname=PATH
-++ _pa_new_path=PATH
-++ '[' -n /opt/spack/bin ']'
-++ _pa_varname=PATH
-++ _pa_new_path=/opt/spack/bin
-++ eval '_pa_oldvalue=${PATH:-}'
-+++ _pa_oldvalue=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ _pa_canonical=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
-++ '[' -d /opt/spack/bin ']'
-++ '[' /opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin: = /opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin: ']'
-++ '[' -n /opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
-++ eval 'export PATH="/opt/spack/bin:/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"'
-+++ export PATH=/opt/spack/bin:/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-+++ PATH=/opt/spack/bin:/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ eval 'spack() {
-    : this is a shell function from: /opt/spack/share/spack/setup-env.sh
-    : the real spack script is here: /opt/spack/bin/spack
-    _spack_shell_wrapper "$@"
-    return $?
-}'
-++ '[' bash = bash ']'
-++ export -f spack
-++ export -f _spack_shell_wrapper
-++ for cmd in "${SPACK_PYTHON:-}" python3 python python2
-++ command -v ''
-++ for cmd in "${SPACK_PYTHON:-}" python3 python python2
-++ command -v python3
-+++ command -v python3
-++ export SPACK_PYTHON=/usr/bin/python3
-++ SPACK_PYTHON=/usr/bin/python3
-++ break
-++ '[' -z '' ']'
-++ need_module=no
-++ _spack_fn_exists use
-++ LANG=
-++ type use
-++ grep -q function
-++ _spack_fn_exists module
-++ LANG=
-++ type module
-++ grep -q function
-++ need_module=yes
-++ '[' yes = yes ']'
-+++ spack --print-shell-vars sh,modules
-+++ : this is a shell function from: /opt/spack/share/spack/setup-env.sh
-+++ : the real spack script is here: /opt/spack/bin/spack
-+++ _spack_shell_wrapper --print-shell-vars sh,modules
-+++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
-+++ eval 'if [ -n "${DYLD_LIBRARY_PATH-}" ]; then export SPACK_DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}; fi'
-++++ '[' -n '' ']'
-+++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
-+++ eval 'if [ -n "${DYLD_FALLBACK_LIBRARY_PATH-}" ]; then export SPACK_DYLD_FALLBACK_LIBRARY_PATH=${DYLD_FALLBACK_LIBRARY_PATH}; fi'
-++++ '[' -n '' ']'
-+++ '[' -n '' ']'
-+++ _sp_flags=
-+++ '[' '!' -z x ']'
-+++ '[' -print-shell-vars '!=' --print-shell-vars ']'
-+++ _sp_flags=' --print-shell-vars'
-+++ shift
-+++ '[' '!' -z x ']'
-+++ '[' sh,modules '!=' sh,modules ']'
-+++ '[' -n ' --print-shell-vars' ']'
-+++ '[' ell-vars '!=' ' --print-shell-vars' ']'
-+++ command spack --print-shell-vars sh,modules
-+++ return
-+++ return 0
-++ eval '_sp_sys_type='\''linux-rocky9-neoverse_v1'\''' '_sp_compatible_sys_types='\''linux-rocky9-neoverse_v1:linux-rocky9-neoverse_n1:linux-rocky9-armv8.4a:linux-rocky9-cortex_a72:linux-rocky9-armv8.2a:linux-rocky9-aarch64:linux-rocky9-armv8.1a:linux-rocky9-armv8.3a'\''' '_sp_tcl_roots='\''/opt/spack/share/spack/modules'\''' '_sp_lmod_roots='\''/opt/spack/share/spack/lmod'\''' '_sp_module_prefix='\''not_installed'\'''
-+++ _sp_sys_type=linux-rocky9-neoverse_v1
-+++ _sp_compatible_sys_types=linux-rocky9-neoverse_v1:linux-rocky9-neoverse_n1:linux-rocky9-armv8.4a:linux-rocky9-cortex_a72:linux-rocky9-armv8.2a:linux-rocky9-aarch64:linux-rocky9-armv8.1a:linux-rocky9-armv8.3a
-+++ _sp_tcl_roots=/opt/spack/share/spack/modules
-+++ _sp_lmod_roots=/opt/spack/share/spack/lmod
-+++ _sp_module_prefix=not_installed
-++ '[' not_installed '!=' not_installed ']'
-++ _sp_multi_pathadd MODULEPATH /opt/spack/share/spack/modules
-++ local IFS=:
-++ '[' bash = zsh ']'
-++ for pth in $2
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-neoverse_v1
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-neoverse_v1 ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-neoverse_v1
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-neoverse_v1 ']'
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-neoverse_n1
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-neoverse_n1 ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-neoverse_n1
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-neoverse_n1 ']'
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-armv8.4a
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-armv8.4a ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-armv8.4a
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-armv8.4a ']'
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-cortex_a72
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-cortex_a72 ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-cortex_a72
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-cortex_a72 ']'
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-armv8.2a
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-armv8.2a ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-armv8.2a
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-armv8.2a ']'
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-aarch64
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-aarch64 ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-aarch64
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-aarch64 ']'
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-armv8.1a
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-armv8.1a ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-armv8.1a
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-armv8.1a ']'
-++ for systype in ${_sp_compatible_sys_types}
-++ _spack_pathadd MODULEPATH /opt/spack/share/spack/modules/linux-rocky9-armv8.3a
-++ _pa_varname=PATH
-++ _pa_new_path=MODULEPATH
-++ '[' -n /opt/spack/share/spack/modules/linux-rocky9-armv8.3a ']'
-++ _pa_varname=MODULEPATH
-++ _pa_new_path=/opt/spack/share/spack/modules/linux-rocky9-armv8.3a
-++ eval '_pa_oldvalue=${MODULEPATH:-}'
-+++ _pa_oldvalue=
-++ _pa_canonical=:
-++ '[' -d /opt/spack/share/spack/modules/linux-rocky9-armv8.3a ']'
-++ test bash = bash
-++ source /opt/spack/share/spack/spack-completion.bash
-+++ test -n ''
-+++ complete -o bashdefault -o default -F _bash_completion_spack spack
-+++ complete -o bashdefault -o default -F _bash_completion_spack spacktivate
-+++ SPACK_ALIASES='concretise:concretize;containerise:containerize;rm:remove'
-++ unset _sp_initializing
-++ export _sp_initializing
-+ source /opt/llm/bin/activate
-++ deactivate nondestructive
-++ '[' -n '' ']'
-++ '[' -n '' ']'
-++ '[' -n /bin/sh -o -n '' ']'
-++ hash -r
-++ '[' -n '' ']'
-++ unset VIRTUAL_ENV
-++ '[' '!' nondestructive = nondestructive ']'
-++ VIRTUAL_ENV=/opt/llm
-++ export VIRTUAL_ENV
-++ _OLD_VIRTUAL_PATH=/opt/spack/bin:/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ PATH=/opt/llm/bin:/opt/spack/bin:/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/gcc-8.5.0/gcc-14.1.0-by7ibhprouon776fcsagfzmqm6enng6a/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/binutils-2.43.1-fdfvs5e4qnizssn3iycvkbrdyb2wbgav/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/zstd-1.5.6-ahkihqzppmjytclcgjgvg4ryjozjfkym/bin:/opt/spack/opt/spack/linux-rocky9-neoverse_v1/clang-18.1.8/gcc-8.5.0-57d2qb2hiayjz3lpijydghglbq6dvozy/bin:/opt/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-++ export PATH
-++ '[' -n '' ']'
-++ '[' -z '' ']'
-++ _OLD_VIRTUAL_PS1=
-++ PS1='(llm) '
-++ export PS1
-++ '[' -n /bin/sh -o -n '' ']'
-++ hash -r
 + cd /opt
 + git clone https://github.com/microsoft/Megatron-DeepSpeed
 Cloning into 'Megatron-DeepSpeed'...
 + cd Megatron-DeepSpeed
 + cat
-+ pip install -r requirements.txt
-Collecting deepspeed
-  Downloading deepspeed-0.16.3.tar.gz (1.4 MB)
-Requirement already satisfied: ninja in /opt/llm/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (1.11.1.3)
-Requirement already satisfied: numpy in /opt/llm/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (2.0.2)
-Requirement already satisfied: packaging in /opt/llm/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (24.2)
-Collecting pybind11
-  Downloading pybind11-2.13.6-py3-none-any.whl (243 kB)
-Collecting regex
-  Downloading regex-2024.11.6-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (782 kB)
-Requirement already satisfied: six in /opt/llm/lib/python3.9/site-packages (from -r requirements.txt (line 7)) (1.17.0)
-Collecting tensorboard
-  Downloading tensorboard-2.19.0-py3-none-any.whl (5.5 MB)
-Requirement already satisfied: torch in /opt/pytorch (from -r requirements.txt (line 9)) (2.5.0a0+git32f585d)
-Collecting transformers
-  Downloading transformers-4.49.0-py3-none-any.whl (10.0 MB)
-Collecting wandb
-  Downloading wandb-0.19.6-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (19.5 MB)
-Requirement already satisfied: wheel in /opt/llm/lib/python3.9/site-packages (from -r requirements.txt (line 12)) (0.45.1)
-Collecting mpi4py
++ pip install --break-system-packages -r requirements.txt
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/pillow-11.1.0-py3.12-linux-aarch64.egg is deprecated. pip 24.3 will enforce this behaviour change. A possible replacement is to use pip for package installation.. Discussion can be found at https://github.com/pypa/pip/issues/12330
+Collecting deepspeed (from -r requirements.txt (line 1))
+  Downloading deepspeed-0.16.4.tar.gz (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 25.6 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: ninja in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 2)) (1.11.1.3)
+Requirement already satisfied: numpy in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 3)) (2.2.3)
+Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 4)) (24.2)
+Collecting pybind11 (from -r requirements.txt (line 5))
+  Downloading pybind11-2.13.6-py3-none-any.whl.metadata (9.5 kB)
+Collecting regex (from -r requirements.txt (line 6))
+  Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 kB 5.9 MB/s eta 0:00:00
+Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 7)) (1.17.0)
+Collecting tensorboard (from -r requirements.txt (line 8))
+  Downloading tensorboard-2.19.0-py3-none-any.whl.metadata (1.8 kB)
+Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 9)) (2.5.0a0+git32f585d)
+Collecting transformers (from -r requirements.txt (line 10))
+  Downloading transformers-4.49.0-py3-none-any.whl.metadata (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.0/44.0 kB 6.5 MB/s eta 0:00:00
+Collecting wandb (from -r requirements.txt (line 11))
+  Downloading wandb-0.19.7-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
+Requirement already satisfied: wheel in /usr/lib/python3/dist-packages (from -r requirements.txt (line 12)) (0.42.0)
+Collecting mpi4py (from -r requirements.txt (line 13))
   Downloading mpi4py-4.0.3.tar.gz (466 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 466.3/466.3 kB 30.9 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status 'done'
   Getting requirements to build wheel: started
   Getting requirements to build wheel: finished with status 'done'
   Installing backend dependencies: started
   Installing backend dependencies: finished with status 'done'
-    Preparing wheel metadata: started
-    Preparing wheel metadata: finished with status 'done'
-Collecting einops
-  Downloading einops-0.8.1-py3-none-any.whl (64 kB)
-Collecting hjson
-  Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
-Collecting msgpack
-  Downloading msgpack-1.1.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (371 kB)
-Requirement already satisfied: psutil in /opt/llm/lib/python3.9/site-packages (from deepspeed->-r requirements.txt (line 1)) (7.0.0)
-Collecting py-cpuinfo
-  Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
-Collecting pydantic>=2.0.0
-  Downloading pydantic-2.10.6-py3-none-any.whl (431 kB)
-Collecting tqdm
-  Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
-Requirement already satisfied: setuptools>=41.0.0 in /opt/llm/lib/python3.9/site-packages (from tensorboard->-r requirements.txt (line 8)) (53.0.0)
-Collecting absl-py>=0.4
-  Downloading absl_py-2.1.0-py3-none-any.whl (133 kB)
-Collecting markdown>=2.6.8
-  Downloading Markdown-3.7-py3-none-any.whl (106 kB)
-Collecting protobuf!=4.24.0,>=3.19.6
-  Downloading protobuf-5.29.3-cp38-abi3-manylinux2014_aarch64.whl (319 kB)
-Collecting tensorboard-data-server<0.8.0,>=0.7.0
-  Downloading tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
-Collecting werkzeug>=1.0.1
-  Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
-Collecting grpcio>=1.48.2
-  Downloading grpcio-1.70.0-cp39-cp39-manylinux_2_17_aarch64.whl (5.7 MB)
-Requirement already satisfied: filelock in /opt/llm/lib/python3.9/site-packages (from torch->-r requirements.txt (line 9)) (3.17.0)
-Requirement already satisfied: typing-extensions>=4.8.0 in /opt/llm/lib/python3.9/site-packages (from torch->-r requirements.txt (line 9)) (4.12.2)
-Requirement already satisfied: networkx in /opt/llm/lib/python3.9/site-packages (from torch->-r requirements.txt (line 9)) (3.2.1)
-Requirement already satisfied: jinja2 in /opt/llm/lib/python3.9/site-packages (from torch->-r requirements.txt (line 9)) (3.1.5)
-Requirement already satisfied: fsspec in /opt/llm/lib/python3.9/site-packages (from torch->-r requirements.txt (line 9)) (2025.2.0)
-Collecting sympy==1.13.1
-  Downloading sympy-1.13.1-py3-none-any.whl (6.2 MB)
-Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/llm/lib/python3.9/site-packages (from sympy==1.13.1->torch->-r requirements.txt (line 9)) (1.3.0)
-Collecting tokenizers<0.22,>=0.21
-  Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
-Collecting safetensors>=0.4.1
-  Downloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (450 kB)
-Collecting huggingface-hub<1.0,>=0.26.0
-  Downloading huggingface_hub-0.29.1-py3-none-any.whl (468 kB)
-Requirement already satisfied: requests in /opt/llm/lib/python3.9/site-packages (from transformers->-r requirements.txt (line 10)) (2.32.3)
-Requirement already satisfied: pyyaml>=5.1 in /opt/llm/lib/python3.9/site-packages (from transformers->-r requirements.txt (line 10)) (6.0.2)
-Collecting docker-pycreds>=0.4.0
-  Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
-Collecting eval-type-backport
-  Downloading eval_type_backport-0.2.2-py3-none-any.whl (5.8 kB)
-Collecting platformdirs
-  Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
-Collecting setproctitle
-  Downloading setproctitle-1.3.4-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (30 kB)
-Collecting gitpython!=3.1.29,>=1.0.0
-  Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
-Collecting sentry-sdk>=2.0.0
-  Downloading sentry_sdk-2.22.0-py2.py3-none-any.whl (325 kB)
-Collecting click!=8.0.0,>=7.1
-  Downloading click-8.1.8-py3-none-any.whl (98 kB)
-Collecting gitdb<5,>=4.0.1
-  Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
-Collecting smmap<6,>=3.0.1
-  Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
-Collecting importlib-metadata>=4.4
-  Using cached importlib_metadata-8.6.1-py3-none-any.whl (26 kB)
-Collecting zipp>=3.20
-  Using cached zipp-3.21.0-py3-none-any.whl (9.6 kB)
-Collecting pydantic-core==2.27.2
-  Downloading pydantic_core-2.27.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.8 MB)
-Collecting annotated-types>=0.6.0
-  Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
-Requirement already satisfied: idna<4,>=2.5 in /opt/llm/lib/python3.9/site-packages (from requests->transformers->-r requirements.txt (line 10)) (3.10)
-Requirement already satisfied: certifi>=2017.4.17 in /opt/llm/lib/python3.9/site-packages (from requests->transformers->-r requirements.txt (line 10)) (2025.1.31)
-Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/llm/lib/python3.9/site-packages (from requests->transformers->-r requirements.txt (line 10)) (2.3.0)
-Requirement already satisfied: charset-normalizer<4,>=2 in /opt/llm/lib/python3.9/site-packages (from requests->transformers->-r requirements.txt (line 10)) (3.4.1)
-Requirement already satisfied: MarkupSafe>=2.1.1 in /opt/llm/lib/python3.9/site-packages (from werkzeug>=1.0.1->tensorboard->-r requirements.txt (line 8)) (3.0.2)
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting einops (from deepspeed->-r requirements.txt (line 1))
+  Downloading einops-0.8.1-py3-none-any.whl.metadata (13 kB)
+Collecting hjson (from deepspeed->-r requirements.txt (line 1))
+  Downloading hjson-3.1.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting msgpack (from deepspeed->-r requirements.txt (line 1))
+  Downloading msgpack-1.1.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (8.4 kB)
+Requirement already satisfied: psutil in /usr/local/lib/python3.12/dist-packages (from deepspeed->-r requirements.txt (line 1)) (7.0.0)
+Collecting py-cpuinfo (from deepspeed->-r requirements.txt (line 1))
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Collecting pydantic>=2.0.0 (from deepspeed->-r requirements.txt (line 1))
+  Downloading pydantic-2.10.6-py3-none-any.whl.metadata (30 kB)
+Collecting tqdm (from deepspeed->-r requirements.txt (line 1))
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 9.8 MB/s eta 0:00:00
+Collecting absl-py>=0.4 (from tensorboard->-r requirements.txt (line 8))
+  Downloading absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+Collecting grpcio>=1.48.2 (from tensorboard->-r requirements.txt (line 8))
+  Downloading grpcio-1.70.0-cp312-cp312-manylinux_2_17_aarch64.whl.metadata (3.9 kB)
+Collecting markdown>=2.6.8 (from tensorboard->-r requirements.txt (line 8))
+  Downloading Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
+Collecting protobuf!=4.24.0,>=3.19.6 (from tensorboard->-r requirements.txt (line 8))
+  Downloading protobuf-5.29.3-cp38-abi3-manylinux2014_aarch64.whl.metadata (592 bytes)
+Requirement already satisfied: setuptools>=41.0.0 in /usr/lib/python3/dist-packages (from tensorboard->-r requirements.txt (line 8)) (68.1.2)
+Collecting tensorboard-data-server<0.8.0,>=0.7.0 (from tensorboard->-r requirements.txt (line 8))
+  Downloading tensorboard_data_server-0.7.2-py3-none-any.whl.metadata (1.1 kB)
+Collecting werkzeug>=1.0.1 (from tensorboard->-r requirements.txt (line 8))
+  Downloading werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
+Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 9)) (3.17.0)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 9)) (2025.2.0)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 9)) (3.1.5)
+Requirement already satisfied: networkx in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 9)) (3.4.2)
+Requirement already satisfied: typing-extensions>=4.8.0 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 9)) (4.12.2)
+Requirement already satisfied: sympy==1.13.1 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 9)) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy==1.13.1->torch->-r requirements.txt (line 9)) (1.3.0)
+Collecting huggingface-hub<1.0,>=0.26.0 (from transformers->-r requirements.txt (line 10))
+  Downloading huggingface_hub-0.29.1-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.12/dist-packages (from transformers->-r requirements.txt (line 10)) (6.0.2)
+Requirement already satisfied: requests in /usr/local/lib/python3.12/dist-packages (from transformers->-r requirements.txt (line 10)) (2.32.3)
+Collecting tokenizers<0.22,>=0.21 (from transformers->-r requirements.txt (line 10))
+  Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.7 kB)
+Collecting safetensors>=0.4.1 (from transformers->-r requirements.txt (line 10))
+  Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.8 kB)
+Collecting click!=8.0.0,>=7.1 (from wandb->-r requirements.txt (line 11))
+  Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Collecting docker-pycreds>=0.4.0 (from wandb->-r requirements.txt (line 11))
+  Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Collecting gitpython!=3.1.29,>=1.0.0 (from wandb->-r requirements.txt (line 11))
+  Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+Collecting platformdirs (from wandb->-r requirements.txt (line 11))
+  Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+Collecting sentry-sdk>=2.0.0 (from wandb->-r requirements.txt (line 11))
+  Downloading sentry_sdk-2.22.0-py2.py3-none-any.whl.metadata (10 kB)
+Collecting setproctitle (from wandb->-r requirements.txt (line 11))
+  Downloading setproctitle-1.3.5-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.29,>=1.0.0->wandb->-r requirements.txt (line 11))
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0.0->deepspeed->-r requirements.txt (line 1))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.27.2 (from pydantic>=2.0.0->deepspeed->-r requirements.txt (line 1))
+  Downloading pydantic_core-2.27.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.6 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests->transformers->-r requirements.txt (line 10)) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.12/dist-packages (from requests->transformers->-r requirements.txt (line 10)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/dist-packages (from requests->transformers->-r requirements.txt (line 10)) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests->transformers->-r requirements.txt (line 10)) (2025.1.31)
+Requirement already satisfied: MarkupSafe>=2.1.1 in /usr/local/lib/python3.12/dist-packages (from werkzeug>=1.0.1->tensorboard->-r requirements.txt (line 8)) (3.0.2)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb->-r requirements.txt (line 11))
+  Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+Downloading pybind11-2.13.6-py3-none-any.whl (243 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.3/243.3 kB 28.1 MB/s eta 0:00:00
+Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (794 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 795.0/795.0 kB 46.5 MB/s eta 0:00:00
+Downloading tensorboard-2.19.0-py3-none-any.whl (5.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 97.5 MB/s eta 0:00:00
+Downloading transformers-4.49.0-py3-none-any.whl (10.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 154.0 MB/s eta 0:00:00
+Downloading wandb-0.19.7-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (19.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.5/19.5 MB 111.6 MB/s eta 0:00:00
+Downloading absl_py-2.1.0-py3-none-any.whl (133 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.7/133.7 kB 39.9 MB/s eta 0:00:00
+Downloading click-8.1.8-py3-none-any.whl (98 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 33.7 MB/s eta 0:00:00
+Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
+Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.6/207.6 kB 67.0 MB/s eta 0:00:00
+Downloading grpcio-1.70.0-cp312-cp312-manylinux_2_17_aarch64.whl (5.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 142.9 MB/s eta 0:00:00
+Downloading huggingface_hub-0.29.1-py3-none-any.whl (468 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.0/468.0 kB 86.2 MB/s eta 0:00:00
+Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 106.3/106.3 kB 34.8 MB/s eta 0:00:00
+Downloading protobuf-5.29.3-cp38-abi3-manylinux2014_aarch64.whl (319 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 319.6/319.6 kB 68.9 MB/s eta 0:00:00
+Downloading pydantic-2.10.6-py3-none-any.whl (431 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 kB 97.9 MB/s eta 0:00:00
+Downloading pydantic_core-2.27.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 177.6 MB/s eta 0:00:00
+Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (459 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 459.5/459.5 kB 115.7 MB/s eta 0:00:00
+Downloading sentry_sdk-2.22.0-py2.py3-none-any.whl (325 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 325.8/325.8 kB 79.2 MB/s eta 0:00:00
+Downloading tensorboard_data_server-0.7.2-py3-none-any.whl (2.4 kB)
+Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 154.0 MB/s eta 0:00:00
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 28.3 MB/s eta 0:00:00
+Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 44.5 MB/s eta 0:00:00
+Downloading einops-0.8.1-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 16.5 MB/s eta 0:00:00
+Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 kB 6.9 MB/s eta 0:00:00
+Downloading msgpack-1.1.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (392 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 393.0/393.0 kB 36.6 MB/s eta 0:00:00
+Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading setproctitle-1.3.5-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (31 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 8.0 MB/s eta 0:00:00
+Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
 Building wheels for collected packages: deepspeed, mpi4py
   Building wheel for deepspeed (setup.py): started
   Building wheel for deepspeed (setup.py): finished with status 'done'
-  Created wheel for deepspeed: filename=deepspeed-0.16.3-py3-none-any.whl size=1549938 sha256=e07ce380ef1383c6c1b035affcefed2fc71a770670d9a4b247524f49d01b0768
-  Stored in directory: /root/.cache/pip/wheels/80/7d/5c/ba8d8aa95d5696c63fe6491b72dcc9e4906d8f0622252c8901
-  Building wheel for mpi4py (PEP 517): started
-  Building wheel for mpi4py (PEP 517): still running...
-  Building wheel for mpi4py (PEP 517): finished with status 'done'
-  Created wheel for mpi4py: filename=mpi4py-4.0.3-cp39-cp39-linux_aarch64.whl size=4532935 sha256=2786807fa1d7f4dd45b53bcaa2144c29449fb2f824329c4eec0ba052696b59f0
-  Stored in directory: /root/.cache/pip/wheels/c8/6d/35/5b437fa28e579de9da97d3894b2ce58cf12b6e3baf4c85d827
+  Created wheel for deepspeed: filename=deepspeed-0.16.4-py3-none-any.whl size=1562520 sha256=db6d9049aa3180ebd4b627aed00484dad74d522055766f9bf2cd7f3dc2299854
+  Stored in directory: /root/.cache/pip/wheels/df/4c/09/8ae983e56c326a108b2b9d8671823076456164405dcebe7cb0
+  Building wheel for mpi4py (pyproject.toml): started
+  Building wheel for mpi4py (pyproject.toml): still running...
+  Building wheel for mpi4py (pyproject.toml): finished with status 'done'
+  Created wheel for mpi4py: filename=mpi4py-4.0.3-cp312-cp312-linux_aarch64.whl size=5026050 sha256=62d11004cc7cc79299d2347a268d14f87f74449a6de209de74e106ec4b147610
+  Stored in directory: /root/.cache/pip/wheels/10/44/e1/03c799a415ad873a19c5b830e6ae3c2ac6064dff0b9b2aeb7d
 Successfully built deepspeed mpi4py
-Installing collected packages: zipp, tqdm, smmap, sympy, pydantic-core, importlib-metadata, huggingface-hub, gitdb, annotated-types, werkzeug, tokenizers, tensorboard-data-server, setproctitle, sentry-sdk, safetensors, regex, pydantic, py-cpuinfo, protobuf, platformdirs, msgpack, markdown, hjson, grpcio, gitpython, eval-type-backport, einops, docker-pycreds, click, absl-py, wandb, transformers, tensorboard, pybind11, mpi4py, deepspeed
-  Attempting uninstall: sympy
-    Found existing installation: sympy 1.13.3
-    Uninstalling sympy-1.13.3:
-      Successfully uninstalled sympy-1.13.3
-Successfully installed absl-py-2.1.0 annotated-types-0.7.0 click-8.1.8 deepspeed-0.16.3 docker-pycreds-0.4.0 einops-0.8.1 eval-type-backport-0.2.2 gitdb-4.0.12 gitpython-3.1.44 grpcio-1.70.0 hjson-3.1.0 huggingface-hub-0.29.1 importlib-metadata-8.6.1 markdown-3.7 mpi4py-4.0.3 msgpack-1.1.0 platformdirs-4.3.6 protobuf-5.29.3 py-cpuinfo-9.0.0 pybind11-2.13.6 pydantic-2.10.6 pydantic-core-2.27.2 regex-2024.11.6 safetensors-0.5.2 sentry-sdk-2.22.0 setproctitle-1.3.4 smmap-5.0.2 sympy-1.13.1 tensorboard-2.19.0 tensorboard-data-server-0.7.2 tokenizers-0.21.0 tqdm-4.67.1 transformers-4.49.0 wandb-0.19.6 werkzeug-3.1.3 zipp-3.21.0
-WARNING: You are using pip version 21.2.3; however, version 25.0.1 is available.
-You should consider upgrading via the '/opt/llm/bin/python3 -m pip install --upgrade pip' command.
+Installing collected packages: py-cpuinfo, hjson, werkzeug, tqdm, tensorboard-data-server, smmap, setproctitle, sentry-sdk, safetensors, regex, pydantic-core, pybind11, protobuf, platformdirs, msgpack, mpi4py, markdown, grpcio, einops, docker-pycreds, click, annotated-types, absl-py, tensorboard, pydantic, huggingface-hub, gitdb, tokenizers, gitpython, deepspeed, wandb, transformers
+Successfully installed absl-py-2.1.0 annotated-types-0.7.0 click-8.1.8 deepspeed-0.16.4 docker-pycreds-0.4.0 einops-0.8.1 gitdb-4.0.12 gitpython-3.1.44 grpcio-1.70.0 hjson-3.1.0 huggingface-hub-0.29.1 markdown-3.7 mpi4py-4.0.3 msgpack-1.1.0 platformdirs-4.3.6 protobuf-5.29.3 py-cpuinfo-9.0.0 pybind11-2.13.6 pydantic-2.10.6 pydantic-core-2.27.2 regex-2024.11.6 safetensors-0.5.3 sentry-sdk-2.22.0 setproctitle-1.3.5 smmap-5.0.2 tensorboard-2.19.0 tensorboard-data-server-0.7.2 tokenizers-0.21.0 tqdm-4.67.1 transformers-4.49.0 wandb-0.19.7 werkzeug-3.1.3
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 + pip list
-Package                 Version            Location
------------------------ ------------------ --------------
+DEPRECATION: Loading egg at /usr/local/lib/python3.12/dist-packages/pillow-11.1.0-py3.12-linux-aarch64.egg is deprecated. pip 24.3 will enforce this behaviour change. A possible replacement is to use pip for package installation.. Discussion can be found at https://github.com/pypa/pip/issues/12330
+Package                 Version            Editable project location
+----------------------- ------------------ -------------------------
 absl-py                 2.1.0
 annotated-types         0.7.0
 astunparse              1.6.3
@@ -380,12 +208,9 @@ attrs                   25.1.0
 certifi                 2025.1.31
 charset-normalizer      3.4.1
 click                   8.1.8
-cmake                   3.31.4
-deepspeed               0.16.3
+deepspeed               0.16.4
 docker-pycreds          0.4.0
 einops                  0.8.1
-eval_type_backport      0.2.2
-exceptiongroup          1.2.2
 expecttest              0.3.0
 filelock                3.17.0
 fsspec                  2025.2.0
@@ -394,9 +219,8 @@ GitPython               3.1.44
 grpcio                  1.70.0
 hjson                   3.1.0
 huggingface-hub         0.29.1
-hypothesis              6.126.0
+hypothesis              6.127.2
 idna                    3.10
-importlib_metadata      8.6.1
 Jinja2                  3.1.5
 lintrunner              0.12.7
 Markdown                3.7
@@ -404,13 +228,15 @@ MarkupSafe              3.0.2
 mpi4py                  4.0.3
 mpmath                  1.3.0
 msgpack                 1.1.0
-networkx                3.2.1
+networkx                3.4.2
 ninja                   1.11.1.3
-numpy                   2.0.2
+numpy                   2.2.3
 optree                  0.14.0
 packaging               24.2
 pillow                  11.1.0
-pip                     21.2.3
+pillow                  11.1.0
+pip                     24.0
+pkgconfig               1.5.5
 platformdirs            4.3.6
 protobuf                5.29.3
 psutil                  7.0.0
@@ -421,10 +247,11 @@ pydantic_core           2.27.2
 PyYAML                  6.0.2
 regex                   2024.11.6
 requests                2.32.3
-safetensors             0.5.2
+safetensors             0.5.3
+SCons                   4.8.1
 sentry-sdk              2.22.0
-setproctitle            1.3.4
-setuptools              53.0.0
+setproctitle            1.3.5
+setuptools              68.1.2
 six                     1.17.0
 smmap                   5.0.2
 sortedcontainers        2.4.0
@@ -432,26 +259,23 @@ sympy                   1.13.1
 tensorboard             2.19.0
 tensorboard-data-server 0.7.2
 tokenizers              0.21.0
-torch                   2.5.0a0+git32f585d /opt/pytorch
+torch                   2.5.0a0+git32f585d
 torchaudio              2.6.0a0+c670ad8    /opt/audio/src
-torchvision             0.22.0a0+b5c7443   /opt/vision
+torchvision             0.22.0a0+7b2addf   /opt/vision
 tqdm                    4.67.1
 transformers            4.49.0
 types-dataclasses       0.6.6
 typing_extensions       4.12.2
 urllib3                 2.3.0
-wandb                   0.19.6
+wandb                   0.19.7
 Werkzeug                3.1.3
-wheel                   0.45.1
-zipp                    3.21.0
-WARNING: You are using pip version 21.2.3; however, version 25.0.1 is available.
-You should consider upgrading via the '/opt/llm/bin/python3 -m pip install --upgrade pip' command.
+wheel                   0.42.0
 + cd /opt/Megatron-DeepSpeed/megatron/data/
 + make
-g++ -O3 -Wall -shared -std=c++11 -fPIC -fdiagnostics-color -I/usr/include/python3.9 -I/opt/llm/lib64/python3.9/site-packages/pybind11/include helpers.cpp -o helpers.cpython-39-aarch64-linux-gnu.so
+g++ -O3 -Wall -shared -std=c++11 -fPIC -fdiagnostics-color -I/usr/include/python3.12 -I/usr/local/lib/python3.12/dist-packages/pybind11/include helpers.cpp -o helpers.cpython-312-aarch64-linux-gnu.so
 INFO:    Adding environment to container
 INFO:    Adding runscript
 INFO:    Creating SIF file...
 VERBOSE: Set SIF container architecture to arm64
-VERBOSE: Build complete: /lustre01/rccs-sdt/a01029/work/singularity/Megatron-DeepSpeed2/Megatron-DeepSpeed.sif
+VERBOSE: Build complete: /lustre01/rccs-sdt/a01029/work/singularity/Megatron-DeepSpeed_acl/Megatron-DeepSpeed.sif
 INFO:    Build complete: Megatron-DeepSpeed.sif
