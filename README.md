@@ -15,7 +15,7 @@ Definition files for creating a singularity container.
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw, armpl)
  - Arm Compiler for Linux : acfl.def (includes armpl)
  - llama.cpp : llama.cpp.def (requires GCC v14.1.0 container image)
- - PyTorch v2.5.0 : pytorch.def (requires GCC v14.1.0 container image)
+ - PyTorch v2.5.0 : pytorch.def (with oneDNN, ACL)
  - TensorFlow v2.17 : tensorflow.def (without ACL)
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch v2.5.0 container image)
 

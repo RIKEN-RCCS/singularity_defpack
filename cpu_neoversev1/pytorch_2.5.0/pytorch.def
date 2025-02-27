@@ -1,5 +1,5 @@
-Bootstrap: localimage
-From: gcc_14.1.0.sif
+Bootstrap: docker
+From: ubuntu:noble
 
 %setup
 
@@ -8,50 +8,50 @@ From: gcc_14.1.0.sif
 %files
 
 %post
-  . /opt/spack/share/spack/setup-env.sh
+  apt-get update && apt-get install -y --no-install-recommends build-essential
+  apt-get install -y python3-dev python3-pip python3-pkgconfig libhdf5-dev
+  apt-get install -y wget git patchelf unzip cmake
+  apt-get install -y openmpi-bin openmpi-common openmpi-doc libopenmpi-dev libopenmpi3t64
 
+  pip install --break-system-packages scons
+
+  # Build Arm Compute Library (ACL)
+  ACL_VER=25.02
   cd /opt
-  python3 -m venv llm
-  source /opt/llm/bin/activate
+  git clone https://github.com/ARM-software/ComputeLibrary.git
+  cd ComputeLibrary
+  git checkout v${ACL_VER}
+  scons Werror=1 -j32 debug=0 neon=1 opencl=0 os=linux openmp=1 cppthreads=0 arch=armv8a multi_isa=1 build=native
 
+  # Build PyTorch from the tip of the tree
   PYTORCH_VER=2.5.0
-  GCC_RUNTIME=`spack location -i gcc-runtime`
-
   cd /opt
   git clone --recursive http://github.com/pytorch/pytorch
   cd pytorch
-  pip install -r requirements.txt
   git checkout v${PYTORCH_VER}
   git submodule sync
   git submodule update --init --recursive
-  LD_LIBRARY_PATH=${GCC_RUNTIME}/lib USE_CUDA=0 python3 setup.py develop
+  pip install --break-system-packages -r requirements.txt
+
+  # Set the ACL root directory and enable MKLDNN backend
+  export ACL_ROOT_DIR=/opt/ComputeLibrary
+  export USE_MKLDNN=ON USE_MKLDNN_ACL=ON USE_CUDA=0 USE_MPI=ON USE_OPENMP=ON
+  python3 setup.py bdist_wheel
+  pip install --break-system-packages ./dist/torch-2.5.0a0+git32f585d-cp312-cp312-linux_aarch64.whl
 
   cd /opt
   git clone https://github.com/pytorch/vision
   cd vision
-  LD_LIBRARY_PATH=${GCC_RUNTIME}/lib USE_CUDA=0 python3 setup.py develop
+  python3 setup.py develop
 
   cd /opt
   git clone https://github.com/pytorch/audio
   cd audio
-  LD_LIBRARY_PATH=${GCC_RUNTIME}/lib USE_CUDA=0 python3 setup.py develop
+  python3 setup.py develop
+
+  rm -rf /opt/pytorch
 
   pip list
 
 %runscript
-  #!/bin/sh
-  ARMPL_DIR=`spack location -i armpl-gcc`/armpl_24.10_gcc
-  OB_DIR=`spack location -i openblas`
-  FFTW_DIR=`spack location -i fftw`
-  GPERF_DIR=`spack location -i gperftools`
-  VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
-
-  export PATH=/usr/local/go/pkg/tool/linux_arm64:${PATH}:/usr/local/bin:${ARMPL_DIR}/bin:${GPERF_DIR}/bin:${FFTW_DIR}/bin
-  export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
-  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
-  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-  export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-  export INCLUDE_PATH=${INCLUDE_PATH}:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-
-  source /opt/llm/bin/activate
   exec "$@"
