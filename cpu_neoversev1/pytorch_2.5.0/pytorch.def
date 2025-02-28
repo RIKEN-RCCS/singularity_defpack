@@ -12,6 +12,13 @@ From: ubuntu:noble
   apt-get install -y python3-dev python3-pip python3-pkgconfig python3-venv libhdf5-dev
   apt-get install -y wget git patchelf unzip cmake
   apt-get install -y openmpi-bin openmpi-common openmpi-doc libopenmpi-dev libopenmpi3t64
+  apt-get install -y gcc-14 g++-14
+
+  update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100
+  update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100
+
+  gcc --version
+  g++ --version
 
   python3 -m pip install --break-system-packages scons
 
@@ -21,11 +28,13 @@ From: ubuntu:noble
   git clone https://github.com/ARM-software/ComputeLibrary.git
   cd ComputeLibrary
   git checkout v${ACL_VER}
-  scons Werror=1 -j32 debug=0 neon=1 opencl=0 os=linux openmp=1 cppthreads=0 arch=armv8a multi_isa=1 build=native
+  scons Werror=1 -j32 benchmark_tests=1 debug=0 neon=1 opencl=0 os=linux openmp=1 cppthreads=0 arch=armv8.2-a-sve multi_isa=1 build=native
 
   # Set the ACL root directory and enable MKLDNN backend
   export ACL_ROOT_DIR=/opt/ComputeLibrary
   export USE_MKLDNN=ON USE_MKLDNN_ACL=ON USE_CUDA=0 USE_MPI=ON USE_OPENMP=ON
+
+  mkdir /opt/dist
 
   # Build PyTorch from the tip of the tree
   PYTORCH_VER=2.5.0
@@ -37,24 +46,30 @@ From: ubuntu:noble
   git submodule update --init --recursive
   python3 -m pip install --break-system-packages -r requirements.txt
   python3 setup.py bdist_wheel
-  python3 -m pip install --break-system-packages `find ./dist -name *.whl`
-  find /opt/pytorch -mindepth 1 -maxdepth 1 -type d ! -name "dist" -exec rm -r {} +
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/pytorch
 
   # Build TorchVision
   cd /opt
   git clone https://github.com/pytorch/vision
   cd vision
   python3 setup.py bdist_wheel
-  python3 -m pip install --break-system-packages `find ./dist -name *.whl`
-  find /opt/vision -mindepth 1 -maxdepth 1 -type d ! -name "dist" -exec rm -r {} +
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/vision
 
   # Build TorchAudio
   cd /opt
   git clone https://github.com/pytorch/audio
   cd audio
   python3 setup.py bdist_wheel
-  python3 -m pip install --break-system-packages `find ./dist -name *.whl`
-  find /opt/audio -mindepth 1 -maxdepth 1 -type d ! -name "dist" -exec rm -r {} +
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/audio
 
   python3 -m pip freeze > /opt/requirements.txt
 
