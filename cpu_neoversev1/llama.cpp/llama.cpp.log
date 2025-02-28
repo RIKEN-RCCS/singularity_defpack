@@ -1,21 +1,3 @@
-VERBOSE: Set messagelevel to: 4
-VERBOSE: Starter initialization
-VERBOSE: Check if we are running as setuid
-VERBOSE: Drop root privileges
-VERBOSE: Drop root privileges permanently
-VERBOSE: Spawn stage 1
-VERBOSE: Execute stage 1
-VERBOSE: stage 1 exited with status 0
-VERBOSE: Create user namespace
-VERBOSE: Create pid namespace
-VERBOSE: Spawn master process
-VERBOSE: Get root privileges
-VERBOSE: Create mount namespace
-VERBOSE: Spawn RPC server
-VERBOSE: Execute master process
-VERBOSE: Serve RPC requests
-VERBOSE: rpc server exited with status 0
-VERBOSE: Execute stage 2
 INFO:    Starting build...
 INFO:    Verifying bootstrap image gcc_14.1.0.sif
 WARNING: integrity: signature not found for object group 1
@@ -1742,6 +1724,4 @@ gmake[1]: Leaving directory '/opt/llama.cpp/build'
 INFO:    Adding environment to container
 INFO:    Adding runscript
 INFO:    Creating SIF file...
-VERBOSE: Set SIF container architecture to arm64
-VERBOSE: Build complete: /lustre01/rccs-sdt/a01029/work/singularity/llama.cpp2/llama.cpp.sif
 INFO:    Build complete: llama.cpp.sif

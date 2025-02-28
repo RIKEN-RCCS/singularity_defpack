@@ -1,21 +1,3 @@
-VERBOSE: Set messagelevel to: 4
-VERBOSE: Starter initialization
-VERBOSE: Check if we are running as setuid
-VERBOSE: Drop root privileges
-VERBOSE: Drop root privileges permanently
-VERBOSE: Spawn stage 1
-VERBOSE: Execute stage 1
-VERBOSE: stage 1 exited with status 0
-VERBOSE: Create user namespace
-VERBOSE: Create pid namespace
-VERBOSE: Spawn master process
-VERBOSE: Get root privileges
-VERBOSE: Create mount namespace
-VERBOSE: Spawn RPC server
-VERBOSE: Execute master process
-VERBOSE: Serve RPC requests
-VERBOSE: rpc server exited with status 0
-VERBOSE: Execute stage 2
 INFO:    Starting build...
 INFO:    Verifying bootstrap image gcc.sif
 WARNING: integrity: signature not found for object group 1
@@ -2718,6 +2700,4 @@ INFO:    Running post scriptlet
 INFO:    Adding environment to container
 INFO:    Adding runscript
 INFO:    Creating SIF file...
-VERBOSE: Set SIF container architecture to amd64
-VERBOSE: Build complete: /home/users/hikaru.inoue/cpu_sapphirerapids/singularity/spack_gcc_rhel9_vf/application.sif
 INFO:    Build complete: application.sif
