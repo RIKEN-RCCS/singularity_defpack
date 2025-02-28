@@ -8,6 +8,12 @@ From: pytorch_2.5.0.sif
 %files
 
 %post
+  # Install PyTorch, TorchVision and TorchAudio
+  python3 -m venv venv
+  source venv/bin/activate
+  python3 -m pip install -r /opt/requirements.txt
+
+  # Build Megatron DeepSpeed
   cd /opt
   git clone https://github.com/microsoft/Megatron-DeepSpeed
   cd Megatron-DeepSpeed
@@ -26,9 +32,9 @@ wandb
 wheel
 mpi4py
 EOF
-  pip install --break-system-packages -r requirements.txt
+  python3 -m pip install -r requirements.txt
 
-  pip list
+  python3 -m pip list
 
   cd /opt/Megatron-DeepSpeed/megatron/data/
   make
