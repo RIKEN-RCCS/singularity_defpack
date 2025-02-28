@@ -24,6 +24,7 @@ Definition files for creating a singularity container.
  - GCC v14.1.0 : gcc.def (includes openblas, fftw)
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw)
  - oneAPI : oneapi.def (includes mkl)
+ - PyTorch v2.5.0 : pytorch.def (with oneDNN v3.5.3)
  - HPC Applications : application.def (based on [VirtualFugaku v1.1](https://github.com/RIKEN-RCCS/spack/blob/virtual_fugaku/spack-ver1-1.def))
 
 ### AMD Zen4 (EPYC 9004 series)
