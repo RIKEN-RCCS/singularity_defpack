@@ -6,6 +6,7 @@ From: rockylinux/rockylinux:9.4
 %environment
 
 %files
+  packages.yaml /tmp
 
 %post
   dnf -y group install "Development Tools"
@@ -15,6 +16,11 @@ From: rockylinux/rockylinux:9.4
 
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
+  cd spack
+  git checkout virtual_fugaku
+
+  FILE1=$(find /tmp/build-temp-* | grep 'tmp/packages.yaml' )
+  cp $FILE1 /opt/spack/etc/spack
 
   . /opt/spack/share/spack/setup-env.sh
 
