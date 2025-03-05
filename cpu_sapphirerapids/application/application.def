@@ -11,19 +11,26 @@ From: gcc.sif
 %post
   . /opt/spack/share/spack/setup-env.sh
 
-  FILE2=$(find /tmp/build-temp-* | grep 'tmp/argument.patch' )
+  FILE1=$(find /tmp/build-temp-* | grep 'tmp/argument.patch' )
+  FILE2=/opt/spack/etc/spack/spack_python.yaml
   FILE3=/opt/spack/var/spack/repos/local/packages/suite-sparse/package.py
   FILE4=/opt/spack/var/spack/repos/local/packages/quantum-espresso/package.py
   FILE5=/opt/spack/etc/spack/spack.yaml
 
-  cp $FILE2 /opt/spack/var/spack/repos/local/packages/scale
+  cp $FILE1 /opt/spack/var/spack/repos/local/packages/scale
+
+  sed -i -e '/tensor/d' -e '/torch/d' $FILE2
   sed -i 's/-mcpu=neoverse-n1/-march=native/' $FILE3
   sed -i 's/-mcpu=neoverse-n1/-march=native/' $FILE4
   sed -i 's/autodock-vina/autodock-vina ^boost@1.82.0/' $FILE5
 
   spack clean --all
 
-  spack env create --include-concrete virtual_fugaku virtual_fugaku_application $FILE5
+  spack env create virtual_fugaku_python $FILE2
+  spack -e virtual_fugaku_python concretize
+  spack -e virtual_fugaku_python install
+
+  spack env create --include-concrete virtual_fugaku_python virtual_fugaku_application $FILE5
   spack -e virtual_fugaku_application add gcc@14.1.0
   spack -e virtual_fugaku_application concretize
   spack -e virtual_fugaku_application install
