@@ -9,32 +9,17 @@ From: pytorch_2.5.0.sif
 
 %post
   # Install PyTorch, TorchVision and TorchAudio
-  python3 -m venv venv
-  . venv/bin/activate
+  cd /opt
+  python3 -m venv llm
+  . /opt/llm/bin/activate
   python3 -m pip install -r /opt/requirements.txt
+
+  python3 -m pip install accelerate transformers deepspeed bitsandbytes datasets evaluate hjson huggingface-hub sentencepiece tokenizers wandb ninja packaging pybind11 six trl optimum peft regex tensorboard mpi4py
 
   # Build Megatron DeepSpeed
   cd /opt
   git clone https://github.com/microsoft/Megatron-DeepSpeed
   cd Megatron-DeepSpeed
-cat << EOF >> requirements.txt
-deepspeed
-ninja
-numpy
-packaging
-pybind11
-regex
-six
-tensorboard
-torch
-transformers
-wandb
-wheel
-mpi4py
-EOF
-  python3 -m pip install -r requirements.txt
-
-  python3 -m pip list
 
   cd /opt/Megatron-DeepSpeed/megatron/data/
   make
@@ -42,4 +27,5 @@ EOF
 %runscript
   #!/bin/sh
   export PYTHONPATH="/opt/Megatron-DeepSpeed"
+  . /opt/llm/bin/activate
   exec "$@"
