@@ -1,9 +1,15 @@
 import tensorflow as tf
+import time
 
-print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+class MatMulBenchmark(tf.test.Benchmark):
+    def benchmark_matmul(self):
+        x = tf.random.normal([1000, 1000])
+        y = tf.random.normal([1000, 1000])
+        start = time.time()
+        for _ in range(100):
+            z = tf.matmul(x, y)
+        end = time.time()
+        print(f"Execution time: {end - start:.5f} seconds")
 
-tensor = tf.constant([1.0, 2.0, 3.0])
-print("Tensor:", tensor)
-
-result = tf.reduce_sum(tensor)
-print("Sum of Tensor:", result)
+bench = MatMulBenchmark()
+bench.benchmark_matmul()

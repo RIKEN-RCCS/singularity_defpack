@@ -16,7 +16,7 @@ Definition files for creating a singularity container.
  - Arm Compiler for Linux : acfl.def (includes armpl)
  - llama.cpp : llama.cpp.def (requires GCC v14.1.0 container image)
  - PyTorch v2.5.0 : pytorch.def (with oneDNN v3.5.3, ACL v25.02) and (OpenBLAS v0.3.29)
- - TensorFlow v2.17 : tensorflow.def (without ACL)
+ - TensorFlow v2.17 : tensorflow.def (without oneDNN)
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch v2.5.0 container image)
 
 ### Intel Sapphire Rapids
