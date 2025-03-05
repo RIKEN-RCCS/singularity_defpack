@@ -5,27 +5,27 @@ Rocky LinuxとはRed Hat Enterprise Linux(RHEL)と互換性を持つオープン
 環境はspackによる構築を基本とし、仮想環境virtual_fugakuへ各種パッケージをインストールする。
 spackはRIKEN-RCCSのリポジトリを利用する(https://github.com/RIKEN-RCCS/spack.git)
 
-## gcc_14.1.0
+## GCC version14.1.0
 
 - 一部アプリがgcc@8.5.0を必要とするため、下記ステップでgcc@14.1.0を構築する
- 1. clang (OS標準)
- 2. clang -> gcc@8.5.0
- 3. gcc@8.5.0 -> gcc@14.1.0
+  1. clang (OS標準)
+  2. clang -> gcc@8.5.0
+  3. gcc@8.5.0 -> gcc@14.1.0
 
 - 数学ライブラリを構築する
- * openblas
- * fftw
- * ARM Performance Library(armpl)
+  - openblas
+  - fftw
+  - ARM Performance Library(armpl)
 
 - プロファイル情報採取のためのライブラリを構築する、可視化ツールpprofのためgoも合わせて構築する
- * gperftools
- * perf_helper
- * go
+  - gperftools
+  - perf_helper
+  - go
 
 - コンパイル方法の例
 下記の例では、コンパイルスクリプト.compile.shをヒアドキュメントで作成し、コンテナに渡してコンパイルを実行している。
 上記手順で整備したライブラリはコンテナ内部でパスを設定しているため、追加のパス指定なしにリンク可能である。
-注：perf_helperの使い方は(Gitリポジトリ)[https://github.com/RIKEN-RCCS/perf_helper]を参照のこと。
+注：perf_helperの使い方は[Gitリポジトリ](https://github.com/RIKEN-RCCS/perf_helper)を参照のこと。
 
 ```bash
 #!/bin/sh
