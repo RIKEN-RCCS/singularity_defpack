@@ -83,6 +83,8 @@ bench.benchmark_matmul()
 | 32 | 0.11891 |
 | 64 | 0.08579 |
 
+This benchmark test is executed by the following script.
+
 ```bash
 #!/bin/bash
 
