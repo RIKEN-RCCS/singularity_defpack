@@ -1,4 +1,4 @@
-# **About Language System Containers**
+# **Language System Containers**
 
 The base OS is set to **Rocky Linux 9.4** for its ease of installing standard OS packages. Rocky Linux is an open-source Linux distribution that is compatible with Red Hat Enterprise Linux (RHEL). The environment is primarily built using **Spack**, with various packages installed into the virtual environment **virtual_fugaku**. For Spack, the [RIKEN-RCCS repository](https://github.com/RIKEN-RCCS/spack.git) is used.  
 
@@ -83,7 +83,7 @@ Profiling tools:
 
 ---
 
-# **About AI System Containers**
+# **AI System Containers**
 
 The base OS is set to **Ubuntu 24.04**, as it is widely used for AI-related tasks.
 This environment is built using the **OS default compilers** for package installation.
