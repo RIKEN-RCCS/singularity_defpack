@@ -61,8 +61,6 @@ For profiling, `gperftools` and `go` (for `pprof`) are also installed:
 
 (*Compilation steps are the same as for GCC and are omitted here.*)  
 
----
-
 ## **LLVM version 19.1.4**
 
 LLVM is downloaded and installed from the official LLVM repository.  Before installing LLVM, `ninja` and `cmake` are installed using the OS default `clang`.  Since `spack compiler find` cannot detect `flang`, it must be manually added to `compilers.yaml`.  
