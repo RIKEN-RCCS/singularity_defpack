@@ -127,7 +127,6 @@ python3 -m pip install -r /opt/requirements.txt
 
 ## TensorFlow Version 2.17
 
-Since oneDNN and its backend ACL are enabled by default in TensorFlow, special installation steps are unnecessary.
 Installation follows the official [Building from Source](https://www.tensorflow.org/install/source?hl=ja) guide.
 
 > **Note**: On aarch64, a linking error workaround requires adding `--linkopt=-fuse-ld=bfd` to `bazel build`.
