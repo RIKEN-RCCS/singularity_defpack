@@ -46,7 +46,7 @@ EOF
 singularity run ${SIFFILE} sh ./.compile.sh
 ```
 
-## **Intel oneAPI **
+## **Intel oneAPI**
 
 `oneAPI` is installed using **Spack**.
 In addition to the compiler, **MPI**, **Math Kernel Library**, and **VTune** are also installed.
