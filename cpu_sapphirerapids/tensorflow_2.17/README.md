@@ -1,6 +1,6 @@
 # **Package List**
 
-The container created on May 4, 2025, for Graviton3E contains the following packages.
+The container created on May 4, 2025, for Sapphire Rapids contains the following packages.
 
 ```
 Package            Version
@@ -15,7 +15,7 @@ google-pasta            0.2.0
 grpcio                  1.70.0
 h5py                    3.13.0
 idna                    3.10
-keras                   3.9.0
+keras                   3.8.0
 libclang                18.1.1
 Markdown                3.7
 markdown-it-py          3.0.0
@@ -71,26 +71,26 @@ bench = MatMulBenchmark()
 bench.benchmark_matmul()
 ```
 
-**The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
+**The execution time at Sapphire Rapids(Intel Xeon platinum 8470 using 52cores**
 
 | # of threads | Execution time[sec] |
 | ---- | ---- |
-|  1 | 2.61713 |
-|  2 | 1.31781 |
-|  4 | 0.68670 |
-|  8 | 0.37916 |
-| 16 | 0.29445 |
-| 32 | 0.11891 |
-| 64 | 0.08579 |
+|  1 | 1.00280 |
+|  2 | 0.52856 |
+|  4 | 0.30501 |
+|  8 | 0.18887 |
+| 16 | 0.12214 |
+| 32 | 0.09711 |
+| 52 | 0.09182 |
 
 ```bash
 #!/bin/bash
 
-for j in 1 2 4 8 16 32 64;do
+for j in 1 2 4 8 16 32 52;do
 END=`expr $j - 1`
 export TF_NUM_INTRAOP_THREADS=$j
 export GOMP_CPU_AFFINITY="0-$END"
-for i in `seq 1 10`;do
+for i in `seq 1 5`;do
   singularity run tensorflow.sif python3 test.py
 done
 done
