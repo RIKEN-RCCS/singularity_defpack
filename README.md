@@ -9,6 +9,28 @@ Definition files for creating a singularity container.
 
 ## Definition Files
 
+|  | virtual_fugaku | Compiler | Misc. |
+| ---- | ---- | ---- | ---- |
+|  A64FX |  |  | [Pytorch Install Guide]() |
+| ---- | ---- | ---- | ---- |
+|  Neoverse V1 | [spack-ver1-1.def]() | gcc.def:v8.5, v14.1.0 | pytorch.def(oneDNN):v2.5.0 |
+|              |                      | llvm.def:v19.1.4      | pytorch.def(OpenBLAS):v2.5.0 |
+|              |                      | acfl.def              | tensorflow.def:v2.17 |
+|              |                      |                       | llama.cpp.def |
+|              |                      |                       | Megatron-DeepSpeed.def |
+| ---- | ---- | ---- | ---- |
+|  Sapphire Rapids | application.def | gcc.def:v8.5, v14.1.0  | pytorch.def(oneDNN):v2.5.0 |
+|              |                     | llvm.def:v19.1.4       | tensorflow.def:v2.17 |
+|              |                     | oneapi.def             |  |
+| ---- | ---- | ---- | ---- |
+|  Zen4 |  | aocc.def |  |
+| ---- | ---- | ---- | ---- |
+|  Nvidia GPU |  |  | pytorch.def:v2.2.0 |
+|             |  |  | Megatron-DeepSpeed.def |
+| ---- | ---- | ---- | ---- |
+|  AMD GPU    |  |  | pytorch.def:v2.1.2 |
+|             |  |  | Megatron-DeepSpeed.def |
+
 ### ARM Neoverse V1 (Probably, V2 should be fine as well)
 
  - GCC v14.1.0 : gcc.def (includes openblas, fftw, armpl)
