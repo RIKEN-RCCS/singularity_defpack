@@ -54,6 +54,110 @@ Using the `pip` command, install necessary libraries for large language model tr
 ### Installing Megatron-DeepSpeed
 Download from Microsoft's repository and build the helper libraries.
 
+### Package List
+
+The container created on May 5, 2025, for Graviton3E contains the following packages.
+```
+Package                 Version
+----------------------- ------------------
+absl-py                 2.1.0
+accelerate              1.4.0
+aiohappyeyeballs        2.4.8
+aiohttp                 3.11.13
+aiosignal               1.3.2
+annotated-types         0.7.0
+astunparse              1.6.3
+attrs                   25.1.0
+bitsandbytes            0.42.0
+certifi                 2025.1.31
+charset-normalizer      3.4.1
+click                   8.1.8
+datasets                3.3.2
+deepspeed               0.16.4
+dill                    0.3.8
+docker-pycreds          0.4.0
+einops                  0.8.1
+evaluate                0.4.3
+expecttest              0.3.0
+filelock                3.17.0
+frozenlist              1.5.0
+fsspec                  2024.12.0
+gitdb                   4.0.12
+GitPython               3.1.44
+grpcio                  1.70.0
+hjson                   3.1.0
+huggingface-hub         0.29.1
+hypothesis              6.127.5
+idna                    3.10
+Jinja2                  3.1.5
+lintrunner              0.12.7
+Markdown                3.7
+markdown-it-py          3.0.0
+MarkupSafe              3.0.2
+mdurl                   0.1.2
+mpi4py                  4.0.3
+mpmath                  1.3.0
+msgpack                 1.1.0
+multidict               6.1.0
+multiprocess            0.70.16
+networkx                3.4.2
+ninja                   1.11.1.3
+numpy                   2.2.3
+optimum                 1.24.0
+optree                  0.14.1
+packaging               24.2
+pandas                  2.2.3
+peft                    0.14.0
+pillow                  11.1.0
+pip                     24.0
+pkgconfig               1.5.5
+platformdirs            4.3.6
+propcache               0.3.0
+protobuf                5.29.3
+psutil                  7.0.0
+py-cpuinfo              9.0.0
+pyarrow                 19.0.1
+pybind11                2.13.6
+pydantic                2.10.6
+pydantic_core           2.27.2
+Pygments                2.19.1
+python-dateutil         2.9.0.post0
+pytz                    2025.1
+PyYAML                  6.0.2
+regex                   2024.11.6
+requests                2.32.3
+rich                    13.9.4
+safetensors             0.5.3
+scipy                   1.15.2
+SCons                   4.9.0
+sentencepiece           0.2.0
+sentry-sdk              2.22.0
+setproctitle            1.3.5
+setuptools              68.1.2
+six                     1.17.0
+smmap                   5.0.2
+sortedcontainers        2.4.0
+sympy                   1.13.1
+tensorboard             2.19.0
+tensorboard-data-server 0.7.2
+tokenizers              0.21.0
+torch                   2.5.0a0+git32f585d
+torchaudio              2.6.0a0+c670ad8
+torchvision             0.22.0a0+dcd1e42
+tqdm                    4.67.1
+transformers            4.49.0
+trl                     0.15.2
+types-dataclasses       0.6.6
+typing_extensions       4.12.2
+tzdata                  2025.1
+urllib3                 2.3.0
+wandb                   0.19.8
+Werkzeug                3.1.3
+wheel                   0.42.0
+xxhash                  3.5.0
+yarl                    1.18.3
+```
+
 ## Usage Examples
 
 ### Fine-tuning
