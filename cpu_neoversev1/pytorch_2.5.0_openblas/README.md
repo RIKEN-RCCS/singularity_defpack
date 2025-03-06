@@ -64,7 +64,7 @@ def benchmark_matmul():
 benchmark_matmul()
 ```
 
-**The execution time at **Graviton3E(hpc7g.16xlarge) using 64vCPU**
+**The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
 | # of threads | Execution time[sec] |
 | ---- | ---- |
