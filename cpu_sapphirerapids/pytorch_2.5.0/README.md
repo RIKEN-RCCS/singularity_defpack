@@ -12,9 +12,9 @@ charset-normalizer 3.4.1
 expecttest         0.3.0
 filelock           3.17.0
 fsspec             2025.2.0
-hypothesis         6.127.5
+hypothesis         6.127.8
 idna               3.10
-Jinja2             3.1.5
+Jinja2             3.1.6
 lintrunner         0.12.7
 MarkupSafe         3.0.2
 mpmath             1.3.0
@@ -36,7 +36,7 @@ sortedcontainers   2.4.0
 sympy              1.13.1
 torch              2.5.0a0+git32f585d
 torchaudio         2.6.0a0+c670ad8
-torchvision        0.22.0a0+dcd1e42
+torchvision        0.22.0a0+124dfa4
 types-dataclasses  0.6.6
 typing_extensions  4.12.2
 urllib3            2.3.0
