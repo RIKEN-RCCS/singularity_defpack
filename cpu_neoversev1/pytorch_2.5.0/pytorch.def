@@ -13,6 +13,7 @@ From: ubuntu:noble
   apt-get install -y wget git patchelf unzip cmake
   apt-get install -y openmpi-bin openmpi-common openmpi-doc libopenmpi-dev libopenmpi3t64
   apt-get install -y gcc-14 g++-14
+  apt-get install -y libgoogle-perftools4t64
 
   update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100
   update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100

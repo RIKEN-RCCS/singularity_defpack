@@ -13,12 +13,15 @@ From: ubuntu:noble
   apt-get install -y wget git patchelf unzip cmake
   apt-get install -y openmpi-bin openmpi-common openmpi-doc libopenmpi-dev libopenmpi3t64
   apt-get install -y libmkl-dev libmkl-rt libmkl-avx512 libomp-dev libmkl-scalapack-ilp64 libmkl-scalapack-lp64
+  apt-get install -y libgoogle-perftools4t64
 
   python3 -m pip install --break-system-packages scons
 
   # Enable MKLDNN backend
   export USE_MKL=ON USE_MKLDNN=ON MKL_THREADING_LAYER=GNU USE_CUDA=0 USE_MPI=ON USE_OPENMP=ON
   export MKL_ENABLE_INSTRUCTIONS=AVX512
+
+  mkdir /opt/dist
 
   # Build PyTorch from the tip of the tree
   PYTORCH_VER=2.5.0
@@ -30,24 +33,30 @@ From: ubuntu:noble
   git submodule update --init --recursive
   python3 -m pip install --break-system-packages -r requirements.txt
   python3 setup.py bdist_wheel
-  python3 -m pip install --break-system-packages `find ./dist -name *.whl`
-  find /opt/pytorch -mindepth 1 -maxdepth 1 -type d ! -name "dist" -exec rm -r {} +
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/pytorch
 
   # Build TorchVision
   cd /opt
   git clone https://github.com/pytorch/vision
   cd vision
   python3 setup.py bdist_wheel
-  python3 -m pip install --break-system-packages `find ./dist -name *.whl`
-  find /opt/vision -mindepth 1 -maxdepth 1 -type d ! -name "dist" -exec rm -r {} +
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/vision
 
   # Build TorchAudio
   cd /opt
   git clone https://github.com/pytorch/audio
   cd audio
   python3 setup.py bdist_wheel
-  python3 -m pip install --break-system-packages `find ./dist -name *.whl`
-  find /opt/audio -mindepth 1 -maxdepth 1 -type d ! -name "dist" -exec rm -r {} +
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/audio
 
   python3 -m pip freeze > /opt/requirements.txt
 

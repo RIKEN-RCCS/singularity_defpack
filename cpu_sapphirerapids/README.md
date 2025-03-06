@@ -10,11 +10,10 @@ Since some applications require `gcc@8.5.0`, `gcc@14.1.0` is built using the fol
 2. Use `clang` to build `gcc@8.5.0`  
 3. Use `gcc@8.5.0` to build `gcc@14.1.0`  
 
-The following mathematical libraries are installed, including both commonly used BLAS and FFT libraries as well as vendor-specific **ARM Performance Library for GCC (armpl)**:  
+The following mathematical libraries are installed, including both commonly used BLAS and FFT libraries:
 
 - OpenBLAS  
 - FFTW  
-- ARMPL for GCC  
 
 For profiling purposes, **Google Performance Tools (gperftools)** and the visualization tool **`pprof`** (which requires `go`) are also installed:  
 
@@ -47,14 +46,12 @@ EOF
 singularity run ${SIFFILE} sh ./.compile.sh
 ```
 
-## **ARM Compiler For Linux (acfl)**
+## **Intel oneAPI **
 
-`acfl` is installed using **Spack**.  
-
-Since `armpl` is already included in `acfl`, additional mathematical libraries like OpenBLAS are **not** installed.  
+`oneAPI` is installed using **Spack**.
+In addition to the compiler, **MPI**, **Math Kernel Library**, and **VTune** are also installed.
 
 For profiling, `gperftools` and `go` (for `pprof`) are also installed:  
-
 - gperftools  
 - perf_helper  
 - go  
@@ -71,7 +68,6 @@ Installed mathematical libraries:
 
 - OpenBLAS  
 - FFTW  
-- ARMPL for GCC  
 
 Profiling tools:  
 
@@ -91,17 +87,12 @@ Since AI environments typically require **Python modules**, instead of using Spa
 
 ## **PyTorch version 2.5.0**
 
-The ARM Compute Library (`acl`) is installed using the OS default compiler **GCC-14**.
-`acl` is specifically optimized for **machine learning and computer vision** tasks, and works as a **backend for oneDNN** which is used by PyTorch.
-During the `acl` build, **OpenMP is enabled**, and the **target architecture is set to `armv8.2-a-sve`**, enabling **SVE instructions**.  
-
-- **acl version 25.02**  
-
+With GCC-14, PyTorch fails to build due to an undefined reference to the variable r in UtilsAvx512.cc, so GCC-13 is used instead.
 During the PyTorch build, the following settings are applied:  
 
 - Enable **oneDNN** as the mathematical library  
-- Set `acl` as the **oneDNN backend**  
 - Enable **MPI and OpenMP support**  
+- Enable **AVX512 support**  
 
 PyTorch is built along with **TorchVision** and **TorchAudio**.  
 
