@@ -42,3 +42,51 @@ typing_extensions  4.12.2
 urllib3            2.3.0
 wheel              0.42.0
 ```
+
+# **Performance test**
+
+Measure the execution time of matrix multiplication for a 1000x1000 matrix.
+Theoretical flop count is **200G flops**.
+
+```bash
+import torch
+import time
+
+def benchmark_matmul():
+    x = torch.randn(1000, 1000)
+    y = torch.randn(1000, 1000)
+    start = time.time()
+    for _ in range(100):
+        z = torch.matmul(x, y)
+    end = time.time()
+    print(f"Execution time: {end - start:.5f} seconds")
+
+benchmark_matmul()
+```
+
+**The execution time at Sapphire Rapids(Intel Xeon platinum 8470 using 52cores**
+
+| # of threads | Execution time[sec] |
+| ---- | ---- |
+|  1 | 1.02414 |
+|  2 | 0.54270 |
+|  4 | 0.28750 |
+|  8 | 0.18091 |
+| 16 | 0.10886 |
+| 32 | 0.08345 |
+| 52 | 0.06823 |
+
+This benchmark test is executed by the following script.
+
+```bash
+#!/bin/bash
+
+for j in 1 2 4 8 16 32 52;do
+END=`expr $j - 1`
+export OMP_NUM_THREADS=$j
+export GOMP_CPU_AFFINITY="0-$END"
+for i in `seq 1 5`;do
+  singularity run pytorch.sif python3 test.py
+done
+done
+```
