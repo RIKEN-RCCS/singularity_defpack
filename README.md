@@ -11,25 +11,12 @@ Definition files for creating a singularity container.
 
 |  | virtual_fugaku | Compiler | Misc. |
 | ---- | ---- | ---- | ---- |
-|  A64FX |  |  | [Pytorch Install Guide]() |
-| ---- | ---- | ---- | ---- |
-|  Neoverse V1 | [spack-ver1-1.def]() | gcc.def:v8.5, v14.1.0 | pytorch.def(oneDNN):v2.5.0 |
-|              |                      | llvm.def:v19.1.4      | pytorch.def(OpenBLAS):v2.5.0 |
-|              |                      | acfl.def              | tensorflow.def:v2.17 |
-|              |                      |                       | llama.cpp.def |
-|              |                      |                       | Megatron-DeepSpeed.def |
-| ---- | ---- | ---- | ---- |
-|  Sapphire Rapids | application.def | gcc.def:v8.5, v14.1.0  | pytorch.def(oneDNN):v2.5.0 |
-|              |                     | llvm.def:v19.1.4       | tensorflow.def:v2.17 |
-|              |                     | oneapi.def             |  |
-| ---- | ---- | ---- | ---- |
-|  Zen4 |  | aocc.def |  |
-| ---- | ---- | ---- | ---- |
-|  Nvidia GPU |  |  | pytorch.def:v2.2.0 |
-|             |  |  | Megatron-DeepSpeed.def |
-| ---- | ---- | ---- | ---- |
-|  AMD GPU    |  |  | pytorch.def:v2.1.2 |
-|             |  |  | Megatron-DeepSpeed.def |
+|  A64FX |  |  | [Pytorch Install Guide](https://github.com/fujitsu/pytorch/wiki) |
+|  Neoverse V1 | [spack-ver1-1.def](https://github.com/RIKEN-RCCS/spack/blob/virtual_fugaku/spack-ver1-1.def) | [gcc.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/gcc_14.1.0/gcc.def) : v14.1.0 <br> [llvm.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llvm_19.1.4/llvm.def) : v19.1.4 <br> [acl.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/acfl_24.10.1/acfl.def) |  [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/pytorch_2.5.0/pytorch.def)(oneDNN) : v2.5.0 <br> [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/pytorch_2.5.0_openblas/pytorch.def)(OpenBLAS) : v2.5.0 <br> [tensorflow.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/tensorflow_2.17/tensorflow.def) : v2.17 <br> [llama.cpp.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llama.cpp/llama.cpp.def) <br> [Megatron-DeepSpeed.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/Megatron-DeepSpeed/Megatron-DeepSpeed.def)|
+|  Sapphire Rapids | [application.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/application/application.def) | [gcc.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gcc_14.1.0/gcc.def) : v14.1.0 <br> [llvm.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/llvm_19.1.4/llvm.def) : v19.1.4 <br> [oneapi.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/oneapi_2025.0.1/oneapi.def) | [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/pytorch_2.5.0/pytorch.def)(oneDNN) : v2.5.0 <br> [tensorflow.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/tensorflow_2.17/tensorflow.def) : v2.17 |
+|  Zen4 |  | [aocc.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_zen4/aocc/aocc.def) |  |
+|  Nvidia GPU |  |  | [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/pytorch/pytorch.def) : v2.2.0 <br> [Megatron-DeepSpeed.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/Megatron-DeepSpeed/Megatron-DeepSpeed.def)|
+|  AMD GPU    |  |  | [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/pytorch/pytorch.def) : v2.1.2 <br> [Megatron-DeepSpeed.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/Megatron-DeepSpeed/Megatron-DeepSpeed.def)|
 
 ### ARM Neoverse V1 (Probably, V2 should be fine as well)
 
