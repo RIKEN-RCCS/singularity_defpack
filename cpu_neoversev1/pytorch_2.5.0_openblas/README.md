@@ -66,15 +66,15 @@ benchmark_matmul()
 
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
-| # of threads | Execution time[sec] |
-| ---- | ---- |
-|  1 | 2.55920 |
-|  2 | 1.29891 |
-|  4 | 0.67570 |
-|  8 | 0.37352 |
-| 16 | 0.22710 |
-| 32 | 0.17172 |
-| 64 | 0.21237 |
+| # of threads | Execution time[sec] | GFlop/s |
+| ---- | ---- | ---- |
+|  1 | 2.55920 | 78.1 |
+|  2 | 1.29891 | 154.0 |
+|  4 | 0.67570 | 260.0 |
+|  8 | 0.37352 | 535.4 |
+| 16 | 0.22710 | 880.7 |
+| 32 | 0.17172 | 1,164.7 |
+| 64 | 0.21237 | 941.8 |
 
 This benchmark test is executed by the following script.
 
