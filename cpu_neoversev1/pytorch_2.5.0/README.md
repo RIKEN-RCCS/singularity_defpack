@@ -1,5 +1,7 @@
 # **Building PyTorch from source**
 
+## **definition file**
+
 Install Ubuntu standard packages and scons.
 Set the installed gcc-14 and g++-14 as the default compilers.
 
@@ -22,7 +24,7 @@ Set the installed gcc-14 and g++-14 as the default compilers.
 
 Clone the Arm Compute Library (ACL) source code from Git and checkout release **25.02.1**.
 Release **25.02.1** includes stateless support for GEMM kernels, which improves performance.
-Enable neon, openmp, multi_isa, and fixed_format_kernels, then install ACL.
+Install ACL with neon, openmp, multi_isa, and fixed_format_kernels enabled.
 
 ```bash
   # Build Arm Compute Library (ACL)
@@ -36,7 +38,7 @@ Enable neon, openmp, multi_isa, and fixed_format_kernels, then install ACL.
 
 Clone the OpenBLAS source code from Git and checkout release **0.3.27**.
 OpenBLAS improves performance for GEMM kernels where ACL is not utilized.
-Enable openmp, then install OpenBLAS.
+Install OpenBLAS with openmp enabled.
 
 ```bash
   # Build OpenBLAS
