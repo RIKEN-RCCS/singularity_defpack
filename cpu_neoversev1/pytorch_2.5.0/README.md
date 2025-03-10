@@ -78,7 +78,6 @@ benchmark_matmul()
 | 32 | 0.18053 | 1,107.8 |
 | 64 | 0.20754 |   963.7 |
 
-This benchmark test is executed by the following script.
 
 ## **INFERENCE**
 

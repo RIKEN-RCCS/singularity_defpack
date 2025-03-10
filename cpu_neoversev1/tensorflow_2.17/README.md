@@ -73,27 +73,59 @@ bench.benchmark_matmul()
 
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
-| # of threads | Execution time[sec] |
-| ---- | ---- |
-|  1 | 2.61713 |
-|  2 | 1.31781 |
-|  4 | 0.68670 |
-|  8 | 0.37916 |
-| 16 | 0.29445 |
-| 32 | 0.11891 |
-| 64 | 0.08579 |
+| # of threads | Execution time[sec] | GFlop/s |
+| ---- | ---- | ---- |
+|  1 | 2.61993 |    76.3 |
+|  2 | 1.31418 |   152.2 |
+|  4 | 0.67959 |   294.3 |
+|  8 | 0.37341 |   535.6 |
+| 16 | 0.19806 | 1,009.8 |
+| 32 | 0.11197 | 1,786.3 |
+| 64 | 0.07838 | 2,551.7 |
 
-This benchmark test is executed by the following script.
 
-```bash
-#!/bin/bash
+## **INFERENCE**
 
-for j in 1 2 4 8 16 32 64;do
-END=`expr $j - 1`
-export TF_NUM_INTRAOP_THREADS=$j
-export GOMP_CPU_AFFINITY="0-$END"
-for i in `seq 1 10`;do
-  singularity run tensorflow.sif python3 test.py
-done
-done
+Measure the execution time of inference performance.
+This script is quoted from the [PyTorch tutorial](https://pytorch.org/tutorials/recipes/inference_tuning_on_aws_graviton.html).
+
+```python
+import tensorflow as tf
+import time
+
+print(f"Using CPU device")
+
+class MyNeuralNetwork(tf.keras.Model):
+    def __init__(self):
+        super(MyNeuralNetwork, self).__init__()
+        self.flatten = tf.keras.layers.Flatten()
+        self.linear_relu_stack = tf.keras.Sequential([
+            tf.keras.layers.Dense(4096, activation="relu"),
+            tf.keras.layers.Dense(11008, activation="relu"),
+            tf.keras.layers.Dense(10)
+        ])
+
+    def call(self, x):
+        x = self.flatten(x)
+        return self.linear_relu_stack(x)
+
+model = MyNeuralNetwork()
+
+X = tf.random.uniform((256, 64, 64))
+
+for _ in range(50):
+    _ = model(X, training=False)
+
+start = time.time()
+for _ in range(100):
+    _ = model(X, training=False)
+end = time.time()
+print(f"Execution time: {end - start:.5f} seconds")
 ```
+
+**The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
+
+| Mode | Execution time[sec] |
+| ---- | ----: |
+| FP32 | 1.457 |
+| tcmalloc | 1.444 |
