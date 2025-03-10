@@ -50,6 +50,7 @@ wrapt                   1.17.2
 
 # **Performance test**
 
+## **MATMUL**
 Measure the execution time of matrix multiplication for a 1000x1000 matrix.
 Theoretical flop count is **200G flops**.
 
