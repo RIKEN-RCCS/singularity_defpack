@@ -69,7 +69,7 @@ benchmark_matmul()
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
 | # of threads | Execution time[sec] | GFlop/s |
-| ---- | ---- | ---- |
+| ---- | ----: | ----: |
 |  1 | 2.54832 |    78.5 |
 |  2 | 1.29556 |   154.4 |
 |  4 | 0.67472 |   296.4 |
@@ -128,7 +128,7 @@ print(prof.key_averages().table(sort_by="self_cpu_time_total"))
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
 | Mode | Execution time[sec] |
-| ---- | ---- |
+| ---- | ----: |
 | FP32 | 2.127 |
 | BF16 | 1.236 |
 | BF16+tcmalloc | 0.672 |
@@ -185,7 +185,7 @@ Using cpu device
 Self CPU time total: 1.236s
 ```
 
-Following is the profiler output with the bfload16 and tcmalloc:
+Following is the profiler output with the bfload16 with tcmalloc:
 
 ```
 $ export DNNL_DEFAULT_FPMATH_MODE=BF16
