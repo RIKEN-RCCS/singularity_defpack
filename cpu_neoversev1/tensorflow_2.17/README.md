@@ -75,7 +75,7 @@ bench.benchmark_matmul()
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
 | # of threads | Execution time[sec] | GFlop/s |
-| ---- | ---- | ---- |
+| ---- | ----: | ----: |
 |  1 | 2.61993 |    76.3 |
 |  2 | 1.31418 |   152.2 |
 |  4 | 0.67959 |   294.3 |
