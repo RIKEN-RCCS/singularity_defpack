@@ -4,6 +4,7 @@ From: ubuntu:noble
 %setup
 
 %files
+  compute_library.patch /tmp
 
 %post
   apt-get update && apt-get install -y --no-install-recommends build-essential
@@ -15,36 +16,36 @@ From: ubuntu:noble
 
   python3 -m pip install --break-system-packages mpi4py
 
+  mkdir /opt/dist
+
+  # Setup Bazel v6.5.0
   wget https://github.com/bazelbuild/bazelisk/releases/download/v1.25.0/bazelisk-linux-arm64
   mv bazelisk-linux-arm64 /usr/local/bin/bazel
   chmod +x /usr/local/bin/bazel
-
   export USE_BAZEL_VERSION=6.5.0
   /usr/local/bin/bazel version
 
+  # Build TensorFlow from the tip of the tree
   cd /opt
   git clone https://github.com/tensorflow/tensorflow.git
   cd tensorflow
-  git checkout r2.17
+  git checkout v2.17.1
 
   export TF_PYTHON_VERSION=3.12
 
   yes "" | python3 configure.py
 
-  bazel build --config=opt --copt=-march=native --linkopt=-fuse-ld=bfd //tensorflow/tools/pip_package:wheel --repo_env=WHEEL_NAME=tensorflow_cpu
-
+  FILE=$(find /tmp/build-temp-* | grep 'tmp/compute_library.patch' )
+  cp $FILE /opt/tensorflow/third_party/compute_library
+  bazel build --config=opt --copt=-march=native --config=mkl_aarch64_threadpool --linkopt=-fuse-ld=bfd //tensorflow/tools/pip_package:wheel --repo_env=WHEEL_NAME=tensorflow_cpu
   FILE=`ls -1 bazel-bin/tensorflow/tools/pip_package/wheel_house`
-  pip install --break-system-packages bazel-bin/tensorflow/tools/pip_package/wheel_house/$FILE
+  mv bazel-bin/tensorflow/tools/pip_package/wheel_house/$FILE /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt && rm -rf /opt/tensorflow
 
-  mkdir /opt/dist; cd /opt/dist
-  python3 -m pip freeze > requirements.txt
-  python3 -m pip wheel --wheel-dir=/opt/dist -r requirements.txt
-
-  rm -rf /opt/tensorflow
+  python3 -m pip freeze > /opt/requirements.txt
 
 %environment
-  export PATH="/usr/lib/openmpi/bin:$PATH"
-  export LD_LIBRARY_PATH="/usr/lib/openmpi/lib:$LD_LIBRARY_PATH"
   export TF_ENABLE_ONEDNN_OPTS=1
 
 %runscript

@@ -1,5 +1,4 @@
-
-# Singularity Container Definition File Package
+# **Singularity Container Definition File Package**
 
 ## Introduction
 
@@ -23,7 +22,7 @@ Definition files for creating a singularity container.
  - Arm Compiler for Linux : acfl.def (includes armpl)
  - llama.cpp : llama.cpp.def (requires GCC v14.1.0 container image)
  - PyTorch v2.5.0 : pytorch.def (with oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27)
- - TensorFlow v2.17 : tensorflow.def (without oneDNN)
+ - TensorFlow v2.17 : tensorflow.def (with oneDNN v3.2.1, ACL v23.05.1)
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch v2.5.0 container image)
 
 ### Intel Sapphire Rapids
@@ -31,8 +30,8 @@ Definition files for creating a singularity container.
  - GCC v14.1.0 : gcc.def (includes openblas, fftw)
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw)
  - oneAPI : oneapi.def (includes mkl)
- - PyTorch v2.5.0 : pytorch.def (with oneDNN v3.5.3)
- - TensorFlow v2.17 : tensorflow.def (with oneDNN v3.4.1)
+ - PyTorch v2.5.0 : pytorch.def
+ - TensorFlow v2.17 : tensorflow.def
  - HPC Applications : application.def (based on [VirtualFugaku v1.1](https://github.com/RIKEN-RCCS/spack/blob/virtual_fugaku/spack-ver1-1.def))
 
 ### AMD Zen4 (EPYC 9004 series)
@@ -61,4 +60,67 @@ Assign the definition file to the environment variable NAME and create a contain
 NAME=gcc
 
 singularity -v build --force --fakeroot $NAME.sif $NAME.def > $NAME.log 2>&1
+```
+
+# ** Extra: Installing SingularityCE v4.2.1 on Graviton 3E**
+
+## Install Development packages.
+
+```bash
+sudo dnf groupinstall "Development Tools"
+sudo dnf install -y \
+   autoconf \
+   automake \
+   crun \
+   cryptsetup \
+   fuse \
+   fuse3 \
+   fuse3-devel \
+   git \
+   glib2-devel \
+   libseccomp-devel \
+   libtool \
+   squashfs-tools \
+   wget \
+   zlib-devel
+```
+
+## Install Go v.1.22.6
+
+```bash
+$ export VERSION=1.22.6 OS=linux ARCH=arm64 && \
+    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
+    sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \
+    rm go$VERSION.$OS-$ARCH.tar.gz
+
+$ echo 'export GOPATH=${HOME}/go' >> ~/.bashrc && \
+    echo 'export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin' >> ~/.bashrc && \
+    source ~/.bashrc
+```
+
+## Install Singularity v.4.2.1
+
+```bash
+$ export VERSION=4.2.1 &&
+    wget https://github.com/sylabs/singularity/releases/download/v${VERSION}/singularity-ce-${VERSION}.tar.gz && \
+    tar -xzf singularity-ce-${VERSION}.tar.gz && \
+    cd singularity-ce-${VERSION}
+
+$ ./mconfig && \
+    make -C ./builddir && \
+    sudo make -C ./builddir install
+```
+
+## Set timezon to Asia/Tokyo
+
+```bash
+$ sudo timedatectl set-timezone Asia/Tokyo
+```
+
+## Install extra tools
+
+```
+$ sudo dnf install -y gcc-gfortran
+$ sudo dnf install -y perf
+$ sudo dnf install -y numactl*
 ```

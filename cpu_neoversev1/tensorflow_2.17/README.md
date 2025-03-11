@@ -1,6 +1,74 @@
-# **Package List**
+# **Building TensorFlow from source**
 
-The container created on May 4, 2025, for Graviton3E contains the following packages.
+## **definition file**
+
+Install Ubuntu standard packages and scons.
+
+```bash
+  apt-get update && apt-get install -y --no-install-recommends build-essential
+  apt-get install -y python3-dev python3-pip python3-pkgconfig python3-venv libhdf5-dev
+  apt-get install -y llvm-17 clang-17 libomp-17-dev libomp-17-doc
+  apt-get install -y openmpi-bin openmpi-common openmpi-doc libopenmpi-dev libopenmpi3t64
+  apt-get install -y wget git patchelf unzip cmake
+  apt-get install -y libgoogle-perftools4t64
+
+  python3 -m pip install --break-system-packages mpi4py
+```
+
+Create the `/opt/dist` directory to store the wheels that will be built later.
+
+```bash
+  mkdir /opt/dist
+```
+
+Setup bazel v6.5.0.
+
+```bash
+  # Setup Bazel v6.5.0
+  wget https://github.com/bazelbuild/bazelisk/releases/download/v1.25.0/bazelisk-linux-arm64
+  mv bazelisk-linux-arm64 /usr/local/bin/bazel
+  chmod +x /usr/local/bin/bazel
+  export USE_BAZEL_VERSION=6.5.0
+  /usr/local/bin/bazel version
+```
+
+Clone the TensorFlow source from Git and checkout release **2.17.1**.
+
+> **note1:** To address an error occurring with Clang 17, I have added a patch to compute_library.patch that includes <string> in IPrinter.h. The official patch will be applied from version v2.19.0-rc0.
+> **note2:** The ACL version is specified as v23.5.0 in ./tensorflow/workspace2.bzl and ./third_party/xla/tsl_workspace2.bzl. Since Stateless GEMM is applied from v25.02.1, the performance improvement with oneDNN may be limited depending on the problem size.
+
+Create a wheel according to the above declarations, move the wheel file to `/opt/dist`, and install it.
+To reduce the container file size, delete the cloned directories.
+
+```bash
+  # Build TensorFlow from the tip of the tree
+  cd /opt
+  git clone https://github.com/tensorflow/tensorflow.git
+  cd tensorflow
+  git checkout v2.17.1
+
+  export TF_PYTHON_VERSION=3.12
+
+  yes "" | python3 configure.py
+
+  FILE=$(find /tmp/build-temp-* | grep 'tmp/compute_library.patch' )
+  cp $FILE /opt/tensorflow/third_party/compute_library
+  bazel build --config=opt --copt=-march=native --config=mkl_aarch64_threadpool --linkopt=-fuse-ld=bfd //tensorflow/tools/pip_package:wheel --repo_env=WHEEL_NAME=tensorflow_cpu
+  FILE=`ls -1 bazel-bin/tensorflow/tools/pip_package/wheel_house`
+  mv bazel-bin/tensorflow/tools/pip_package/wheel_house/$FILE /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt && rm -rf /opt/tensorflow
+```
+
+Freeze the environment for the reuse of the PyTorch environment.
+
+```bash
+  python3 -m pip freeze > /opt/requirements.txt
+```
+
+## **Package List**
+
+The container created on May 11, 2025, for Graviton3E contains the following packages.
 
 ```
 Package            Version
@@ -12,7 +80,7 @@ charset-normalizer      3.4.1
 flatbuffers             25.2.10
 gast                    0.6.0
 google-pasta            0.2.0
-grpcio                  1.70.0
+grpcio                  1.71.0
 h5py                    3.13.0
 idna                    3.10
 keras                   3.9.0
@@ -74,15 +142,14 @@ bench.benchmark_matmul()
 
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
-| # of threads | Execution time[sec] | GFlop/s |
+> note: tcmalloc refers to pre-loadiing libtcmalloc.so.4 befor python3.
+
+| Mode | Execution time[sec] | GFlop/s |
 | ---- | ----: | ----: |
-|  1 | 2.61993 |    76.3 |
-|  2 | 1.31418 |   152.2 |
-|  4 | 0.67959 |   294.3 |
-|  8 | 0.37341 |   535.6 |
-| 16 | 0.19806 | 1,009.8 |
-| 32 | 0.11197 | 1,786.3 |
-| 64 | 0.07838 | 2,551.7 |
+| oneDNN=OFF | 0.07938 | 2,519.5 |
+| oneDNN=ON, FP32 | 0.07678 | 2,604.8 |
+| oneDNN=ON, BF16 | 0.06026 | 3,319.0 |
+| oneDNN=ON, BF16, tcmalloc | 0.05867 | 3,408.9 |
 
 
 ## **INFERENCE**
@@ -126,7 +193,11 @@ print(f"Execution time: {end - start:.5f} seconds")
 
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
+> note: tcmalloc refers to pre-loadiing libtcmalloc.so.4 befor python3.
+
 | Mode | Execution time[sec] |
 | ---- | ----: |
-| FP32 | 1.457 |
-| tcmalloc | 1.444 |
+| oneDNN=OFF | 1.74958 |
+| oneDNN=ON, FP32 | 2.84469 |
+| oneDNN=ON, FP16 | 2.04007 |
+| oneDNN=ON, BF16, tcmalloc | 1.3516 |
