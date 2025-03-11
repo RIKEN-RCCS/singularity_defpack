@@ -128,6 +128,6 @@ $ sudo dnf install -y numactl*
 ## Fakeroot setting
 
 ```
-$ sudo singularity config fakeroot --add *username*
-$ sudo singularity config fakeroot --enable *username*
+$ sudo singularity config fakeroot --add username
+$ sudo singularity config fakeroot --enable username
 ```
