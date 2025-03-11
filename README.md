@@ -111,7 +111,7 @@ $ ./mconfig && \
     sudo make -C ./builddir install
 ```
 
-## Set timezon to Asia/Tokyo
+## Set timezone to Asia/Tokyo
 
 ```bash
 $ sudo timedatectl set-timezone Asia/Tokyo
