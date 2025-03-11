@@ -196,15 +196,13 @@ benchmark_matmul()
 
 **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
-| # of threads | Execution time[sec] | GFlop/s |
+> note: tcmalloc refers to pre-loadiing libtcmalloc.so.4 befor python3.
+
+| Mode | Execution time[sec] | GFlop/s |
 | ---- | ----: | ----: |
-|  1 | 2.54832 |    78.5 |
-|  2 | 1.29556 |   154.4 |
-|  4 | 0.67472 |   296.4 |
-|  8 | 0.37038 |   540.0 |
-| 16 | 0.22970 |   870.7 |
-| 32 | 0.18053 | 1,107.8 |
-| 64 | 0.20754 |   963.7 |
+| FP32 | 0.2069 | 966.9 |
+| BF16 | 0.2069 | 966.5 |
+| BF16, tcmalloc | 0.2070 | 966.1 |
 
 
 ## **INFERENCE**
@@ -256,9 +254,9 @@ print(prof.key_averages().table(sort_by="self_cpu_time_total"))
 
 | Mode | Execution time[sec] |
 | ---- | ----: |
-| FP32 | 2.127 |
-| BF16 | 1.236 |
-| BF16+tcmalloc | 0.672 |
+| FP32 | 2.126 |
+| BF16 | 1.234 |
+| BF16+tcmalloc | 0.667 |
 
 Following is the profiler output with the default PyTorch configuration:
 
@@ -267,22 +265,22 @@ Using cpu device
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-           aten::addmm        92.68%        1.971s        94.16%        2.002s       6.675ms           300
-       aten::clamp_min         2.97%      63.117ms         2.97%      63.117ms     315.585us           200
-     mymodel_inference         2.34%      49.772ms       100.00%        2.127s        2.127s             1
-           aten::copy_         1.43%      30.491ms         1.43%      30.491ms     101.635us           300
-          aten::linear         0.14%       3.006ms        94.52%        2.010s       6.700ms           300
-               aten::t         0.10%       2.040ms         0.21%       4.493ms      14.975us           300
-            aten::relu         0.07%       1.505ms         3.04%      64.622ms     323.110us           200
-      aten::as_strided         0.07%       1.408ms         0.07%       1.408ms       2.347us           600
-         aten::flatten         0.06%       1.378ms         0.10%       2.228ms      22.283us           100
-       aten::transpose         0.06%       1.305ms         0.12%       2.453ms       8.175us           300
-            aten::view         0.04%     850.213us         0.04%     850.213us       8.502us           100
-          aten::expand         0.03%     659.868us         0.04%     919.915us       3.066us           300
-    aten::resolve_conj         0.01%     227.359us         0.01%     227.359us       0.379us           600
+           aten::addmm        92.84%        1.974s        94.32%        2.005s       6.684ms           300
+       aten::clamp_min         2.93%      62.230ms         2.93%      62.230ms     311.149us           200
+     mymodel_inference         2.29%      48.739ms       100.00%        2.126s        2.126s             1
+           aten::copy_         1.43%      30.373ms         1.43%      30.373ms     101.243us           300
+          aten::linear         0.10%       2.214ms        94.64%        2.012s       6.707ms           300
+               aten::t         0.09%       2.019ms         0.22%       4.589ms      15.295us           300
+            aten::relu         0.07%       1.553ms         3.00%      63.783ms     318.915us           200
+      aten::as_strided         0.07%       1.449ms         0.07%       1.449ms       2.415us           600
+       aten::transpose         0.06%       1.368ms         0.12%       2.569ms       8.564us           300
+            aten::view         0.04%     855.499us         0.04%     855.499us       8.555us           100
+          aten::expand         0.03%     642.560us         0.04%     890.680us       2.969us           300
+         aten::flatten         0.02%     485.983us         0.06%       1.341ms      13.415us           100
+    aten::resolve_conj         0.01%     258.197us         0.01%     258.197us       0.430us           600
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-Self CPU time total: 2.127s
-```
+Self CPU time total: 2.126s
+``
 
 Following is the profiler output with the bfload16:
 
@@ -295,22 +293,22 @@ Using cpu device
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-           aten::addmm        87.83%        1.085s        90.34%        1.116s       3.721ms           300
-       aten::clamp_min         4.99%      61.665ms         4.99%      61.665ms     308.323us           200
-     mymodel_inference         3.90%      48.198ms       100.00%        1.236s        1.236s             1
-           aten::copy_         2.41%      29.823ms         2.41%      29.823ms      99.411us           300
-          aten::linear         0.17%       2.153ms        90.87%        1.123s       3.743ms           300
-               aten::t         0.16%       2.000ms         0.36%       4.451ms      14.836us           300
-            aten::relu         0.12%       1.469ms         5.11%      63.133ms     315.667us           200
-      aten::as_strided         0.11%       1.407ms         0.11%       1.407ms       2.345us           600
-       aten::transpose         0.11%       1.319ms         0.20%       2.450ms       8.168us           300
-            aten::view         0.08%     952.788us         0.08%     952.788us       9.528us           100
-          aten::expand         0.05%     668.986us         0.08%     945.287us       3.151us           300
-         aten::flatten         0.04%     487.127us         0.12%       1.440ms      14.399us           100
-    aten::resolve_conj         0.02%     231.992us         0.02%     231.992us       0.387us           600
+           aten::addmm        87.48%        1.080s        90.45%        1.116s       3.721ms           300
+       aten::clamp_min         4.94%      61.012ms         4.94%      61.012ms     305.059us           200
+     mymodel_inference         3.84%      47.352ms       100.00%        1.234s        1.234s             1
+           aten::copy_         2.88%      35.539ms         2.88%      35.539ms     118.465us           300
+          aten::linear         0.17%       2.107ms        90.98%        1.123s       3.742ms           300
+               aten::t         0.16%       1.977ms         0.36%       4.437ms      14.789us           300
+            aten::relu         0.13%       1.544ms         5.07%      62.556ms     312.779us           200
+      aten::as_strided         0.11%       1.376ms         0.11%       1.376ms       2.293us           600
+       aten::transpose         0.11%       1.331ms         0.20%       2.460ms       8.199us           300
+            aten::view         0.07%     865.467us         0.07%     865.467us       8.655us           100
+          aten::expand         0.05%     638.083us         0.07%     884.811us       2.949us           300
+         aten::flatten         0.04%     486.091us         0.11%       1.352ms      13.516us           100
+    aten::resolve_conj         0.02%     228.540us         0.02%     228.540us       0.381us           600
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-Self CPU time total: 1.236s
-```
+Self CPU time total: 1.234s
+``
 
 Following is the profiler output with the bfload16 with tcmalloc:
 
@@ -324,19 +322,19 @@ Using cpu device
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-           aten::addmm        89.03%     598.708ms        91.75%     617.012ms       2.057ms           300
-       aten::clamp_min         3.83%      25.748ms         3.83%      25.748ms     128.742us           200
-     mymodel_inference         3.14%      21.118ms       100.00%     672.507ms     672.507ms             1
-           aten::copy_         2.57%      17.290ms         2.57%      17.290ms      57.633us           300
-          aten::linear         0.29%       1.959ms        92.66%     623.138ms       2.077ms           300
-               aten::t         0.27%       1.837ms         0.62%       4.166ms      13.887us           300
-       aten::transpose         0.19%       1.266ms         0.35%       2.329ms       7.763us           300
-      aten::as_strided         0.18%       1.238ms         0.18%       1.238ms       2.064us           600
-            aten::relu         0.18%       1.196ms         4.01%      26.944ms     134.721us           200
-            aten::view         0.13%     866.526us         0.13%     866.526us       8.665us           100
-          aten::expand         0.09%     604.474us         0.12%     779.890us       2.600us           300
-         aten::flatten         0.07%     440.311us         0.19%       1.307ms      13.068us           100
-    aten::resolve_conj         0.03%     234.495us         0.03%     234.495us       0.391us           600
+           aten::addmm        88.93%     593.475ms        91.41%     609.994ms       2.033ms           300
+       aten::clamp_min         4.03%      26.893ms         4.03%      26.893ms     134.467us           200
+     mymodel_inference         3.22%      21.520ms       100.00%     667.319ms     667.319ms             1
+           aten::copy_         2.32%      15.473ms         2.32%      15.473ms      51.575us           300
+          aten::linear         0.31%       2.072ms        92.36%     616.322ms       2.054ms           300
+               aten::t         0.29%       1.929ms         0.64%       4.256ms      14.187us           300
+      aten::as_strided         0.20%       1.307ms         0.20%       1.307ms       2.178us           600
+            aten::relu         0.19%       1.244ms         4.22%      28.137ms     140.686us           200
+       aten::transpose         0.18%       1.215ms         0.35%       2.327ms       7.755us           300
+            aten::view         0.13%     862.055us         0.13%     862.055us       8.621us           100
+          aten::expand         0.09%     613.264us         0.12%     808.830us       2.696us           300
+         aten::flatten         0.07%     477.892us         0.20%       1.340ms      13.399us           100
+    aten::resolve_conj         0.04%     237.190us         0.04%     237.190us       0.395us           600
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-Self CPU time total: 672.507ms
-```
+Self CPU time total: 667.319ms
+``
