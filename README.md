@@ -62,7 +62,7 @@ NAME=gcc
 singularity -v build --force --fakeroot $NAME.sif $NAME.def > $NAME.log 2>&1
 ```
 
-# ** Extra: Installing SingularityCE v4.2.1 on Graviton 3E**
+# **Extra: Installing SingularityCE v4.2.1 on Graviton 3E**
 
 ## Install Development packages.
 
