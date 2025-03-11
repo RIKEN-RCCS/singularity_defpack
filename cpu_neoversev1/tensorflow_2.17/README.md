@@ -35,6 +35,7 @@ Setup bazel v6.5.0.
 Clone the TensorFlow source from Git and checkout release **2.17.1**.
 
 > **note1:** To address an error occurring with Clang 17, I have added a patch to compute_library.patch that includes <string> in IPrinter.h. The official patch will be applied from version v2.19.0-rc0.
+
 > **note2:** The ACL version is specified as v23.5.0 in ./tensorflow/workspace2.bzl and ./third_party/xla/tsl_workspace2.bzl. Since Stateless GEMM is applied from v25.02.1, the performance improvement with oneDNN may be limited depending on the problem size.
 
 Create a wheel according to the above declarations, move the wheel file to `/opt/dist`, and install it.
