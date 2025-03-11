@@ -147,10 +147,10 @@ bench.benchmark_matmul()
 
 | Mode | Execution time[sec] | GFlop/s |
 | ---- | ----: | ----: |
-| oneDNN=OFF | 0.07938 | 2,519.5 |
-| oneDNN=ON, FP32 | 0.07678 | 2,604.8 |
-| oneDNN=ON, BF16 | 0.06026 | 3,319.0 |
-| oneDNN=ON, BF16, tcmalloc | 0.05867 | 3,408.9 |
+| oneDNN=OFF | 0.07938 | 2,520 |
+| oneDNN=ON, FP32 | 0.07678 | 2,605 |
+| oneDNN=ON, BF16 | 0.06026 | 3,319 |
+| oneDNN=ON, BF16, tcmalloc | 0.05867 | 3,409 |
 
 
 ## **INFERENCE**
@@ -198,7 +198,7 @@ print(f"Execution time: {end - start:.5f} seconds")
 
 | Mode | Execution time[sec] |
 | ---- | ----: |
-| oneDNN=OFF | 1.74958 |
-| oneDNN=ON, FP32 | 2.84469 |
-| oneDNN=ON, FP16 | 2.04007 |
-| oneDNN=ON, BF16, tcmalloc | 1.3516 |
+| oneDNN=OFF | 1.750 |
+| oneDNN=ON, FP32 | 2.845 |
+| oneDNN=ON, FP16 | 2.040 |
+| oneDNN=ON, BF16, tcmalloc | 1.352 |
