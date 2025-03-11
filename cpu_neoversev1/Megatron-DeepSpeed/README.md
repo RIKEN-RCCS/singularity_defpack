@@ -1,8 +1,8 @@
-# Megatron-DeepSpeed Container
+# **Megatron-DeepSpeed Container**
 
 Creating a new Megatron-DeepSpeed container based on the PyTorch version 2.5.0 container.
 
-## What is Megatron-DeepSpeed?
+## **What is Megatron-DeepSpeed?**
 
 ### Overview
 Megatron-DeepSpeed is a framework optimized for training ultra-large transformer models. It integrates the model parallelism technology of Megatron-LM with DeepSpeed's distributed optimization features, enabling efficient training of models with billions to trillions of parameters.
@@ -19,50 +19,71 @@ A large-scale distributed learning framework developed by Microsoft.
 - Provides features such as CPU offloading, communication optimization, and mixed precision training (FP16, BF16).
 
 ### Key Benefits of Megatron-DeepSpeed
-#### 1. Integration of Model Parallelism (MP) and Data Parallelism (DP)
-  Combines Megatron's Tensor Parallelism & Pipeline Parallelism with DeepSpeed's ZeRO for efficient training of ultra-large models.
+#### 1. **Integration of Model Parallelism (MP) and Data Parallelism (DP)**
+Combines Megatron's Tensor Parallelism & Pipeline Parallelism with DeepSpeed's ZeRO for efficient training of ultra-large models.
 
-#### 2. Improved Memory Efficiency  
+#### 2. **Improved Memory Efficiency**
 DeepSpeed's ZeRO-3 distributes memory usage for parameters, gradients, and optimizers.
 
-#### 3. Large-Scale Cluster Support  
+#### 3. **Large-Scale Cluster Support**
 Optimized for multi-node distributed training using InfiniBand / NVLink.
 
-#### 4. Mixed Precision & Low-Precision Training  
+#### 4. **Mixed Precision & Low-Precision Training**
 Leverages FP16, BF16, and 8-bit quantization (DeepSpeed-AIO) to reduce computation costs.
 
-#### 5. Dynamic Batch Size Adjustment  
+#### 5. **Dynamic Batch Size Adjustment**
 Supports ZeRO-infinity, which dynamically adjusts the batch size based on available memory.
 
-### Use Cases
-- Training large language models such as GPT-3, LLaMA, and BLOOM.
-- Distributed training of ultra-large transformer models.
-- Maximizing computational resource utilization for AI model development.
+----
 
-## Creating the Container
+## **Building Megatron-DeepSpeed container**
 
-### Base Model
+### definition file
+
 The container will use a locally available image created with the PyTorch version 2.5.0 definition file published in this repository.
 
-### Installing Python Libraries
-Using the `pip` command, install necessary libraries for large language model training and inference, including:
-- `transformers`
-- `deepspeed`
-- `trl` (reinforcement learning library)
-- `peft` (fine-tuning library)
+```
+Bootstrap: localimage
+From: pytorch_2.5.0.sif
+```
 
-### Installing Megatron-DeepSpeed
-Download from Microsoft's repository and build the helper libraries.
+Create a Python virtual environment named `llm` and install the full set of PyTorch, TorchVision, and TorchAudio packages from pytorch_2.5.0.sif.
+
+```
+  # Install PyTorch, TorchVision and TorchAudio
+  cd /opt
+  python3 -m venv llm
+  . /opt/llm/bin/activate
+  python3 -m pip install -r /opt/requirements.txt
+```
+
+Install the Python packages for LLMs using Megatron-DeepSpeed.
+
+```
+  python3 -m pip install accelerate transformers deepspeed bitsandbytes datasets evaluate hjson huggingface-hub sentencepiece tokenizers wandb ninja packaging pybind11 six trl optimum peft regex tensorboard mpi4py
+```
+
+Clone the Megatron-DeepSpeed from Git, and build helper library.
+
+```
+  # Build Megatron DeepSpeed
+  cd /opt
+  git clone https://github.com/microsoft/Megatron-DeepSpeed
+  cd Megatron-DeepSpeed
+
+  cd /opt/Megatron-DeepSpeed/megatron/data/
+  make
+```
 
 ### Package List
 
-The container created on May 5, 2025, for Graviton3E contains the following packages.
+The container created on May 11, 2025, for Graviton3E contains the following packages.
 ```
 Package                 Version
 ----------------------- ------------------
 absl-py                 2.1.0
 accelerate              1.4.0
-aiohappyeyeballs        2.4.8
+aiohappyeyeballs        2.5.0
 aiohttp                 3.11.13
 aiosignal               1.3.2
 annotated-types         0.7.0
@@ -84,12 +105,12 @@ frozenlist              1.5.0
 fsspec                  2024.12.0
 gitdb                   4.0.12
 GitPython               3.1.44
-grpcio                  1.70.0
+grpcio                  1.71.0
 hjson                   3.1.0
-huggingface-hub         0.29.1
-hypothesis              6.127.5
+huggingface-hub         0.29.2
+hypothesis              6.127.9
 idna                    3.10
-Jinja2                  3.1.5
+Jinja2                  3.1.6
 lintrunner              0.12.7
 Markdown                3.7
 markdown-it-py          3.0.0
@@ -143,7 +164,7 @@ tensorboard-data-server 0.7.2
 tokenizers              0.21.0
 torch                   2.5.0a0+git32f585d
 torchaudio              2.6.0a0+c670ad8
-torchvision             0.22.0a0+dcd1e42
+torchvision             0.22.0a0+124dfa4
 tqdm                    4.67.1
 transformers            4.49.0
 trl                     0.15.2
