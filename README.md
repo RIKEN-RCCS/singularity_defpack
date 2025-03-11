@@ -124,3 +124,10 @@ $ sudo dnf install -y gcc-gfortran
 $ sudo dnf install -y perf
 $ sudo dnf install -y numactl*
 ```
+
+## Fakeroot setting
+
+```
+$ sudo singularity config fakeroot --add *username*
+$ sudo singularity config fakeroot --enable *username*
+```
