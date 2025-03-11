@@ -48,8 +48,6 @@ Definition files for creating a singularity container.
  - PyTorch v2.1.2 : pytorch.def
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
 
----
-
 ## How to Create Container
 
 Assign the definition file to the environment variable NAME and create a container with the fakeroot option enabled.
@@ -61,6 +59,8 @@ NAME=gcc
 
 singularity -v build --force --fakeroot $NAME.sif $NAME.def > $NAME.log 2>&1
 ```
+
+----
 
 # **Extra: Installing SingularityCE v4.2.1 on Graviton 3E**
 
