@@ -152,3 +152,30 @@ Set the library and other search paths in the Singularity container using the `%
   export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
   export INCLUDE_PATH=${INCLUDE_PATH}:${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
 ```
+
+----
+
+# **Compilation Example**
+
+In the example below, a compilation script `.compile.sh` is created using a **here document**, then passed to the container for execution.  Since library path have already been set in the container, additional path specifications are unnecessary.  
+
+> **Note:** For usage details of `perf_helper`, refer to the [RIKEN-RCCS repository](https://github.com/RIKEN-RCCS/perf_helper)
+
+```sh
+#!/bin/sh
+
+SIFFILE=./gcc.sif
+
+cat << EOF > .compile.sh
+rm -f a.out* *.a *.o *.mod
+
+FC=gfortran
+OMP="-fopenmp -fPIC"
+
+\$FC -c \$OMP main.f90 -o main_f.o -J/usr/local/lib
+\$FC -c \$OMP test.f90 -o test.o
+\$FC \$OMP main_f.o test.o -lperf_helper -lprofiler -o a.out_f
+EOF
+
+singularity run ${SIFFILE} sh ./.compile.sh
+```
