@@ -43,7 +43,7 @@ Since `armpl` is already included in `acfl`, additional mathematical libraries l
 
 ```bash
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
-``
+```
 
 Clone the `go` from GitHub and install it into `/usr/local`.
 `pprof` included in Go is required for visualizing profile data.
