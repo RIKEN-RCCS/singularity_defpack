@@ -87,7 +87,7 @@ Install the profiling tool `gperftools` and mathematical libraries `openblas`, `
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp
   spack -e virtual_fugaku install -j 32 --add armpl-gcc%gcc@14.1.0 threads=openmp
-``
+```
 
 Clone the `go` from GitHub and install it into `/usr/local`.
 `pprof` included in Go is required for visualizing profile data.
