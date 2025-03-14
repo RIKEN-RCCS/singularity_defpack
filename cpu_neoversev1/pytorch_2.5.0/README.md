@@ -280,7 +280,7 @@ Using cpu device
     aten::resolve_conj         0.01%     258.197us         0.01%     258.197us       0.430us           600
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
 Self CPU time total: 2.126s
-``
+```
 
 Following is the profiler output with the bfload16:
 
@@ -308,7 +308,7 @@ Using cpu device
     aten::resolve_conj         0.02%     228.540us         0.02%     228.540us       0.381us           600
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
 Self CPU time total: 1.234s
-``
+```
 
 Following is the profiler output with the bfload16 with tcmalloc:
 
@@ -337,4 +337,4 @@ Using cpu device
     aten::resolve_conj         0.04%     237.190us         0.04%     237.190us       0.395us           600
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
 Self CPU time total: 667.319ms
-``
+```
