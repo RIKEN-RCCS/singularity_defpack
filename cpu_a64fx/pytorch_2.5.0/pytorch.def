@@ -1,0 +1,95 @@
+Bootstrap: docker
+From: ubuntu:noble
+
+%setup
+
+%environment
+
+%files
+
+%post
+  apt-get update && apt-get install -y --no-install-recommends build-essential
+  apt-get install -y python3-dev python3-pip python3-pkgconfig python3-venv libhdf5-dev
+  apt-get install -y gcc-14 g++-14
+  apt-get install -y openmpi-bin openmpi-common openmpi-doc libopenmpi-dev libopenmpi3t64
+  apt-get install -y wget git patchelf unzip cmake
+  apt-get install -y libgoogle-perftools4t64
+
+  update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100
+  update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100
+
+  gcc --version
+  g++ --version
+
+  python3 -m pip install --break-system-packages scons
+
+  # Build Arm Compute Library (ACL)
+  ACL_VER=25.02.1
+  cd /opt
+  git clone https://github.com/ARM-software/ComputeLibrary.git
+  cd ComputeLibrary
+  git checkout v${ACL_VER}
+  scons Werror=0 -j32 benchmark_tests=1 embed_kernels=0 debug=0 neon=1 opencl=0 os=linux openmp=1 cppthreads=0 arch=armv8.2-a multi_isa=1 build=native fixed_format_kernels=1
+
+  # Build OpenBLAS
+  OB_VER=0.3.27
+  cd /opt
+  git clone https://github.com/OpenMathLib/OpenBLAS.git
+  cd OpenBLAS
+  git checkout v${OB_VER}
+  mkdir build
+  cd build
+  cmake -DUSE_OPENMP=ON -DCORE=ARMV8SVE -DTARGET=ARMV8_2 ..
+  make -j32
+  make install
+  rm -rf /opt/OpenBLAS
+
+  export ACL_ROOT_DIR=/opt/ComputeLibrary
+  export USE_MKL=ON USE_MKLDNN=ON USE_MKLDNN_ACL=ON USE_CUDA=0 USE_MPI=1 USE_OPENMP=1
+  export MAX_JOBS=4
+
+  mkdir /opt/dist
+
+  # Build PyTorch from the tip of the tree
+  PYTORCH_VER=2.5.0
+  ONEDNN_VER=3.7.1
+  cd /opt
+  git clone --recursive http://github.com/pytorch/pytorch
+  cd pytorch
+  git checkout v${PYTORCH_VER}
+  git submodule sync
+  git submodule update --init --recursive
+  cd third_party/ideep/mkl-dnn
+  git checkout v${ONEDNN_VER}
+  cd ../../..
+  python3 -m pip install --break-system-packages -r requirements.txt
+  python3 setup.py bdist_wheel
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/pytorch
+
+  # Build TorchVision
+# cd /opt
+# git clone https://github.com/pytorch/vision
+# cd vision
+# python3 setup.py bdist_wheel
+# FILE=`cd ./dist; ls -1 *.whl | head -1`
+# mv ./dist/${FILE} /opt/dist
+# python3 -m pip install --break-system-packages /opt/dist/${FILE}
+# cd /opt; rm -rf /opt/vision
+
+  # Build TorchAudio
+# cd /opt
+# git clone https://github.com/pytorch/audio
+# cd audio
+# python3 setup.py bdist_wheel
+# FILE=`cd ./dist; ls -1 *.whl | head -1`
+# mv ./dist/${FILE} /opt/dist
+# python3 -m pip install --break-system-packages /opt/dist/${FILE}
+# cd /opt; rm -rf /opt/audio
+
+# python3 -m pip freeze > /opt/requirements.txt
+
+%runscript
+  exec "$@"

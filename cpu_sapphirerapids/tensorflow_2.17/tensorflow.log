@@ -2,26 +2,27 @@ INFO:    Starting build...
 INFO:    Fetching OCI image...
 INFO:    Extracting OCI image...
 INFO:    Inserting Singularity configuration...
+INFO:    Running setup scriptlet
 INFO:    Running post scriptlet
 + apt-get update
 Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
 Get:2 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
-Get:3 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [24.2 kB]
-Get:4 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [842 kB]
-Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [814 kB]
-Get:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
-Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1058 kB]
-Get:8 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
-Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
-Get:10 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
-Get:11 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
-Get:12 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
-Get:13 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [28.8 kB]
-Get:14 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [881 kB]
-Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1341 kB]
-Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1138 kB]
+Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [841 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1063 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.0 kB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [909 kB]
+Get:10 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [955 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.7 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1350 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1163 kB]
 Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [16.0 kB]
-Fetched 28.4 MB in 6s (5009 kB/s)
+Fetched 28.6 MB in 7s (3932 kB/s)
 Reading package lists...
 + apt-get install -y --no-install-recommends build-essential
 Reading package lists...
@@ -86,7 +87,7 @@ Get:16 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgprofng0 amd
 Get:17 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils-x86-64-linux-gnu amd64 2.42-4ubuntu2.4 [2464 kB]
 Get:18 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 binutils amd64 2.42-4ubuntu2.4 [18.1 kB]
 Get:19 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libc-dev-bin amd64 2.39-0ubuntu8.4 [20.4 kB]
-Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-libc-dev amd64 6.8.0-54.56 [1795 kB]
+Get:20 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 linux-libc-dev amd64 6.8.0-55.57 [1795 kB]
 Get:21 http://archive.ubuntu.com/ubuntu noble/main amd64 libcrypt-dev amd64 1:4.4.36-4build1 [112 kB]
 Get:22 http://archive.ubuntu.com/ubuntu noble/main amd64 rpcsvc-proto amd64 1.4.2-0ubuntu7 [67.4 kB]
 Get:23 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libc6-dev amd64 2.39-0ubuntu8.4 [2124 kB]
@@ -126,7 +127,7 @@ Get:56 http://archive.ubuntu.com/ubuntu noble/main amd64 lto-disabled-list all 4
 Get:57 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 dpkg-dev all 1.22.6ubuntu6.1 [1074 kB]
 Get:58 http://archive.ubuntu.com/ubuntu noble/main amd64 build-essential amd64 12.10ubuntu1 [4928 B]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 85.6 MB in 9s (9935 kB/s)
+Fetched 85.6 MB in 8s (10.3 MB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4383 files and directories currently installed.)
 Preparing to unpack .../perl-base_5.38.2-3.2build2.1_amd64.deb ...
 Unpacking perl-base (5.38.2-3.2build2.1) over (5.38.2-3.2build2) ...
@@ -201,8 +202,8 @@ Selecting previously unselected package libc-dev-bin.
 Preparing to unpack .../15-libc-dev-bin_2.39-0ubuntu8.4_amd64.deb ...
 Unpacking libc-dev-bin (2.39-0ubuntu8.4) ...
 Selecting previously unselected package linux-libc-dev:amd64.
-Preparing to unpack .../16-linux-libc-dev_6.8.0-54.56_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (6.8.0-54.56) ...
+Preparing to unpack .../16-linux-libc-dev_6.8.0-55.57_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (6.8.0-55.57) ...
 Selecting previously unselected package libcrypt-dev:amd64.
 Preparing to unpack .../17-libcrypt-dev_1%3a4.4.36-4build1_amd64.deb ...
 Unpacking libcrypt-dev:amd64 (1:4.4.36-4build1) ...
@@ -321,7 +322,7 @@ Setting up lto-disabled-list (47) ...
 Setting up libgdbm6t64:amd64 (1.23-5.1build1) ...
 Setting up libgdbm-compat4t64:amd64 (1.23-5.1build1) ...
 Setting up binutils-common:amd64 (2.42-4ubuntu2.4) ...
-Setting up linux-libc-dev:amd64 (6.8.0-54.56) ...
+Setting up linux-libc-dev:amd64 (6.8.0-55.57) ...
 Setting up libctf-nobfd0:amd64 (2.42-4ubuntu2.4) ...
 Setting up libgomp1:amd64 (14.2.0-4ubuntu2~24.04) ...
 Setting up bzip2 (1.0.8-5.1build0.1) ...
@@ -515,7 +516,7 @@ Get:76 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3-set
 Get:77 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3.12-venv amd64 3.12.3-1ubuntu0.5 [5678 B]
 Get:78 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3-venv amd64 3.12.3-0ubuntu2 [1034 B]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 36.7 MB in 5s (7820 kB/s)
+Fetched 36.7 MB in 6s (6236 kB/s)
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10291 files and directories currently installed.)
 Preparing to unpack .../libssl3t64_3.0.13-0ubuntu3.5_amd64.deb ...
 Unpacking libssl3t64:amd64 (3.0.13-0ubuntu3.5) over (3.0.13-0ubuntu3.4) ...
@@ -798,8 +799,8 @@ Geographic area:
 Use of uninitialized value $_[1] in join or string at /usr/share/perl5/Debconf/DbDriver/Stack.pm line 112.
 
 Current default time zone: '/UTC'
-Local time is now:      Tue Mar  4 13:36:45 UTC 2025.
-Universal Time is now:  Tue Mar  4 13:36:45 UTC 2025.
+Local time is now:      Tue Mar 11 12:44:56 UTC 2025.
+Universal Time is now:  Tue Mar 11 12:44:56 UTC 2025.
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
 Use of uninitialized value $val in substitution (s///) at /usr/share/perl5/Debconf/Format/822.pm line 84, <GEN6> line 4.
@@ -940,7 +941,7 @@ Get:34 http://archive.ubuntu.com/ubuntu noble/universe amd64 libz3-4 amd64 4.8.1
 Get:35 http://archive.ubuntu.com/ubuntu noble/universe amd64 libz3-dev amd64 4.8.12-3.1build1 [72.2 kB]
 Get:36 http://archive.ubuntu.com/ubuntu noble/universe amd64 llvm-17-dev amd64 1:17.0.6-9ubuntu1 [43.4 MB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 154 MB in 12s (12.4 MB/s)
+Fetched 154 MB in 17s (9034 kB/s)
 Selecting previously unselected package libpipeline1:amd64.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14141 files and directories currently installed.)
 Preparing to unpack .../00-libpipeline1_1.5.7-2_amd64.deb ...
@@ -1206,7 +1207,7 @@ Get:71 http://archive.ubuntu.com/ubuntu noble/main amd64 libibverbs-dev amd64 50
 Get:72 http://archive.ubuntu.com/ubuntu noble/universe amd64 libopenmpi-dev amd64 4.1.6-7ubuntu2 [864 kB]
 Get:73 http://archive.ubuntu.com/ubuntu noble/universe amd64 openmpi-doc all 4.1.6-7ubuntu2 [894 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 56.2 MB in 6s (8660 kB/s)
+Fetched 56.2 MB in 7s (7596 kB/s)
 Selecting previously unselected package adduser.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 18963 files and directories currently installed.)
 Preparing to unpack .../adduser_3.137ubuntu1_all.deb ...
@@ -1556,7 +1557,7 @@ Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.4
 Get:13 http://archive.ubuntu.com/ubuntu noble/universe amd64 patchelf amd64 0.18.0-1.1build1 [106 kB]
 Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 unzip amd64 6.0-28ubuntu4.1 [174 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 19.9 MB in 5s (4116 kB/s)
+Fetched 19.9 MB in 5s (3869 kB/s)
 Selecting previously unselected package less.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 24243 files and directories currently installed.)
 Preparing to unpack .../00-less_590-2ubuntu2.1_amd64.deb ...
@@ -1630,7 +1631,7 @@ Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 libtcmalloc-minimal4t64 
 Get:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libunwind8 amd64 1.6.2-3build1.1 [55.3 kB]
 Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libgoogle-perftools4t64 amd64 2.15-3build1 [212 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 357 kB in 2s (224 kB/s)
+Fetched 357 kB in 2s (210 kB/s)
 Selecting previously unselected package libtcmalloc-minimal4t64:amd64.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 28811 files and directories currently installed.)
 Preparing to unpack .../libtcmalloc-minimal4t64_2.15-3build1_amd64.deb ...
@@ -1648,7 +1649,7 @@ Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
 + python3 -m pip install --break-system-packages mpi4py
 Collecting mpi4py
   Downloading mpi4py-4.0.3.tar.gz (466 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 466.3/466.3 kB 43.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 466.3/466.3 kB 40.3 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status 'done'
   Getting requirements to build wheel: started
@@ -1661,150 +1662,151 @@ Building wheels for collected packages: mpi4py
   Building wheel for mpi4py (pyproject.toml): started
   Building wheel for mpi4py (pyproject.toml): still running...
   Building wheel for mpi4py (pyproject.toml): finished with status 'done'
-  Created wheel for mpi4py: filename=mpi4py-4.0.3-cp312-cp312-linux_x86_64.whl size=5187398 sha256=c6e3c9958839bbe6f8f16dae23ef2ab65a47efbe0b279e0122b6760bfcf2cf11
+  Created wheel for mpi4py: filename=mpi4py-4.0.3-cp312-cp312-linux_x86_64.whl size=5187399 sha256=57ccf4d0a6ef56150e638d70b64f79cc913639791669d9c4d6439a6d51482e0c
   Stored in directory: /root/.cache/pip/wheels/10/44/e1/03c799a415ad873a19c5b830e6ae3c2ac6064dff0b9b2aeb7d
 Successfully built mpi4py
 Installing collected packages: mpi4py
 Successfully installed mpi4py-4.0.3
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ mkdir /opt/dist
 + wget https://github.com/bazelbuild/bazelisk/releases/download/v1.25.0/bazelisk-linux-amd64
---2025-03-04 13:39:03--  https://github.com/bazelbuild/bazelisk/releases/download/v1.25.0/bazelisk-linux-amd64
+--2025-03-11 12:47:20--  https://github.com/bazelbuild/bazelisk/releases/download/v1.25.0/bazelisk-linux-amd64
 Resolving github.com (github.com)... 20.27.177.113
 Connecting to github.com (github.com)|20.27.177.113|:443... connected.
 HTTP request sent, awaiting response... 302 Found
-Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/149661467/32eb0dd4-dd43-4b4d-974f-c5470c83d5f6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250304%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250304T133904Z&X-Amz-Expires=300&X-Amz-Signature=f337dbd8dc78bc50b7b7ba48e0ab76fbffeb0cefcd0d15ab8044126d679f0920&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dbazelisk-linux-amd64&response-content-type=application%2Foctet-stream [following]
---2025-03-04 13:39:04--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/149661467/32eb0dd4-dd43-4b4d-974f-c5470c83d5f6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250304%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250304T133904Z&X-Amz-Expires=300&X-Amz-Signature=f337dbd8dc78bc50b7b7ba48e0ab76fbffeb0cefcd0d15ab8044126d679f0920&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dbazelisk-linux-amd64&response-content-type=application%2Foctet-stream
-Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.111.133, 185.199.110.133, ...
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/149661467/32eb0dd4-dd43-4b4d-974f-c5470c83d5f6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250311%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250311T124721Z&X-Amz-Expires=300&X-Amz-Signature=3065a864bc253a9164546d36cc391ac19024f7673fca824334dc8436fb514be6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dbazelisk-linux-amd64&response-content-type=application%2Foctet-stream [following]
+--2025-03-11 12:47:21--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/149661467/32eb0dd4-dd43-4b4d-974f-c5470c83d5f6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250311%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250311T124721Z&X-Amz-Expires=300&X-Amz-Signature=3065a864bc253a9164546d36cc391ac19024f7673fca824334dc8436fb514be6&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dbazelisk-linux-amd64&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.111.133, ...
 Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 5976216 (5.7M) [application/octet-stream]
 Saving to: 'bazelisk-linux-amd64'
 
-     0K .......... .......... .......... .......... ..........  0% 14.6M 0s
-    50K .......... .......... .......... .......... ..........  1% 26.2M 0s
-   100K .......... .......... .......... .......... ..........  2%  121M 0s
-   150K .......... .......... .......... .......... ..........  3% 30.0M 0s
-   200K .......... .......... .......... .......... ..........  4% 91.2M 0s
-   250K .......... .......... .......... .......... ..........  5%  105M 0s
-   300K .......... .......... .......... .......... ..........  5%  112M 0s
-   350K .......... .......... .......... .......... ..........  6%  132M 0s
-   400K .......... .......... .......... .......... ..........  7% 79.9M 0s
-   450K .......... .......... .......... .......... ..........  8%  122M 0s
-   500K .......... .......... .......... .......... ..........  9%  113M 0s
-   550K .......... .......... .......... .......... .......... 10%  118M 0s
-   600K .......... .......... .......... .......... .......... 11% 84.0M 0s
-   650K .......... .......... .......... .......... .......... 11%  115M 0s
-   700K .......... .......... .......... .......... .......... 12%  143M 0s
-   750K .......... .......... .......... .......... .......... 13%  105M 0s
-   800K .......... .......... .......... .......... .......... 14%  117M 0s
-   850K .......... .......... .......... .......... .......... 15%  130M 0s
-   900K .......... .......... .......... .......... .......... 16% 85.2M 0s
-   950K .......... .......... .......... .......... .......... 17%  114M 0s
-  1000K .......... .......... .......... .......... .......... 17%  119M 0s
-  1050K .......... .......... .......... .......... .......... 18%  125M 0s
-  1100K .......... .......... .......... .......... .......... 19%  110M 0s
-  1150K .......... .......... .......... .......... .......... 20%  113M 0s
-  1200K .......... .......... .......... .......... .......... 21%  109M 0s
-  1250K .......... .......... .......... .......... .......... 22%  122M 0s
-  1300K .......... .......... .......... .......... .......... 23% 22.5M 0s
-  1350K .......... .......... .......... .......... .......... 23%  121M 0s
-  1400K .......... .......... .......... .......... .......... 24% 21.1M 0s
-  1450K .......... .......... .......... .......... .......... 25% 39.0M 0s
-  1500K .......... .......... .......... .......... .......... 26%  119M 0s
-  1550K .......... .......... .......... .......... .......... 27% 91.2M 0s
-  1600K .......... .......... .......... .......... .......... 28%  109M 0s
+     0K .......... .......... .......... .......... ..........  0% 12.6M 0s
+    50K .......... .......... .......... .......... ..........  1% 75.4M 0s
+   100K .......... .......... .......... .......... ..........  2% 46.8M 0s
+   150K .......... .......... .......... .......... ..........  3% 94.3M 0s
+   200K .......... .......... .......... .......... ..........  4%  123M 0s
+   250K .......... .......... .......... .......... ..........  5%  110M 0s
+   300K .......... .......... .......... .......... ..........  5% 71.9M 0s
+   350K .......... .......... .......... .......... ..........  6% 89.0M 0s
+   400K .......... .......... .......... .......... ..........  7%  121M 0s
+   450K .......... .......... .......... .......... ..........  8%  109M 0s
+   500K .......... .......... .......... .......... ..........  9%  121M 0s
+   550K .......... .......... .......... .......... .......... 10%  120M 0s
+   600K .......... .......... .......... .......... .......... 11%  112M 0s
+   650K .......... .......... .......... .......... .......... 11%  119M 0s
+   700K .......... .......... .......... .......... .......... 12%  115M 0s
+   750K .......... .......... .......... .......... .......... 13% 90.4M 0s
+   800K .......... .......... .......... .......... .......... 14%  106M 0s
+   850K .......... .......... .......... .......... .......... 15%  125M 0s
+   900K .......... .......... .......... .......... .......... 16%  112M 0s
+   950K .......... .......... .......... .......... .......... 17%  125M 0s
+  1000K .......... .......... .......... .......... .......... 17%  118M 0s
+  1050K .......... .......... .......... .......... .......... 18%  114M 0s
+  1100K .......... .......... .......... .......... .......... 19%  117M 0s
+  1150K .......... .......... .......... .......... .......... 20% 81.8M 0s
+  1200K .......... .......... .......... .......... .......... 21%  111M 0s
+  1250K .......... .......... .......... .......... .......... 22%  124M 0s
+  1300K .......... .......... .......... .......... .......... 23%  115M 0s
+  1350K .......... .......... .......... .......... .......... 23%  117M 0s
+  1400K .......... .......... .......... .......... .......... 24%  116M 0s
+  1450K .......... .......... .......... .......... .......... 25%  117M 0s
+  1500K .......... .......... .......... .......... .......... 26%  122M 0s
+  1550K .......... .......... .......... .......... .......... 27% 87.5M 0s
+  1600K .......... .......... .......... .......... .......... 28%  106M 0s
   1650K .......... .......... .......... .......... .......... 29%  121M 0s
-  1700K .......... .......... .......... .......... .......... 29% 37.7M 0s
-  1750K .......... .......... .......... .......... .......... 30%  131M 0s
-  1800K .......... .......... .......... .......... .......... 31%  108M 0s
-  1850K .......... .......... .......... .......... .......... 32%  130M 0s
-  1900K .......... .......... .......... .......... .......... 33%  111M 0s
-  1950K .......... .......... .......... .......... .......... 34% 84.8M 0s
-  2000K .......... .......... .......... .......... .......... 35%  112M 0s
-  2050K .......... .......... .......... .......... .......... 35%  130M 0s
-  2100K .......... .......... .......... .......... .......... 36%  113M 0s
-  2150K .......... .......... .......... .......... .......... 37%  128M 0s
-  2200K .......... .......... .......... .......... .......... 38%  120M 0s
-  2250K .......... .......... .......... .......... .......... 39% 99.0M 0s
-  2300K .......... .......... .......... .......... .......... 40%  125M 0s
-  2350K .......... .......... .......... .......... .......... 41%  106M 0s
-  2400K .......... .......... .......... .......... .......... 41%  112M 0s
-  2450K .......... .......... .......... .......... .......... 42% 99.2M 0s
-  2500K .......... .......... .......... .......... .......... 43%  118M 0s
-  2550K .......... .......... .......... .......... .......... 44%  121M 0s
-  2600K .......... .......... .......... .......... .......... 45%  120M 0s
+  1700K .......... .......... .......... .......... .......... 29%  114M 0s
+  1750K .......... .......... .......... .......... .......... 30%  117M 0s
+  1800K .......... .......... .......... .......... .......... 31%  131M 0s
+  1850K .......... .......... .......... .......... .......... 32%  109M 0s
+  1900K .......... .......... .......... .......... .......... 33%  114M 0s
+  1950K .......... .......... .......... .......... .......... 34% 84.0M 0s
+  2000K .......... .......... .......... .......... .......... 35%  125M 0s
+  2050K .......... .......... .......... .......... .......... 35%  114M 0s
+  2100K .......... .......... .......... .......... .......... 36%  131M 0s
+  2150K .......... .......... .......... .......... .......... 37%  117M 0s
+  2200K .......... .......... .......... .......... .......... 38%  110M 0s
+  2250K .......... .......... .......... .......... .......... 39%  129M 0s
+  2300K .......... .......... .......... .......... .......... 40%  114M 0s
+  2350K .......... .......... .......... .......... .......... 41% 85.6M 0s
+  2400K .......... .......... .......... .......... .......... 41%  121M 0s
+  2450K .......... .......... .......... .......... .......... 42%  112M 0s
+  2500K .......... .......... .......... .......... .......... 43%  112M 0s
+  2550K .......... .......... .......... .......... .......... 44%  118M 0s
+  2600K .......... .......... .......... .......... .......... 45%  122M 0s
   2650K .......... .......... .......... .......... .......... 46%  108M 0s
-  2700K .......... .......... .......... .......... .......... 47%  122M 0s
-  2750K .......... .......... .......... .......... .......... 47% 89.3M 0s
+  2700K .......... .......... .......... .......... .......... 47%  123M 0s
+  2750K .......... .......... .......... .......... .......... 47% 92.6M 0s
   2800K .......... .......... .......... .......... .......... 48%  113M 0s
-  2850K .......... .......... .......... .......... .......... 49%  119M 0s
-  2900K .......... .......... .......... .......... .......... 50%  114M 0s
-  2950K .......... .......... .......... .......... .......... 51%  122M 0s
-  3000K .......... .......... .......... .......... .......... 52%  126M 0s
+  2850K .......... .......... .......... .......... .......... 49%  121M 0s
+  2900K .......... .......... .......... .......... .......... 50%  109M 0s
+  2950K .......... .......... .......... .......... .......... 51%  114M 0s
+  3000K .......... .......... .......... .......... .......... 52%  119M 0s
   3050K .......... .......... .......... .......... .......... 53%  106M 0s
-  3100K .......... .......... .......... .......... .......... 53%  110M 0s
-  3150K .......... .......... .......... .......... .......... 54% 83.1M 0s
-  3200K .......... .......... .......... .......... .......... 55%  135M 0s
-  3250K .......... .......... .......... .......... .......... 56%  108M 0s
-  3300K .......... .......... .......... .......... .......... 57%  125M 0s
-  3350K .......... .......... .......... .......... .......... 58%  118M 0s
-  3400K .......... .......... .......... .......... .......... 59%  122M 0s
-  3450K .......... .......... .......... .......... .......... 59%  109M 0s
-  3500K .......... .......... .......... .......... .......... 60%  123M 0s
-  3550K .......... .......... .......... .......... .......... 61% 85.8M 0s
-  3600K .......... .......... .......... .......... .......... 62%  117M 0s
-  3650K .......... .......... .......... .......... .......... 63%  121M 0s
-  3700K .......... .......... .......... .......... .......... 64%  108M 0s
-  3750K .......... .......... .......... .......... .......... 65%  120M 0s
-  3800K .......... .......... .......... .......... .......... 65%  121M 0s
-  3850K .......... .......... .......... .......... .......... 66%  107M 0s
-  3900K .......... .......... .......... .......... .......... 67%  123M 0s
-  3950K .......... .......... .......... .......... .......... 68% 88.4M 0s
-  4000K .......... .......... .......... .......... .......... 69%  118M 0s
-  4050K .......... .......... .......... .......... .......... 70%  110M 0s
-  4100K .......... .......... .......... .......... .......... 71%  121M 0s
-  4150K .......... .......... .......... .......... .......... 71%  108M 0s
-  4200K .......... .......... .......... .......... .......... 72%  123M 0s
-  4250K .......... .......... .......... .......... .......... 73%  112M 0s
-  4300K .......... .......... .......... .......... .......... 74%  125M 0s
-  4350K .......... .......... .......... .......... .......... 75% 89.5M 0s
-  4400K .......... .......... .......... .......... .......... 76%  115M 0s
-  4450K .......... .......... .......... .......... .......... 77%  122M 0s
-  4500K .......... .......... .......... .......... .......... 77%  103M 0s
-  4550K .......... .......... .......... .......... .......... 78%  108M 0s
-  4600K .......... .......... .......... .......... .......... 79%  124M 0s
-  4650K .......... .......... .......... .......... .......... 80%  133M 0s
-  4700K .......... .......... .......... .......... .......... 81%  116M 0s
-  4750K .......... .......... .......... .......... .......... 82% 86.7M 0s
-  4800K .......... .......... .......... .......... .......... 83%  111M 0s
-  4850K .......... .......... .......... .......... .......... 83%  116M 0s
-  4900K .......... .......... .......... .......... .......... 84%  127M 0s
-  4950K .......... .......... .......... .......... .......... 85%  109M 0s
-  5000K .......... .......... .......... .......... .......... 86%  115M 0s
-  5050K .......... .......... .......... .......... .......... 87%  131M 0s
-  5100K .......... .......... .......... .......... .......... 88%  108M 0s
-  5150K .......... .......... .......... .......... .......... 89% 93.2M 0s
-  5200K .......... .......... .......... .......... .......... 89% 99.8M 0s
-  5250K .......... .......... .......... .......... .......... 90%  133M 0s
-  5300K .......... .......... .......... .......... .......... 91%  123M 0s
-  5350K .......... .......... .......... .......... .......... 92%  114M 0s
-  5400K .......... .......... .......... .......... .......... 93%  109M 0s
-  5450K .......... .......... .......... .......... .......... 94%  114M 0s
-  5500K .......... .......... .......... .......... .......... 95%  126M 0s
-  5550K .......... .......... .......... .......... .......... 95% 85.2M 0s
-  5600K .......... .......... .......... .......... .......... 96%  118M 0s
-  5650K .......... .......... .......... .......... .......... 97%  112M 0s
+  3100K .......... .......... .......... .......... .......... 53%  121M 0s
+  3150K .......... .......... .......... .......... .......... 54% 94.4M 0s
+  3200K .......... .......... .......... .......... .......... 55%  110M 0s
+  3250K .......... .......... .......... .......... .......... 56%  122M 0s
+  3300K .......... .......... .......... .......... .......... 57%  122M 0s
+  3350K .......... .......... .......... .......... .......... 58%  115M 0s
+  3400K .......... .......... .......... .......... .......... 59%  118M 0s
+  3450K .......... .......... .......... .......... .......... 59%  106M 0s
+  3500K .......... .......... .......... .......... .......... 60%  120M 0s
+  3550K .......... .......... .......... .......... .......... 61% 90.9M 0s
+  3600K .......... .......... .......... .......... .......... 62%  118M 0s
+  3650K .......... .......... .......... .......... .......... 63%  117M 0s
+  3700K .......... .......... .......... .......... .......... 64%  103M 0s
+  3750K .......... .......... .......... .......... .......... 65%  122M 0s
+  3800K .......... .......... .......... .......... .......... 65%  108M 0s
+  3850K .......... .......... .......... .......... .......... 66%  124M 0s
+  3900K .......... .......... .......... .......... .......... 67%  114M 0s
+  3950K .......... .......... .......... .......... .......... 68% 97.5M 0s
+  4000K .......... .......... .......... .......... .......... 69%  112M 0s
+  4050K .......... .......... .......... .......... .......... 70%  115M 0s
+  4100K .......... .......... .......... .......... .......... 71%  117M 0s
+  4150K .......... .......... .......... .......... .......... 71%  123M 0s
+  4200K .......... .......... .......... .......... .......... 72%  116M 0s
+  4250K .......... .......... .......... .......... .......... 73%  123M 0s
+  4300K .......... .......... .......... .......... .......... 74%  104M 0s
+  4350K .......... .......... .......... .......... .......... 75% 88.7M 0s
+  4400K .......... .......... .......... .......... .......... 76%  121M 0s
+  4450K .......... .......... .......... .......... .......... 77%  111M 0s
+  4500K .......... .......... .......... .......... .......... 77%  104M 0s
+  4550K .......... .......... .......... .......... .......... 78%  131M 0s
+  4600K .......... .......... .......... .......... .......... 79%  126M 0s
+  4650K .......... .......... .......... .......... .......... 80%  125M 0s
+  4700K .......... .......... .......... .......... .......... 81% 95.9M 0s
+  4750K .......... .......... .......... .......... .......... 82% 94.3M 0s
+  4800K .......... .......... .......... .......... .......... 83%  125M 0s
+  4850K .......... .......... .......... .......... .......... 83%  114M 0s
+  4900K .......... .......... .......... .......... .......... 84%  123M 0s
+  4950K .......... .......... .......... .......... .......... 85%  121M 0s
+  5000K .......... .......... .......... .......... .......... 86%  107M 0s
+  5050K .......... .......... .......... .......... .......... 87%  125M 0s
+  5100K .......... .......... .......... .......... .......... 88%  112M 0s
+  5150K .......... .......... .......... .......... .......... 89% 81.3M 0s
+  5200K .......... .......... .......... .......... .......... 89%  112M 0s
+  5250K .......... .......... .......... .......... .......... 90%  139M 0s
+  5300K .......... .......... .......... .......... .......... 91% 99.3M 0s
+  5350K .......... .......... .......... .......... .......... 92%  125M 0s
+  5400K .......... .......... .......... .......... .......... 93%  126M 0s
+  5450K .......... .......... .......... .......... .......... 94%  127M 0s
+  5500K .......... .......... .......... .......... .......... 95% 94.4M 0s
+  5550K .......... .......... .......... .......... .......... 95% 94.9M 0s
+  5600K .......... .......... .......... .......... .......... 96%  126M 0s
+  5650K .......... .......... .......... .......... .......... 97%  118M 0s
   5700K .......... .......... .......... .......... .......... 98%  116M 0s
-  5750K .......... .......... .......... .......... .......... 99%  128M 0s
-  5800K .......... .......... .......... ......               100%  141M=0.06s
+  5750K .......... .......... .......... .......... .......... 99%  122M 0s
+  5800K .......... .......... .......... ......               100%  129M=0.06s
 
-2025-03-04 13:39:04 (92.3 MB/s) - 'bazelisk-linux-amd64' saved [5976216/5976216]
+2025-03-11 12:47:22 (103 MB/s) - 'bazelisk-linux-amd64' saved [5976216/5976216]
 
 + mv bazelisk-linux-amd64 /usr/local/bin/bazel
 + chmod +x /usr/local/bin/bazel
 + export USE_BAZEL_VERSION=6.5.0
 + /usr/local/bin/bazel version
-2025/03/04 13:39:04 Downloading https://releases.bazel.build/6.5.0/release/bazel-6.5.0-linux-x86_64...
+2025/03/11 12:47:22 Downloading https://releases.bazel.build/6.5.0/release/bazel-6.5.0-linux-x86_64...
 Bazelisk version: v1.25.0
 WARNING: Invoking Bazel in batch mode since it is not invoked from within a workspace (below a directory having a WORKSPACE file).
 Extracting Bazel installation...
@@ -1816,11 +1818,27 @@ Build timestamp as int: 1706028261
 + cd /opt
 + git clone https://github.com/tensorflow/tensorflow.git
 Cloning into 'tensorflow'...
-Updating files:  65% (22869/34998)Updating files:  66% (23099/34998)Updating files:  67% (23449/34998)Updating files:  68% (23799/34998)Updating files:  69% (24149/34998)Updating files:  70% (24499/34998)Updating files:  71% (24849/34998)Updating files:  72% (25199/34998)Updating files:  73% (25549/34998)Updating files:  74% (25899/34998)Updating files:  75% (26249/34998)Updating files:  76% (26599/34998)Updating files:  77% (26949/34998)Updating files:  78% (27299/34998)Updating files:  79% (27649/34998)Updating files:  80% (27999/34998)Updating files:  81% (28349/34998)Updating files:  82% (28699/34998)Updating files:  83% (29049/34998)Updating files:  84% (29399/34998)Updating files:  85% (29749/34998)Updating files:  86% (30099/34998)Updating files:  87% (30449/34998)Updating files:  88% (30799/34998)Updating files:  89% (31149/34998)Updating files:  90% (31499/34998)Updating files:  91% (31849/34998)Updating files:  92% (32199/34998)Updating files:  93% (32549/34998)Updating files:  94% (32899/34998)Updating files:  95% (33249/34998)Updating files:  96% (33599/34998)Updating files:  97% (33949/34998)Updating files:  98% (34299/34998)Updating files:  99% (34649/34998)Updating files: 100% (34998/34998)Updating files: 100% (34998/34998), done.
+Updating files:  66% (23294/35018)Updating files:  67% (23463/35018)Updating files:  68% (23813/35018)Updating files:  69% (24163/35018)Updating files:  70% (24513/35018)Updating files:  71% (24863/35018)Updating files:  72% (25213/35018)Updating files:  73% (25564/35018)Updating files:  74% (25914/35018)Updating files:  75% (26264/35018)Updating files:  76% (26614/35018)Updating files:  77% (26964/35018)Updating files:  78% (27315/35018)Updating files:  79% (27665/35018)Updating files:  80% (28015/35018)Updating files:  81% (28365/35018)Updating files:  82% (28715/35018)Updating files:  83% (29065/35018)Updating files:  84% (29416/35018)Updating files:  85% (29766/35018)Updating files:  86% (30116/35018)Updating files:  87% (30466/35018)Updating files:  88% (30816/35018)Updating files:  89% (31167/35018)Updating files:  90% (31517/35018)Updating files:  91% (31867/35018)Updating files:  92% (32217/35018)Updating files:  93% (32567/35018)Updating files:  94% (32917/35018)Updating files:  95% (33268/35018)Updating files:  96% (33618/35018)Updating files:  97% (33968/35018)Updating files:  98% (34318/35018)Updating files:  99% (34668/35018)Updating files: 100% (35018/35018)Updating files: 100% (35018/35018), done.
 + cd tensorflow
-+ git checkout r2.17
-Switched to a new branch 'r2.17'
-branch 'r2.17' set up to track 'origin/r2.17'.
++ git checkout v2.17.1
+Note: switching to 'v2.17.1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3c92ac03cab Merge pull request #72195 from tensorflow/r2.17-314385ab894
 + export TF_PYTHON_VERSION=3.12
 + yes 
 + python3 configure.py
@@ -1855,7 +1873,7 @@ Preconfigured Bazel build configs. You can use any of the below by adding "--con
 Preconfigured Bazel build configs to DISABLE default on features:
 	--config=nogcp       	# Disable GCP support.
 	--config=nonccl      	# Disable NVIDIA NCCL support.
-+ bazel build --config=opt --copt=-march=native //tensorflow/tools/pip_package:wheel --repo_env=WHEEL_NAME=tensorflow_cpu
++ bazel build --config=opt --copt=-march=sapphirerapids --copt=-O3 --copt=-mfma --copt=-mavx512f --copt=-mavx512dq --copt=-mavx512bw --copt=-mavx512vl --copt=-mamx-tile --copt=-mamx-int8 --copt=-mamx-bf16 --define=tensorflow_mkldnn_bfloat16=1 //tensorflow/tools/pip_package:wheel --repo_env=WHEEL_NAME=tensorflow_cpu
 Starting local Bazel server and connecting to it...
 INFO: Reading 'startup' options from /opt/tensorflow/.bazelrc: --windows_enable_symlinks
 INFO: Options provided by the client:
@@ -1886,489 +1904,502 @@ Loading:
 Loading: 
 Loading: 
 Loading: 
+Loading: 
+Loading: 
+Loading: 
 Loading: 0 packages loaded
 Analyzing: target //tensorflow/tools/pip_package:wheel (1 packages loaded, 0 targets configured)
 Analyzing: target //tensorflow/tools/pip_package:wheel (11 packages loaded, 12 targets configured)
-Analyzing: target //tensorflow/tools/pip_package:wheel (270 packages loaded, 2259 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (156 packages loaded, 301 targets configured)
 Analyzing: target //tensorflow/tools/pip_package:wheel (274 packages loaded, 4199 targets configured)
-Analyzing: target //tensorflow/tools/pip_package:wheel (289 packages loaded, 4461 targets configured)
-Analyzing: target //tensorflow/tools/pip_package:wheel (307 packages loaded, 4722 targets configured)
-Analyzing: target //tensorflow/tools/pip_package:wheel (311 packages loaded, 7341 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (275 packages loaded, 4224 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (302 packages loaded, 4722 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (309 packages loaded, 6252 targets configured)
 Analyzing: target //tensorflow/tools/pip_package:wheel (313 packages loaded, 7520 targets configured)
-Analyzing: target //tensorflow/tools/pip_package:wheel (430 packages loaded, 8341 targets configured)
-Analyzing: target //tensorflow/tools/pip_package:wheel (681 packages loaded, 28456 targets configured)
-Analyzing: target //tensorflow/tools/pip_package:wheel (682 packages loaded, 37672 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (424 packages loaded, 8340 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (586 packages loaded, 17127 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (678 packages loaded, 29654 targets configured)
 Analyzing: target //tensorflow/tools/pip_package:wheel (683 packages loaded, 38843 targets configured)
+Analyzing: target //tensorflow/tools/pip_package:wheel (686 packages loaded, 39538 targets configured)
 Analyzing: target //tensorflow/tools/pip_package:wheel (687 packages loaded, 41831 targets configured)
 Analyzing: target //tensorflow/tools/pip_package:wheel (688 packages loaded, 43538 targets configured)
 INFO: Analyzed target //tensorflow/tools/pip_package:wheel (688 packages loaded, 43538 targets configured).
 INFO: Found 1 target...
-[0 / 5] [Prepa] Creating source manifest for //tensorflow/tools/pip_package:build_pip_package_py [for tool]
-[875 / 14,338] Compiling double-conversion/string-to-double.cc; 0s local ... (207 actions running)
-[1,406 / 14,955] Compiling tensorflow/python/util/nest_wrapper.cc; 1s local ... (207 actions, 206 running)
-[1,573 / 14,963] Compiling tensorflow/python/util/nest_wrapper.cc; 2s local ... (207 actions, 206 running)
-[1,789 / 14,970] Compiling tensorflow/python/util/nest_wrapper.cc; 3s local ... (208 actions, 207 running)
-[1,990 / 14,971] Compiling tensorflow/python/util/nest_wrapper.cc; 4s local ... (208 actions, 207 running)
-[2,140 / 14,995] Compiling tensorflow/python/util/determinism.cc; 5s local ... (207 actions, 204 running)
-[2,265 / 14,999] Compiling _src/dtypes.cc; 6s local ... (207 actions, 205 running)
-[2,447 / 15,014] Compiling _src/dtypes.cc; 7s local ... (208 actions, 205 running)
-[2,694 / 15,089] Compiling _src/dtypes.cc; 8s local ... (207 actions, 204 running)
-[2,958 / 15,150] Compiling _src/dtypes.cc; 9s local ... (207 actions, 205 running)
-[3,167 / 15,280] Compiling _src/dtypes.cc; 10s local ... (208 actions, 205 running)
-[3,399 / 15,404] Compiling _src/dtypes.cc; 11s local ... (208 actions, 204 running)
-[3,623 / 15,506] Compiling _src/dtypes.cc; 12s local ... (205 actions, 203 running)
-[3,853 / 15,621] Compiling _src/dtypes.cc; 13s local ... (208 actions, 205 running)
-[4,050 / 15,730] Compiling _src/dtypes.cc; 14s local ... (208 actions, 206 running)
-[4,235 / 15,846] Compiling _src/dtypes.cc; 15s local ... (208 actions, 205 running)
-[4,437 / 15,912] Compiling _src/dtypes.cc; 16s local ... (208 actions, 206 running)
-[4,671 / 15,937] Compiling _src/dtypes.cc; 17s local ... (208 actions, 206 running)
-[4,795 / 15,941] Compiling _src/dtypes.cc; 18s local ... (208 actions, 206 running)
-[5,021 / 15,947] Compiling _src/dtypes.cc; 19s local ... (208 actions, 207 running)
-[5,285 / 15,947] Compiling _src/dtypes.cc; 20s local ... (208 actions, 206 running)
-[5,518 / 15,947] Compiling _src/dtypes.cc; 21s local ... (207 actions, 206 running)
-[5,668 / 15,947] Compiling _src/dtypes.cc; 22s local ... (208 actions, 206 running)
-[5,803 / 15,948] Compiling _src/dtypes.cc; 23s local ... (208 actions, 207 running)
-[5,927 / 15,948] Compiling sqlite3.c; 23s local ... (208 actions, 206 running)
-[6,075 / 15,948] Compiling sqlite3.c; 24s local ... (208 actions, 205 running)
-[6,268 / 16,033] Compiling sqlite3.c; 25s local ... (208 actions, 207 running)
-[6,378 / 16,033] Compiling sqlite3.c; 26s local ... (208 actions, 207 running)
-[6,443 / 16,033] Compiling sqlite3.c; 27s local ... (207 actions, 206 running)
-[6,554 / 16,033] Compiling sqlite3.c; 28s local ... (208 actions, 207 running)
-[6,669 / 16,033] Compiling sqlite3.c; 29s local ... (208 actions, 207 running)
-[6,764 / 16,033] Compiling sqlite3.c; 30s local ... (208 actions, 207 running)
-[6,850 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 20s local ... (208 actions, 207 running)
-[6,910 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 21s local ... (208 actions, 207 running)
-[6,977 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 22s local ... (207 actions, 206 running)
-[7,022 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 23s local ... (208 actions, 207 running)
-[7,063 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 24s local ... (208 actions, 207 running)
-[7,108 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 25s local ... (208 actions, 207 running)
-[7,148 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 27s local ... (208 actions, 207 running)
-[7,197 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 28s local ... (208 actions, 207 running)
-[7,260 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 29s local ... (207 actions, 206 running)
-[7,300 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 30s local ... (208 actions, 207 running)
-[7,346 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 31s local ... (208 actions, 207 running)
-[7,380 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 32s local ... (208 actions, 207 running)
-[7,428 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 33s local ... (208 actions, 207 running)
-[7,464 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 34s local ... (208 actions, 207 running)
-[7,503 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 35s local ... (208 actions, 207 running)
-[7,567 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 36s local ... (208 actions running)
-[7,607 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 37s local ... (207 actions running)
-[7,658 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 38s local ... (208 actions running)
-[7,700 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 39s local ... (208 actions running)
-[7,761 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 40s local ... (208 actions running)
-[7,890 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 41s local ... (208 actions running)
-[7,948 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 42s local ... (208 actions, 207 running)
-[8,029 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 35s local ... (208 actions running)
-[8,065 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 36s local ... (207 actions, 206 running)
-[8,099 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 37s local ... (208 actions running)
-[8,130 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 38s local ... (208 actions running)
-[8,167 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 39s local ... (208 actions running)
-[8,201 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 40s local ... (208 actions running)
-[8,243 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 41s local ... (208 actions running)
-[8,278 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 42s local ... (208 actions running)
-[8,311 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 43s local ... (207 actions running)
-[8,351 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 44s local ... (208 actions running)
-[8,387 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 45s local ... (208 actions running)
-[8,414 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 46s local ... (208 actions running)
-[8,495 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 47s local ... (208 actions running)
-[8,565 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 48s local ... (208 actions running)
-[8,629 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 49s local ... (208 actions, 207 running)
-[8,723 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 50s local ... (208 actions, 207 running)
-[8,843 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 51s local ... (208 actions, 207 running)
-[8,928 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 52s local ... (208 actions, 207 running)
-[9,009 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 53s local ... (207 actions, 206 running)
-[9,125 / 16,033] Compiling xla/service/cpu/runtime_conv2d.cc; 54s local ... (208 actions, 207 running)
-[9,243 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 47s local ... (208 actions, 207 running)
-[9,361 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 48s local ... (208 actions, 207 running)
-[9,500 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 49s local ... (208 actions, 207 running)
-[9,565 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 50s local ... (208 actions, 207 running)
-[9,622 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 51s local ... (208 actions, 207 running)
-[9,654 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 52s local ... (208 actions, 207 running)
-[9,688 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 53s local ... (208 actions, 207 running)
-[9,720 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 54s local ... (208 actions, 207 running)
-[9,745 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 55s local ... (208 actions, 207 running)
-[9,777 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 56s local ... (208 actions, 207 running)
-[9,813 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 57s local ... (208 actions, 207 running)
-[9,841 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 58s local ... (208 actions, 207 running)
-[9,888 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 59s local ... (208 actions, 207 running)
-[9,990 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 60s local ... (208 actions, 207 running)
-[10,045 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 60s local ... (208 actions, 207 running)
-[10,071 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 61s local ... (208 actions, 207 running)
-[10,096 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 62s local ... (208 actions, 207 running)
-[10,133 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 63s local ... (208 actions, 207 running)
-[10,158 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 65s local ... (208 actions, 207 running)
-[10,188 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 66s local ... (208 actions, 207 running)
-[10,211 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 67s local ... (208 actions, 207 running)
-[10,242 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 68s local ... (208 actions, 207 running)
-[10,274 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 69s local ... (207 actions, 206 running)
-[10,298 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 70s local ... (208 actions, 207 running)
-[10,322 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 71s local ... (208 actions, 207 running)
-[10,344 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 72s local ... (208 actions, 207 running)
-[10,368 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 73s local ... (208 actions, 207 running)
-[10,395 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 74s local ... (208 actions, 207 running)
-[10,422 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 75s local ... (208 actions, 207 running)
-[10,444 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 76s local ... (208 actions, 207 running)
-[10,478 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 77s local ... (208 actions, 207 running)
-[10,503 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 78s local ... (208 actions, 207 running)
-[10,527 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 79s local ... (208 actions, 207 running)
-[10,567 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 80s local ... (207 actions, 206 running)
-[10,593 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 81s local ... (208 actions, 207 running)
-[10,619 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 82s local ... (208 actions running)
-[10,641 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 83s local ... (208 actions running)
-[10,666 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 84s local ... (208 actions running)
-[10,692 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 85s local ... (208 actions, 207 running)
-[10,712 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 86s local ... (208 actions running)
-[10,731 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 87s local ... (208 actions running)
-[10,760 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 88s local ... (208 actions, 207 running)
-[10,791 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 89s local ... (208 actions, 207 running)
-[10,810 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 90s local ... (208 actions, 207 running)
-[10,833 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 91s local ... (208 actions, 207 running)
-[10,859 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 92s local ... (208 actions, 207 running)
-[10,891 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 94s local ... (208 actions, 207 running)
-[10,922 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 95s local ... (208 actions, 206 running)
-[10,943 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 96s local ... (208 actions, 207 running)
-[10,958 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 97s local ... (208 actions, 207 running)
-[10,982 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 98s local ... (208 actions, 207 running)
-[11,003 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 99s local ... (208 actions, 207 running)
-[11,028 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 100s local ... (208 actions, 207 running)
-[11,045 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 101s local ... (208 actions, 207 running)
-[11,067 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 102s local ... (208 actions, 207 running)
-[11,096 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 103s local ... (208 actions, 207 running)
-[11,116 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 104s local ... (208 actions, 207 running)
-[11,143 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 105s local ... (208 actions, 207 running)
-[11,165 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 106s local ... (208 actions, 207 running)
-[11,187 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 107s local ... (208 actions, 206 running)
-[11,210 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 108s local ... (208 actions, 207 running)
-[11,234 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 109s local ... (208 actions, 207 running)
-[11,255 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 110s local ... (208 actions, 207 running)
-[11,275 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 111s local ... (207 actions running)
-[11,290 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 112s local ... (208 actions running)
-[11,319 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 113s local ... (208 actions running)
-[11,335 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 114s local ... (208 actions running)
-[11,363 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 110s local ... (208 actions running)
-[11,381 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 111s local ... (208 actions running)
-[11,396 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 112s local ... (208 actions running)
-[11,417 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 113s local ... (208 actions, 207 running)
-[11,440 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 114s local ... (208 actions, 207 running)
-[11,467 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 115s local ... (208 actions, 207 running)
-[11,483 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 116s local ... (208 actions, 207 running)
-[11,508 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 117s local ... (208 actions, 207 running)
-[11,531 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 118s local ... (208 actions, 207 running)
-[11,554 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 119s local ... (207 actions, 206 running)
-[11,577 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 120s local ... (208 actions, 207 running)
-[11,592 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 121s local ... (208 actions, 207 running)
-[11,609 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 122s local ... (208 actions, 207 running)
-[11,635 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 123s local ... (207 actions, 206 running)
-[11,657 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 124s local ... (208 actions, 207 running)
-[11,672 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 125s local ... (208 actions, 207 running)
-[11,697 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 126s local ... (208 actions, 207 running)
-[11,712 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 127s local ... (208 actions, 207 running)
-[11,736 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 128s local ... (208 actions, 207 running)
-[11,750 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 129s local ... (208 actions, 207 running)
-[11,774 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 128s local ... (208 actions, 207 running)
-[11,805 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 129s local ... (203 actions, 202 running)
-[11,823 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 130s local ... (208 actions, 207 running)
-[11,843 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 131s local ... (208 actions, 207 running)
-[11,860 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 132s local ... (208 actions running)
-[11,882 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 133s local ... (208 actions, 207 running)
-[11,905 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 134s local ... (208 actions running)
-[11,930 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 135s local ... (208 actions running)
-[11,959 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 136s local ... (208 actions running)
-[11,980 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 137s local ... (208 actions running)
-[12,000 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 138s local ... (207 actions running)
-[12,019 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 139s local ... (208 actions, 207 running)
-[12,034 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 140s local ... (208 actions, 207 running)
-[12,054 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 141s local ... (208 actions, 207 running)
-[12,084 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 142s local ... (208 actions, 207 running)
-[12,105 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 143s local ... (208 actions, 207 running)
-[12,126 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 144s local ... (208 actions, 207 running)
-[12,144 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 145s local ... (208 actions, 207 running)
-[12,160 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 146s local ... (208 actions, 207 running)
-[12,180 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 147s local ... (207 actions, 206 running)
-[12,200 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 148s local ... (208 actions, 207 running)
-[12,224 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 149s local ... (206 actions, 205 running)
-[12,240 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 150s local ... (208 actions, 207 running)
-[12,255 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 152s local ... (208 actions, 207 running)
-[12,271 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 153s local ... (208 actions, 207 running)
-[12,293 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 154s local ... (208 actions, 207 running)
-[12,315 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 155s local ... (208 actions, 207 running)
-[12,333 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 156s local ... (208 actions running)
-[12,350 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 157s local ... (208 actions, 207 running)
-[12,368 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 158s local ... (208 actions, 207 running)
-[12,390 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 159s local ... (208 actions, 207 running)
-[12,414 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 160s local ... (208 actions, 207 running)
-[12,435 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 161s local ... (208 actions, 206 running)
-[12,452 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 162s local ... (208 actions, 207 running)
-[12,471 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 163s local ... (208 actions, 207 running)
-[12,483 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 164s local ... (208 actions, 207 running)
-[12,502 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 165s local ... (208 actions, 207 running)
-[12,516 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 166s local ... (208 actions, 207 running)
-[12,535 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 167s local ... (208 actions running)
-[12,554 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 168s local ... (208 actions, 206 running)
-[12,569 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 169s local ... (208 actions running)
-[12,582 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 170s local ... (208 actions running)
-[12,594 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 171s local ... (208 actions running)
-[12,610 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 172s local ... (208 actions running)
-[12,626 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 173s local ... (208 actions running)
-[12,638 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 174s local ... (208 actions, 207 running)
-[12,654 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 175s local ... (208 actions running)
-[12,674 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 176s local ... (208 actions running)
-[12,689 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 177s local ... (208 actions running)
-[12,713 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 178s local ... (208 actions running)
-[12,728 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 179s local ... (208 actions running)
-[12,741 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 180s local ... (207 actions running)
-[12,751 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 181s local ... (208 actions running)
-[12,765 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 182s local ... (208 actions running)
-[12,780 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 183s local ... (208 actions running)
-[12,789 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 184s local ... (208 actions running)
-[12,802 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 185s local ... (208 actions, 207 running)
-[12,813 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 186s local ... (208 actions, 207 running)
-[12,829 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 187s local ... (207 actions, 206 running)
-[12,845 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 188s local ... (208 actions, 207 running)
-[12,853 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 189s local ... (208 actions, 207 running)
-[12,867 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 190s local ... (208 actions, 207 running)
-[12,885 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 191s local ... (207 actions, 206 running)
-[12,897 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 192s local ... (208 actions, 207 running)
-[12,909 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 193s local ... (208 actions, 207 running)
-[12,926 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 195s local ... (208 actions, 207 running)
-[12,940 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 196s local ... (207 actions, 206 running)
-[12,954 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 197s local ... (208 actions, 207 running)
-[12,969 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 198s local ... (208 actions, 207 running)
-[12,986 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 199s local ... (208 actions, 207 running)
-[13,000 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 200s local ... (207 actions, 206 running)
-[13,014 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 201s local ... (208 actions, 207 running)
-[13,027 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 202s local ... (208 actions, 207 running)
-[13,035 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 203s local ... (208 actions, 207 running)
-[13,054 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 204s local ... (208 actions, 207 running)
-[13,068 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 205s local ... (208 actions running)
-[13,086 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part2_autogen.cpp; 206s local ... (208 actions running)
-[13,102 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part2_autogen.cpp; 207s local ... (208 actions, 207 running)
-[13,112 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part2_autogen.cpp; 209s local ... (208 actions, 207 running)
-[13,129 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part2_autogen.cpp; 210s local ... (208 actions, 207 running)
-[13,145 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part2_autogen.cpp; 211s local ... (208 actions, 207 running)
-[13,160 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 191s local ... (208 actions, 207 running)
-[13,175 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 192s local ... (207 actions, 205 running)
-[13,198 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 193s local ... (208 actions running)
-[13,211 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 194s local ... (208 actions, 205 running)
-[13,230 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 195s local ... (208 actions running)
-[13,245 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 196s local ... (208 actions running)
-[13,259 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 197s local ... (208 actions, 206 running)
-[13,278 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 198s local ... (208 actions, 207 running)
-[13,292 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 199s local ... (208 actions, 207 running)
-[13,303 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 201s local ... (208 actions, 207 running)
-[13,315 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 202s local ... (208 actions, 207 running)
-[13,334 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 203s local ... (207 actions, 206 running)
-[13,351 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 204s local ... (208 actions, 207 running)
-[13,369 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 205s local ... (208 actions, 207 running)
-[13,389 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 206s local ... (208 actions, 207 running)
-[13,403 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 207s local ... (208 actions, 207 running)
-[13,419 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 208s local ... (207 actions, 206 running)
-[13,428 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 209s local ... (207 actions running)
-[13,444 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 210s local ... (208 actions running)
-[13,462 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 211s local ... (208 actions, 207 running)
-[13,475 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 212s local ... (208 actions, 207 running)
-[13,496 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 214s local ... (208 actions, 207 running)
-[13,510 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 215s local ... (208 actions, 207 running)
-[13,518 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 216s local ... (208 actions, 207 running)
-[13,536 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 217s local ... (207 actions, 206 running)
-[13,554 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 218s local ... (208 actions, 207 running)
-[13,575 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 219s local ... (208 actions, 207 running)
-[13,587 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 220s local ... (208 actions, 207 running)
-[13,600 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 221s local ... (208 actions, 207 running)
-[13,620 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 222s local ... (208 actions, 207 running)
-[13,637 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 223s local ... (208 actions, 207 running)
-[13,647 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 224s local ... (208 actions, 207 running)
-[13,757 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 225s local ... (208 actions, 207 running)
-[13,768 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 226s local ... (207 actions, 206 running)
-[13,784 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 227s local ... (208 actions, 207 running)
-[13,810 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 228s local ... (208 actions, 207 running)
-[13,832 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 229s local ... (208 actions, 207 running)
-[13,846 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 230s local ... (208 actions, 207 running)
-[13,863 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 231s local ... (208 actions, 207 running)
-[13,874 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 232s local ... (208 actions, 207 running)
-[13,889 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 233s local ... (208 actions, 207 running)
-[13,907 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 234s local ... (208 actions running)
-[13,936 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 235s local ... (208 actions running)
-[13,961 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_at_kern_autogen.cpp; 236s local ... (208 actions running)
-[13,991 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_at_kern_autogen.cpp; 237s local ... (208 actions, 207 running)
-[14,016 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 238s local ... (208 actions, 207 running)
-[14,052 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 239s local ... (208 actions, 207 running)
-[14,089 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 240s local ... (208 actions, 207 running)
-[14,123 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 241s local ... (207 actions, 206 running)
-[14,148 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 242s local ... (208 actions, 207 running)
-[14,163 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 243s local ... (207 actions, 206 running)
-[14,191 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 245s local ... (208 actions, 207 running)
-[14,207 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 246s local ... (208 actions, 207 running)
-[14,235 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 247s local ... (208 actions, 207 running)
-[14,262 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 248s local ... (207 actions, 206 running)
-[14,290 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 249s local ... (208 actions, 207 running)
-[14,315 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 250s local ... (208 actions, 207 running)
-[14,343 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 251s local ... (207 actions, 206 running)
-[14,377 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 252s local ... (208 actions, 207 running)
-[14,411 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 253s local ... (208 actions, 206 running)
-[14,458 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 254s local ... (207 actions, 206 running)
-[14,505 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 255s local ... (208 actions, 207 running)
-[14,516 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 256s local ... (208 actions, 207 running)
-[14,528 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 257s local ... (208 actions, 207 running)
-[14,540 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 258s local ... (208 actions, 207 running)
-[14,548 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 259s local ... (208 actions, 207 running)
-[14,560 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 260s local ... (208 actions, 207 running)
-[14,571 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 261s local ... (208 actions running)
-[14,583 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 262s local ... (208 actions, 207 running)
-[14,593 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 263s local ... (208 actions, 207 running)
-[14,607 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 264s local ... (206 actions, 205 running)
-[14,616 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 265s local ... (208 actions, 207 running)
-[14,628 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 266s local ... (208 actions, 207 running)
-[14,637 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 268s local ... (208 actions, 207 running)
-[14,652 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 269s local ... (208 actions, 207 running)
-[14,666 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 270s local ... (208 actions, 207 running)
-[14,674 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 271s local ... (207 actions running)
-[14,685 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 272s local ... (208 actions running)
-[14,694 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 273s local ... (208 actions running)
-[14,704 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 274s local ... (208 actions running)
-[14,722 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 275s local ... (208 actions, 207 running)
-[14,741 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 276s local ... (208 actions, 207 running)
-[14,758 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 277s local ... (208 actions, 206 running)
-[14,770 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 278s local ... (208 actions, 207 running)
-[14,784 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 280s local ... (208 actions, 207 running)
-[14,793 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 281s local ... (208 actions, 207 running)
-[14,807 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 282s local ... (208 actions, 207 running)
-[14,822 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 283s local ... (208 actions, 207 running)
-[14,829 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 284s local ... (208 actions, 207 running)
-[14,844 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 285s local ... (208 actions, 207 running)
-[14,854 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 286s local ... (208 actions running)
-[14,867 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 287s local ... (208 actions running)
-[14,878 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 288s local ... (208 actions, 207 running)
-[14,886 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 289s local ... (208 actions, 207 running)
-[14,898 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 290s local ... (208 actions, 207 running)
-[14,905 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 291s local ... (208 actions, 207 running)
-[14,908 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 292s local ... (208 actions, 207 running)
-[14,926 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 293s local ... (208 actions, 207 running)
-[14,941 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 295s local ... (208 actions, 207 running)
-[14,952 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 296s local ... (208 actions, 207 running)
-[14,964 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 297s local ... (208 actions, 207 running)
-[14,981 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 298s local ... (208 actions, 207 running)
-[14,992 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 299s local ... (208 actions, 207 running)
-[15,001 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 300s local ... (208 actions running)
-[15,008 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 301s local ... (208 actions running)
-[15,015 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 302s local ... (208 actions, 207 running)
-[15,025 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 303s local ... (208 actions, 207 running)
-[15,038 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 305s local ... (208 actions, 207 running)
-[15,054 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 306s local ... (208 actions, 207 running)
-[15,063 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 307s local ... (208 actions running)
-[15,075 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 308s local ... (208 actions running)
-[15,084 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 195s local ... (208 actions, 207 running)
-[15,093 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 196s local ... (207 actions, 206 running)
-[15,097 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 197s local ... (208 actions, 207 running)
-[15,103 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 198s local ... (208 actions, 207 running)
-[15,111 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 199s local ... (208 actions, 207 running)
-[15,126 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 200s local ... (208 actions, 207 running)
-[15,141 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 201s local ... (208 actions, 207 running)
-[15,146 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 203s local ... (207 actions, 206 running)
-[15,154 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 204s local ... (208 actions, 207 running)
-[15,163 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 205s local ... (208 actions, 207 running)
-[15,178 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 206s local ... (207 actions, 206 running)
-[15,190 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 207s local ... (208 actions running)
-[15,196 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 208s local ... (208 actions running)
-[15,206 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 209s local ... (208 actions running)
-[15,210 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 210s local ... (208 actions, 207 running)
-[15,219 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 211s local ... (208 actions, 207 running)
-[15,225 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 212s local ... (208 actions, 207 running)
-[15,233 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 213s local ... (208 actions, 207 running)
-[15,239 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 215s local ... (208 actions, 207 running)
-[15,248 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 216s local ... (208 actions, 207 running)
-[15,255 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 217s local ... (208 actions running)
-[15,261 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 218s local ... (208 actions running)
-[15,270 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 219s local ... (207 actions, 206 running)
-[15,277 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 220s local ... (208 actions, 207 running)
-[15,287 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 221s local ... (208 actions, 207 running)
-[15,297 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 222s local ... (208 actions, 207 running)
-[15,304 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 223s local ... (208 actions, 207 running)
-[15,313 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 225s local ... (208 actions, 207 running)
-[15,317 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 226s local ... (208 actions, 207 running)
-[15,322 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 227s local ... (208 actions, 207 running)
-[15,327 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 228s local ... (208 actions running)
-[15,336 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 229s local ... (207 actions, 206 running)
-[15,346 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 230s local ... (208 actions running)
-[15,353 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 231s local ... (208 actions running)
-[15,356 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 232s local ... (208 actions, 207 running)
-[15,364 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 233s local ... (208 actions, 207 running)
-[15,370 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 234s local ... (208 actions, 207 running)
-[15,380 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 235s local ... (208 actions, 207 running)
-[15,385 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 236s local ... (208 actions, 207 running)
-[15,393 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 238s local ... (208 actions, 207 running)
-[15,402 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 239s local ... (208 actions, 207 running)
-[15,409 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 240s local ... (208 actions, 207 running)
-[15,417 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 241s local ... (208 actions, 207 running)
-[15,430 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 242s local ... (208 actions, 207 running)
-[15,441 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 243s local ... (208 actions, 207 running)
-[15,449 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 152s local ... (208 actions running)
-[15,460 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 153s local ... (208 actions, 207 running)
-[15,467 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 154s local ... (208 actions, 207 running)
-[15,481 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 155s local ... (208 actions, 207 running)
-[15,488 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 156s local ... (208 actions, 207 running)
-[15,495 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 157s local ... (208 actions, 207 running)
-[15,505 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 158s local ... (208 actions, 207 running)
-[15,512 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 160s local ... (208 actions, 207 running)
-[15,521 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 161s local ... (208 actions, 207 running)
-[15,526 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 162s local ... (208 actions, 207 running)
-[15,532 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 163s local ... (208 actions, 207 running)
-[15,538 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 164s local ... (208 actions, 207 running)
-[15,546 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 165s local ... (208 actions running)
-[15,553 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 166s local ... (208 actions, 207 running)
-[15,564 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 167s local ... (208 actions, 207 running)
-[15,569 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 169s local ... (208 actions, 207 running)
-[15,576 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 170s local ... (208 actions, 207 running)
-[15,586 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 171s local ... (208 actions, 207 running)
-[15,591 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 172s local ... (208 actions, 207 running)
-[15,594 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 173s local ... (208 actions, 207 running)
-[15,602 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 174s local ... (208 actions, 207 running)
-[15,608 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 175s local ... (208 actions running)
-[15,619 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 176s local ... (208 actions running)
-[15,628 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 177s local ... (208 actions, 207 running)
-[15,638 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 178s local ... (208 actions, 207 running)
-[15,642 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 180s local ... (208 actions, 207 running)
-[15,647 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 181s local ... (208 actions, 207 running)
-[15,657 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 182s local ... (208 actions, 207 running)
-[15,667 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 183s local ... (208 actions, 207 running)
-[15,673 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 184s local ... (208 actions, 207 running)
-[15,683 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 185s local ... (208 actions, 207 running)
-[15,697 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 186s local ... (208 actions, 207 running)
-[15,702 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 187s local ... (208 actions, 207 running)
-[15,708 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 188s local ... (208 actions, 207 running)
-[15,718 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 189s local ... (208 actions, 207 running)
-[15,729 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 190s local ... (208 actions running)
-[15,734 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 191s local ... (208 actions running)
-[15,747 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 192s local ... (208 actions, 205 running)
-[15,757 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 193s local ... (206 actions, 205 running)
-[15,776 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 195s local ... (193 actions running)
-[15,799 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 197s local ... (170 actions running)
-[15,846 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 199s local ... (123 actions running)
-[15,890 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 201s local ... (79 actions running)
-[15,933 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 203s local ... (36 actions running)
-[15,947 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 205s local ... (22 actions running)
-[15,954 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 206s local ... (15 actions running)
-[15,963 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 208s local ... (6 actions running)
-[15,965 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 210s local ... (4 actions running)
-[15,966 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 212s local ... (3 actions running)
-[15,967 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 214s local ... (2 actions running)
-[15,968 / 16,033] Compiling tensorflow/compiler/mlir/python/mlir.cc; 26s local
+[0 / 5] [Prepa] BazelWorkspaceStatusAction stable-status.txt
+[847 / 14,131] Compiling fftsg.c; 0s local ... (208 actions, 207 running)
+[1,322 / 14,832] Compiling src/google/protobuf/compiler/cpp/string_field.cc [for tool]; 1s local ... (208 actions, 207 running)
+[1,529 / 14,963] Compiling tensorflow/python/util/tensor_float_32.cc; 2s local ... (207 actions, 206 running)
+[1,653 / 14,979] Compiling tensorflow/python/util/tensor_float_32.cc; 3s local ... (208 actions, 201 running)
+[1,791 / 15,039] Compiling tensorflow/python/util/tensor_float_32.cc; 4s local ... (208 actions, 205 running)
+[1,928 / 15,118] Compiling tensorflow/python/util/tensor_float_32.cc; 5s local ... (207 actions, 202 running)
+[2,164 / 15,272] Compiling tensorflow/lite/python/metrics/wrapper/metrics_wrapper_pybind11.cc; 6s local ... (191 actions, 186 running)
+[2,419 / 15,404] Compiling c/enc/backward_references.c; 7s local ... (207 actions, 202 running)
+[2,683 / 15,587] Compiling c/enc/backward_references.c; 8s local ... (208 actions, 200 running)
+[2,955 / 15,732] Compiling c/enc/backward_references.c; 9s local ... (208 actions, 206 running)
+[3,188 / 15,810] Compiling src/google/protobuf/descriptor.cc; 10s local ... (207 actions, 206 running)
+[3,389 / 15,898] Compiling src/google/protobuf/descriptor.cc; 11s local ... (207 actions, 203 running)
+[3,585 / 15,926] Compiling src/google/protobuf/descriptor.cc; 12s local ... (208 actions, 207 running)
+[3,770 / 15,947] Compiling src/google/protobuf/descriptor.cc; 13s local ... (207 actions, 206 running)
+[3,899 / 15,947] Compiling src/google/protobuf/descriptor.cc; 14s local ... (207 actions, 206 running)
+[4,048 / 15,947] Compiling src/google/protobuf/descriptor.cc; 15s local ... (207 actions, 206 running)
+[4,184 / 15,947] Compiling _src/dtypes.cc; 16s local ... (208 actions, 207 running)
+[4,376 / 15,947] Compiling _src/dtypes.cc; 17s local ... (208 actions, 206 running)
+[4,675 / 15,948] Compiling _src/dtypes.cc; 18s local ... (207 actions, 206 running)
+[4,969 / 15,948] Compiling _src/dtypes.cc; 19s local ... (208 actions, 206 running)
+[5,188 / 16,033] Compiling _src/dtypes.cc; 20s local ... (208 actions, 207 running)
+[5,364 / 16,033] Compiling src/idl_parser.cpp; 21s local ... (207 actions, 205 running)
+[5,577 / 16,033] Compiling src/idl_parser.cpp; 22s local ... (206 actions, 205 running)
+[5,713 / 16,033] Compiling sqlite3.c; 22s local ... (208 actions running)
+[5,871 / 16,033] Compiling sqlite3.c; 23s local ... (207 actions running)
+[6,090 / 16,033] Compiling sqlite3.c; 24s local ... (208 actions running)
+[6,204 / 16,033] Compiling sqlite3.c; 25s local ... (208 actions running)
+[6,252 / 16,033] Compiling sqlite3.c; 26s local ... (208 actions running)
+[6,329 / 16,033] Compiling sqlite3.c; 27s local ... (208 actions, 207 running)
+[6,400 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 19s local ... (208 actions, 207 running)
+[6,452 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 20s local ... (207 actions, 206 running)
+[6,518 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 21s local ... (208 actions, 207 running)
+[6,590 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 22s local ... (208 actions, 207 running)
+[6,651 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 23s local ... (208 actions, 207 running)
+[6,688 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 24s local ... (207 actions, 206 running)
+[6,748 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 25s local ... (208 actions, 207 running)
+[6,811 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 26s local ... (208 actions, 206 running)
+[6,878 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 27s local ... (208 actions, 207 running)
+[6,947 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 28s local ... (208 actions, 207 running)
+[6,987 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 29s local ... (208 actions, 207 running)
+[7,070 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 30s local ... (208 actions, 207 running)
+[7,122 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 31s local ... (208 actions, 207 running)
+[7,155 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 32s local ... (208 actions, 207 running)
+[7,207 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 33s local ... (208 actions, 207 running)
+[7,253 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 34s local ... (208 actions, 207 running)
+[7,292 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 35s local ... (208 actions, 207 running)
+[7,379 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 36s local ... (208 actions, 207 running)
+[7,441 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 37s local ... (208 actions, 207 running)
+[7,496 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 38s local ... (208 actions, 207 running)
+[7,569 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 39s local ... (208 actions, 207 running)
+[7,704 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 40s local ... (207 actions, 206 running)
+[7,824 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 41s local ... (208 actions, 207 running)
+[7,947 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 42s local ... (208 actions, 207 running)
+[8,034 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 43s local ... (208 actions, 207 running)
+[8,116 / 16,033] Compiling mlir/lib/ExecutionEngine/SparseTensorRuntime.cpp; 44s local ... (208 actions, 207 running)
+[8,234 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 35s local ... (208 actions, 207 running)
+[8,371 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 36s local ... (208 actions, 207 running)
+[8,496 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 37s local ... (208 actions, 207 running)
+[8,630 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 38s local ... (207 actions, 206 running)
+[8,710 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 39s local ... (208 actions, 207 running)
+[8,756 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 40s local ... (207 actions, 206 running)
+[8,807 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 41s local ... (208 actions, 206 running)
+[8,863 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 42s local ... (208 actions, 207 running)
+[8,935 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 43s local ... (207 actions, 206 running)
+[9,028 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 44s local ... (208 actions, 207 running)
+[9,109 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 45s local ... (208 actions, 207 running)
+[9,162 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 46s local ... (208 actions, 207 running)
+[9,195 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 47s local ... (208 actions, 207 running)
+[9,237 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 48s local ... (208 actions, 207 running)
+[9,293 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 49s local ... (208 actions, 207 running)
+[9,375 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 50s local ... (208 actions, 207 running)
+[9,413 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 51s local ... (208 actions, 207 running)
+[9,461 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 52s local ... (208 actions, 206 running)
+[9,496 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 53s local ... (208 actions, 207 running)
+[9,522 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 54s local ... (208 actions, 207 running)
+[9,550 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 55s local ... (208 actions, 207 running)
+[9,580 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 56s local ... (208 actions, 207 running)
+[9,603 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 57s local ... (208 actions, 207 running)
+[9,630 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 58s local ... (208 actions, 207 running)
+[9,661 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 59s local ... (208 actions, 206 running)
+[9,692 / 16,033] Compiling src/cpu/cpu_convolution_list.cpp; 60s local ... (207 actions, 206 running)
+[9,724 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 61s local ... (208 actions, 207 running)
+[9,753 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 62s local ... (208 actions, 207 running)
+[9,799 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 63s local ... (208 actions, 207 running)
+[9,832 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 64s local ... (208 actions, 207 running)
+[9,851 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 65s local ... (208 actions, 207 running)
+[9,873 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 66s local ... (208 actions, 207 running)
+[9,894 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 67s local ... (208 actions, 207 running)
+[9,916 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 68s local ... (208 actions, 207 running)
+[9,946 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 69s local ... (208 actions, 207 running)
+[9,973 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 70s local ... (208 actions, 207 running)
+[10,001 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 71s local ... (208 actions, 207 running)
+[10,021 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 72s local ... (208 actions, 207 running)
+[10,053 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 73s local ... (208 actions, 207 running)
+[10,077 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 74s local ... (208 actions, 206 running)
+[10,096 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 75s local ... (208 actions, 207 running)
+[10,130 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 76s local ... (208 actions, 207 running)
+[10,160 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 77s local ... (208 actions, 207 running)
+[10,182 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 79s local ... (208 actions, 207 running)
+[10,207 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 80s local ... (208 actions, 207 running)
+[10,231 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 81s local ... (208 actions, 207 running)
+[10,250 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 82s local ... (208 actions, 207 running)
+[10,278 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 83s local ... (208 actions, 207 running)
+[10,306 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 84s local ... (208 actions, 207 running)
+[10,328 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 85s local ... (208 actions, 207 running)
+[10,356 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 86s local ... (208 actions, 207 running)
+[10,390 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 87s local ... (208 actions, 207 running)
+[10,415 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 88s local ... (208 actions, 207 running)
+[10,430 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 89s local ... (208 actions, 207 running)
+[10,447 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 90s local ... (208 actions, 207 running)
+[10,471 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 91s local ... (208 actions, 207 running)
+[10,495 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 92s local ... (208 actions running)
+[10,518 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 93s local ... (208 actions running)
+[10,559 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 94s local ... (208 actions running)
+[10,581 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 95s local ... (208 actions, 207 running)
+[10,602 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 96s local ... (208 actions, 207 running)
+[10,627 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 97s local ... (208 actions, 207 running)
+[10,647 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 98s local ... (208 actions, 207 running)
+[10,671 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 99s local ... (208 actions, 207 running)
+[10,690 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 100s local ... (208 actions, 207 running)
+[10,714 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 101s local ... (208 actions, 207 running)
+[10,737 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 102s local ... (208 actions, 207 running)
+[10,760 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 103s local ... (208 actions, 206 running)
+[10,781 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 104s local ... (208 actions, 207 running)
+[10,801 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 105s local ... (208 actions, 207 running)
+[10,819 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 106s local ... (208 actions, 207 running)
+[10,846 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 107s local ... (208 actions, 207 running)
+[10,862 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 108s local ... (207 actions, 206 running)
+[10,887 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 110s local ... (208 actions, 207 running)
+[10,915 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 111s local ... (208 actions, 207 running)
+[10,938 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 112s local ... (208 actions, 207 running)
+[10,964 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 113s local ... (208 actions, 207 running)
+[10,981 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 114s local ... (208 actions, 207 running)
+[11,002 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 115s local ... (208 actions, 207 running)
+[11,020 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 116s local ... (208 actions, 207 running)
+[11,047 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 117s local ... (208 actions, 207 running)
+[11,063 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 118s local ... (208 actions, 207 running)
+[11,077 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 119s local ... (208 actions, 207 running)
+[11,102 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 120s local ... (208 actions, 207 running)
+[11,119 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 121s local ... (207 actions, 205 running)
+[11,135 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 122s local ... (208 actions, 207 running)
+[11,150 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 123s local ... (208 actions, 207 running)
+[11,171 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 124s local ... (208 actions, 207 running)
+[11,192 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 125s local ... (208 actions, 207 running)
+[11,214 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 126s local ... (208 actions, 207 running)
+[11,235 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 127s local ... (208 actions, 207 running)
+[11,250 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 128s local ... (208 actions, 207 running)
+[11,268 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 129s local ... (208 actions, 207 running)
+[11,279 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 130s local ... (208 actions, 207 running)
+[11,303 / 16,033] Compiling src/cpu/cpu_rnn_list.cpp; 131s local ... (207 actions running)
+[11,315 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 129s local ... (208 actions running)
+[11,334 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 130s local ... (208 actions running)
+[11,354 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 131s local ... (208 actions running)
+[11,381 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 132s local ... (207 actions running)
+[11,406 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 133s local ... (208 actions running)
+[11,427 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 134s local ... (208 actions running)
+[11,441 / 16,033] Compiling src/cpu/rnn/ref_rnn.cpp; 135s local ... (208 actions, 207 running)
+[11,461 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 134s local ... (208 actions, 207 running)
+[11,476 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 135s local ... (208 actions, 207 running)
+[11,489 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 137s local ... (208 actions, 207 running)
+[11,513 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 138s local ... (208 actions, 207 running)
+[11,539 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 139s local ... (208 actions, 207 running)
+[11,562 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 140s local ... (207 actions, 206 running)
+[11,584 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 141s local ... (208 actions, 207 running)
+[11,597 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 142s local ... (208 actions, 207 running)
+[11,615 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 143s local ... (208 actions, 206 running)
+[11,627 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 144s local ... (208 actions, 207 running)
+[11,650 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 145s local ... (205 actions, 202 running)
+[11,666 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 146s local ... (208 actions, 207 running)
+[11,691 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 147s local ... (208 actions, 207 running)
+[11,705 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 148s local ... (208 actions, 207 running)
+[11,726 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 149s local ... (208 actions, 207 running)
+[11,746 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 150s local ... (208 actions, 207 running)
+[11,763 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 151s local ... (208 actions, 207 running)
+[11,780 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 152s local ... (208 actions running)
+[11,803 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 153s local ... (207 actions, 206 running)
+[11,823 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 155s local ... (208 actions, 207 running)
+[11,842 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 156s local ... (208 actions, 207 running)
+[11,858 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 157s local ... (208 actions, 207 running)
+[11,874 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 158s local ... (207 actions, 206 running)
+[11,894 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 159s local ... (208 actions, 207 running)
+[11,909 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 160s local ... (208 actions, 207 running)
+[11,926 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 161s local ... (208 actions, 207 running)
+[11,950 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 162s local ... (208 actions, 207 running)
+[11,968 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 163s local ... (208 actions, 207 running)
+[11,994 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 164s local ... (208 actions, 207 running)
+[12,016 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 165s local ... (208 actions, 207 running)
+[12,043 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 166s local ... (208 actions running)
+[12,069 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 167s local ... (208 actions running)
+[12,090 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 168s local ... (208 actions running)
+[12,111 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 169s local ... (208 actions running)
+[12,126 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 170s local ... (208 actions running)
+[12,148 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 171s local ... (208 actions, 207 running)
+[12,168 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 172s local ... (208 actions, 207 running)
+[12,189 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 173s local ... (207 actions, 206 running)
+[12,210 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 174s local ... (208 actions, 207 running)
+[12,228 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 175s local ... (208 actions, 207 running)
+[12,239 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 177s local ... (208 actions, 207 running)
+[12,257 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 178s local ... (208 actions, 207 running)
+[12,280 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 179s local ... (208 actions, 206 running)
+[12,304 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 180s local ... (207 actions, 205 running)
+[12,330 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 181s local ... (208 actions, 207 running)
+[12,346 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 182s local ... (208 actions, 207 running)
+[12,369 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 183s local ... (207 actions, 206 running)
+[12,390 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 184s local ... (207 actions, 206 running)
+[12,412 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 185s local ... (208 actions, 207 running)
+[12,433 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 186s local ... (208 actions, 207 running)
+[12,452 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 187s local ... (208 actions, 207 running)
+[12,473 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 188s local ... (208 actions, 207 running)
+[12,494 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 189s local ... (208 actions, 207 running)
+[12,511 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 190s local ... (208 actions, 207 running)
+[12,525 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 191s local ... (208 actions, 207 running)
+[12,543 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 192s local ... (208 actions running)
+[12,563 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 193s local ... (208 actions running)
+[12,579 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 194s local ... (208 actions running)
+[12,588 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 195s local ... (208 actions running)
+[12,606 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 196s local ... (208 actions running)
+[12,621 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 197s local ... (208 actions, 207 running)
+[12,636 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 198s local ... (208 actions, 207 running)
+[12,647 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 199s local ... (208 actions, 207 running)
+[12,665 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 200s local ... (208 actions, 207 running)
+[12,683 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 202s local ... (208 actions, 207 running)
+[12,701 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 203s local ... (208 actions, 207 running)
+[12,708 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 204s local ... (208 actions, 207 running)
+[12,717 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part1_autogen.cpp; 205s local ... (208 actions, 207 running)
+[12,735 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part2_autogen.cpp; 206s local ... (208 actions, 207 running)
+[12,748 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_at_kern_part2_autogen.cpp; 207s local ... (208 actions, 207 running)
+[12,760 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 195s local ... (208 actions, 207 running)
+[12,780 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 196s local ... (208 actions, 207 running)
+[12,792 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 197s local ... (208 actions, 207 running)
+[12,801 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 198s local ... (208 actions, 207 running)
+[12,820 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 199s local ... (208 actions, 207 running)
+[12,829 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 200s local ... (208 actions, 207 running)
+[12,841 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 201s local ... (208 actions, 207 running)
+[12,855 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 203s local ... (208 actions, 207 running)
+[12,870 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 204s local ... (208 actions running)
+[12,884 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 205s local ... (208 actions, 207 running)
+[12,899 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 206s local ... (208 actions, 207 running)
+[12,917 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 207s local ... (208 actions, 207 running)
+[12,941 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 208s local ... (206 actions, 205 running)
+[12,959 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 209s local ... (207 actions, 206 running)
+[12,976 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 210s local ... (208 actions, 207 running)
+[12,992 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 211s local ... (208 actions, 207 running)
+[13,005 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 212s local ... (208 actions, 207 running)
+[13,022 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 213s local ... (208 actions, 205 running)
+[13,032 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 214s local ... (208 actions, 207 running)
+[13,050 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 215s local ... (208 actions, 207 running)
+[13,068 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 216s local ... (208 actions, 207 running)
+[13,086 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 217s local ... (208 actions, 207 running)
+[13,110 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 218s local ... (208 actions, 207 running)
+[13,130 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 219s local ... (208 actions, 207 running)
+[13,150 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 220s local ... (208 actions, 207 running)
+[13,165 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 221s local ... (208 actions, 207 running)
+[13,175 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 222s local ... (208 actions, 207 running)
+[13,190 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 224s local ... (208 actions, 207 running)
+[13,209 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 225s local ... (208 actions, 207 running)
+[13,224 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 226s local ... (207 actions running)
+[13,234 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 227s local ... (208 actions running)
+[13,247 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 228s local ... (208 actions, 207 running)
+[13,265 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 229s local ... (208 actions, 207 running)
+[13,282 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 230s local ... (208 actions, 207 running)
+[13,294 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 231s local ... (208 actions, 207 running)
+[13,313 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 232s local ... (208 actions, 207 running)
+[13,322 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 233s local ... (208 actions, 207 running)
+[13,337 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 234s local ... (208 actions, 207 running)
+[13,354 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx2_f32_copy_an_kern_autogen.cpp; 235s local ... (208 actions, 207 running)
+[13,370 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 236s local ... (208 actions, 207 running)
+[13,387 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 237s local ... (208 actions, 207 running)
+[13,399 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 238s local ... (208 actions, 207 running)
+[13,420 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 239s local ... (208 actions, 207 running)
+[13,428 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 240s local ... (208 actions, 207 running)
+[13,441 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 241s local ... (208 actions, 207 running)
+[13,457 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 242s local ... (208 actions, 207 running)
+[13,468 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 243s local ... (208 actions running)
+[13,485 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 244s local ... (208 actions running)
+[13,501 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 245s local ... (207 actions running)
+[13,515 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 246s local ... (208 actions running)
+[13,522 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 247s local ... (208 actions running)
+[13,538 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 248s local ... (208 actions, 207 running)
+[13,551 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 249s local ... (208 actions, 207 running)
+[13,560 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 250s local ... (208 actions, 207 running)
+[13,577 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 252s local ... (208 actions, 207 running)
+[13,594 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 253s local ... (208 actions, 207 running)
+[13,604 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 254s local ... (208 actions, 207 running)
+[13,616 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 255s local ... (208 actions, 207 running)
+[13,629 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 256s local ... (208 actions, 207 running)
+[13,647 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 257s local ... (207 actions running)
+[13,659 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 258s local ... (208 actions, 207 running)
+[13,674 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 259s local ... (208 actions, 207 running)
+[13,691 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 260s local ... (207 actions, 206 running)
+[13,699 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 261s local ... (208 actions, 207 running)
+[13,709 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 262s local ... (208 actions, 207 running)
+[13,726 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 263s local ... (208 actions, 207 running)
+[13,735 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 264s local ... (208 actions, 207 running)
+[13,744 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 265s local ... (208 actions, 207 running)
+[13,750 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 267s local ... (208 actions, 207 running)
+[13,765 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 268s local ... (208 actions, 207 running)
+[13,777 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 269s local ... (208 actions, 207 running)
+[13,800 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 270s local ... (207 actions running)
+[13,815 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 271s local ... (208 actions running)
+[13,830 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 272s local ... (208 actions, 207 running)
+[13,839 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 273s local ... (207 actions, 206 running)
+[13,854 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 274s local ... (208 actions, 207 running)
+[13,869 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 275s local ... (208 actions, 207 running)
+[13,879 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 276s local ... (207 actions, 206 running)
+[13,893 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 277s local ... (208 actions, 207 running)
+[13,908 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 278s local ... (208 actions, 207 running)
+[13,921 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 280s local ... (208 actions, 207 running)
+[13,930 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 281s local ... (208 actions running)
+[13,935 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 282s local ... (208 actions running)
+[13,948 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 283s local ... (208 actions, 207 running)
+[13,963 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 284s local ... (208 actions, 207 running)
+[13,970 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 285s local ... (207 actions, 206 running)
+[13,983 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 286s local ... (208 actions, 207 running)
+[13,989 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 287s local ... (208 actions, 207 running)
+[14,004 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 288s local ... (208 actions, 207 running)
+[14,028 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 289s local ... (206 actions, 205 running)
+[14,048 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 290s local ... (208 actions, 207 running)
+[14,068 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 291s local ... (208 actions, 207 running)
+[14,077 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 293s local ... (207 actions, 206 running)
+[14,085 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 294s local ... (208 actions, 207 running)
+[14,096 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 295s local ... (208 actions, 207 running)
+[14,107 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 296s local ... (208 actions, 207 running)
+[14,117 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 297s local ... (208 actions, 207 running)
+[14,132 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 298s local ... (208 actions running)
+[14,145 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 299s local ... (208 actions running)
+[14,162 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 300s local ... (207 actions running)
+[14,176 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 301s local ... (208 actions running)
+[14,191 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 302s local ... (208 actions, 207 running)
+[14,201 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 303s local ... (208 actions, 207 running)
+[14,212 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 304s local ... (208 actions, 207 running)
+[14,220 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 305s local ... (208 actions, 207 running)
+[14,231 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 307s local ... (208 actions, 207 running)
+[14,241 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 308s local ... (208 actions, 207 running)
+[14,258 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 309s local ... (207 actions, 206 running)
+[14,277 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 310s local ... (207 actions, 206 running)
+[14,286 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 311s local ... (208 actions, 207 running)
+[14,298 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 312s local ... (208 actions, 207 running)
+[14,305 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 313s local ... (208 actions, 207 running)
+[14,319 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 314s local ... (208 actions, 207 running)
+[14,327 / 16,033] Compiling src/cpu/x64/gemm/f32/jit_avx512_core_f32_copy_an_kern_autogen.cpp; 315s local ... (208 actions, 207 running)
+[14,344 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 191s local ... (208 actions, 207 running)
+[14,356 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 192s local ... (208 actions, 207 running)
+[14,376 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 193s local ... (208 actions, 207 running)
+[14,392 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 194s local ... (208 actions, 207 running)
+[14,402 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 195s local ... (208 actions, 207 running)
+[14,413 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 196s local ... (207 actions running)
+[14,430 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 197s local ... (208 actions, 207 running)
+[14,440 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 198s local ... (208 actions, 207 running)
+[14,453 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 199s local ... (208 actions, 207 running)
+[14,467 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 200s local ... (208 actions, 207 running)
+[14,478 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 201s local ... (208 actions, 207 running)
+[14,488 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 203s local ... (208 actions, 207 running)
+[14,502 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 204s local ... (208 actions, 207 running)
+[14,515 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 205s local ... (208 actions, 207 running)
+[14,527 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 206s local ... (208 actions, 207 running)
+[14,540 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 207s local ... (208 actions, 207 running)
+[14,553 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 208s local ... (208 actions, 207 running)
+[14,562 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 209s local ... (208 actions, 207 running)
+[14,573 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 210s local ... (208 actions, 207 running)
+[14,579 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 211s local ... (208 actions, 207 running)
+[14,589 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 212s local ... (208 actions, 207 running)
+[14,599 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 213s local ... (208 actions, 207 running)
+[14,614 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 214s local ... (208 actions, 207 running)
+[14,626 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 215s local ... (208 actions running)
+[14,638 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 216s local ... (208 actions running)
+[14,645 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 217s local ... (208 actions, 207 running)
+[14,658 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 218s local ... (208 actions, 207 running)
+[14,669 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 220s local ... (208 actions, 207 running)
+[14,679 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 221s local ... (208 actions, 207 running)
+[14,689 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 222s local ... (207 actions, 206 running)
+[14,699 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 223s local ... (208 actions, 207 running)
+[14,714 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 224s local ... (208 actions, 207 running)
+[14,727 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 225s local ... (208 actions, 207 running)
+[14,832 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 226s local ... (208 actions, 207 running)
+[14,859 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 227s local ... (208 actions, 207 running)
+[14,878 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 228s local ... (208 actions, 207 running)
+[14,891 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 229s local ... (208 actions running)
+[14,900 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 230s local ... (208 actions running)
+[14,917 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 231s local ... (208 actions, 207 running)
+[14,944 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 232s local ... (207 actions, 206 running)
+[14,985 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 233s local ... (208 actions, 207 running)
+[15,033 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 234s local ... (208 actions, 207 running)
+[15,082 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 235s local ... (208 actions, 207 running)
+[15,177 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 236s local ... (207 actions, 204 running)
+[15,258 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 237s local ... (208 actions, 207 running)
+[15,283 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 239s local ... (208 actions, 207 running)
+[15,293 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 240s local ... (208 actions, 207 running)
+[15,300 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 241s local ... (207 actions, 206 running)
+[15,307 / 16,033] Compiling tensorflow/compiler/mlir/tensorflow/ir/tf_ops.cc; 242s local ... (208 actions, 207 running)
+[15,317 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 161s local ... (208 actions, 207 running)
+[15,323 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 162s local ... (208 actions, 207 running)
+[15,331 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 163s local ... (208 actions running)
+[15,339 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 164s local ... (208 actions running)
+[15,345 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 165s local ... (208 actions, 207 running)
+[15,353 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 166s local ... (208 actions, 207 running)
+[15,361 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 167s local ... (208 actions, 207 running)
+[15,366 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 168s local ... (208 actions, 207 running)
+[15,370 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 169s local ... (208 actions, 207 running)
+[15,378 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 171s local ... (208 actions, 207 running)
+[15,382 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 172s local ... (208 actions, 207 running)
+[15,396 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 173s local ... (208 actions, 207 running)
+[15,408 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 174s local ... (208 actions, 207 running)
+[15,416 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 175s local ... (208 actions, 207 running)
+[15,426 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 176s local ... (208 actions, 207 running)
+[15,433 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 177s local ... (208 actions running)
+[15,443 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 178s local ... (208 actions running)
+[15,455 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 179s local ... (208 actions, 207 running)
+[15,460 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 180s local ... (208 actions, 207 running)
+[15,471 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 181s local ... (208 actions, 207 running)
+[15,484 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 182s local ... (208 actions, 207 running)
+[15,498 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 183s local ... (208 actions, 207 running)
+[15,510 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 184s local ... (208 actions, 207 running)
+[15,521 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 186s local ... (208 actions, 207 running)
+[15,532 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 187s local ... (208 actions, 207 running)
+[15,541 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 188s local ... (208 actions, 207 running)
+[15,549 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 189s local ... (208 actions, 207 running)
+[15,561 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 190s local ... (208 actions, 207 running)
+[15,569 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 191s local ... (208 actions, 207 running)
+[15,576 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 192s local ... (208 actions, 207 running)
+[15,582 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 193s local ... (208 actions, 206 running)
+[15,588 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 194s local ... (208 actions running)
+[15,594 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 195s local ... (207 actions running)
+[15,599 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 196s local ... (208 actions running)
+[15,605 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 197s local ... (208 actions, 207 running)
+[15,610 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 198s local ... (208 actions, 207 running)
+[15,617 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 199s local ... (208 actions, 207 running)
+[15,622 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 200s local ... (208 actions, 205 running)
+[15,630 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 201s local ... (208 actions, 207 running)
+[15,638 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 202s local ... (208 actions, 207 running)
+[15,645 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 203s local ... (207 actions, 206 running)
+[15,656 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 204s local ... (208 actions, 207 running)
+[15,676 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 205s local ... (208 actions, 207 running)
+[15,690 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 206s local ... (208 actions, 207 running)
+[15,700 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 207s local ... (208 actions, 207 running)
+[15,707 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 208s local ... (208 actions, 207 running)
+[15,712 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 209s local ... (208 actions, 207 running)
+[15,724 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 211s local ... (208 actions, 207 running)
+[15,732 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 212s local ... (208 actions, 207 running)
+[15,745 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 213s local ... (208 actions, 207 running)
+[15,751 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 214s local ... (208 actions running)
+[15,760 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 215s local ... (208 actions running)
+[15,778 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 217s local ... (191 actions running)
+[15,798 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 219s local ... (171 actions running)
+[15,818 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 220s local ... (151 actions running)
+[15,833 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 221s local ... (136 actions running)
+[15,875 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 223s local ... (94 actions running)
+[15,899 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 224s local ... (70 actions running)
+[15,933 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 226s local ... (36 actions running)
+[15,942 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 227s local ... (27 actions running)
+[15,958 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 229s local ... (11 actions running)
+[15,963 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 231s local ... (6 actions running)
+[15,964 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 233s local ... (5 actions running)
+[15,965 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 235s local ... (4 actions running)
+[15,966 / 16,033] Compiling tensorflow/core/kernels/matmul_op_real.cc; 237s local ... (3 actions running)
+[15,967 / 16,033] Compiling tensorflow/core/kernels/conv_ops_half.cc; 158s local ... (2 actions running)
 [15,969 / 16,033] [Prepa] Linking tensorflow/libtensorflow_cc.so.2.17.1
 [15,969 / 16,033] Linking tensorflow/libtensorflow_cc.so.2.17.1; 1s local
 [15,969 / 16,033] Linking tensorflow/libtensorflow_cc.so.2.17.1; 11s local
-[15,974 / 16,033] [Prepa] action 'SolibSymlink _solib_k8/_Utensorflow_Spython/_pywrap_tensorflow_internal.so'
+[15,973 / 16,033] Linking tensorflow/python/_pywrap_tensorflow_internal.so; 0s local
 [16,032 / 16,033] Action tensorflow/tools/pip_package/wheel_house; 0s local
 [16,032 / 16,033] Action tensorflow/tools/pip_package/wheel_house; 10s local
 [16,032 / 16,033] Action tensorflow/tools/pip_package/wheel_house; 40s local
+[16,033 / 16,033] checking cached actions
 Target //tensorflow/tools/pip_package:wheel up-to-date:
   bazel-bin/tensorflow/tools/pip_package/wheel_house
-INFO: Elapsed time: 588.556s, Critical Path: 371.45s
+INFO: Elapsed time: 597.257s, Critical Path: 380.36s
 INFO: 16033 processes: 1234 internal, 14799 local.
 INFO: Build completed successfully, 16033 total actions
 + ls -1 bazel-bin/tensorflow/tools/pip_package/wheel_house
 + FILE=tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl
-+ pip install --break-system-packages bazel-bin/tensorflow/tools/pip_package/wheel_house/tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl
-Processing ./bazel-bin/tensorflow/tools/pip_package/wheel_house/tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl
++ mv bazel-bin/tensorflow/tools/pip_package/wheel_house/tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl /opt/dist
++ python3 -m pip install --break-system-packages /opt/dist/tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl
+Processing /opt/dist/tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl
 Collecting absl-py>=1.0.0 (from tensorflow-cpu==2.17.1)
   Downloading absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
 Collecting astunparse>=1.6.0 (from tensorflow-cpu==2.17.1)
@@ -2403,14 +2434,14 @@ Collecting typing-extensions>=3.6.6 (from tensorflow-cpu==2.17.1)
 Collecting wrapt>=1.11.0 (from tensorflow-cpu==2.17.1)
   Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
 Collecting grpcio<2.0,>=1.24.3 (from tensorflow-cpu==2.17.1)
-  Downloading grpcio-1.70.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.9 kB)
+  Downloading grpcio-1.71.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
 Collecting tensorboard<2.18,>=2.17 (from tensorflow-cpu==2.17.1)
   Downloading tensorboard-2.17.1-py3-none-any.whl.metadata (1.6 kB)
 Collecting keras>=3.2.0 (from tensorflow-cpu==2.17.1)
-  Downloading keras-3.8.0-py3-none-any.whl.metadata (5.8 kB)
+  Downloading keras-3.9.0-py3-none-any.whl.metadata (6.1 kB)
 Collecting numpy<2.0.0,>=1.26.0 (from tensorflow-cpu==2.17.1)
   Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 35.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB 33.5 MB/s eta 0:00:00
 Requirement already satisfied: wheel<1.0,>=0.23.0 in /usr/lib/python3/dist-packages (from astunparse>=1.6.0->tensorflow-cpu==2.17.1) (0.42.0)
 Collecting rich (from keras>=3.2.0->tensorflow-cpu==2.17.1)
   Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB)
@@ -2418,7 +2449,7 @@ Collecting namex (from keras>=3.2.0->tensorflow-cpu==2.17.1)
   Downloading namex-0.0.8-py3-none-any.whl.metadata (246 bytes)
 Collecting optree (from keras>=3.2.0->tensorflow-cpu==2.17.1)
   Downloading optree-0.14.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (49 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.1/49.1 kB 40.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.1/49.1 kB 28.6 MB/s eta 0:00:00
 Collecting charset-normalizer<4,>=2 (from requests<3,>=2.21.0->tensorflow-cpu==2.17.1)
   Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
 Collecting idna<4,>=2.5 (from requests<3,>=2.21.0->tensorflow-cpu==2.17.1)
@@ -2441,230 +2472,67 @@ Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/lib/python3/dist-
 Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->keras>=3.2.0->tensorflow-cpu==2.17.1)
   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
 Downloading absl_py-2.1.0-py3-none-any.whl (133 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.7/133.7 kB 56.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.7/133.7 kB 44.4 MB/s eta 0:00:00
 Downloading astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
 Downloading flatbuffers-25.2.10-py2.py3-none-any.whl (30 kB)
 Downloading gast-0.6.0-py3-none-any.whl (21 kB)
 Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 53.6 MB/s eta 0:00:00
-Downloading grpcio-1.70.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 29.3 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.5/57.5 kB 52.7 MB/s eta 0:00:00
+Downloading grpcio-1.71.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 104.6 MB/s eta 0:00:00
 Downloading h5py-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 103.5 MB/s eta 0:00:00
-Downloading keras-3.8.0-py3-none-any.whl (1.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 101.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 104.8 MB/s eta 0:00:00
+Downloading keras-3.9.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 106.7 MB/s eta 0:00:00
 Downloading libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl (24.5 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.5/24.5 MB 89.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.5/24.5 MB 89.0 MB/s eta 0:00:00
 Downloading ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 103.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 84.3 MB/s eta 0:00:00
 Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.0 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 95.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 83.5 MB/s eta 0:00:00
 Downloading opt_einsum-3.4.0-py3-none-any.whl (71 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.9/71.9 kB 66.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.9/71.9 kB 29.5 MB/s eta 0:00:00
 Downloading protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.6/294.6 kB 110.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.6/294.6 kB 99.6 MB/s eta 0:00:00
 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 61.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 62.9 MB/s eta 0:00:00
 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
 Downloading tensorboard-2.17.1-py3-none-any.whl (5.5 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 104.0 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 84.2 MB/s eta 0:00:00
 Downloading termcolor-2.5.0-py3-none-any.whl (7.8 kB)
 Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
 Downloading wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.2/89.2 kB 89.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.2/89.2 kB 84.1 MB/s eta 0:00:00
 Using cached packaging-24.2-py3-none-any.whl (65 kB)
 Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 166.4/166.4 kB 102.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 166.4/166.4 kB 94.2 MB/s eta 0:00:00
 Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (145 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 145.3/145.3 kB 84.0 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 145.3/145.3 kB 116.4 MB/s eta 0:00:00
 Downloading idna-3.10-py3-none-any.whl (70 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 69.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 67.9 MB/s eta 0:00:00
 Downloading Markdown-3.7-py3-none-any.whl (106 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 106.3/106.3 kB 98.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 106.3/106.3 kB 94.8 MB/s eta 0:00:00
 Downloading tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl (6.6 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 105.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 104.3 MB/s eta 0:00:00
 Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.4/128.4 kB 109.5 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.4/128.4 kB 93.8 MB/s eta 0:00:00
 Downloading werkzeug-3.1.3-py3-none-any.whl (224 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 80.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.5/224.5 kB 85.9 MB/s eta 0:00:00
 Downloading namex-0.0.8-py3-none-any.whl (5.8 kB)
 Downloading optree-0.14.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (403 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 403.6/403.6 kB 90.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 403.6/403.6 kB 58.7 MB/s eta 0:00:00
 Downloading rich-13.9.4-py3-none-any.whl (242 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 kB 97.5 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 kB 73.0 MB/s eta 0:00:00
 Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 85.3 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 78.4 MB/s eta 0:00:00
 Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
 Installing collected packages: namex, libclang, flatbuffers, wrapt, urllib3, typing-extensions, termcolor, tensorboard-data-server, six, protobuf, packaging, opt-einsum, numpy, mdurl, MarkupSafe, markdown, idna, grpcio, gast, charset-normalizer, certifi, absl-py, werkzeug, requests, optree, ml-dtypes, markdown-it-py, h5py, google-pasta, astunparse, tensorboard, rich, keras, tensorflow-cpu
-Successfully installed MarkupSafe-3.0.2 absl-py-2.1.0 astunparse-1.6.3 certifi-2025.1.31 charset-normalizer-3.4.1 flatbuffers-25.2.10 gast-0.6.0 google-pasta-0.2.0 grpcio-1.70.0 h5py-3.13.0 idna-3.10 keras-3.8.0 libclang-18.1.1 markdown-3.7 markdown-it-py-3.0.0 mdurl-0.1.2 ml-dtypes-0.4.1 namex-0.0.8 numpy-1.26.4 opt-einsum-3.4.0 optree-0.14.1 packaging-24.2 protobuf-4.25.6 requests-2.32.3 rich-13.9.4 six-1.17.0 tensorboard-2.17.1 tensorboard-data-server-0.7.2 tensorflow-cpu-2.17.1 termcolor-2.5.0 typing-extensions-4.12.2 urllib3-2.3.0 werkzeug-3.1.3 wrapt-1.17.2
+Successfully installed MarkupSafe-3.0.2 absl-py-2.1.0 astunparse-1.6.3 certifi-2025.1.31 charset-normalizer-3.4.1 flatbuffers-25.2.10 gast-0.6.0 google-pasta-0.2.0 grpcio-1.71.0 h5py-3.13.0 idna-3.10 keras-3.9.0 libclang-18.1.1 markdown-3.7 markdown-it-py-3.0.0 mdurl-0.1.2 ml-dtypes-0.4.1 namex-0.0.8 numpy-1.26.4 opt-einsum-3.4.0 optree-0.14.1 packaging-24.2 protobuf-4.25.6 requests-2.32.3 rich-13.9.4 six-1.17.0 tensorboard-2.17.1 tensorboard-data-server-0.7.2 tensorflow-cpu-2.17.1 termcolor-2.5.0 typing-extensions-4.12.2 urllib3-2.3.0 werkzeug-3.1.3 wrapt-1.17.2
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-+ mkdir /opt/dist
-+ cd /opt/dist
-+ python3 -m pip freeze
-+ python3 -m pip wheel --wheel-dir=/opt/dist -r requirements.txt
-Processing /opt/tensorflow/bazel-bin/tensorflow/tools/pip_package/wheel_house/tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl (from -r requirements.txt (line 34))
-Collecting absl-py==2.1.0 (from -r requirements.txt (line 1))
-  Using cached absl_py-2.1.0-py3-none-any.whl.metadata (2.3 kB)
-Collecting astunparse==1.6.3 (from -r requirements.txt (line 2))
-  Using cached astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
-Collecting certifi==2025.1.31 (from -r requirements.txt (line 3))
-  Using cached certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
-Collecting charset-normalizer==3.4.1 (from -r requirements.txt (line 4))
-  Using cached charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
-Collecting flatbuffers==25.2.10 (from -r requirements.txt (line 5))
-  Using cached flatbuffers-25.2.10-py2.py3-none-any.whl.metadata (875 bytes)
-Collecting gast==0.6.0 (from -r requirements.txt (line 6))
-  Using cached gast-0.6.0-py3-none-any.whl.metadata (1.3 kB)
-Collecting google-pasta==0.2.0 (from -r requirements.txt (line 7))
-  Using cached google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
-Collecting grpcio==1.70.0 (from -r requirements.txt (line 8))
-  Using cached grpcio-1.70.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.9 kB)
-Collecting h5py==3.13.0 (from -r requirements.txt (line 9))
-  Using cached h5py-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.5 kB)
-Collecting idna==3.10 (from -r requirements.txt (line 10))
-  Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
-Collecting keras==3.8.0 (from -r requirements.txt (line 11))
-  Using cached keras-3.8.0-py3-none-any.whl.metadata (5.8 kB)
-Collecting libclang==18.1.1 (from -r requirements.txt (line 12))
-  Using cached libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl.metadata (5.2 kB)
-Collecting Markdown==3.7 (from -r requirements.txt (line 13))
-  Using cached Markdown-3.7-py3-none-any.whl.metadata (7.0 kB)
-Collecting markdown-it-py==3.0.0 (from -r requirements.txt (line 14))
-  Using cached markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
-Collecting MarkupSafe==3.0.2 (from -r requirements.txt (line 15))
-  Using cached MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
-Collecting mdurl==0.1.2 (from -r requirements.txt (line 16))
-  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
-Collecting ml-dtypes==0.4.1 (from -r requirements.txt (line 17))
-  Using cached ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
-Collecting mpi4py==4.0.3 (from -r requirements.txt (line 18))
-  Using cached mpi4py-4.0.3-cp312-cp312-linux_x86_64.whl
-Collecting namex==0.0.8 (from -r requirements.txt (line 19))
-  Using cached namex-0.0.8-py3-none-any.whl.metadata (246 bytes)
-Collecting numpy==1.26.4 (from -r requirements.txt (line 20))
-  Using cached numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
-Collecting opt_einsum==3.4.0 (from -r requirements.txt (line 21))
-  Using cached opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
-Collecting optree==0.14.1 (from -r requirements.txt (line 22))
-  Using cached optree-0.14.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (49 kB)
-Collecting packaging==24.2 (from -r requirements.txt (line 23))
-  Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
-Collecting pkgconfig==1.5.5 (from -r requirements.txt (line 24))
-  Downloading pkgconfig-1.5.5-py3-none-any.whl.metadata (4.0 kB)
-Collecting protobuf==4.25.6 (from -r requirements.txt (line 25))
-  Using cached protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes)
-Collecting Pygments==2.17.2 (from -r requirements.txt (line 26))
-  Downloading pygments-2.17.2-py3-none-any.whl.metadata (2.6 kB)
-Collecting PyYAML==6.0.1 (from -r requirements.txt (line 27))
-  Downloading PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
-Collecting requests==2.32.3 (from -r requirements.txt (line 28))
-  Using cached requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
-Collecting rich==13.9.4 (from -r requirements.txt (line 29))
-  Using cached rich-13.9.4-py3-none-any.whl.metadata (18 kB)
-Collecting setuptools==68.1.2 (from -r requirements.txt (line 30))
-  Downloading setuptools-68.1.2-py3-none-any.whl.metadata (6.2 kB)
-Collecting six==1.17.0 (from -r requirements.txt (line 31))
-  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-Collecting tensorboard==2.17.1 (from -r requirements.txt (line 32))
-  Using cached tensorboard-2.17.1-py3-none-any.whl.metadata (1.6 kB)
-Collecting tensorboard-data-server==0.7.2 (from -r requirements.txt (line 33))
-  Using cached tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl.metadata (1.1 kB)
-Collecting termcolor==2.5.0 (from -r requirements.txt (line 35))
-  Using cached termcolor-2.5.0-py3-none-any.whl.metadata (6.1 kB)
-Collecting typing_extensions==4.12.2 (from -r requirements.txt (line 36))
-  Using cached typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
-Collecting urllib3==2.3.0 (from -r requirements.txt (line 37))
-  Using cached urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
-Collecting Werkzeug==3.1.3 (from -r requirements.txt (line 38))
-  Using cached werkzeug-3.1.3-py3-none-any.whl.metadata (3.7 kB)
-Collecting wheel==0.42.0 (from -r requirements.txt (line 39))
-  Downloading wheel-0.42.0-py3-none-any.whl.metadata (2.2 kB)
-Collecting wrapt==1.17.2 (from -r requirements.txt (line 40))
-  Using cached wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.4 kB)
-Using cached absl_py-2.1.0-py3-none-any.whl (133 kB)
-Using cached astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
-Using cached certifi-2025.1.31-py3-none-any.whl (166 kB)
-Using cached charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (145 kB)
-Using cached flatbuffers-25.2.10-py2.py3-none-any.whl (30 kB)
-Using cached gast-0.6.0-py3-none-any.whl (21 kB)
-Using cached google_pasta-0.2.0-py3-none-any.whl (57 kB)
-Using cached grpcio-1.70.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
-Using cached h5py-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
-Using cached idna-3.10-py3-none-any.whl (70 kB)
-Using cached keras-3.8.0-py3-none-any.whl (1.3 MB)
-Using cached libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl (24.5 MB)
-Using cached Markdown-3.7-py3-none-any.whl (106 kB)
-Using cached markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
-Using cached MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
-Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
-Using cached ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
-Using cached namex-0.0.8-py3-none-any.whl (5.8 kB)
-Using cached numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.0 MB)
-Using cached opt_einsum-3.4.0-py3-none-any.whl (71 kB)
-Using cached optree-0.14.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (403 kB)
-Using cached packaging-24.2-py3-none-any.whl (65 kB)
-Downloading pkgconfig-1.5.5-py3-none-any.whl (6.7 kB)
-Using cached protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
-Downloading pygments-2.17.2-py3-none-any.whl (1.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 75.3 MB/s eta 0:00:00
-Downloading PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (724 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 725.0/725.0 kB 105.1 MB/s eta 0:00:00
-Using cached requests-2.32.3-py3-none-any.whl (64 kB)
-Using cached rich-13.9.4-py3-none-any.whl (242 kB)
-Downloading setuptools-68.1.2-py3-none-any.whl (805 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.1/805.1 kB 100.2 MB/s eta 0:00:00
-Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
-Using cached tensorboard-2.17.1-py3-none-any.whl (5.5 MB)
-Using cached tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl (6.6 MB)
-Using cached termcolor-2.5.0-py3-none-any.whl (7.8 kB)
-Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
-Using cached urllib3-2.3.0-py3-none-any.whl (128 kB)
-Using cached werkzeug-3.1.3-py3-none-any.whl (224 kB)
-Downloading wheel-0.42.0-py3-none-any.whl (65 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.4/65.4 kB 58.1 MB/s eta 0:00:00
-Using cached wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (89 kB)
-Saved ./absl_py-2.1.0-py3-none-any.whl
-Saved ./astunparse-1.6.3-py2.py3-none-any.whl
-Saved ./certifi-2025.1.31-py3-none-any.whl
-Saved ./charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./flatbuffers-25.2.10-py2.py3-none-any.whl
-Saved ./gast-0.6.0-py3-none-any.whl
-Saved ./google_pasta-0.2.0-py3-none-any.whl
-Saved ./grpcio-1.70.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./h5py-3.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./idna-3.10-py3-none-any.whl
-Saved ./keras-3.8.0-py3-none-any.whl
-Saved ./libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl
-Saved ./Markdown-3.7-py3-none-any.whl
-Saved ./markdown_it_py-3.0.0-py3-none-any.whl
-Saved ./MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./mdurl-0.1.2-py3-none-any.whl
-Saved ./ml_dtypes-0.4.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./mpi4py-4.0.3-cp312-cp312-linux_x86_64.whl
-Saved ./namex-0.0.8-py3-none-any.whl
-Saved ./numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./opt_einsum-3.4.0-py3-none-any.whl
-Saved ./optree-0.14.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./packaging-24.2-py3-none-any.whl
-Saved ./pkgconfig-1.5.5-py3-none-any.whl
-Saved ./protobuf-4.25.6-cp37-abi3-manylinux2014_x86_64.whl
-Saved ./pygments-2.17.2-py3-none-any.whl
-Saved ./PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./requests-2.32.3-py3-none-any.whl
-Saved ./rich-13.9.4-py3-none-any.whl
-Saved ./setuptools-68.1.2-py3-none-any.whl
-Saved ./six-1.17.0-py2.py3-none-any.whl
-Saved ./tensorboard-2.17.1-py3-none-any.whl
-Saved ./tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl
-Saved ./termcolor-2.5.0-py3-none-any.whl
-Saved ./typing_extensions-4.12.2-py3-none-any.whl
-Saved ./urllib3-2.3.0-py3-none-any.whl
-Saved ./werkzeug-3.1.3-py3-none-any.whl
-Saved ./wheel-0.42.0-py3-none-any.whl
-Saved ./wrapt-1.17.2-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-Saved ./tensorflow_cpu-2.17.1-cp312-cp312-linux_x86_64.whl
++ cd /opt
 + rm -rf /opt/tensorflow
++ python3 -m pip freeze
 INFO:    Adding environment to container
 INFO:    Adding runscript
 INFO:    Creating SIF file...
