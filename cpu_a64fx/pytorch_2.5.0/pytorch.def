@@ -70,26 +70,27 @@ From: ubuntu:noble
   cd /opt; rm -rf /opt/pytorch
 
   # Build TorchVision
-# cd /opt
-# git clone https://github.com/pytorch/vision
-# cd vision
-# python3 setup.py bdist_wheel
-# FILE=`cd ./dist; ls -1 *.whl | head -1`
-# mv ./dist/${FILE} /opt/dist
-# python3 -m pip install --break-system-packages /opt/dist/${FILE}
-# cd /opt; rm -rf /opt/vision
+  cd /opt
+  git clone https://github.com/pytorch/vision
+  cd vision
+  python3 setup.py bdist_wheel
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/vision
 
   # Build TorchAudio
-# cd /opt
-# git clone https://github.com/pytorch/audio
-# cd audio
-# python3 setup.py bdist_wheel
-# FILE=`cd ./dist; ls -1 *.whl | head -1`
-# mv ./dist/${FILE} /opt/dist
-# python3 -m pip install --break-system-packages /opt/dist/${FILE}
-# cd /opt; rm -rf /opt/audio
+  export CMAKE_BUILD_PARALLEL_LEVEL=2
+  cd /opt
+  git clone https://github.com/pytorch/audio
+  cd audio
+  python3 setup.py bdist_wheel
+  FILE=`cd ./dist; ls -1 *.whl | head -1`
+  mv ./dist/${FILE} /opt/dist
+  python3 -m pip install --break-system-packages /opt/dist/${FILE}
+  cd /opt; rm -rf /opt/audio
 
-# python3 -m pip freeze > /opt/requirements.txt
+  python3 -m pip freeze > /opt/requirements.txt
 
 %runscript
   exec "$@"
