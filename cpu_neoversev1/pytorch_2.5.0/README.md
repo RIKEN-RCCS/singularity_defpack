@@ -201,8 +201,9 @@ benchmark_matmul()
 | Mode | Execution time[sec] | GFlop/s |
 | ---- | ----: | ----: |
 | FP32 | 0.2069 | 966.9 |
+| FP32+tcmalloc | 0.2070 | 966.1 |
 | BF16 | 0.2069 | 966.5 |
-| BF16, tcmalloc | 0.2070 | 966.1 |
+| BF16+tcmalloc | 0.2070 | 966.1 |
 
 
 ## **INFERENCE**
@@ -255,6 +256,7 @@ print(prof.key_averages().table(sort_by="self_cpu_time_total"))
 | Mode | Execution time[sec] |
 | ---- | ----: |
 | FP32 | 2.126 |
+| FP32+tcmalloc | 1.018 |
 | BF16 | 1.234 |
 | BF16+tcmalloc | 0.667 |
 
@@ -280,6 +282,34 @@ Using cpu device
     aten::resolve_conj         0.01%     258.197us         0.01%     258.197us       0.430us           600
 ----------------------  ------------  ------------  ------------  ------------  ------------  ------------
 Self CPU time total: 2.126s
+```
+
+Following is the profiler output with the FP32 with tcmalloc:
+
+```
+$ LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libtcmalloc.so.4 python3 infer.py
+```
+
+```
+Using cpu device
+----------------------  ------------  ------------  ------------  ------------  ------------  ------------
+                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
+----------------------  ------------  ------------  ------------  ------------  ------------  ------------
+           aten::addmm        92.38%     940.412ms        94.08%     957.776ms       3.193ms           300
+       aten::clamp_min         2.89%      29.416ms         2.89%      29.416ms     147.082us           200
+     mymodel_inference         2.14%      21.807ms       100.00%        1.018s        1.018s             1
+           aten::copy_         1.60%      16.319ms         1.60%      16.319ms      54.397us           300
+          aten::linear         0.20%       2.081ms        94.71%     964.188ms       3.214ms           300
+               aten::t         0.18%       1.864ms         0.43%       4.330ms      14.434us           300
+      aten::as_strided         0.13%       1.348ms         0.13%       1.348ms       2.246us           600
+            aten::relu         0.13%       1.311ms         3.02%      30.728ms     153.638us           200
+       aten::transpose         0.13%       1.305ms         0.24%       2.466ms       8.220us           300
+            aten::view         0.08%     851.186us         0.08%     851.186us       8.512us           100
+          aten::expand         0.06%     619.989us         0.08%     806.363us       2.688us           300
+         aten::flatten         0.04%     454.107us         0.13%       1.305ms      13.053us           100
+    aten::resolve_conj         0.02%     238.554us         0.02%     238.554us       0.398us           600
+----------------------  ------------  ------------  ------------  ------------  ------------  ------------
+Self CPU time total: 1.018s
 ```
 
 Following is the profiler output with the bfload16:
