@@ -1,9 +1,5 @@
 # **Singularity Container Definition File Package**
 
-## Introduction
-
-Definition files for creating a singularity container.
-
 ## Definition Files
 
 |  | virtual_fugaku | Compiler | Misc. |
