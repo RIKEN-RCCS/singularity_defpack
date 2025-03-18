@@ -295,22 +295,22 @@ Self CPU time total: 2.126s
 
 ```
 Using cpu device
-         5301 function calls (3901 primitive calls) in 2.482 seconds
+         5301 function calls (3901 primitive calls) in 2.138 seconds
 
    Ordered by: internal time
    List reduced from 18 to 10 due to restriction <10>
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-      300    2.368    0.008    2.368    0.008 {built-in method torch._C._nn.linear}
-      200    0.067    0.000    0.067    0.000 {built-in method torch.relu}
-      100    0.031    0.000    2.476    0.025 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/container.py:248(forward)
-  800/100    0.004    0.000    2.482    0.025 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1740(_call_impl)
-  800/100    0.003    0.000    2.482    0.025 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1732(_wrapped_call_impl)
+      300    2.026    0.007    2.026    0.007 {built-in method torch._C._nn.linear}
+      200    0.064    0.000    0.064    0.000 {built-in method torch.relu}
+      100    0.031    0.000    2.132    0.021 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/container.py:248(forward)
+  800/100    0.004    0.000    2.137    0.021 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1740(_call_impl)
+  800/100    0.003    0.000    2.138    0.021 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1732(_wrapped_call_impl)
       800    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
       100    0.002    0.000    0.002    0.000 {method 'flatten' of 'torch._C.TensorBase' objects}
       800    0.001    0.000    0.001    0.000 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1918(__getattr__)
-      300    0.001    0.000    2.369    0.008 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/linear.py:124(forward)
-      200    0.001    0.000    0.068    0.000 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/activation.py:132(forward)
+      300    0.001    0.000    2.027    0.007 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/linear.py:124(forward)
+      200    0.001    0.000    0.066    0.000 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/activation.py:132(forward)
 ```
 
 - **Call graph by gperftools with the default PyTorch configuration(FP32)**
