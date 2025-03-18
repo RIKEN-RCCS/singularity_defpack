@@ -208,8 +208,9 @@ benchmark_matmul()
 
 ## **INFERENCE**
 
-Measure the execution time of inference performance.
-This script is quoted from the [PyTorch tutorial](https://pytorch.org/tutorials/recipes/inference_tuning_on_aws_graviton.html).
+### **Execution time**
+
+- This script is quoted from the [PyTorch tutorial](https://pytorch.org/tutorials/recipes/inference_tuning_on_aws_graviton.html).
 
 ```python
 import torch
@@ -251,7 +252,7 @@ with torch.set_grad_enabled(False):
 print(prof.key_averages().table(sort_by="self_cpu_time_total"))
 ```
 
-**The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
+- **The execution time at Graviton3E(hpc7g.16xlarge) using 64vCPU**
 
 | Mode | Execution time[sec] |
 | ---- | ----: |
@@ -260,7 +261,9 @@ print(prof.key_averages().table(sort_by="self_cpu_time_total"))
 | BF16 | 1.234 |
 | BF16+tcmalloc | 0.667 |
 
-Following is the profiler output with the default PyTorch configuration:
+### **Performance tool output**
+
+- **torch.profiler output with the default PyTorch configuration(FP32)**
 
 ```
 Using cpu device
@@ -284,87 +287,39 @@ Using cpu device
 Self CPU time total: 2.126s
 ```
 
-Following is the profiler output with the FP32 with tcmalloc:
+- **cProfile output with the default PyTorch configuration(FP32)**
 
-```
-$ LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libtcmalloc.so.4 python3 infer.py
-```
-
-```
-Using cpu device
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-           aten::addmm        92.38%     940.412ms        94.08%     957.776ms       3.193ms           300
-       aten::clamp_min         2.89%      29.416ms         2.89%      29.416ms     147.082us           200
-     mymodel_inference         2.14%      21.807ms       100.00%        1.018s        1.018s             1
-           aten::copy_         1.60%      16.319ms         1.60%      16.319ms      54.397us           300
-          aten::linear         0.20%       2.081ms        94.71%     964.188ms       3.214ms           300
-               aten::t         0.18%       1.864ms         0.43%       4.330ms      14.434us           300
-      aten::as_strided         0.13%       1.348ms         0.13%       1.348ms       2.246us           600
-            aten::relu         0.13%       1.311ms         3.02%      30.728ms     153.638us           200
-       aten::transpose         0.13%       1.305ms         0.24%       2.466ms       8.220us           300
-            aten::view         0.08%     851.186us         0.08%     851.186us       8.512us           100
-          aten::expand         0.06%     619.989us         0.08%     806.363us       2.688us           300
-         aten::flatten         0.04%     454.107us         0.13%       1.305ms      13.053us           100
-    aten::resolve_conj         0.02%     238.554us         0.02%     238.554us       0.398us           600
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-Self CPU time total: 1.018s
-```
-
-Following is the profiler output with the bfload16:
-
-```
-$ export DNNL_DEFAULT_FPMATH_MODE=BF16
-```
+  cProfile shows Python-level functions, while torch.profiler provides details of lower-level `aten::` functions. 
+  Therefore, cProfile’s `torch._C._nn.linear` is actually broken down into multiple functions like `aten::linear`, `aten::addmm`, `aten::copy_`, and others in torch.profiler.
+  For precise performance analysis, torch.profiler provides more detailed information.
 
 ```
 Using cpu device
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-           aten::addmm        87.48%        1.080s        90.45%        1.116s       3.721ms           300
-       aten::clamp_min         4.94%      61.012ms         4.94%      61.012ms     305.059us           200
-     mymodel_inference         3.84%      47.352ms       100.00%        1.234s        1.234s             1
-           aten::copy_         2.88%      35.539ms         2.88%      35.539ms     118.465us           300
-          aten::linear         0.17%       2.107ms        90.98%        1.123s       3.742ms           300
-               aten::t         0.16%       1.977ms         0.36%       4.437ms      14.789us           300
-            aten::relu         0.13%       1.544ms         5.07%      62.556ms     312.779us           200
-      aten::as_strided         0.11%       1.376ms         0.11%       1.376ms       2.293us           600
-       aten::transpose         0.11%       1.331ms         0.20%       2.460ms       8.199us           300
-            aten::view         0.07%     865.467us         0.07%     865.467us       8.655us           100
-          aten::expand         0.05%     638.083us         0.07%     884.811us       2.949us           300
-         aten::flatten         0.04%     486.091us         0.11%       1.352ms      13.516us           100
-    aten::resolve_conj         0.02%     228.540us         0.02%     228.540us       0.381us           600
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-Self CPU time total: 1.234s
+         5301 function calls (3901 primitive calls) in 2.482 seconds
+
+   Ordered by: internal time
+   List reduced from 18 to 10 due to restriction <10>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      300    2.368    0.008    2.368    0.008 {built-in method torch._C._nn.linear}
+      200    0.067    0.000    0.067    0.000 {built-in method torch.relu}
+      100    0.031    0.000    2.476    0.025 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/container.py:248(forward)
+  800/100    0.004    0.000    2.482    0.025 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1740(_call_impl)
+  800/100    0.003    0.000    2.482    0.025 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1732(_wrapped_call_impl)
+      800    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+      100    0.002    0.000    0.002    0.000 {method 'flatten' of 'torch._C.TensorBase' objects}
+      800    0.001    0.000    0.001    0.000 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py:1918(__getattr__)
+      300    0.001    0.000    2.369    0.008 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/linear.py:124(forward)
+      200    0.001    0.000    0.068    0.000 /usr/local/lib/python3.12/dist-packages/torch/nn/modules/activation.py:132(forward)
 ```
 
-Following is the profiler output with the bfload16 with tcmalloc:
+- **Call graph by gperftools with the default PyTorch configuration(FP32)**
 
-```
-$ export DNNL_DEFAULT_FPMATH_MODE=BF16
-$ LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libtcmalloc.so.4 python3 infer.py
-```
+  It is possible to profile with gperftools by preloading libprofiler. 
+  However, since gperftools is a tool designed for applications written in C/C++ and similar languages, the information that can be measured is limited. 
+  The following call graph is the output of gperftools, but it only tracks the call structure of shared libraries.
 
-```
-Using cpu device
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-                  Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-           aten::addmm        88.93%     593.475ms        91.41%     609.994ms       2.033ms           300
-       aten::clamp_min         4.03%      26.893ms         4.03%      26.893ms     134.467us           200
-     mymodel_inference         3.22%      21.520ms       100.00%     667.319ms     667.319ms             1
-           aten::copy_         2.32%      15.473ms         2.32%      15.473ms      51.575us           300
-          aten::linear         0.31%       2.072ms        92.36%     616.322ms       2.054ms           300
-               aten::t         0.29%       1.929ms         0.64%       4.256ms      14.187us           300
-      aten::as_strided         0.20%       1.307ms         0.20%       1.307ms       2.178us           600
-            aten::relu         0.19%       1.244ms         4.22%      28.137ms     140.686us           200
-       aten::transpose         0.18%       1.215ms         0.35%       2.327ms       7.755us           300
-            aten::view         0.13%     862.055us         0.13%     862.055us       8.621us           100
-          aten::expand         0.09%     613.264us         0.12%     808.830us       2.696us           300
-         aten::flatten         0.07%     477.892us         0.20%       1.340ms      13.399us           100
-    aten::resolve_conj         0.04%     237.190us         0.04%     237.190us       0.395us           600
-----------------------  ------------  ------------  ------------  ------------  ------------  ------------
-Self CPU time total: 667.319ms
-```
+  > LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libprofiler.so.0 python3 infer.py  
+  > /usr/local/go/pkg/tool/linux_arm64/pprof -png /usr/bin/python3 output.prof
+
+  <img src="../../images/callgraph.png">
