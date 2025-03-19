@@ -8,6 +8,8 @@ Install Rocky Linux 9.4 standard packages.
   dnf -y group install "Development Tools"
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
+  dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 ```
 
@@ -16,6 +18,9 @@ Clone Spack from RIKEN RCCS GitHub, activate the Spack environment, and detect i
 ```bash
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
+  git checkout virtual_fugaku
+
+  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -66,7 +71,7 @@ Clone the profiling tool `perf_helper` from GitHub, build it, and install librar
   cd perf_helper
   make COMPILER=acfl
   cp perf_helper.h /usr/local/include
-  cp libperf_helper.a /usr/local/lib
+  cp libperf_helper.so /usr/local/lib
   cp perf_helper_mod.mod /usr/local/lib
 ```
 
