@@ -40,6 +40,8 @@ From: rockylinux/rockylinux:9.4
 
   spack env create virtual_fugaku
 
+  spack -e virtual_fugaku install -j 32 --add libfabric fabrics=sockets,tcp,udp,shm,efa,verbs,ucx,mlx
+  spack -e virtual_fugaku install -j 32 --add openmpi fabrics=auto
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp

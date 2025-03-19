@@ -11,6 +11,7 @@ From: rockylinux/rockylinux:9.4
   dnf -y group install "Development Tools"
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
+  dnf -y install gcc-gfortran
   dnf -y install libxcrypt-compat
   dnf -y install cmake
   dnf clean all
@@ -33,6 +34,8 @@ From: rockylinux/rockylinux:9.4
   spack compiler find
   spack config blame compilers
 
+  spack -e virtual_fugaku install -j 32 --add libfabric fabrics=sockets,tcp,udp,shm,efa,verbs,ucx,mlx
+  spack -e virtual_fugaku install -j 32 --add openmpi fabrics=auto
   spack -e virtual_fugaku install -j 32 --add gperftools%arm
 
   # Go for pprof

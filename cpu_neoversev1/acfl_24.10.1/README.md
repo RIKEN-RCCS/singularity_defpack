@@ -8,6 +8,7 @@ Install Rocky Linux 9.4 standard packages.
   dnf -y group install "Development Tools"
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
+  dnf -y install gcc-gfortran
   dnf -y install libxcrypt-compat
   dnf -y install cmake
   dnf clean all
@@ -43,10 +44,12 @@ Output the list of detected compilers.
   spack config blame compilers
 ```
 
-Install the profiling tool `gperftools`.
+Install the `openmpi`, fabric library `libfabric`, the profiling tool `gperftools`.
 Since `armpl` is already included in `acfl`, additional mathematical libraries like OpenBLAS are not installed.
 
 ```bash
+  spack -e virtual_fugaku install -j 32 --add libfabric fabrics=sockets,tcp,udp,shm,efa,verbs,ucx,mlx
+  spack -e virtual_fugaku install -j 32 --add openmpi fabrics=auto
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
 ```
 

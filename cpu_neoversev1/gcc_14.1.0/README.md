@@ -58,9 +58,11 @@ Create a Spack virtual environment `virtual_fugaku`.
   spack env create virtual_fugaku
 ```
 
-Install the `cmake`, profiling tool `gperftools` and mathematical libraries `openblas`, `fftw`, `armpl for gcc`.
+Install the `openmpi`, fabric library `libfabric`, profiling tool `gperftools` and mathematical libraries `openblas`, `fftw`, `armpl for gcc`.
 
 ```bash
+  spack -e virtual_fugaku install -j 32 --add libfabric fabrics=sockets,tcp,udp,shm,efa,verbs,ucx,mlx
+  spack -e virtual_fugaku install -j 32 --add openmpi fabrics=auto
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp
