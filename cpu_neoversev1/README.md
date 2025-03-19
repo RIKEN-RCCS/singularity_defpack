@@ -64,7 +64,7 @@ The ARM Compute Library (`acl`) is installed using the OS default compiler **GCC
 `acl` is specifically optimized for **machine learning and computer vision** tasks, and works as a **backend for oneDNN** which is used by PyTorch.
 During the `acl` build, **OpenMP is enabled**, and the **target architecture is set to `armv8.2-a`**.  
 
-- **acl version 25.02**  
+- **acl version 25.02.1**  
 
 During the PyTorch build, the following settings are applied:  
 
