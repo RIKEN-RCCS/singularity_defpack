@@ -162,12 +162,12 @@ SIFFILE=./gcc.sif
 cat << EOF > .compile.sh
 rm -f a.out* *.a *.o *.mod
 
-FC=gfortran
+FC=flang
 OMP="-fopenmp -fPIC"
 
 \$FC -c \$OMP main.f90 -o main_f.o -J/usr/local/lib
 \$FC -c \$OMP test.f90 -o test.o
-\$FC \$OMP main_f.o test.o -lperf_helper -lprofiler -o a.out_f
+\$FC \$OMP main_f.o test.o -lperf_helper -o a.out_f
 EOF
 
 singularity run ${SIFFILE} sh ./.compile.sh
