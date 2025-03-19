@@ -11,10 +11,16 @@ From: rockylinux/rockylinux:9.4
   dnf -y group install "Development Tools"
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
+  dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
+  cd spack
+  git checkout virtual_fugaku
+
+  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -42,7 +48,7 @@ From: rockylinux/rockylinux:9.4
   cd perf_helper
   make COMPILER=acfl
   cp perf_helper.h /usr/local/include
-  cp libperf_helper.a /usr/local/lib
+  cp libperf_helper.so /usr/local/lib
   cp perf_helper_mod.mod /usr/local/lib
 
   spack env activate --sh virtual_fugaku >> $SINGULARITY_ENVIRONMENT

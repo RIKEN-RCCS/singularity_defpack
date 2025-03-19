@@ -12,10 +12,16 @@ From: rockylinux/rockylinux:9.4
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
   dnf -y install gcc-gfortran
+  dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
+  cd spack
+  git checkout virtual_fugaku
+
+  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -23,8 +29,8 @@ From: rockylinux/rockylinux:9.4
 
   spack env create virtual_fugaku
 
-  spack -e virtual_fugaku install -j 32 --add ninja%clang cmake%clang
-  spack load ninja cmake
+  spack -e virtual_fugaku install -j 32 --add ninja%clang
+  spack load ninja
 
   cd /opt
   git clone https://github.com/llvm/llvm-project.git
@@ -69,24 +75,13 @@ sed -i '/spec: clang@=19.1.4/,/flags:/{
   tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
   rm go$VERSION.$OS-$ARCH.tar.gz
 
-  export PATH=/usr/local/llvm-19.1.4/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/llvm-19.1.4/lib:$LD_LIBRARY_PATH
-  export LIBRARY_PATH=/usr/local/llvm-19.1.4/lib:$LIBRARY_PATH
-  export C_INCLUDE_PATH=/usr/local/llvm-19.1.4/include:$C_INCLUDE_PATH
-  export CC=clang
-  export FC=flang
-  export OMP="-fopenmp -fPIC -Wall"
-
   # Perf Helper Library
   cd /opt
   git clone https://github.com/RIKEN-RCCS/perf_helper.git
   cd perf_helper
-  ${CC} -c ${OMP} perf_helper.c -o perf_helper.o
-  ${CC} -c ${OMP} perf_helper_wrapper.c -o perf_helper_wrapper.o
-  ${FC} -c ${OMP} perf_helper_mod.f90 -o perf_helper_mod.o
-  ar r libperf_helper.a perf_helper.o perf_helper_wrapper.o perf_helper_mod.o
+  make COMPILER=llvm
   cp perf_helper.h /usr/local/include
-  cp libperf_helper.a /usr/local/lib
+  cp libperf_helper.so /usr/local/lib
   cp perf_helper_mod.mod /usr/local/lib
 
   spack env activate --sh virtual_fugaku >> $SINGULARITY_ENVIRONMENT

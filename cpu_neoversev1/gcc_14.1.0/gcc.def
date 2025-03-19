@@ -12,6 +12,7 @@ From: rockylinux/rockylinux:9.4
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
   dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 
   cd /opt
@@ -39,7 +40,6 @@ From: rockylinux/rockylinux:9.4
 
   spack env create virtual_fugaku
 
-  spack -e virtual_fugaku install -j 32 --add cmake
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp
