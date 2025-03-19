@@ -9,6 +9,8 @@ Install Rocky Linux 9.4 standard packages.
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
   dnf -y install gcc-gfortran
+  dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 ```
 
@@ -17,6 +19,9 @@ Clone Spack from RIKEN RCCS GitHub, activate the Spack environment, and detect i
 ```bash
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
+  git checkout virtual_fugaku
+
+  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -101,28 +106,16 @@ Clone the `go` from GitHub and install it into `/usr/local`.
   rm go$VERSION.$OS-$ARCH.tar.gz
 ```
 
-Define various environment variables to build `perf_helper` with LLVM.
 Clone the profiling tool `perf_helper` from GitHub, build it, and install libraries and other dependencies into `/usr/local`.
 
 ```bash
-  export PATH=/usr/local/llvm-19.1.4/bin:$PATH
-  export LD_LIBRARY_PATH=/usr/local/llvm-19.1.4/lib:$LD_LIBRARY_PATH
-  export LIBRARY_PATH=/usr/local/llvm-19.1.4/lib:$LIBRARY_PATH
-  export C_INCLUDE_PATH=/usr/local/llvm-19.1.4/include:$C_INCLUDE_PATH
-  export CC=clang
-  export FC=flang
-  export OMP="-fopenmp -fPIC -Wall"
-
   # Perf Helper Library
   cd /opt
   git clone https://github.com/RIKEN-RCCS/perf_helper.git
   cd perf_helper
-  ${CC} -c ${OMP} perf_helper.c -o perf_helper.o
-  ${CC} -c ${OMP} perf_helper_wrapper.c -o perf_helper_wrapper.o
-  ${FC} -c ${OMP} perf_helper_mod.f90 -o perf_helper_mod.o
-  ar r libperf_helper.a perf_helper.o perf_helper_wrapper.o perf_helper_mod.o
+  make COMPILER=llvm
   cp perf_helper.h /usr/local/include
-  cp libperf_helper.a /usr/local/lib
+  cp libperf_helper.so /usr/local/lib
   cp perf_helper_mod.mod /usr/local/lib
 ```
 
