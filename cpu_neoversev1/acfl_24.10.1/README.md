@@ -115,7 +115,7 @@ SIFFILE=./gcc.sif
 cat << EOF > .compile.sh
 rm -f a.out* *.a *.o *.mod
 
-FC=gfortran
+FC=armflang
 OMP="-fopenmp -fPIC"
 
 \$FC -c \$OMP main.f90 -o main_f.o -J/usr/local/lib
