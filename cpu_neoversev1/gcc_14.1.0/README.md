@@ -8,6 +8,7 @@ Install Rocky Linux 9.4 standard packages.
   dnf -y group install "Development Tools"
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
+  dnf -y install libxcrypt-compat
   dnf clean all
 ```
 
@@ -16,6 +17,10 @@ Clone Spack from RIKEN RCCS GitHub, activate the Spack environment, and detect i
 ```bash
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
+  cd spack
+  git checkout virtual_fugaku
+
+  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -52,9 +57,10 @@ Create a Spack virtual environment `virtual_fugaku`.
   spack env create virtual_fugaku
 ```
 
-Install the profiling tool `gperftools` and mathematical libraries `openblas`, `fftw`, `armpl for gcc`.
+Install the `cmake`, profiling tool `gperftools` and mathematical libraries `openblas`, `fftw`, `armpl for gcc`.
 
 ```bash
+  spack -e virtual_fugaku install -j 32 --add cmake
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp
