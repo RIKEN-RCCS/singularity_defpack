@@ -9,6 +9,7 @@ Install Rocky Linux 9.4 standard packages.
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
   dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 ```
 
@@ -60,7 +61,6 @@ Create a Spack virtual environment `virtual_fugaku`.
 Install the `cmake`, profiling tool `gperftools` and mathematical libraries `openblas`, `fftw`, `armpl for gcc`.
 
 ```bash
-  spack -e virtual_fugaku install -j 32 --add cmake
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp
@@ -88,7 +88,7 @@ Clone the profiling tool `perf_helper` from GitHub, build it, and install librar
   cd perf_helper
   make COMPILER=gcc
   cp perf_helper.h /usr/local/include
-  cp libperf_helper.a /usr/local/lib
+  cp libperf_helper.so /usr/local/lib
   cp perf_helper_mod.mod /usr/local/lib
 ```
 
