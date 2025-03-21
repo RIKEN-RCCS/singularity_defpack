@@ -85,9 +85,11 @@ Output the list of detected compilers.
   spack config blame compilers
 ```
 
-Install the profiling tool `gperftools` and mathematical libraries `openblas`, `fftw`, `armpl for gcc`.
+Install the `openmpi`, fabric library `libfabric`, profiling tool `gperftools` and mathematical libraries `openblas`, `fftw`, `armpl for gcc`.
 
 ```bash
+  spack -e virtual_fugaku install -j 32 --add libfabric fabrics=sockets,tcp,udp,shm,efa,verbs,ucx,mlx
+  spack -e virtual_fugaku install -j 32 --add openmpi fabrics=auto
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp
@@ -109,6 +111,14 @@ Clone the `go` from GitHub and install it into `/usr/local`.
 Clone the profiling tool `perf_helper` from GitHub, build it, and install libraries and other dependencies into `/usr/local`.
 
 ```bash
+  LLVM=/usr/local/llvm-19.1.4
+  export PATH=/usr/local/go/pkg/tool/linux_arm64:${LLVM}/bin:/usr/local/bin:${PATH}
+  export LIBRARY_PATH=${LLVM}/lib:${LLVM}/lib/aarch64-unknown-linux-gnu:${LLVM}/lib/clang/19/lib/aarch64-unknown-linux-gnu:/usr/local/lib:${LIBRARY_PATH}
+  export LD_LIBRARY_PATH=${LLVM}/lib:${LLVM}/lib/aarch64-unknown-linux-gnu:${LLVM}/lib/clang/19/lib/aarch64-unknown-linux-gnu:/usr/local/lib:${LD_LIBRARY_PATH}
+  export C_INCLUDE_PATH=${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${C_INCLUDE_PATH}
+  export CPLUS_INCLUDE_PATH=${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${CPLUS_INCLUDE_PATH}
+  export INCLUDE_PATH=${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${INCLUDE_PATH}
+
   # Perf Helper Library
   cd /opt
   git clone https://github.com/RIKEN-RCCS/perf_helper.git
@@ -138,12 +148,13 @@ Set the library and other search paths in the Singularity container using the `%
   VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
   LLVM=/usr/local/llvm-19.1.4
 
-  export PATH=/usr/local/go/pkg/tool/linux_arm64:${PATH}:${LLVM}/bin:/usr/local/bin:${ARMPL_DIR}/bin:${GPERF_DIR}/bin:${FFTW_DIR}/bin
-  export LIBRARY_PATH=${LIBRARY_PATH}:${LLVM}/lib:${LLVM}/lib/aarch64-unknown-linux-gnu:${LLVM}/lib/clang/19/lib/aarch64-unknown-linux-gnu:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
-  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${LLVM}/lib:${LLVM}/lib/aarch64-unknown-linux-gnu:${LLVM}/lib/clang/19/lib/aarch64-unknown-linux-gnu:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
-  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-  export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
-  export INCLUDE_PATH=${INCLUDE_PATH}:${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  export PATH=/usr/local/go/pkg/tool/linux_arm64:${LLVM}/bin:/usr/local/bin:${PATH}:${ARMPL_DIR}/bin:${GPERF_DIR}/bin:${FFTW_DIR}/bin
+  export LIBRARY_PATH=${LLVM}/lib:${LLVM}/lib/aarch64-unknown-linux-gnu:${LLVM}/lib/clang/19/lib/aarch64-unknown-linux-gnu:/usr/local/lib:${LIBRARY_PATH}:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export LD_LIBRARY_PATH=${LLVM}/lib:${LLVM}/lib/aarch64-unknown-linux-gnu:${LLVM}/lib/clang/19/lib/aarch64-unknown-linux-gnu:/usr/local/lib:${LD_LIBRARY_PATH}:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${ARMPL_DIR}/lib:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export C_INCLUDE_PATH=${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${C_INCLUDE_PATH}:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  export CPLUS_INCLUDE_PATH=${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${CPLUS_INCLUDE_PATH}:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  export INCLUDE_PATH=${LLVM}/include:${LLVM}/lib/clang/19/include:/usr/local/include:${INCLUDE_PATH}:${ARMPL_DIR}/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  exec "$@"
 ```
 
 ----
