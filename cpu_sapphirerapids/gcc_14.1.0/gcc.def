@@ -6,21 +6,24 @@ From: rockylinux/rockylinux:9.4
 %environment
 
 %files
-  packages.yaml /tmp
 
 %post
   dnf -y group install "Development Tools"
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
+  dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
-  cd spack
-  git checkout virtual_fugaku
 
-  FILE1=$(find /tmp/build-temp-* | grep 'tmp/packages.yaml' )
-  cp $FILE1 /opt/spack/etc/spack
+cat << EOF > /opt/spack/etc/spack/mirrors.yaml
+mirrors:
+  build_cache_https:
+    url: https://spack-mirror.r-ccs.riken.jp
+    signed: false
+EOF
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -40,6 +43,8 @@ From: rockylinux/rockylinux:9.4
 
   spack env create virtual_fugaku
 
+  spack -e virtual_fugaku install -j 32 --add libfabric fabrics=sockets,tcp,udp,shm,efa,verbs,ucx,mlx
+  spack -e virtual_fugaku install -j 32 --add openmpi fabrics=auto
   spack -e virtual_fugaku install -j 32 --add gperftools%gcc@14.1.0
   spack -e virtual_fugaku install -j 32 --add openblas%gcc@14.1.0 threads=openmp
   spack -e virtual_fugaku install -j 32 --add fftw%gcc@14.1.0 +openmp
@@ -57,7 +62,7 @@ From: rockylinux/rockylinux:9.4
   cd perf_helper
   make COMPILER=gcc
   cp perf_helper.h /usr/local/include
-  cp libperf_helper.a /usr/local/lib
+  cp libperf_helper.so /usr/local/lib
   cp perf_helper_mod.mod /usr/local/lib
 
   spack env activate --sh virtual_fugaku >> $SINGULARITY_ENVIRONMENT
