@@ -19,9 +19,13 @@ From: rockylinux/rockylinux:9.4
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
   cd spack
-  git checkout virtual_fugaku
 
-  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
+cat << EOF > /opt/spack/etc/spack/mirrors.yaml
+mirrors:
+  build_cache_https:
+    url: https://spack-mirror.r-ccs.riken.jp
+    signed: false
+EOF
 
   . /opt/spack/share/spack/setup-env.sh
 

@@ -13,15 +13,19 @@ Install Rocky Linux 9.4 standard packages.
   dnf clean all
 ```
 
-Clone Spack from RIKEN RCCS GitHub, activate the Spack environment, and detect installed compilers in Spack.
+Clone Spack from RIKEN RCCS GitHub, define spack mirror, activate the Spack environment, and detect installed compilers in Spack.
 
 ```bash
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
   cd spack
-  git checkout virtual_fugaku
 
-  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
+cat << EOF > /opt/spack/etc/spack/mirrors.yaml
+mirrors:
+  build_cache_https:
+    url: https://spack-mirror.r-ccs.riken.jp
+    signed: false
+EOF
 
   . /opt/spack/share/spack/setup-env.sh
 

@@ -19,9 +19,13 @@ Clone Spack from RIKEN RCCS GitHub, activate the Spack environment, and detect i
 ```bash
   cd /opt
   git clone https://github.com/RIKEN-RCCS/spack.git
-  git checkout virtual_fugaku
 
-  sed -i '/^ *openmpi:/,/^ *python:/ {/^ *python:/!d;}' /opt/spack/etc/spack/packages.yaml
+cat << EOF > /opt/spack/etc/spack/mirrors.yaml
+mirrors:
+  build_cache_https:
+    url: https://spack-mirror.r-ccs.riken.jp
+    signed: false
+EOF
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -34,11 +38,11 @@ Create a Spack virtual environment `virtual_fugaku`.
   spack env create virtual_fugaku
 ```
 
-Install cmake and ninja required for LLVM installation.
+Install ninja required for LLVM installation.
 
 ```bash
-  spack -e virtual_fugaku install -j 32 --add ninja%clang cmake%clang
-  spack load ninja cmake
+  spack -e virtual_fugaku install -j 32 --add ninja%clang
+  spack load ninja
 ```
 
 Clone LLVM from GitHub, checkout v19.1.4, and install into `/usr/local/llvm-19.1.4`.
