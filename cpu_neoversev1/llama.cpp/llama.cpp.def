@@ -10,15 +10,14 @@ From: gcc_14.1.0.sif
 %post
   . /opt/spack/share/spack/setup-env.sh
 
-  spack install -j 32 --add cmake
-  spack load cmake
+  CC=/opt/spack/opt/spack/linux-rhel8-neoverse_v1/gcc-8.5.0/gcc-14.1.0-3b4ckpxkri7gaqjcjhwknz642yzdhcp7/bin/gcc
+  CXX=/opt/spack/opt/spack/linux-rhel8-neoverse_v1/gcc-8.5.0/gcc-14.1.0-3b4ckpxkri7gaqjcjhwknz642yzdhcp7/bin/g++
 
   cd /opt
   git clone https://github.com/ggerganov/llama.cpp.git
   cd llama.cpp
-  sed -i -e 's/GGML_SVE\s*"ggml:\s*enable\s*SVE"\s*OFF/GGML_SVE "ggml: enable SVE" ON/' ggml/CMakeLists.txt 
-  sed -i -e 's/APPEND\s*ARCH_FLAGS\s*-march=armv8.6-a+sve/APPEND ARCH_FLAGS -march=armv8.2-a+sve/' ggml/src/CMakeLists.txt
-  cmake -B build 
+  git checkout b4953
+  cmake -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX -B build
   cd build
   cmake --build . --verbose -j32
   cmake --install .
