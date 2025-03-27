@@ -20,7 +20,7 @@
  - GCC v14.1.0 : gcc.def (includes openblas, fftw, armpl)
  - LLVM v19.1.4 : llvm.def (includes openblas, fftw, armpl)
  - Arm Compiler for Linux v24.10.1 : acfl.def (includes armpl)
- - llama.cpp : llama.cpp.def (requires GCC v14.1.0 container image)
+ - llama.cpp b4953 : llama.cpp.def (requires GCC v14.1.0 container image)
  - PyTorch v2.5.0 : pytorch.def (with oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27)
  - TensorFlow v2.17.1 : tensorflow.def (with oneDNN v3.2.1, ACL v23.05.1)
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch v2.5.0 container image)
@@ -42,6 +42,7 @@
 
  - PyTorch v2.2.0 : pytorch.def
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
+ - llama.cpp b4953 : llama.cpp.def
 
 ### AMD GPU
 
