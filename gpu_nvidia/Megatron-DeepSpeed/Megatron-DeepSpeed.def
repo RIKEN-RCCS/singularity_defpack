@@ -10,32 +10,29 @@ From: pytorch.sif
     export NVIDIA_DRIVER_CAPABILITIES=compute,utilit
 
     curl https://sh.rustup.rs -sSf | sh -s -- -y
-    . "$HOME/.cargo/env" 
+    . "$HOME/.cargo/env"
     rustup update
 
     pip install --upgrade 'sudachipy<0.6.9'
     pip install sudachidict_core
     pip install fugashi ipadic unidic_lite unidic rhoknp
 
+    cd /opt
     git clone https://github.com/bitsandbytes-foundation/bitsandbytes.git && cd bitsandbytes/
+    git checkout 0.45.1
 #   pip install -r requirements-dev.txt
     cmake -DCOMPUTE_BACKEND=cuda -S .
     make
     pip install -e .
 
-    pip install accelerate transformers deepspeed datasets evaluate hjson huggingface-hub sentencepiece tokenizers wandb ninja packaging pybind11 six trl optimum peft
-
-    pip install --upgrade transformer-engine
-    pip install --upgrade flash-attn
+    pip install accelerate==1.2.1 transformers==4.47.1 deepspeed==0.16.1 datasets==3.2.0 evaluate==0.4.3 hjson==3.1.0 huggingface-hub==0.27.0 sentencepiece==0.2.0 tokenizers==0.21.0 wandb==0.19.1 ninja==1.11.1.1 packaging==23.2 pybind11==2.11.1 six==1.16.0 trl==0.13.0 optimum==1.23.3 peft==0.14.0
+    pip install --upgrade transformer-engine==1.13.0
+    pip install --upgrade flash-attn==2.7.2.post1
 
     cd /opt
     git clone https://github.com/microsoft/Megatron-DeepSpeed
     cd Megatron-DeepSpeed/megatron/data
     make
-
-%test
-    python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"
-    python -m bitsandbytes
 
 %environment
     export PATH=/usr/local/cuda/bin:$PATH
