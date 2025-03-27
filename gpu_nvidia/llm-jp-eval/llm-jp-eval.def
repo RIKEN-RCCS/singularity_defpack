@@ -1,0 +1,28 @@
+Bootstrap: localimage
+From: pytorch.sif
+
+%setup
+
+%post
+  export PATH=/usr/local/cuda/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+  export NVIDIA_VISIBLE_DEVICES=all
+  export NVIDIA_DRIVER_CAPABILITIES=compute,utilit
+
+  pip install poetry
+
+  cd /opt
+  git clone https://github.com/llm-jp/llm-jp-eval.git && cd llm-jp-eval
+  cp configs/config_template.yaml configs/config.yaml
+  pip install .
+
+  poetry install
+
+%environment
+  export PATH=/usr/local/cuda/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+  export NVIDIA_VISIBLE_DEVICES=all
+  export NVIDIA_DRIVER_CAPABILITIES=compute,utilit
+
+%runscript
+  exec "$@"
