@@ -1,0 +1,661 @@
+INFO:    Starting build...
+INFO:    Verifying bootstrap image pytorch.sif
+WARNING: integrity: signature not found for object group 1
+WARNING: Bootstrap image could not be verified, but build will continue.
+INFO:    Extracting local image...
+INFO:    Inserting Singularity configuration...
+INFO:    Running setup scriptlet
+INFO:    Running post scriptlet
++ export PATH=/usr/local/cuda/bin:/usr/local/cuda/bin:/usr/local/lib/python3.10/dist-packages/torch_tensorrt/bin:/usr/local/mpi/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ucx/bin:/opt/tensorrt/bin
++ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/lib64:/usr/local/lib/python3.10/dist-packages/torch/lib:/usr/local/lib/python3.10/dist-packages/torch_tensorrt/lib:/usr/local/cuda/compat/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/.singularity.d/libs
++ export NVIDIA_VISIBLE_DEVICES=all
++ export NVIDIA_DRIVER_CAPABILITIES=compute,utilit
++ curl https://sh.rustup.rs -sSf
++ sh -s -- -y
+info: downloading installer
+info: profile set to 'default'
+info: default host triple is aarch64-unknown-linux-gnu
+info: syncing channel updates for 'stable-aarch64-unknown-linux-gnu'
+info: latest update on 2025-03-18, rust version 1.85.1 (4eb161250 2025-03-15)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'rust-docs'
+info: downloading component 'rust-std'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'rust-docs'
+info: installing component 'rust-std'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+info: default toolchain set to 'stable-aarch64-unknown-linux-gnu'
+
+  stable-aarch64-unknown-linux-gnu installed - rustc 1.85.1 (4eb161250 2025-03-15)
+
+
+Rust is installed now. Great!
+
+To get started you may need to restart your current shell.
+This would reload your PATH environment variable to include
+Cargo's bin directory ($HOME/.cargo/bin).
+
+To configure your current shell, you need to source
+the corresponding env file under $HOME/.cargo.
+
+This is usually done by running one of the following (note the leading DOT):
+. "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
+source "$HOME/.cargo/env.fish"  # For fish
+source "$HOME/.cargo/env.nu"    # For nushell
++ . /root/.cargo/env
++ export PATH=/root/.cargo/bin:/usr/local/cuda/bin:/usr/local/cuda/bin:/usr/local/lib/python3.10/dist-packages/torch_tensorrt/bin:/usr/local/mpi/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ucx/bin:/opt/tensorrt/bin
++ rustup update
+info: syncing channel updates for 'stable-aarch64-unknown-linux-gnu'
+info: checking for self-update
+
+  stable-aarch64-unknown-linux-gnu unchanged - rustc 1.85.1 (4eb161250 2025-03-15)
+
+info: cleaning up downloads & tmp directories
++ pip install --upgrade sudachipy<0.6.9
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting sudachipy<0.6.9
+  Downloading SudachiPy-0.6.8.tar.gz (161 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: sudachipy
+  Building wheel for sudachipy (pyproject.toml): started
+  Building wheel for sudachipy (pyproject.toml): finished with status 'done'
+  Created wheel for sudachipy: filename=sudachipy-0.6.8-cp310-cp310-linux_aarch64.whl size=1576180 sha256=41922d558f9459cda0dc493e5400eecf3060b85a4f214b4fbfbd54af6edea421
+  Stored in directory: /tmp/pip-ephem-wheel-cache-kymtad6x/wheels/cd/92/ce/3dedb665f72d1e1369793e995a42842ec438af4569fd85fcc7
+Successfully built sudachipy
+Installing collected packages: sudachipy
+Successfully installed sudachipy-0.6.8
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python -m pip install --upgrade pip
++ pip install sudachidict_core
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting sudachidict_core
+  Downloading SudachiDict_core-20250129-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: SudachiPy<0.7,>=0.5 in /usr/local/lib/python3.10/dist-packages (from sudachidict_core) (0.6.8)
+Downloading SudachiDict_core-20250129-py3-none-any.whl (72.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.1/72.1 MB 117.2 MB/s eta 0:00:00
+Installing collected packages: sudachidict_core
+Successfully installed sudachidict_core-20250129
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python -m pip install --upgrade pip
++ pip install fugashi ipadic unidic_lite unidic rhoknp
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting fugashi
+  Downloading fugashi-1.4.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.9 kB)
+Collecting ipadic
+  Downloading ipadic-1.0.0.tar.gz (13.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.4/13.4 MB 117.4 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting unidic_lite
+  Downloading unidic-lite-1.0.8.tar.gz (47.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.4/47.4 MB 117.5 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting unidic
+  Downloading unidic-1.1.0.tar.gz (7.7 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting rhoknp
+  Downloading rhoknp-1.7.0-py3-none-any.whl.metadata (8.6 kB)
+Requirement already satisfied: requests<3.0.0,>=2.22.0 in /usr/local/lib/python3.10/dist-packages (from unidic) (2.31.0)
+Requirement already satisfied: tqdm<5.0.0,>=4.41.1 in /usr/local/lib/python3.10/dist-packages (from unidic) (4.66.1)
+Collecting wasabi<1.0.0,>=0.6.0 (from unidic)
+  Downloading wasabi-0.10.1-py3-none-any.whl.metadata (28 kB)
+Collecting plac<2.0.0,>=1.1.3 (from unidic)
+  Downloading plac-1.4.3-py2.py3-none-any.whl.metadata (5.9 kB)
+Requirement already satisfied: typing-extensions>=4.4 in /usr/local/lib/python3.10/dist-packages (from rhoknp) (4.8.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests<3.0.0,>=2.22.0->unidic) (3.3.1)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests<3.0.0,>=2.22.0->unidic) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests<3.0.0,>=2.22.0->unidic) (1.26.18)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests<3.0.0,>=2.22.0->unidic) (2023.11.17)
+Downloading fugashi-1.4.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (653 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 653.5/653.5 kB 122.6 MB/s eta 0:00:00
+Downloading rhoknp-1.7.0-py3-none-any.whl (93 kB)
+Downloading plac-1.4.3-py2.py3-none-any.whl (22 kB)
+Downloading wasabi-0.10.1-py3-none-any.whl (26 kB)
+Building wheels for collected packages: ipadic, unidic_lite, unidic
+  Building wheel for ipadic (setup.py): started
+  Building wheel for ipadic (setup.py): finished with status 'done'
+  Created wheel for ipadic: filename=ipadic-1.0.0-py3-none-any.whl size=13556723 sha256=6e77f21212f0bd699267cc810ecd47e140b33a51cfd9ba10a7636da64175b25c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-zvma4bq1/wheels/5b/ea/e3/2f6e0860a327daba3b030853fce4483ed37468bbf1101c59c3
+  Building wheel for unidic_lite (setup.py): started
+  Building wheel for unidic_lite (setup.py): finished with status 'done'
+  Created wheel for unidic_lite: filename=unidic_lite-1.0.8-py3-none-any.whl size=47658833 sha256=4c7c85f6a1f509d2691bf583e5c5a6719492945d2d60b089561ed85e3b2f8bad
+  Stored in directory: /tmp/pip-ephem-wheel-cache-zvma4bq1/wheels/89/e8/68/f9ac36b8cc6c8b3c96888cd57434abed96595d444f42243853
+  Building wheel for unidic (setup.py): started
+  Building wheel for unidic (setup.py): finished with status 'done'
+  Created wheel for unidic: filename=unidic-1.1.0-py3-none-any.whl size=7419 sha256=5c3fd498e3d09b7c1aedf82d06688ea54473990826520891f58d7811015302f5
+  Stored in directory: /tmp/pip-ephem-wheel-cache-zvma4bq1/wheels/7a/72/72/1f3d654c345ea69d5d51b531c90daf7ba14cc555eaf2c64ab0
+Successfully built ipadic unidic_lite unidic
+Installing collected packages: wasabi, unidic_lite, plac, ipadic, rhoknp, fugashi, unidic
+  Attempting uninstall: wasabi
+    Found existing installation: wasabi 1.1.2
+    Uninstalling wasabi-1.1.2:
+      Successfully uninstalled wasabi-1.1.2
+Successfully installed fugashi-1.4.0 ipadic-1.0.0 plac-1.4.3 rhoknp-1.7.0 unidic-1.1.0 unidic_lite-1.0.8 wasabi-0.10.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python -m pip install --upgrade pip
++ cd /opt
++ git clone https://github.com/bitsandbytes-foundation/bitsandbytes.git
+Cloning into 'bitsandbytes'...
++ cd bitsandbytes/
++ git checkout 0.45.1
+Note: switching to '0.45.1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 8cd7793 Release v0.45.1
++ cmake -DCOMPUTE_BACKEND=cuda -S .
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring bitsandbytes (Backend: cuda)
+-- The CUDA compiler identification is NVIDIA 12.3.52
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDAToolkit: /usr/local/cuda/include (found version "12.3.52") 
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- CUDA Version: 123 (12.3.52)
+-- CUDA Compiler: /usr/local/cuda/bin/nvcc
+-- CUDA Capabilities Available: 50;52;53;60;61;62;70;72;75;80;86;87;89;90
+-- CUDA Capabilities  Selected: 50;52;53;60;61;62;70;72;75;80;86;87;89;90
+-- CUDA Targets: 50-real;52-real;53-real;60-real;61-real;62-real;70-real;72-real;75-real;80-real;86-real;87-real;89-real;90
+-- CUDA NVCC Flags:  --use_fast_math
+-- Configuring done (4.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /opt/bitsandbytes
++ make
+[ 14%] Building CXX object CMakeFiles/bitsandbytes.dir/csrc/common.cpp.o
+[ 28%] Building CXX object CMakeFiles/bitsandbytes.dir/csrc/cpu_ops.cpp.o
+[ 42%] Building CXX object CMakeFiles/bitsandbytes.dir/csrc/pythonInterface.cpp.o
+[ 57%] Building CUDA object CMakeFiles/bitsandbytes.dir/csrc/ops.cu.o
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/bitsandbytes/csrc/ops.cu(481): warning #550-D: variable "alphaVec" was set but never used
+        cublasLtPointerMode_t alphaVec = CUBLASLT_POINTER_MODE_ALPHA_DEVICE_VECTOR_BETA_HOST;
+                              ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+[ 71%] Building CUDA object CMakeFiles/bitsandbytes.dir/csrc/kernels.cu.o
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+/opt/bitsandbytes/csrc/kernels.cu(25): warning #177-D: variable "nf4_data" was declared but never referenced
+            static float nf4_data[16] = {-1.0, -0.6961928009986877, -0.5250730514526367, -0.39491748809814453, -0.28444138169288635, -0.18477343022823334, -0.09105003625154495, 0.0, 0.07958029955625534, 0.16093020141124725, 0.24611230194568634, 0.33791524171829224, 0.44070982933044434, 0.5626170039176941, 0.7229568362236023, 1.0};
+                         ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+ptxas warning : Value of threads per SM for entry _Z9kQuantizePfS_Phi is out of range. .minnctapersm will be ignored
+[ 85%] Linking CUDA device code CMakeFiles/bitsandbytes.dir/cmake_device_link.o
+[100%] Linking CXX shared library bitsandbytes/libbitsandbytes_cuda123.so
+[100%] Built target bitsandbytes
++ pip install -e .
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Obtaining file:///opt/bitsandbytes
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: torch~=2.0 in /usr/local/lib/python3.10/dist-packages (from bitsandbytes==0.45.1) (2.2.0a0+6a974be)
+Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.10/dist-packages (from bitsandbytes==0.45.1) (1.24.4)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from torch~=2.0->bitsandbytes==0.45.1) (3.13.1)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/dist-packages (from torch~=2.0->bitsandbytes==0.45.1) (4.8.0)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch~=2.0->bitsandbytes==0.45.1) (1.12)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch~=2.0->bitsandbytes==0.45.1) (2.6.3)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch~=2.0->bitsandbytes==0.45.1) (3.1.2)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.10/dist-packages (from torch~=2.0->bitsandbytes==0.45.1) (2023.10.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch~=2.0->bitsandbytes==0.45.1) (2.1.3)
+Requirement already satisfied: mpmath>=0.19 in /usr/local/lib/python3.10/dist-packages (from sympy->torch~=2.0->bitsandbytes==0.45.1) (1.3.0)
+Building wheels for collected packages: bitsandbytes
+  Building editable for bitsandbytes (pyproject.toml): started
+  Building editable for bitsandbytes (pyproject.toml): finished with status 'done'
+  Created wheel for bitsandbytes: filename=bitsandbytes-0.45.1-0.editable-cp310-cp310-linux_aarch64.whl size=6357 sha256=9dd4728228d597a8f011bf1e8a5dbbafe69ec6f3cb17bacf52c5426496bae308
+  Stored in directory: /tmp/pip-ephem-wheel-cache-1jdqwle5/wheels/52/83/0f/45ebf6b2f0ab0c292010e2365230ca3fd3e38471c80cbc637e
+Successfully built bitsandbytes
+Installing collected packages: bitsandbytes
+Successfully installed bitsandbytes-0.45.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python -m pip install --upgrade pip
++ pip install accelerate==1.2.1 transformers==4.47.1 deepspeed==0.16.1 datasets==3.2.0 evaluate==0.4.3 hjson==3.1.0 huggingface-hub==0.27.0 sentencepiece==0.2.0 tokenizers==0.21.0 wandb==0.19.1 ninja==1.11.1.1 packaging==23.2 pybind11==2.11.1 six==1.16.0 trl==0.13.0 optimum==1.23.3 peft==0.14.0
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting accelerate==1.2.1
+  Downloading accelerate-1.2.1-py3-none-any.whl.metadata (19 kB)
+Collecting transformers==4.47.1
+  Downloading transformers-4.47.1-py3-none-any.whl.metadata (44 kB)
+Collecting deepspeed==0.16.1
+  Downloading deepspeed-0.16.1.tar.gz (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 117.5 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting datasets==3.2.0
+  Downloading datasets-3.2.0-py3-none-any.whl.metadata (20 kB)
+Collecting evaluate==0.4.3
+  Downloading evaluate-0.4.3-py3-none-any.whl.metadata (9.2 kB)
+Collecting hjson==3.1.0
+  Downloading hjson-3.1.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting huggingface-hub==0.27.0
+  Downloading huggingface_hub-0.27.0-py3-none-any.whl.metadata (13 kB)
+Collecting sentencepiece==0.2.0
+  Downloading sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.7 kB)
+Collecting tokenizers==0.21.0
+  Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.7 kB)
+Collecting wandb==0.19.1
+  Downloading wandb-0.19.1-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
+Requirement already satisfied: ninja==1.11.1.1 in /usr/local/lib/python3.10/dist-packages (1.11.1.1)
+Requirement already satisfied: packaging==23.2 in /usr/local/lib/python3.10/dist-packages (23.2)
+Requirement already satisfied: pybind11==2.11.1 in /usr/local/lib/python3.10/dist-packages (2.11.1)
+Requirement already satisfied: six==1.16.0 in /usr/local/lib/python3.10/dist-packages (1.16.0)
+Collecting trl==0.13.0
+  Downloading trl-0.13.0-py3-none-any.whl.metadata (11 kB)
+Collecting optimum==1.23.3
+  Downloading optimum-1.23.3-py3-none-any.whl.metadata (20 kB)
+Collecting peft==0.14.0
+  Downloading peft-0.14.0-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: numpy<3.0.0,>=1.17 in /usr/local/lib/python3.10/dist-packages (from accelerate==1.2.1) (1.24.4)
+Requirement already satisfied: psutil in /usr/local/lib/python3.10/dist-packages (from accelerate==1.2.1) (5.9.4)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.10/dist-packages (from accelerate==1.2.1) (6.0.1)
+Requirement already satisfied: torch>=1.10.0 in /usr/local/lib/python3.10/dist-packages (from accelerate==1.2.1) (2.2.0a0+6a974be)
+Collecting safetensors>=0.4.3 (from accelerate==1.2.1)
+  Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.8 kB)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers==4.47.1) (3.13.1)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.47.1) (2023.10.3)
+Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from transformers==4.47.1) (2.31.0)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.10/dist-packages (from transformers==4.47.1) (4.66.1)
+Requirement already satisfied: einops in /usr/local/lib/python3.10/dist-packages (from deepspeed==0.16.1) (0.7.0)
+Requirement already satisfied: msgpack in /usr/local/lib/python3.10/dist-packages (from deepspeed==0.16.1) (1.0.7)
+Collecting py-cpuinfo (from deepspeed==0.16.1)
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Requirement already satisfied: pydantic>=2.0.0 in /usr/local/lib/python3.10/dist-packages (from deepspeed==0.16.1) (2.5.1)
+Collecting nvidia-ml-py (from deepspeed==0.16.1)
+  Downloading nvidia_ml_py-12.570.86-py3-none-any.whl.metadata (8.7 kB)
+Collecting pyarrow>=15.0.0 (from datasets==3.2.0)
+  Downloading pyarrow-19.0.1-cp310-cp310-manylinux_2_28_aarch64.whl.metadata (3.3 kB)
+Collecting dill<0.3.9,>=0.3.0 (from datasets==3.2.0)
+  Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from datasets==3.2.0) (1.5.3)
+Collecting requests (from transformers==4.47.1)
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting tqdm>=4.27 (from transformers==4.47.1)
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Collecting xxhash (from datasets==3.2.0)
+  Downloading xxhash-3.5.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (12 kB)
+Collecting multiprocess<0.70.17 (from datasets==3.2.0)
+  Downloading multiprocess-0.70.16-py310-none-any.whl.metadata (7.2 kB)
+Requirement already satisfied: fsspec<=2024.9.0,>=2023.1.0 in /usr/local/lib/python3.10/dist-packages (from fsspec[http]<=2024.9.0,>=2023.1.0->datasets==3.2.0) (2023.10.0)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from datasets==3.2.0) (3.8.6)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub==0.27.0) (4.8.0)
+Requirement already satisfied: click!=8.0.0,>=7.1 in /usr/local/lib/python3.10/dist-packages (from wandb==0.19.1) (8.1.7)
+Collecting docker-pycreds>=0.4.0 (from wandb==0.19.1)
+  Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Collecting gitpython!=3.1.29,>=1.0.0 (from wandb==0.19.1)
+  Downloading GitPython-3.1.44-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: platformdirs in /usr/local/lib/python3.10/dist-packages (from wandb==0.19.1) (4.0.0)
+Requirement already satisfied: protobuf!=4.21.0,!=5.28.0,<6,>=3.19.0 in /usr/local/lib/python3.10/dist-packages (from wandb==0.19.1) (4.24.4)
+Collecting pydantic>=2.0.0 (from deepspeed==0.16.1)
+  Downloading pydantic-2.10.6-py3-none-any.whl.metadata (30 kB)
+Collecting sentry-sdk>=2.0.0 (from wandb==0.19.1)
+  Downloading sentry_sdk-2.24.1-py2.py3-none-any.whl.metadata (10 kB)
+Collecting setproctitle (from wandb==0.19.1)
+  Downloading setproctitle-1.3.5-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (from wandb==0.19.1) (75.6.0)
+Collecting rich (from trl==0.13.0)
+  Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB)
+Collecting coloredlogs (from optimum==1.23.3)
+  Downloading coloredlogs-15.0.1-py2.py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from optimum==1.23.3) (1.12)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->datasets==3.2.0) (23.1.0)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->datasets==3.2.0) (3.3.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp->datasets==3.2.0) (6.0.4)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in /usr/local/lib/python3.10/dist-packages (from aiohttp->datasets==3.2.0) (4.0.3)
+Requirement already satisfied: yarl<2.0,>=1.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp->datasets==3.2.0) (1.9.2)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp->datasets==3.2.0) (1.4.0)
+Requirement already satisfied: aiosignal>=1.1.2 in /usr/local/lib/python3.10/dist-packages (from aiohttp->datasets==3.2.0) (1.3.1)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.29,>=1.0.0->wandb==0.19.1)
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic>=2.0.0->deepspeed==0.16.1) (0.6.0)
+Collecting pydantic-core==2.27.2 (from pydantic>=2.0.0->deepspeed==0.16.1)
+  Downloading pydantic_core-2.27.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.6 kB)
+Collecting typing-extensions>=3.7.4.3 (from huggingface-hub==0.27.0)
+  Downloading typing_extensions-4.13.0-py3-none-any.whl.metadata (3.0 kB)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.47.1) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.47.1) (1.26.18)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.47.1) (2023.11.17)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch>=1.10.0->accelerate==1.2.1) (2.6.3)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch>=1.10.0->accelerate==1.2.1) (3.1.2)
+Collecting humanfriendly>=9.1 (from coloredlogs->optimum==1.23.3)
+  Downloading humanfriendly-10.0-py2.py3-none-any.whl.metadata (9.2 kB)
+Requirement already satisfied: python-dateutil>=2.8.1 in /usr/local/lib/python3.10/dist-packages (from pandas->datasets==3.2.0) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas->datasets==3.2.0) (2023.3.post1)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.10/dist-packages (from rich->trl==0.13.0) (3.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.10/dist-packages (from rich->trl==0.13.0) (2.17.1)
+Requirement already satisfied: mpmath>=0.19 in /usr/local/lib/python3.10/dist-packages (from sympy->optimum==1.23.3) (1.3.0)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb==0.19.1)
+  Downloading smmap-5.0.2-py3-none-any.whl.metadata (4.3 kB)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py>=2.2.0->rich->trl==0.13.0) (0.1.2)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch>=1.10.0->accelerate==1.2.1) (2.1.3)
+Downloading accelerate-1.2.1-py3-none-any.whl (336 kB)
+Downloading transformers-4.47.1-py3-none-any.whl (10.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.1/10.1 MB 117.6 MB/s eta 0:00:00
+Downloading datasets-3.2.0-py3-none-any.whl (480 kB)
+Downloading evaluate-0.4.3-py3-none-any.whl (84 kB)
+Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
+Downloading huggingface_hub-0.27.0-py3-none-any.whl (450 kB)
+Downloading sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 119.8 MB/s eta 0:00:00
+Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 118.4 MB/s eta 0:00:00
+Downloading wandb-0.19.1-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (18.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.8/18.8 MB 57.4 MB/s eta 0:00:00
+Downloading trl-0.13.0-py3-none-any.whl (293 kB)
+Downloading optimum-1.23.3-py3-none-any.whl (424 kB)
+Downloading peft-0.14.0-py3-none-any.whl (374 kB)
+Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
+Downloading GitPython-3.1.44-py3-none-any.whl (207 kB)
+Downloading multiprocess-0.70.16-py310-none-any.whl (134 kB)
+Downloading pyarrow-19.0.1-cp310-cp310-manylinux_2_28_aarch64.whl (40.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 MB 116.0 MB/s eta 0:00:00
+Downloading pydantic-2.10.6-py3-none-any.whl (431 kB)
+Downloading pydantic_core-2.27.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 118.6 MB/s eta 0:00:00
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (459 kB)
+Downloading sentry_sdk-2.24.1-py2.py3-none-any.whl (336 kB)
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+Downloading typing_extensions-4.13.0-py3-none-any.whl (45 kB)
+Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+Downloading nvidia_ml_py-12.570.86-py3-none-any.whl (44 kB)
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+Downloading setproctitle-1.3.5-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (31 kB)
+Downloading xxhash-3.5.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (220 kB)
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+Downloading smmap-5.0.2-py3-none-any.whl (24 kB)
+Building wheels for collected packages: deepspeed
+  Building wheel for deepspeed (setup.py): started
+  Building wheel for deepspeed (setup.py): finished with status 'done'
+  Created wheel for deepspeed: filename=deepspeed-0.16.1-py3-none-any.whl size=1543972 sha256=b2c62a71d6bfa11c0c3fa671bcc5df7135d58fa1d9c0c7d330689466715a003c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-um00tfzl/wheels/e8/a6/09/09e982334b832b202b1752644a6b314b922eb3897416846b7e
+Successfully built deepspeed
+Installing collected packages: sentencepiece, py-cpuinfo, nvidia-ml-py, hjson, xxhash, typing-extensions, tqdm, smmap, setproctitle, sentry-sdk, safetensors, requests, pyarrow, humanfriendly, docker-pycreds, dill, rich, pydantic-core, multiprocess, huggingface-hub, gitdb, coloredlogs, tokenizers, pydantic, gitpython, accelerate, wandb, transformers, deepspeed, datasets, trl, peft, optimum, evaluate
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.8.0
+    Uninstalling typing_extensions-4.8.0:
+      Successfully uninstalled typing_extensions-4.8.0
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.1
+    Uninstalling tqdm-4.66.1:
+      Successfully uninstalled tqdm-4.66.1
+  Attempting uninstall: requests
+    Found existing installation: requests 2.31.0
+    Uninstalling requests-2.31.0:
+      Successfully uninstalled requests-2.31.0
+  Attempting uninstall: pyarrow
+    Found existing installation: pyarrow 12.0.1
+    Uninstalling pyarrow-12.0.1:
+      Successfully uninstalled pyarrow-12.0.1
+  Attempting uninstall: pydantic-core
+    Found existing installation: pydantic_core 2.14.3
+    Uninstalling pydantic_core-2.14.3:
+      Successfully uninstalled pydantic_core-2.14.3
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.5.1
+    Uninstalling pydantic-2.5.1:
+      Successfully uninstalled pydantic-2.5.1
+Successfully installed accelerate-1.2.1 coloredlogs-15.0.1 datasets-3.2.0 deepspeed-0.16.1 dill-0.3.8 docker-pycreds-0.4.0 evaluate-0.4.3 gitdb-4.0.12 gitpython-3.1.44 hjson-3.1.0 huggingface-hub-0.27.0 humanfriendly-10.0 multiprocess-0.70.16 nvidia-ml-py-12.570.86 optimum-1.23.3 peft-0.14.0 py-cpuinfo-9.0.0 pyarrow-19.0.1 pydantic-2.10.6 pydantic-core-2.27.2 requests-2.32.3 rich-13.9.4 safetensors-0.5.3 sentencepiece-0.2.0 sentry-sdk-2.24.1 setproctitle-1.3.5 smmap-5.0.2 tokenizers-0.21.0 tqdm-4.67.1 transformers-4.47.1 trl-0.13.0 typing-extensions-4.13.0 wandb-0.19.1 xxhash-3.5.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python -m pip install --upgrade pip
++ pip install --upgrade transformer-engine==1.13.0
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting transformer-engine==1.13.0
+  Downloading transformer_engine-1.13.0-py3-none-any.whl.metadata (16 kB)
+Collecting transformer_engine_cu12==1.13.0 (from transformer-engine==1.13.0)
+  Downloading transformer_engine_cu12-1.13.0-py3-none-manylinux_2_28_aarch64.whl.metadata (16 kB)
+Requirement already satisfied: pydantic in /usr/local/lib/python3.10/dist-packages (from transformer_engine_cu12==1.13.0->transformer-engine==1.13.0) (2.10.6)
+Requirement already satisfied: importlib-metadata>=1.0 in /usr/local/lib/python3.10/dist-packages (from transformer_engine_cu12==1.13.0->transformer-engine==1.13.0) (6.8.0)
+Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from transformer_engine_cu12==1.13.0->transformer-engine==1.13.0) (23.2)
+Requirement already satisfied: zipp>=0.5 in /usr/local/lib/python3.10/dist-packages (from importlib-metadata>=1.0->transformer_engine_cu12==1.13.0->transformer-engine==1.13.0) (3.17.0)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic->transformer_engine_cu12==1.13.0->transformer-engine==1.13.0) (0.6.0)
+Requirement already satisfied: pydantic-core==2.27.2 in /usr/local/lib/python3.10/dist-packages (from pydantic->transformer_engine_cu12==1.13.0->transformer-engine==1.13.0) (2.27.2)
+Requirement already satisfied: typing-extensions>=4.12.2 in /usr/local/lib/python3.10/dist-packages (from pydantic->transformer_engine_cu12==1.13.0->transformer-engine==1.13.0) (4.13.0)
+Downloading transformer_engine-1.13.0-py3-none-any.whl (459 kB)
+Downloading transformer_engine_cu12-1.13.0-py3-none-manylinux_2_28_aarch64.whl (125.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.0/125.0 MB 117.5 MB/s eta 0:00:00
+Installing collected packages: transformer_engine_cu12, transformer-engine
+  Attempting uninstall: transformer-engine
+    Found existing installation: transformer-engine 1.0.0+66d91d5
+    Uninstalling transformer-engine-1.0.0+66d91d5:
+      Successfully uninstalled transformer-engine-1.0.0+66d91d5
+Successfully installed transformer-engine-1.13.0 transformer_engine_cu12-1.13.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python -m pip install --upgrade pip
++ pip install --upgrade flash-attn==2.7.2.post1
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting flash-attn==2.7.2.post1
+  Downloading flash_attn-2.7.2.post1.tar.gz (3.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 116.4 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: torch in /usr/local/lib/python3.10/dist-packages (from flash-attn==2.7.2.post1) (2.2.0a0+6a974be)
+Requirement already satisfied: einops in /usr/local/lib/python3.10/dist-packages (from flash-attn==2.7.2.post1) (0.7.0)
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from torch->flash-attn==2.7.2.post1) (3.13.1)
+Requirement already satisfied: typing-extensions in /usr/local/lib/python3.10/dist-packages (from torch->flash-attn==2.7.2.post1) (4.13.0)
+Requirement already satisfied: sympy in /usr/local/lib/python3.10/dist-packages (from torch->flash-attn==2.7.2.post1) (1.12)
+Requirement already satisfied: networkx in /usr/local/lib/python3.10/dist-packages (from torch->flash-attn==2.7.2.post1) (2.6.3)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.10/dist-packages (from torch->flash-attn==2.7.2.post1) (3.1.2)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.10/dist-packages (from torch->flash-attn==2.7.2.post1) (2023.10.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2->torch->flash-attn==2.7.2.post1) (2.1.3)
+Requirement already satisfied: mpmath>=0.19 in /usr/local/lib/python3.10/dist-packages (from sympy->torch->flash-attn==2.7.2.post1) (1.3.0)
+Building wheels for collected packages: flash-attn
+  Building wheel for flash-attn (setup.py): started
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): still running...
+  Building wheel for flash-attn (setup.py): finished with status 'done'
+  Created wheel for flash-attn: filename=flash_attn-2.7.2.post1-cp310-cp310-linux_aarch64.whl size=188857743 sha256=49ff6c47e106cb4a4fbd8a512f9e7309f0a5f286996720a9a160bce2fb6099bf
+  Stored in directory: /tmp/pip-ephem-wheel-cache-248og8wy/wheels/da/ec/5b/b2c37a8e4f755ad82492a822463bca0817f0e0e11de874b550
+Successfully built flash-attn
+Installing collected packages: flash-attn
+  Attempting uninstall: flash-attn
+    Found existing installation: flash-attn 2.0.4
+    Uninstalling flash-attn-2.0.4:
+      Successfully uninstalled flash-attn-2.0.4
+Successfully installed flash-attn-2.7.2.post1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python -m pip install --upgrade pip
++ cd /opt
++ git clone https://github.com/microsoft/Megatron-DeepSpeed
+Cloning into 'Megatron-DeepSpeed'...
++ cd Megatron-DeepSpeed/megatron/data
++ make
+g++ -O3 -Wall -shared -std=c++11 -fPIC -fdiagnostics-color -I/usr/include/python3.10 -I/usr/local/lib/python3.10/dist-packages/pybind11/include helpers.cpp -o helpers.cpython-310-aarch64-linux-gnu.so
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Creating SIF file...
+INFO:    Build complete: llm2.sif
