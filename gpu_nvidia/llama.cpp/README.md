@@ -58,11 +58,11 @@ Connect llama-server to OpenWebUI.
   - URL: http://127.0.0.1:10000/v1
   - API Key: none
 
-  <img src="./images/openwebui1.jpg">
+  <img src="./images/openwebui1.jpg" width="640">
 
 You can now use Open WebUI’s chat interface to interact with the 
 
-  <img src="./images/openwebui2.jpg">
+  <img src="./images/openwebui2.jpg" width="640">
 
 # **Benchmark test**
 
