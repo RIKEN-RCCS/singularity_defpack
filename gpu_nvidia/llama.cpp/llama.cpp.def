@@ -9,6 +9,7 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
       wget \
       vim \
       build-essential \
+      libcurl4-openssl-dev \
       && apt-get clean && rm -rf /var/lib/apt/lists/*
 
   mkdir /opt/uv
@@ -19,7 +20,7 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
   git clone https://github.com/ggerganov/llama.cpp.git
   cd llama.cpp
   git checkout b4953
-  cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_ENABLE_UNIFIED_MEMORY=1 -DGGML_CUDA_FORCE_CUBLAS=true -DGGML_CUDA_F16=true
+  cmake -B build -DGGML_CUDA=ON -DGGML_CUDA_ENABLE_UNIFIED_MEMORY=1 -DGGML_CUDA_FORCE_CUBLAS=true -DGGML_CUDA_F16=true -DLLAMA_CURL=ON
   cd build
   cmake --build . --verbose -j32
   cmake --install .

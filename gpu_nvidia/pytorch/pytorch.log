@@ -1,0 +1,116 @@
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+INFO:    Extracting OCI image...
+2024/11/28 13:21:44  warn rootless{usr/local/nvm/versions/node/v16.20.2/bin/corepack} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:21:44  warn rootless{usr/local/nvm/versions/node/v16.20.2/bin/npm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:21:44  warn rootless{usr/local/nvm/versions/node/v16.20.2/bin/npx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:09  warn rootless{usr/lib/libarrow.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:09  warn rootless{usr/lib/libarrow.so.1200} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:10  warn rootless{usr/lib/libarrow_acero.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:10  warn rootless{usr/lib/libarrow_acero.so.1200} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:10  warn rootless{usr/lib/libarrow_dataset.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:10  warn rootless{usr/lib/libarrow_dataset.so.1200} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:22  warn rootless{usr/lib/libparquet.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2024/11/28 13:22:22  warn rootless{usr/lib/libparquet.so.1200} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+INFO:    Inserting Singularity configuration...
+INFO:    Running setup scriptlet
++ mkdir /tmp/build-temp-132991023/rootfs/lvs0
+INFO:    Running post scriptlet
++ apt-get update
+Get:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease [270 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 Packages [17.2 MB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy/restricted arm64 Packages [24.2 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 Packages [1758 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy/multiverse arm64 Packages [224 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [2694 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [2418 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1463 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [29.5 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports jammy-backports/universe arm64 Packages [31.8 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports jammy-backports/main arm64 Packages [80.9 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1179 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [24.2 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [2138 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [2610 kB]
+Fetched 32.5 MB in 9s (3685 kB/s)
+Reading package lists...
++ apt-get install -y --no-install-recommends wget vim build-essential
+Reading package lists...
+Building dependency tree...
+Reading state information...
+build-essential is already the newest version (12.9ubuntu3).
+The following additional packages will be installed:
+  vim-common vim-runtime
+Suggested packages:
+  ctags vim-doc vim-scripts
+The following packages will be upgraded:
+  vim vim-common vim-runtime wget
+4 upgraded, 0 newly installed, 0 to remove and 86 not upgraded.
+Need to get 8915 kB of archives.
+After this operation, 50.2 kB disk space will be freed.
+Get:1 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 vim arm64 2:8.2.3995-1ubuntu2.21 [1666 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 vim-runtime all 2:8.2.3995-1ubuntu2.21 [6834 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 vim-common all 2:8.2.3995-1ubuntu2.21 [81.5 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 wget arm64 1.21.2-2ubuntu1.1 [334 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78, <> line 4.)
+debconf: falling back to frontend: Readline
+Fetched 8915 kB in 5s (1835 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22778 files and directories currently installed.)
+Preparing to unpack .../vim_2%3a8.2.3995-1ubuntu2.21_arm64.deb ...
+Unpacking vim (2:8.2.3995-1ubuntu2.21) over (2:8.2.3995-1ubuntu2.13) ...
+Preparing to unpack .../vim-runtime_2%3a8.2.3995-1ubuntu2.21_all.deb ...
+Unpacking vim-runtime (2:8.2.3995-1ubuntu2.21) over (2:8.2.3995-1ubuntu2.13) ...
+Preparing to unpack .../vim-common_2%3a8.2.3995-1ubuntu2.21_all.deb ...
+Unpacking vim-common (2:8.2.3995-1ubuntu2.21) over (2:8.2.3995-1ubuntu2.13) ...
+Preparing to unpack .../wget_1.21.2-2ubuntu1.1_arm64.deb ...
+Unpacking wget (1.21.2-2ubuntu1.1) over (1.21.2-2ubuntu1) ...
+Setting up wget (1.21.2-2ubuntu1.1) ...
+Setting up vim-common (2:8.2.3995-1ubuntu2.21) ...
+Setting up vim-runtime (2:8.2.3995-1ubuntu2.21) ...
+Setting up vim (2:8.2.3995-1ubuntu2.21) ...
++ apt-get clean
++ rm -rf /var/lib/apt/lists/auxfiles /var/lib/apt/lists/lock /var/lib/apt/lists/partial /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-backports_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-backports_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-backports_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_universe_binary-arm64_Packages.lz4
++ pip install --no-cache-dir --upgrade pip setuptools wheel
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Requirement already satisfied: pip in /usr/local/lib/python3.10/dist-packages (23.3.1)
+Collecting pip
+  Downloading pip-24.3.1-py3-none-any.whl.metadata (3.7 kB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (68.2.2)
+Collecting setuptools
+  Downloading setuptools-75.6.0-py3-none-any.whl.metadata (6.7 kB)
+Requirement already satisfied: wheel in /usr/local/lib/python3.10/dist-packages (0.41.3)
+Collecting wheel
+  Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+Downloading pip-24.3.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 29.5 MB/s eta 0:00:00
+Downloading setuptools-75.6.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 124.8 MB/s eta 0:00:00
+Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 470.9 MB/s eta 0:00:00
+Installing collected packages: wheel, setuptools, pip
+  Attempting uninstall: wheel
+    Found existing installation: wheel 0.41.3
+    Uninstalling wheel-0.41.3:
+      Successfully uninstalled wheel-0.41.3
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 68.2.2
+    Uninstalling setuptools-68.2.2:
+      Successfully uninstalled setuptools-68.2.2
+  Attempting uninstall: pip
+    Found existing installation: pip 23.3.1
+    Uninstalling pip-23.3.1:
+      Successfully uninstalled pip-23.3.1
+Successfully installed pip-24.3.1 setuptools-75.6.0 wheel-0.45.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+INFO:    Adding environment to container
+INFO:    Adding testscript
+INFO:    Running testscript
+PyTorch version: 2.2.0a0+6a974be
+CUDA available: False
+CUDA version: 12.3
+INFO:    Creating SIF file...
+INFO:    Build complete: pytorch.sif
