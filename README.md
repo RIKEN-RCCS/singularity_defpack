@@ -1,4 +1,4 @@
-# **Singularity Container Definition File Package**
+# **Singularity Container Definition File and Performance**
 
 ## Definition Files
 
