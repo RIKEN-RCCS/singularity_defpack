@@ -6,52 +6,54 @@
 | ---- | ---- | ---- | ---- | ---- |
 |  A64FX |  |  | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_a64fx/pytorch_2.5.0) : v2.5.0 <br> [Pytorch Install Guide](https://github.com/fujitsu/pytorch/wiki) | |
 |  Neoverse V1 | spack-ver1-1 | [gcc](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/gcc_14.1.0) : v14.1.0 <br> [llvm](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llvm_19.1.4) : v19.1.4 <br> [acl](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/acfl_24.10.1) : v24.10.1 |  [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/pytorch_2.5.0) : v2.5.0 <br> [tensorflow](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/tensorflow_2.17) : v2.17.1 <br> [llama.cpp](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llama.cpp) : b4953+OpenWebUI <br> [Megatron-DeepSpeed](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/Megatron-DeepSpeed)| |
-|  Sapphire Rapids | [application](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/application) | [gcc](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gcc_14.1.0) : v14.1.0 <br> [llvm](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/llvm_19.1.4) : v19.1.4 <br> [oneapi](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/oneapi_2025.0.1) | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/pytorch_2.5.0) : v2.5.0 <br> [tensorflow](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/tensorflow_2.17) : v2.17.1 <br> [llama.cpp](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/cpu_sapphirerapids/llama.cpp) : b4953+OpenWebUI | [btop](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/btop) <br> [gromacs](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gromacs_2024.04) : v2024.04|
+|  Sapphire Rapids | [application](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/application) | [gcc](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gcc_14.1.0) : v14.1.0 <br> [llvm](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/llvm_19.1.4) : v19.1.4 <br> [oneapi](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/oneapi_2025.0.1) | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/pytorch_2.5.0) : v2.5.0 <br> [tensorflow](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/tensorflow_2.17) : v2.17.1 <br> [llama.cpp](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/cpu_sapphirerapids/llama.cpp) : b4953+OpenWebUI | [btop](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/btop) <br> [glow](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/cpu_sapphirerapids/glow) <br> [gromacs](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gromacs_2024.04) : v2024.04|
 |  Zen4 |  | [aocc](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_zen4/aocc) |  | |
 |  Nvidia GPU |  |  | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/pytorch) : v2.2.0 <br> [Megatron-DeepSpeed](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/Megatron-DeepSpeed) <br> [llama.cpp](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/llama.cpp) : b4953+OpenWebUI<br> [llm-jp-eval](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/llm-jp-eval) | [opensplat+colmap](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/opensplat)|
 |  AMD GPU    |  |  | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/pytorch) : v2.1.2 <br> [Megatron-DeepSpeed](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/Megatron-DeepSpeed)| |
 
 ### ARM A64FX (Fugaku)
 
- - PyTorch v2.5.0 : pytorch.def (with oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27)
+ - PyTorch v2.5.0 : Tensors and Dynamic neural networks in Python with oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27
 
 ### ARM Neoverse V1 (Probably, V2 should be fine as well)
 
- - GCC v14.1.0 : gcc.def (includes openblas, fftw, armpl)
- - LLVM v19.1.4 : llvm.def (includes openblas, fftw, armpl)
- - Arm Compiler for Linux v24.10.1 : acfl.def (includes armpl)
- - llama.cpp b4953 : llama.cpp.def (requires GCC v14.1.0 container image)
- - PyTorch v2.5.0 : pytorch.def (with oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27)
- - TensorFlow v2.17.1 : tensorflow.def (with oneDNN v3.2.1, ACL v23.05.1)
- - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch v2.5.0 container image)
+ - GCC v14.1.0 : The GNU Compiler Collection includes C, C++ and Fortran includes *openblas, fftw, armpl*
+ - LLVM v19.1.4 : Collection of modular and reusable compiler and toolchain technologies includes openblas, fftw, armpl
+ - Arm Compiler for Linux v24.10.1 : Suite of tools containing Arm C/C++ Compiler, Arm Fortran Compiler, Arm Performance Libraries
+ - llama.cpp b4953 : LLM inference in C/C++
+ - PyTorch v2.5.0 : Tensors and Dynamic neural networks in Python with oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27
+ - TensorFlow v2.17.1 : An Open Source Machine Learning Framework with oneDNN v3.2.1, ACL v23.05.1
+ - Megatron DeepSpeed : Ongoing research training transformer language models at scale, including: BERT & GPT-2
 
 ### Intel Sapphire Rapids
 
- - GCC v14.1.0 : gcc.def (includes openblas, fftw)
- - LLVM v19.1.4 : llvm.def (includes openblas, fftw)
- - oneAPI : oneapi.def (includes mkl)
- - PyTorch v2.5.0 : pytorch.def
- - TensorFlow v2.17.1 : tensorflow.def
- - HPC Applications : application.def (based on VirtualFugaku v1.1)
- - btop
- - Gromacs 2024.04
+ - GCC v14.1.0 : The GNU Compiler Collection includes C, C++ and Fortran includes openblas, fftw
+ - LLVM v19.1.4 : Collection of modular and reusable compiler and toolchain technologies includes openblas, fftw
+ - oneAPI : Intel software development tool kit
+ - llama.cpp b4953 : LLM inference in C/C++
+ - PyTorch v2.5.0 : Tensors and Dynamic neural networks in Python
+ - TensorFlow v2.17.1 : An Open Source Machine Learning Framework
+ - HPC Applications : VirtualFugaku v1.1
+ - btop : A monitor of resources
+ - glow : Render markdown on the CLI, with pizzazz!
+ - Gromacs 2024.04 : Molecular simulation toolkit
 
 ### AMD Zen4 (EPYC 9004 series)
 
- - AMD Optimizin C/C++ and Fortran compilers : aocc.def (includes amd-aocl, aocl-compression, aocl-da, aocl-utils, aocl-libmem, aocl-sparse)
+ - AMD Optimizin C/C++ and Fortran compilers : AMD Optimizing C/C++ Compiler includes amd-aocl, aocl-compression, aocl-da, aocl-utils, aocl-libmem, aocl-sparse
 
 ### NVIDIA GPU
 
- - PyTorch v2.2.0 : pytorch.def
- - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
- - llama.cpp b4953 : llama.cpp.def
- - llm-jp-eval : llm-jp-eval.def (requires PyTorch container image)
- - OpenSplat+colmap
+ - PyTorch v2.2.0 : Tensors and Dynamic neural networks in Python
+ - Megatron DeepSpeed : Ongoing research training transformer language models at scale, including: BERT & GPT-2
+ - llama.cpp b4953 : LLM inference in C/C++
+ - llm-jp-eval : Automatically evaluating large-scale Japanese language models across multiple datasets.
+ - OpenSplat+colmap : Production-grade 3D gaussian splatting
 
 ### AMD GPU
 
- - PyTorch v2.1.2 : pytorch.def
- - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
+ - PyTorch v2.1.2 : Tensors and Dynamic neural networks in Python
+ - Megatron DeepSpeed : Ongoing research training transformer language models at scale, including: BERT & GPT-2
 
 ## How to Create Container
 
