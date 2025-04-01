@@ -1,0 +1,43 @@
+Bootstrap: localimage
+From: oneapi.sif
+
+%setup
+
+%environment
+
+%files
+
+%post
+  dnf -y install cmake
+
+  . /opt/spack/share/spack/setup-env.sh
+
+  CC=icx
+  CXX=icpx
+
+  export LIBRARY_PATH=`spack location -i intel-oneapi-mkl`/mkl/latest/lib:$LIBRARY_PATH
+  export LD_LIBRARY_PATH=`spack location -i intel-oneapi-mkl`/mkl/latest/lib:$LD_LIBRARY_PATH
+
+  cd /opt
+  git clone https://github.com/ggerganov/llama.cpp.git
+  cd llama.cpp
+  git checkout b4953
+  cmake -B build
+# cmake -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=Intel10_64lp -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX -DGGML_NATIVE=ON -B build
+  cd build
+  cmake --build . --verbose -j32
+  cmake --install .
+  cd /opt
+  rm -rf llama.cpp
+
+%runscript
+  GPERF_DIR=`spack location -i gperftools`
+  VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
+
+  export PATH=/usr/local/go/pkg/tool/linux_amd64:${PATH}:/usr/local/bin:${GPERF_DIR}/bin
+  export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/lib:/usr/local/lib64:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib
+  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib:/usr/local/lib64:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib
+  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools
+  export CPLUS_INCLUDE_PATH=${CPLUS_INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools
+  export INCLUDE_PATH=${INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools
+  exec "$@"

@@ -1,0 +1,53 @@
+Bootstrap: localimage
+From: gcc.sif
+
+%environment
+
+%files
+
+%post
+  OB_DIR=`spack location -i openblas`
+  FFTW_DIR=`spack location -i fftw`
+  GPERF_DIR=`spack location -i gperftools`
+  VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
+
+  source /opt/intel/oneapi/setvars.sh --force
+
+  export PATH=/usr/local/go/pkg/tool/linux_amd64:${PATH}:/usr/local/bin:/usr/local/go/bin:${GPERF_DIR}/bin:${FFTW_DIR}/bin
+  export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+
+  cd /opt
+  wget ftp://ftp.gromacs.org/gromacs/gromacs-2024.4.tar.gz
+  tar zxvf gromacs-2024.4.tar.gz
+  cd gromacs-2024.4
+
+  mkdir build
+  cd build
+  cmake .. \
+        -DCMAKE_C_COMPILER=gcc \
+        -DCMAKE_CXX_COMPILER=g++ \
+        -DCMAKE_C_FLAGS="-O3 -march=native -fstrict-aliasing -g -fno-omit-frame-pointer" \
+        -DCMAKE_CXX_FLAGS="-O3 -march=native -fstrict-aliasing -g -fno-omit-frame-pointer" \
+        -DGMX_MPI=ON
+  make VERBOSE=1 -j32
+  #make check -j32
+  make install
+  cd /opt
+  rm -rf /opt/gromacs-2024.4
+
+%runscript
+  OB_DIR=`spack location -i openblas`
+  FFTW_DIR=`spack location -i fftw`
+  GPERF_DIR=`spack location -i gperftools`
+  VIEW_DIR=/opt/spack/var/spack/environments/virtual_fugaku/.spack-env/view
+
+  source /opt/intel/oneapi/setvars.sh --force
+
+  export PATH=/usr/local/go/pkg/tool/linux_amd64:${PATH}:/usr/local/bin:/usr/local/go/bin:${GPERF_DIR}/bin:${FFTW_DIR}/bin
+  export LIBRARY_PATH=${LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib:${VIEW_DIR}/lib:${VIEW_DIR}/lib64:${GPERF_DIR}/lib:${OB_DIR}/lib:${FFTW_DIR}/lib
+  export C_INCLUDE_PATH=${C_INCLUDE_PATH}:/usr/local/include:${GPERF_DIR}/include/gperftools:${OB_DIR}/include:${FFTW_DIR}/include
+  source /usr/local/gromacs/bin/GMXRC
+  exec "$@"

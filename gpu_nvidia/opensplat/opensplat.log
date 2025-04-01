@@ -1,0 +1,349 @@
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+INFO:    Extracting OCI image...
+2025/03/12 22:02:11  warn rootless{usr/local/nvm/versions/node/v16.20.2/bin/corepack} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:11  warn rootless{usr/local/nvm/versions/node/v16.20.2/bin/npm} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:11  warn rootless{usr/local/nvm/versions/node/v16.20.2/bin/npx} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:38  warn rootless{usr/bin/protoc} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_bad_any_cast_impl.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_bad_optional_access.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_bad_variant_access.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_base.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_city.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_civil_time.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_cord.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_cord_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_cordz_functions.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_cordz_handle.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_cordz_info.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_cordz_sample_token.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_crc32c.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_crc_cord_state.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_crc_cpu_detect.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_crc_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_debugging_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_demangle_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_die_if_null.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_examine_stack.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_exponential_biased.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_failure_signal_handler.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_commandlineflag.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_commandlineflag_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_config.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_marshalling.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_parse.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_private_handle_accessor.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_program_name.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_reflection.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_usage.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_flags_usage_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_graphcycles_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_hash.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_hashtablez_sampler.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_int128.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_kernel_timeout_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_leak_check.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_entry.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_flags.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_globals.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_initialize.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_check_op.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_conditions.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_format.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_globals.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_log_sink_set.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_message.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_nullguard.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_internal_proto.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_severity.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_log_sink.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_low_level_hash.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_malloc_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_periodic_sampler.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_distributions.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_distribution_test_util.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_platform.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_pool_urbg.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_randen.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_randen_hwaes.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_randen_hwaes_impl.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_randen_slow.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_internal_seed_material.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_seed_gen_exception.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_random_seed_sequences.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_raw_hash_set.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_raw_logging_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_scoped_set_env.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_spinlock_wait.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_stacktrace.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_status.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_statusor.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_str_format_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_strerror.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_string_view.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_strings.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_strings_internal.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_symbolize.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_synchronization.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_throw_delegate.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_time.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libabsl_time_zone.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libaddress_sorting.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libaddress_sorting.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libarrow.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libarrow.so.1400} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libarrow_acero.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libarrow_acero.so.1400} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libarrow_dataset.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:39  warn rootless{usr/lib/libarrow_dataset.so.1400} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libfmt.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libfmt.so.10} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgpr.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgpr.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_alts.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_alts.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_error_details.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_error_details.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_reflection.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_reflection.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_unsecure.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc++_unsecure.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc_authorization_provider.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc_authorization_provider.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc_plugin_support.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc_plugin_support.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc_unsecure.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpc_unsecure.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpcpp_channelz.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libgrpcpp_channelz.so.1.62} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libparquet.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libparquet.so.1400} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libprotobuf-lite.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libprotobuf.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:41  warn rootless{usr/lib/libprotoc.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libspdlog.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libspdlog.so.1.12} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_base_lib.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_base_lib.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_json_lib.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_json_lib.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_mem_lib.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_mem_lib.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_message_lib.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_message_lib.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_textformat_lib.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libupb_textformat_lib.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libutf8_range_lib.so} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+2025/03/12 22:02:42  warn rootless{usr/lib/libutf8_range_lib.so.39} ignoring (usually) harmless EPERM on setxattr "user.rootlesscontainers"
+INFO:    Inserting Singularity configuration...
+INFO:    Running setup scriptlet
++ mkdir /tmp/build-temp-906482159/rootfs/lvs0
+INFO:    Running post scriptlet
++ apt-get update
+Get:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease [270 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 Packages [1758 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy/multiverse arm64 Packages [224 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy/restricted arm64 Packages [24.2 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 Packages [17.2 MB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [41.5 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [2654 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [3228 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1490 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports jammy-backports/universe arm64 Packages [33.3 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports jammy-backports/main arm64 Packages [81.0 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [35.2 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [2350 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1197 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [3067 kB]
+Fetched 34.0 MB in 10s (3560 kB/s)
+Reading package lists...
++ apt-get install -y --no-install-recommends wget vim build-essential
+Reading package lists...
+Building dependency tree...
+Reading state information...
+build-essential is already the newest version (12.9ubuntu3).
+The following additional packages will be installed:
+  vim-common vim-runtime
+Suggested packages:
+  ctags vim-doc vim-scripts
+The following packages will be upgraded:
+  vim vim-common vim-runtime wget
+4 upgraded, 0 newly installed, 0 to remove and 63 not upgraded.
+Need to get 8914 kB of archives.
+After this operation, 57.3 kB disk space will be freed.
+Get:1 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 vim arm64 2:8.2.3995-1ubuntu2.23 [1664 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 vim-runtime all 2:8.2.3995-1ubuntu2.23 [6833 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 vim-common all 2:8.2.3995-1ubuntu2.23 [81.5 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 wget arm64 1.21.2-2ubuntu1.1 [334 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 78, <> line 4.)
+debconf: falling back to frontend: Readline
+Fetched 8914 kB in 5s (1817 kB/s)
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22738 files and directories currently installed.)
+Preparing to unpack .../vim_2%3a8.2.3995-1ubuntu2.23_arm64.deb ...
+Unpacking vim (2:8.2.3995-1ubuntu2.23) over (2:8.2.3995-1ubuntu2.16) ...
+Preparing to unpack .../vim-runtime_2%3a8.2.3995-1ubuntu2.23_all.deb ...
+Unpacking vim-runtime (2:8.2.3995-1ubuntu2.23) over (2:8.2.3995-1ubuntu2.16) ...
+Preparing to unpack .../vim-common_2%3a8.2.3995-1ubuntu2.23_all.deb ...
+Unpacking vim-common (2:8.2.3995-1ubuntu2.23) over (2:8.2.3995-1ubuntu2.16) ...
+Preparing to unpack .../wget_1.21.2-2ubuntu1.1_arm64.deb ...
+Unpacking wget (1.21.2-2ubuntu1.1) over (1.21.2-2ubuntu1) ...
+Setting up wget (1.21.2-2ubuntu1.1) ...
+Setting up vim-common (2:8.2.3995-1ubuntu2.23) ...
+Setting up vim-runtime (2:8.2.3995-1ubuntu2.23) ...
+Setting up vim (2:8.2.3995-1ubuntu2.23) ...
++ apt-get clean
++ rm -rf /var/lib/apt/lists/auxfiles /var/lib/apt/lists/lock /var/lib/apt/lists/partial /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-backports_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-backports_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-backports_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-security_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy-updates_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_jammy_universe_binary-arm64_Packages.lz4
++ pip install --no-cache-dir --upgrade pip setuptools wheel
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Requirement already satisfied: pip in /usr/local/lib/python3.10/dist-packages (24.0)
+Collecting pip
+  Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.10/dist-packages (68.2.2)
+Collecting setuptools
+  Downloading setuptools-76.0.0-py3-none-any.whl.metadata (6.7 kB)
+Requirement already satisfied: wheel in /usr/local/lib/python3.10/dist-packages (0.43.0)
+Collecting wheel
+  Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 79.5 MB/s eta 0:00:00
+Downloading setuptools-76.0.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 126.2 MB/s eta 0:00:00
+Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.5/72.5 kB 452.6 MB/s eta 0:00:00
+Installing collected packages: wheel, setuptools, pip
+  Attempting uninstall: wheel
+    Found existing installation: wheel 0.43.0
+    Uninstalling wheel-0.43.0:
+      Successfully uninstalled wheel-0.43.0
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 68.2.2
+    Uninstalling setuptools-68.2.2:
+      Successfully uninstalled setuptools-68.2.2
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed pip-25.0.1 setuptools-76.0.0 wheel-0.45.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ cd /opt
++ git clone https://github.com/pierotofy/OpenSplat.git
+Cloning into 'OpenSplat'...
++ cd OpenSplat
++ mkdir build
++ cd build
++ cmake -DCMAKE_CUDA_ARCHITECTURES=90 -DGPU_RUNTIME=CUDA -DCMAKE_PREFIX_PATH=/usr/local/lib/python3.10/dist-packages/torch ..
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+OpenSplat Version: 1.1.5 (git commit ff463b7)
+-- Using the multi-header code from /opt/OpenSplat/build/_deps/nlohmann_json-src/include/
+-- nanoflann version: 1.5.5
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- GLM: Version 1.0.1
+-- GLM: Build with C++ features auto detection
+-- Found CUDAToolkit: /usr/local/cuda/targets/sbsa-linux/include (found version "12.4.131")
+-- ** Updated TORCH_CUDA_ARCH_LIST to 9.0 **
+-- The CUDA compiler identification is NVIDIA 12.4.131
+-- Detecting CUDA compiler ABI info
+-- Detecting CUDA compiler ABI info - done
+-- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped
+-- Detecting CUDA compile features
+-- Detecting CUDA compile features - done
+-- Found CUDA: /usr/local/cuda (found version "12.4") 
+-- Found CUDAToolkit: /usr/local/cuda/include (found version "12.4.131")
+-- Caffe2: CUDA detected: 12.4
+-- Caffe2: CUDA nvcc is: /usr/local/cuda/bin/nvcc
+-- Caffe2: CUDA toolkit directory: /usr/local/cuda
+-- Caffe2: Header version is: 12.4
+-- /usr/local/cuda-12.4/targets/sbsa-linux/lib/libnvrtc.so shorthash is 92f00e8a
+-- USE_CUDNN is set to 0. Compiling without cuDNN support
+-- USE_CUSPARSELT is set to 0. Compiling without cuSPARSELt support
+-- Added CUDA NVCC flags for: -gencode;arch=compute_90,code=sm_90
+CMake Warning at /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:22 (message):
+  static library kineto_LIBRARY-NOTFOUND not found.
+Call Stack (most recent call first):
+  /usr/local/lib/python3.10/dist-packages/torch/share/cmake/Torch/TorchConfig.cmake:127 (append_torchlib_if_found)
+  CMakeLists.txt:165 (find_package)
+
+
+-- Found Torch: /usr/local/lib/python3.10/dist-packages/torch/lib/libtorch.so
+-- Found OpenCV: /usr/local (found version "4.7.0")
+-- Configuring done (4.9s)
+-- Generating done (0.0s)
+-- Build files have been written to: /opt/OpenSplat/build
++ make -j32
+[  3%] Building CUDA object CMakeFiles/gsplat.dir/rasterizer/gsplat/forward.cu.o
+[ 15%] Building CUDA object CMakeFiles/gsplat.dir/rasterizer/gsplat/backward.cu.o
+[ 15%] Building CXX object CMakeFiles/gsplat_cpu.dir/rasterizer/gsplat-cpu/gsplat_cpu.cpp.o
+[ 15%] Building CXX object _deps/glm-build/glm/CMakeFiles/glm.dir/detail/glm.cpp.o
+[ 19%] Building CUDA object CMakeFiles/gsplat.dir/rasterizer/gsplat/bindings.cu.o
+/opt/OpenSplat/rasterizer/gsplat/backward.cu(386): warning #177-D: variable "cx" was declared but never referenced
+      float cx = intrins.z;
+            ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/opt/OpenSplat/rasterizer/gsplat/backward.cu(387): warning #177-D: variable "cy" was declared but never referenced
+      float cy = intrins.w;
+            ^
+
+[ 23%] Linking CXX static library libglm.a
+[ 23%] Built target glm
+[ 26%] Linking CXX static library libgsplat_cpu.a
+[ 26%] Built target gsplat_cpu
+/opt/OpenSplat/rasterizer/gsplat/bindings.cu(236): warning #177-D: variable "num_cov3d" was declared but never referenced
+      const auto num_cov3d = num_points * 6;
+                 ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+[ 30%] Linking CXX static library libgsplat.a
+[ 30%] Built target gsplat
+[ 34%] Building CXX object CMakeFiles/opensplat.dir/opensplat.cpp.o
+[ 38%] Building CXX object CMakeFiles/opensplat.dir/point_io.cpp.o
+[ 42%] Building CXX object CMakeFiles/opensplat.dir/nerfstudio.cpp.o
+[ 46%] Building CXX object CMakeFiles/opensplat.dir/model.cpp.o
+[ 50%] Building CXX object CMakeFiles/opensplat.dir/kdtree_tensor.cpp.o
+[ 53%] Building CXX object CMakeFiles/opensplat.dir/spherical_harmonics.cpp.o
+[ 57%] Building CXX object CMakeFiles/opensplat.dir/cv_utils.cpp.o
+[ 61%] Building CXX object CMakeFiles/opensplat.dir/utils.cpp.o
+[ 65%] Building CXX object CMakeFiles/opensplat.dir/project_gaussians.cpp.o
+[ 69%] Building CXX object CMakeFiles/opensplat.dir/rasterize_gaussians.cpp.o
+[ 73%] Building CXX object CMakeFiles/opensplat.dir/ssim.cpp.o
+[ 76%] Building CXX object CMakeFiles/opensplat.dir/optim_scheduler.cpp.o
+[ 80%] Building CXX object CMakeFiles/opensplat.dir/colmap.cpp.o
+[ 84%] Building CXX object CMakeFiles/opensplat.dir/opensfm.cpp.o
+[ 88%] Building CXX object CMakeFiles/opensplat.dir/openmvg.cpp.o
+[ 92%] Building CXX object CMakeFiles/opensplat.dir/input_data.cpp.o
+[ 96%] Building CXX object CMakeFiles/opensplat.dir/tensor_math.cpp.o
+[100%] Linking CXX executable opensplat
+[100%] Built target opensplat
+INFO:    Adding environment to container
+INFO:    Adding testscript
+INFO:    Running testscript
+PyTorch version: 2.4.0a0+07cecf4168.nv24.05
+CUDA available: False
+CUDA version: 12.4
+INFO:    Creating SIF file...
+INFO:    Build complete: opensplat.sif

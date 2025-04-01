@@ -1,0 +1,52 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/pytorch:24.05-py3
+
+%setup
+  mkdir ${SINGULARITY_ROOTFS}/lvs0
+
+%post
+  apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    cmake \
+    ninja-build \
+    build-essential \
+    libboost-program-options-dev \
+    libboost-graph-dev \
+    libboost-system-dev \
+    libeigen3-dev \
+    libflann-dev \
+    libfreeimage-dev \
+    libmetis-dev \
+    libgoogle-glog-dev \
+    libgtest-dev \
+    libgmock-dev \
+    libsqlite3-dev \
+    libglew-dev \
+    qtbase5-dev \
+    libqt5opengl5-dev \
+    libcgal-dev \
+    libceres-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+  pip install --no-cache-dir --upgrade pip setuptools wheel
+
+  cd /opt
+  git clone https://git.ffmpeg.org/ffmpeg.git
+  cd ffmpeg
+  ./configure
+  make
+  make install
+
+  cd /opt
+  git clone https://github.com/colmap/colmap.git
+  cd colmap
+  mkdir build && cd build
+  cmake -DCMAKE_CUDA_ARCHITECTURES="90" -GNinja ..
+  ninja
+  ninja install
+  
+%environment
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+    export NVIDIA_VISIBLE_DEVICES=all
+    export NVIDIA_DRIVER_CAPABILITIES=compute,utility

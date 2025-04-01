@@ -1,0 +1,195 @@
+INFO:    Starting build...
+INFO:    Verifying bootstrap image pytorch.sif
+WARNING: integrity: signature not found for object group 1
+WARNING: Bootstrap image could not be verified, but build will continue.
+INFO:    Running setup scriptlet
+INFO:    Running post scriptlet
++ pip install accelerate transformers deepspeed bitsandbytes datasets evaluate hjson huggingface-hub sentencepiece tokenizers wandb ninja packaging pybind11 six trl optimum
+Collecting accelerate
+  Downloading accelerate-1.1.1-py3-none-any.whl.metadata (19 kB)
+Collecting transformers
+  Downloading transformers-4.46.3-py3-none-any.whl.metadata (44 kB)
+Collecting deepspeed
+  Downloading deepspeed-0.16.0.tar.gz (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 39.9 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting bitsandbytes
+  Downloading bitsandbytes-0.44.1-py3-none-manylinux_2_24_x86_64.whl.metadata (3.5 kB)
+Collecting datasets
+  Downloading datasets-3.1.0-py3-none-any.whl.metadata (20 kB)
+Collecting evaluate
+  Downloading evaluate-0.4.3-py3-none-any.whl.metadata (9.2 kB)
+Collecting hjson
+  Downloading hjson-3.1.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting huggingface-hub
+  Downloading huggingface_hub-0.26.2-py3-none-any.whl.metadata (13 kB)
+Collecting sentencepiece
+  Downloading sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+Collecting tokenizers
+  Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting wandb
+  Downloading wandb-0.18.7-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.7 kB)
+Collecting ninja
+  Downloading ninja-1.11.1.2-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl.metadata (5.3 kB)
+Requirement already satisfied: packaging in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (24.0)
+Collecting pybind11
+  Downloading pybind11-2.13.6-py3-none-any.whl.metadata (9.5 kB)
+Requirement already satisfied: six in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (1.16.0)
+Collecting trl
+  Downloading trl-0.12.1-py3-none-any.whl.metadata (10 kB)
+Collecting optimum
+  Downloading optimum-1.23.3-py3-none-any.whl.metadata (20 kB)
+Requirement already satisfied: numpy<3.0.0,>=1.17 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from accelerate) (1.22.4)
+Requirement already satisfied: psutil in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from accelerate) (5.9.8)
+Requirement already satisfied: pyyaml in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from accelerate) (6.0.1)
+Collecting safetensors>=0.4.3 (from accelerate)
+  Downloading safetensors-0.4.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Requirement already satisfied: torch>=1.10.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from accelerate) (2.1.2+git53da8f8)
+Requirement already satisfied: filelock in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from transformers) (3.13.1)
+Collecting regex!=2019.12.17 (from transformers)
+  Downloading regex-2024.11.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+Requirement already satisfied: requests in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from transformers) (2.32.3)
+Collecting tokenizers
+  Downloading tokenizers-0.20.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: tqdm>=4.27 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from transformers) (4.66.4)
+Requirement already satisfied: msgpack in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from deepspeed) (1.0.8)
+Collecting py-cpuinfo (from deepspeed)
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Collecting pydantic>=2.0.0 (from deepspeed)
+  Downloading pydantic-2.10.2-py3-none-any.whl.metadata (170 kB)
+Collecting pyarrow>=15.0.0 (from datasets)
+  Downloading pyarrow-18.1.0-cp310-cp310-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting dill<0.3.9,>=0.3.0 (from datasets)
+  Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
+Collecting pandas (from datasets)
+  Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+Collecting xxhash (from datasets)
+  Downloading xxhash-3.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting multiprocess<0.70.17 (from datasets)
+  Downloading multiprocess-0.70.16-py310-none-any.whl.metadata (7.2 kB)
+Requirement already satisfied: fsspec<=2024.9.0,>=2023.1.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from fsspec[http]<=2024.9.0,>=2023.1.0->datasets) (2024.2.0)
+Requirement already satisfied: aiohttp in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from datasets) (3.9.5)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from huggingface-hub) (4.12.2)
+Requirement already satisfied: click!=8.0.0,>=7.1 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from wandb) (8.1.7)
+Collecting docker-pycreds>=0.4.0 (from wandb)
+  Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl.metadata (1.8 kB)
+Collecting gitpython!=3.1.29,>=1.0.0 (from wandb)
+  Downloading GitPython-3.1.43-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: platformdirs in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from wandb) (4.2.2)
+Requirement already satisfied: protobuf!=4.21.0,!=5.28.0,<6,>=3.19.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from wandb) (3.20.2)
+Collecting sentry-sdk>=2.0.0 (from wandb)
+  Downloading sentry_sdk-2.19.0-py2.py3-none-any.whl.metadata (9.9 kB)
+Collecting setproctitle (from wandb)
+  Downloading setproctitle-1.3.4-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+Requirement already satisfied: setuptools in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from wandb) (75.6.0)
+Collecting rich (from trl)
+  Downloading rich-13.9.4-py3-none-any.whl.metadata (18 kB)
+Collecting coloredlogs (from optimum)
+  Downloading coloredlogs-15.0.1-py2.py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: sympy in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from optimum) (1.12.1)
+Requirement already satisfied: aiosignal>=1.1.2 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from aiohttp->datasets) (1.3.1)
+Requirement already satisfied: attrs>=17.3.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from aiohttp->datasets) (23.2.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from aiohttp->datasets) (1.4.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from aiohttp->datasets) (6.0.5)
+Requirement already satisfied: yarl<2.0,>=1.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from aiohttp->datasets) (1.9.4)
+Requirement already satisfied: async-timeout<5.0,>=4.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from aiohttp->datasets) (4.0.3)
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.29,>=1.0.0->wandb)
+  Downloading gitdb-4.0.11-py3-none-any.whl.metadata (1.2 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0.0->deepspeed)
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.27.1 (from pydantic>=2.0.0->deepspeed)
+  Downloading pydantic_core-2.27.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from requests->transformers) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from requests->transformers) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from requests->transformers) (1.26.18)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from requests->transformers) (2024.6.2)
+Requirement already satisfied: networkx in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (2.8.8)
+Requirement already satisfied: jinja2 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from torch>=1.10.0->accelerate) (3.1.2)
+Collecting humanfriendly>=9.1 (from coloredlogs->optimum)
+  Downloading humanfriendly-10.0-py2.py3-none-any.whl.metadata (9.2 kB)
+Requirement already satisfied: python-dateutil>=2.8.2 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from pandas->datasets) (2.9.0.post0)
+Collecting pytz>=2020.1 (from pandas->datasets)
+  Downloading pytz-2024.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas->datasets)
+  Downloading tzdata-2024.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->trl)
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from rich->trl) (2.15.0)
+Requirement already satisfied: mpmath<1.4.0,>=1.1.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from sympy->optimum) (1.3.0)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb)
+  Downloading smmap-5.0.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->trl)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/conda/envs/py_3.10/lib/python3.10/site-packages (from jinja2->torch>=1.10.0->accelerate) (2.1.5)
+Downloading accelerate-1.1.1-py3-none-any.whl (333 kB)
+Downloading transformers-4.46.3-py3-none-any.whl (10.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 103.3 MB/s eta 0:00:00
+Downloading bitsandbytes-0.44.1-py3-none-manylinux_2_24_x86_64.whl (122.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.4/122.4 MB 103.5 MB/s eta 0:00:00
+Downloading datasets-3.1.0-py3-none-any.whl (480 kB)
+Downloading evaluate-0.4.3-py3-none-any.whl (84 kB)
+Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
+Downloading huggingface_hub-0.26.2-py3-none-any.whl (447 kB)
+Downloading sentencepiece-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 92.9 MB/s eta 0:00:00
+Downloading tokenizers-0.20.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 99.3 MB/s eta 0:00:00
+Downloading wandb-0.18.7-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 102.9 MB/s eta 0:00:00
+Downloading ninja-1.11.1.2-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (422 kB)
+Downloading pybind11-2.13.6-py3-none-any.whl (243 kB)
+Downloading trl-0.12.1-py3-none-any.whl (310 kB)
+Downloading optimum-1.23.3-py3-none-any.whl (424 kB)
+Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
+Downloading GitPython-3.1.43-py3-none-any.whl (207 kB)
+Downloading multiprocess-0.70.16-py310-none-any.whl (134 kB)
+Downloading pyarrow-18.1.0-cp310-cp310-manylinux_2_28_x86_64.whl (40.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.1/40.1 MB 95.2 MB/s eta 0:00:00
+Downloading pydantic-2.10.2-py3-none-any.whl (456 kB)
+Downloading pydantic_core-2.27.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 99.4 MB/s eta 0:00:00
+Downloading regex-2024.11.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (781 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 781.7/781.7 kB 86.8 MB/s eta 0:00:00
+Downloading safetensors-0.4.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (435 kB)
+Downloading sentry_sdk-2.19.0-py2.py3-none-any.whl (322 kB)
+Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+Downloading pandas-2.2.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 104.1 MB/s eta 0:00:00
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+Downloading setproctitle-1.3.4-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (30 kB)
+Downloading xxhash-3.5.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading gitdb-4.0.11-py3-none-any.whl (62 kB)
+Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+Downloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
+Downloading tzdata-2024.2-py2.py3-none-any.whl (346 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading smmap-5.0.1-py3-none-any.whl (24 kB)
+Building wheels for collected packages: deepspeed
+  Building wheel for deepspeed (setup.py): started
+  Building wheel for deepspeed (setup.py): finished with status 'done'
+  Created wheel for deepspeed: filename=deepspeed-0.16.0-py3-none-any.whl size=1535021 sha256=0a83aa1c8c7bf4a3a52199fc555b116ba5bb4b85e7d4f97241fd5e3a87a76bf8
+  Stored in directory: /root/.cache/pip/wheels/21/dc/06/0545933eac80940dcfa7e281d338c9cce37d2a5d9d1a5a55a4
+Successfully built deepspeed
+Installing collected packages: sentencepiece, pytz, py-cpuinfo, hjson, xxhash, tzdata, smmap, setproctitle, sentry-sdk, safetensors, regex, pydantic-core, pybind11, pyarrow, ninja, mdurl, humanfriendly, docker-pycreds, dill, annotated-types, pydantic, pandas, multiprocess, markdown-it-py, huggingface-hub, gitdb, coloredlogs, tokenizers, rich, gitpython, deepspeed, bitsandbytes, accelerate, wandb, transformers, datasets, trl, optimum, evaluate
+Successfully installed accelerate-1.1.1 annotated-types-0.7.0 bitsandbytes-0.44.1 coloredlogs-15.0.1 datasets-3.1.0 deepspeed-0.16.0 dill-0.3.8 docker-pycreds-0.4.0 evaluate-0.4.3 gitdb-4.0.11 gitpython-3.1.43 hjson-3.1.0 huggingface-hub-0.26.2 humanfriendly-10.0 markdown-it-py-3.0.0 mdurl-0.1.2 multiprocess-0.70.16 ninja-1.11.1.2 optimum-1.23.3 pandas-2.2.3 py-cpuinfo-9.0.0 pyarrow-18.1.0 pybind11-2.13.6 pydantic-2.10.2 pydantic-core-2.27.1 pytz-2024.2 regex-2024.11.6 rich-13.9.4 safetensors-0.4.5 sentencepiece-0.2.0 sentry-sdk-2.19.0 setproctitle-1.3.4 smmap-5.0.1 tokenizers-0.20.3 transformers-4.46.3 trl-0.12.1 tzdata-2024.2 wandb-0.18.7 xxhash-3.5.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ cd /opt
++ git clone https://github.com/microsoft/Megatron-DeepSpeed
+Cloning into 'Megatron-DeepSpeed'...
++ cd Megatron-DeepSpeed/megatron/data
++ make
+g++ -O3 -Wall -shared -std=c++11 -fPIC -fdiagnostics-color -I/opt/conda/envs/py_3.10/include/python3.10 -I/opt/conda/envs/py_3.10/lib/python3.10/site-packages/pybind11/include helpers.cpp -o helpers.cpython-310-x86_64-linux-gnu.so
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Adding testscript
+INFO:    Running testscript
+PyTorch version: 2.1.2+git53da8f8
+CUDA available: False
+CUDA version: None
+INFO:    Creating SIF file...
+INFO:    Build complete: llm.sif

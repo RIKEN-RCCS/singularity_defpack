@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/pytorch:24.05-py3
+
+%setup
+  mkdir ${SINGULARITY_ROOTFS}/lvs0
+
+%post
+  apt-get update && apt-get install -y --no-install-recommends \
+      wget \
+      vim \
+      build-essential \
+      && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+  pip install --no-cache-dir --upgrade pip setuptools wheel
+
+  cd /opt
+  git clone https://github.com/pierotofy/OpenSplat.git
+  cd OpenSplat
+  mkdir build && cd build
+  cmake -DCMAKE_CUDA_ARCHITECTURES="90" -DGPU_RUNTIME=CUDA -DCMAKE_PREFIX_PATH=/usr/local/lib/python3.10/dist-packages/torch ..
+  make -j32
+
+%test
+    python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"
+
+%environment
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+    export NVIDIA_VISIBLE_DEVICES=all
+    export NVIDIA_DRIVER_CAPABILITIES=compute,utility
