@@ -8,7 +8,7 @@ From: oneapi.sif
 %files
 
 %post
-  dnf -y install cmake
+  dnf -y install cmake libcurl-devel
 
   . /opt/spack/share/spack/setup-env.sh
 
@@ -22,8 +22,8 @@ From: oneapi.sif
   git clone https://github.com/ggerganov/llama.cpp.git
   cd llama.cpp
   git checkout b4953
-  cmake -B build
-# cmake -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=Intel10_64lp -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX -DGGML_NATIVE=ON -B build
+# cmake -B build
+  cmake -B build -DGGML_BLAS=ON -DGGML_BLAS_VENDOR=Intel10_64lp -DCMAKE_C_COMPILER=$CC -DCMAKE_CXX_COMPILER=$CXX -DGGML_NATIVE=ON -DGGML_AVX=ON -DGGML_AVX2=ON -DGGML_AVX512=ON -DGGML_AVX512_BF16=ON -DGGML_AVX512_VBMI=ON -DGGML_AVX512_VNNI=ON -DGGML_AVX_VNNI=ON -DGGML_AMX_BF16=ON -DGGML_AMX_INT8=ON -DGGML_AMX_TILE=ON -DLLAMA_CURL=ON
   cd build
   cmake --build . --verbose -j32
   cmake --install .

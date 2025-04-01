@@ -1,0 +1,25 @@
+Bootstrap: localimage
+From: gcc.sif
+Stage: build
+
+%post
+  . /opt/spack/share/spack/setup-env.sh
+
+  spack -e virtual_fugaku install -j 32 --add glow
+
+  spack gc -y
+  spack clean --all
+
+Bootstrap: docker
+From: rockylinux/rockylinux:9.4
+Stage: final
+
+%files from build
+  /opt/spack
+
+%post
+  . /opt/spack/share/spack/setup-env.sh
+  spack env activate --sh virtual_fugaku >> $SINGULARITY_ENVIRONMENT
+
+%runscript
+  glow "$@"
