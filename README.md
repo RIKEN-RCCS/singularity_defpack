@@ -17,18 +17,18 @@
 
 ### ARM Neoverse V1 (Probably, V2 should be fine as well)
 
- - GCC v14.1.0 : The GNU Compiler Collection includes C, C++ and Fortran includes *openblas, fftw, armpl*
- - LLVM v19.1.4 : Collection of modular and reusable compiler and toolchain technologies includes openblas, fftw, armpl
+ - GCC v14.1.0 : The GNU Compiler Collection includes C, C++ and Fortran with *openblas, fftw, armpl*
+ - LLVM v19.1.4 : Collection of modular and reusable compiler and toolchain technologies with *openblas, fftw, armpl*
  - Arm Compiler for Linux v24.10.1 : Suite of tools containing Arm C/C++ Compiler, Arm Fortran Compiler, Arm Performance Libraries
  - llama.cpp b4953 : LLM inference in C/C++
- - PyTorch v2.5.0 : Tensors and Dynamic neural networks in Python with oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27
- - TensorFlow v2.17.1 : An Open Source Machine Learning Framework with oneDNN v3.2.1, ACL v23.05.1
+ - PyTorch v2.5.0 : Tensors and Dynamic neural networks in Python with *oneDNN v3.7.1, ACL v25.02.1, OpenBLAS v0.3.27*
+ - TensorFlow v2.17.1 : An Open Source Machine Learning Framework with *oneDNN v3.2.1, ACL v23.05.1*
  - Megatron DeepSpeed : Ongoing research training transformer language models at scale, including: BERT & GPT-2
 
 ### Intel Sapphire Rapids
 
- - GCC v14.1.0 : The GNU Compiler Collection includes C, C++ and Fortran includes openblas, fftw
- - LLVM v19.1.4 : Collection of modular and reusable compiler and toolchain technologies includes openblas, fftw
+ - GCC v14.1.0 : The GNU Compiler Collection includes C, C++ and Fortran with *openblas, fftw*
+ - LLVM v19.1.4 : Collection of modular and reusable compiler and toolchain technologies with *openblas, fftw*
  - oneAPI : Intel software development tool kit
  - llama.cpp b4953 : LLM inference in C/C++
  - PyTorch v2.5.0 : Tensors and Dynamic neural networks in Python
@@ -40,7 +40,7 @@
 
 ### AMD Zen4 (EPYC 9004 series)
 
- - AMD Optimizin C/C++ and Fortran compilers : AMD Optimizing C/C++ Compiler includes amd-aocl, aocl-compression, aocl-da, aocl-utils, aocl-libmem, aocl-sparse
+ - AMD Optimizin C/C++ and Fortran compilers : AMD Optimizing C/C++ Compiler with *amd-aocl, aocl-compression, aocl-da, aocl-utils, aocl-libmem, aocl-sparse*
 
 ### NVIDIA GPU
 
