@@ -2,14 +2,14 @@
 
 ## Definition Files
 
-|  | virtual_fugaku | Compiler | Misc. |
-| ---- | ---- | ---- | ---- |
-|  A64FX |  |  | [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_a64fx/pytorch_2.5.0) : v2.5.0 <br> [Pytorch Install Guide](https://github.com/fujitsu/pytorch/wiki) |
-|  Neoverse V1 | [spack-ver1-1.def](https://github.com/RIKEN-RCCS/spack/blob/virtual_fugaku/spack-ver1-1.def) | [gcc.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/gcc_14.1.0) : v14.1.0 <br> [llvm.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llvm_19.1.4) : v19.1.4 <br> [acl.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/acfl_24.10.1) : v24.10.1 |  [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/pytorch_2.5.0) : v2.5.0 <br> [tensorflow.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/tensorflow_2.17) : v2.17.1 <br> [llama.cpp.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llama.cpp) : b4953 <br> [Megatron-DeepSpeed.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/Megatron-DeepSpeed)|
-|  Sapphire Rapids | [application.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/application) | [gcc.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gcc_14.1.0) : v14.1.0 <br> [llvm.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/llvm_19.1.4) : v19.1.4 <br> [oneapi.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/oneapi_2025.0.1) | [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/pytorch_2.5.0) : v2.5.0 <br> [tensorflow.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/tensorflow_2.17) : v2.17.1 |
-|  Zen4 |  | [aocc.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_zen4/aocc) |  |
-|  Nvidia GPU |  |  | [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/pytorch) : v2.2.0 <br> [Megatron-DeepSpeed.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/Megatron-DeepSpeed) <br> [llama.cpp.def](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/llama.cpp) : b4953 + OpenWebUI<br> [llm-jp-eval.def](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/llm-jp-eval) |
-|  AMD GPU    |  |  | [pytorch.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/pytorch) : v2.1.2 <br> [Megatron-DeepSpeed.def](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/Megatron-DeepSpeed)|
+|  | virtual_fugaku | Compiler | AI | Misc. |
+| ---- | ---- | ---- | ---- | ---- |
+|  A64FX |  |  | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_a64fx/pytorch_2.5.0) : v2.5.0 <br> [Pytorch Install Guide](https://github.com/fujitsu/pytorch/wiki) | |
+|  Neoverse V1 | spack-ver1-1 | [gcc](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/gcc_14.1.0) : v14.1.0 <br> [llvm](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llvm_19.1.4) : v19.1.4 <br> [acl](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/acfl_24.10.1) : v24.10.1 |  [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/pytorch_2.5.0) : v2.5.0 <br> [tensorflow](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/tensorflow_2.17) : v2.17.1 <br> [llama.cpp](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/llama.cpp) : b4953+OpenWebUI <br> [Megatron-DeepSpeed](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_neoversev1/Megatron-DeepSpeed)| |
+|  Sapphire Rapids | [application](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/application) | [gcc](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gcc_14.1.0) : v14.1.0 <br> [llvm](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/llvm_19.1.4) : v19.1.4 <br> [oneapi](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/oneapi_2025.0.1) | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/pytorch_2.5.0) : v2.5.0 <br> [tensorflow](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/tensorflow_2.17) : v2.17.1 | [btop](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/btop) <br> [gromacs](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_sapphirerapids/gromacs_2024.04) : v2024.04|
+|  Zen4 |  | [aocc](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/cpu_zen4/aocc) |  | |
+|  Nvidia GPU |  |  | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/pytorch) : v2.2.0 <br> [Megatron-DeepSpeed](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/Megatron-DeepSpeed) <br> [llama.cpp](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/llama.cpp) : b4953+OpenWebUI<br> [llm-jp-eval](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/llm-jp-eval) | [opensplat+colmap](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/opensplat)|
+|  AMD GPU    |  |  | [pytorch](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/pytorch) : v2.1.2 <br> [Megatron-DeepSpeed](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_amd/Megatron-DeepSpeed)| |
 
 ### ARM A64FX (Fugaku)
 
@@ -32,7 +32,9 @@
  - oneAPI : oneapi.def (includes mkl)
  - PyTorch v2.5.0 : pytorch.def
  - TensorFlow v2.17.1 : tensorflow.def
- - HPC Applications : application.def (based on [VirtualFugaku v1.1](https://github.com/RIKEN-RCCS/spack/blob/virtual_fugaku/spack-ver1-1.def))
+ - HPC Applications : application.def (based on VirtualFugaku v1.1)
+ - btop
+ - Gromacs 2024.04
 
 ### AMD Zen4 (EPYC 9004 series)
 
@@ -44,6 +46,7 @@
  - Megatron DeepSpeed : Megatron-DeepSpeed.def (requires PyTorch container image)
  - llama.cpp b4953 : llama.cpp.def
  - llm-jp-eval : llm-jp-eval.def (requires PyTorch container image)
+ - OpenSplat+colmap
 
 ### AMD GPU
 
