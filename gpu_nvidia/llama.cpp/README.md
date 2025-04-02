@@ -1,3 +1,32 @@
+# **Benchmark test**
+
+Measure performance using llama-bench provided by llama.cpp.
+The models used for benchmarking are DeepSeek-R1-Distill-Qwen-14B and DeepSeek-R1-Distill-Qwen-32B.
+The benchmarking environment is **NVIDIA GH200**.
+
+## **DeepSeek-R1-Distill-Qwen-14B**
+
+### Condition
+   - Model : [DeepSeek-R1-Distill-Qwen-14B](https://huggingface.co/mmnga/DeepSeek-R1-Distill-Qwen-14B-gguf)
+   - Quantization : Q8_0, Q6_K, Q5_K_S, Q5_0, Q5_K_M, IQ4_XS, Q4_K_S, IQ4_NL, Q4_0, Q4_K_M
+   - Batch-size : 128, 256, 512, 1024, 2048, 4096
+   - Flash attention : ON
+### Result
+
+  <img src="./images/14b.png" width="640">
+
+## **DeepSeek-R1-Distill-Qwen-32B**
+
+### Condition
+   - Model : [DeepSeek-R1-Distill-Qwen-32B](https://huggingface.co/mmnga/DeepSeek-R1-Distill-Qwen-32B-gguf)
+   - Quantization : Q8_0, Q6_K, Q5_K_S, Q5_0, Q5_K_M, IQ4_XS, Q4_K_S, IQ4_NL, Q4_0, Q4_K_M
+   - Batch-size : 128, 256, 512, 1024, 2048, 4096
+   - Flash attention : ON
+### Result
+
+  <img src="./images/32b.png" width="640">
+
+
 # **ChatGPT-like service: Open WebUI + llama.cpp**
 
 Implement a ChatGPT-like service in a local environment using OpenWebUI fot UI and llama.cpp for inference with the large language model.
@@ -97,31 +126,3 @@ Connect llama-server to OpenWebUI.
 You can now use Open WebUI’s chat interface to interact with the 
 
   <img src="./images/openwebui2.jpg" width="640">
-
-# **Benchmark test**
-
-Measure performance using llama-bench provided by llama.cpp.
-The models used for benchmarking are DeepSeek-R1-Distill-Qwen-14B and DeepSeek-R1-Distill-Qwen-32B.
-The benchmarking environment is **NVIDIA GH200**.
-
-## **DeepSeek-R1-Distill-Qwen-14B**
-
-### Condition
-   - Model : [DeepSeek-R1-Distill-Qwen-14B](https://huggingface.co/mmnga/DeepSeek-R1-Distill-Qwen-14B-gguf)
-   - Quantization : Q8_0, Q6_K, Q5_K_S, Q5_0, Q5_K_M, IQ4_XS, Q4_K_S, IQ4_NL, Q4_0, Q4_K_M
-   - Batch-size : 128, 256, 512, 1024, 2048, 4096
-   - Flash attention : ON
-### Result
-
-  <img src="./images/14b.png" width="640">
-
-## **DeepSeek-R1-Distill-Qwen-32B**
-
-### Condition
-   - Model : [DeepSeek-R1-Distill-Qwen-32B](https://huggingface.co/mmnga/DeepSeek-R1-Distill-Qwen-32B-gguf)
-   - Quantization : Q8_0, Q6_K, Q5_K_S, Q5_0, Q5_K_M, IQ4_XS, Q4_K_S, IQ4_NL, Q4_0, Q4_K_M
-   - Batch-size : 128, 256, 512, 1024, 2048, 4096
-   - Flash attention : ON
-### Result
-
-  <img src="./images/32b.png" width="640">
