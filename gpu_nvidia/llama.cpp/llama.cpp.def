@@ -27,8 +27,21 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
   cd /opt
   rm -rf llama.cpp
 
+  cd /opt
+  export VERSION=1.22.6 OS=linux ARCH=arm64 && \
+    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
+    tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \
+    rm go$VERSION.$OS-$ARCH.tar.gz
+
+  cd /opt
+  git clone https://github.com/ollama/ollama.git
+  cd ollama
+  cmake -B build
+  cmake --build build --verbose -j32
+  cmake --install build
+
 %environment
-  export PATH=/usr/local/cuda/bin:/opt/uv/bin:$PATH
+  export PATH=/usr/local/cuda/bin:/opt/uv/bin:/usr/local/go/bin:$PATH
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:$LD_LIBRARY_PATH
   export NVIDIA_VISIBLE_DEVICES=all
   export NVIDIA_DRIVER_CAPABILITIES=compute,utility
