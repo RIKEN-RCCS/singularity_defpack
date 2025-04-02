@@ -10,6 +10,8 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
       vim \
       build-essential \
       libcurl4-openssl-dev \
+      openjdk-17-jdk \
+      maven \
       && apt-get clean && rm -rf /var/lib/apt/lists/*
 
   mkdir /opt/uv
@@ -39,6 +41,13 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
   cmake -B build
   cmake --build build --verbose -j32
   cmake --install build
+
+  cd /opt
+  git clone https://github.com/apache/tika.git
+  cd tika
+  mvn clean install -DskipTests
+
+  pip install duckduckgo-search==7.5.3
 
 %environment
   export PATH=/usr/local/cuda/bin:/opt/uv/bin:/usr/local/go/bin:$PATH
