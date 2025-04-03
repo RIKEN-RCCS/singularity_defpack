@@ -12,6 +12,9 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
       libcurl4-openssl-dev \
       openjdk-17-jdk \
       maven \
+      tesseract-ocr \
+      tesseract-ocr-jpn \
+      poppler-utils \
       && apt-get clean && rm -rf /var/lib/apt/lists/*
 
   mkdir /opt/uv
@@ -47,6 +50,9 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
   cd tika
   mvn clean install -DskipTests
 
+  pip uninstall -y opencv opencv-python
+  rm -rf /usr/local/lib/python3.10/dist-packages/cv2/
+  pip install opencv-python pytesseract pdf2image
   pip install duckduckgo-search==7.5.3
 
 %environment
