@@ -11,6 +11,8 @@ From: rockylinux/rockylinux:9.4
   dnf -y group install "Development Tools"
   dnf -y install wget which perf kernel-tools numactl-devel python3-devel
   dnf -y install llvm* clang*
+  dnf -y install libxcrypt-compat
+  dnf -y install cmake
   dnf clean all
 
   cd /opt
@@ -48,9 +50,9 @@ From: rockylinux/rockylinux:9.4
   ${CC} -c ${OMP} perf_helper.c -o perf_helper.o
   ${CC} -c ${OMP} perf_helper_wrapper.c -o perf_helper_wrapper.o
   ${FC} -c ${OMP} perf_helper_mod.f90 -o perf_helper_mod.o
-  ar r libperf_helper.a perf_helper.o perf_helper_wrapper.o perf_helper_mod.o
+  ${CC} -shared -o libperf_helper.so -qopenmp perf_helper.o perf_helper_wrapper.o perf_helper_mod.o
   cp perf_helper.h /usr/local/include
-  cp libperf_helper.a /usr/local/lib
+  cp libperf_helper.so /usr/local/lib
   cp perf_helper_mod.mod /usr/local/lib
 
   spack env activate --sh virtual_fugaku >> $SINGULARITY_ENVIRONMENT
