@@ -10,6 +10,19 @@ It automatically evaluates Japanese LLMs across multiple datasets.
 > [LLM-jp: A Cross-organizational Project for the Research and Development of Fully Open Japanese LLMs](https://arxiv.org/html/2407.03963v1)  
 > [llm-jp-eval: 日本語大規模言語モデルの自動評価ツール](https://www.anlp.jp/proceedings/annual_meeting/2024/pdf_dir/A8-2.pdf)
 
+| Category | Task | Dataset |
+| ---- | ---- | ---- |
+| EL | Entity linking | chABSA |
+| FA | Reading prediction, Named entity recognition, Dependency parsing, <br> Predicate-argument structure analysis, Coreference resolution | Wikipedia Annotated Corpus |
+| HE | Human examination | MMLU, JMMLU |
+| MC | Multiple choice question answering | JCommonsenseQA |
+| MR | Mathematical reasoning | MAWPS |
+| MT | Mathematical translation | ALT Parallel Corpus, Wikipedia’s Kyoto Articles |
+| NLI | Natural language inference | Jamp, JaNLI, JNLI, JSeM, JSICK |
+| QA | Question answering | JEMHopQA, NIILC |
+| RC | Reading comprehension | JSQuAD |
+
+
 ### Condition
   - Site : NVIDIA GH200, GraceCPU(72 ARM Neoverse V2 cores), H100 Tensor Core GPU
   - Singularity Container : [llm-jp-eval](https://github.com/RIKEN-RCCS/singularity_defpack/tree/main/gpu_nvidia/llm-jp-eval) which contains CUDA Version 12.4 and PyTorch Version 2.4.0a0+07cecf4
@@ -17,6 +30,8 @@ It automatically evaluates Japanese LLMs across multiple datasets.
 ### Result
 
 > [llm-jp/open-japanese-llm-leaderboard](https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard)
+
+<img src="./images/llm-jp-eval.png">
 
 | Model                         | AVG   | EL    | FA    | HE    | MC    | MR    | MT    | NLI   | QA    | RC    |
 | ----                          | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: |
@@ -31,5 +46,3 @@ It automatically evaluates Japanese LLMs across multiple datasets.
 | DeepSeek-R1-Distill-Qwen-32B-Japanese | 0.642 | 0.579 | 0.294 | 0.743 | 0.867 | 0.920 | 0.864 | 0.774 | 0.495 | 0.887 |
 
 > The measurement results are unavailable because **DeepSeek-R1-Distill-Qwen-70B** did not complete execution within the job scheduler's 24-hour time limit.
-
-<img src="./images/llm-jp-eval.png">
