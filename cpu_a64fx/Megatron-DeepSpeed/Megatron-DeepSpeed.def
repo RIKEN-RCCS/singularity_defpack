@@ -1,0 +1,47 @@
+BootStrap: localimage
+From: ubi8.sif
+
+%setup
+  mkdir -p ${SINGULARITY_ROOTFS}/home
+  mkdir -p ${SINGULARITY_ROOTFS}/vol0003
+  mkdir -p ${SINGULARITY_ROOTFS}/vol0004
+  mkdir -p ${SINGULARITY_ROOTFS}/opt/FJSVxtclanga
+  mkdir -p ${SINGULARITY_ROOTFS}/opt/FJSVxos
+  mkdir -p ${SINGULARITY_ROOTFS}/usr/lib/FJSVtcs
+
+%environment
+  export PYTHONPATH="${PYTHONPATH}:/usr/local/DeepSpeedFugaku:/usr/local/DeepSpeedFugaku"
+  export LD_LIBRARY_PATH="/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:"
+
+%files
+  /usr/lib64/libxpmem.so.0
+  /usr/lib64/libtofucom.so
+  /usr/lib64/libtofutop.so
+  /usr/lib64/libpmix.so.2
+  /usr/lib64/libhwloc.so.15
+  /usr/lib64/libnuma.so.1
+  /usr/bin/numactl
+
+%post
+  . /vol0004/apps/oss/spack/share/spack/setup-env.sh
+  spack load /zzcm3je # python@3.11.6%fj@4.11.1 arch=linux-rhel8-a64fx
+  spack load py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx
+
+  cd /usr/local
+  python -m venv llm
+  source /usr/local/llm/bin/activate
+  pip install torch==2.5.0
+  pip install deepspeed
+  pip install numpy pydantic accelerate bitsandbytes datasets optimum transformers evaluate scikit-learn pyspark trl wandb
+  pip install aiohttp  attrs certifi charset-normalizer dill filelock frozenlist GitPython idna joblib MarkupSafe multidict multiprocess packaging pandas protobuf psutil pyarrow python-dateutil pytz PyYAML regex requests scipy sentencepiece sentry-sdk setuptools sympy tqdm typing_extensions tzdata urllib3 xxhash yarl
+  pip list
+
+  cd /usr/local
+  git clone https://github.com/microsoft/Megatron-DeepSpeed
+
+%runscript
+  . /vol0004/apps/oss/spack/share/spack/setup-env.sh
+  spack load /zzcm3je # python@3.11.6%fj@4.11.1 arch=linux-rhel8-a64fx
+  spack load py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx
+  source /usr/local/llm/bin/activate
+  exec "$@"

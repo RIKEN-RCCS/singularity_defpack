@@ -1,0 +1,793 @@
+WARNING: 'nodev' mount option set on /worktmp, it could be a source of failure during build process
+INFO:    Starting build...
+INFO:    Verifying bootstrap image ubi8.sif
+WARNING: integrity: signature not found for object group 1
+WARNING: Bootstrap image could not be verified, but build will continue.
+INFO:    Extracting local image...
+INFO:    Inserting Singularity configuration...
+INFO:    Running setup scriptlet
++ mkdir -p /worktmp/build-temp-3806613465/rootfs/home
++ mkdir -p /worktmp/build-temp-3806613465/rootfs/vol0003
++ mkdir -p /worktmp/build-temp-3806613465/rootfs/vol0004
++ mkdir -p /worktmp/build-temp-3806613465/rootfs/opt/FJSVxtclanga
++ mkdir -p /worktmp/build-temp-3806613465/rootfs/opt/FJSVxos
++ mkdir -p /worktmp/build-temp-3806613465/rootfs/usr/lib/FJSVtcs
+INFO:    Copying /usr/lib64/libxpmem.so.0 to 
+INFO:    Copying /usr/lib64/libtofucom.so to 
+INFO:    Copying /usr/lib64/libtofutop.so to 
+INFO:    Copying /usr/lib64/libpmix.so.2 to 
+INFO:    Copying /usr/lib64/libhwloc.so.15 to 
+INFO:    Copying /usr/lib64/libnuma.so.1 to 
+INFO:    Copying /usr/bin/numactl to 
+INFO:    Running post scriptlet
++ . /vol0004/apps/oss/spack/share/spack/setup-env.sh
+++ '[' -n '' ']'
+++ export _sp_initializing=true
+++ _sp_initializing=true
++++ _spack_determine_shell
++++ '[' -f /proc/106/exe ']'
+++++ readlink /proc/106/exe
++++ _sp_exe=/usr/bin/bash
++++ basename /usr/bin/bash
++++ tr -d 0123456789
+++ _sp_shell=bash
+++ alias 'spacktivate=spack env activate'
+++ '[' bash = bash ']'
+++ _sp_source_file=/vol0004/apps/oss/spack/share/spack/setup-env.sh
+++ '[' bash = zsh ']'
+++++ dirname /vol0004/apps/oss/spack/share/spack/setup-env.sh
++++ cd /vol0004/apps/oss/spack/share/spack
++++ pwd
+++ _sp_share_dir=/vol0004/apps/oss/spack/share/spack
++++++ dirname /vol0004/apps/oss/spack/share/spack
+++++ dirname /vol0004/apps/oss/spack/share
++++ cd /vol0004/apps/oss/spack
++++ pwd
+++ _sp_prefix=/vol0004/apps/oss/spack
+++ '[' -x /vol0004/apps/oss/spack/bin/spack ']'
+++ export SPACK_ROOT=/vol0004/apps/oss/spack
+++ SPACK_ROOT=/vol0004/apps/oss/spack
+++ _spack_pathadd PATH /vol0004/apps/oss/spack/bin
+++ _pa_varname=PATH
+++ _pa_new_path=PATH
+++ '[' -n /vol0004/apps/oss/spack/bin ']'
+++ _pa_varname=PATH
+++ _pa_new_path=/vol0004/apps/oss/spack/bin
+++ eval '_pa_oldvalue=${PATH:-}'
++++ _pa_oldvalue=/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ _pa_canonical=:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:
+++ '[' -d /vol0004/apps/oss/spack/bin ']'
+++ '[' :/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin: = :/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin: ']'
+++ '[' -n /opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin ']'
+++ eval 'export PATH="/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"'
++++ export PATH=/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++++ PATH=/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ eval 'spack() {
+    : this is a shell function from: /vol0004/apps/oss/spack/share/spack/setup-env.sh
+    : the real spack script is here: /vol0004/apps/oss/spack/bin/spack
+    _spack_shell_wrapper "$@"
+    return $?
+}'
+++ '[' bash = bash ']'
+++ export -f spack
+++ export -f _spack_shell_wrapper
++++ arch
+++ arch=aarch64
+++ case $arch in
+++ SPACK_PYTHON=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin/python
+++ export SPACK_PYTHON
+++ for cmd in "${SPACK_PYTHON:-}" python3 python python2
+++ command -v /vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin/python
++++ command -v /vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin/python
+++ export SPACK_PYTHON=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin/python
+++ SPACK_PYTHON=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin/python
+++ break
+++ '[' -z '' ']'
+++ need_module=no
+++ _spack_fn_exists use
+++ grep -q function
+++ LANG=
+++ type use
+++ _spack_fn_exists module
+++ grep -q function
+++ LANG=
+++ type module
+++ need_module=yes
+++ '[' yes = yes ']'
++++ spack --print-shell-vars sh,modules
++++ : this is a shell function from: /vol0004/apps/oss/spack/share/spack/setup-env.sh
++++ : the real spack script is here: /vol0004/apps/oss/spack/bin/spack
++++ _spack_shell_wrapper --print-shell-vars sh,modules
++++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
++++ eval 'if [ -n "${DYLD_LIBRARY_PATH-}" ]; then export SPACK_DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}; fi'
+++++ '[' -n '' ']'
++++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
++++ eval 'if [ -n "${DYLD_FALLBACK_LIBRARY_PATH-}" ]; then export SPACK_DYLD_FALLBACK_LIBRARY_PATH=${DYLD_FALLBACK_LIBRARY_PATH}; fi'
+++++ '[' -n '' ']'
++++ '[' -n '' ']'
++++ _sp_flags=
++++ '[' '!' -z x ']'
++++ '[' -print-shell-vars '!=' --print-shell-vars ']'
++++ _sp_flags=' --print-shell-vars'
++++ shift
++++ '[' '!' -z x ']'
++++ '[' sh,modules '!=' sh,modules ']'
++++ '[' -n ' --print-shell-vars' ']'
++++ '[' ell-vars '!=' ' --print-shell-vars' ']'
++++ command spack --print-shell-vars sh,modules
++++ spack --print-shell-vars sh,modules
++++ return
++++ return 0
+++ eval '_sp_sys_type='\''linux-rhel8-a64fx'\''' '_sp_compatible_sys_types='\''linux-rhel8-a64fx:linux-rhel8-armv8.2a:linux-rhel8-armv8.1a:linux-rhel8-aarch64'\''' '_sp_tcl_roots='\''/vol0004/apps/oss/spack-v0.21/share/spack/modules'\''' '_sp_lmod_roots='\''/vol0004/apps/oss/spack-v0.21/share/spack/lmod'\''' '_sp_module_prefix='\''not_installed'\'''
++++ _sp_sys_type=linux-rhel8-a64fx
++++ _sp_compatible_sys_types=linux-rhel8-a64fx:linux-rhel8-armv8.2a:linux-rhel8-armv8.1a:linux-rhel8-aarch64
++++ _sp_tcl_roots=/vol0004/apps/oss/spack-v0.21/share/spack/modules
++++ _sp_lmod_roots=/vol0004/apps/oss/spack-v0.21/share/spack/lmod
++++ _sp_module_prefix=not_installed
+++ '[' not_installed '!=' not_installed ']'
+++ _sp_multi_pathadd MODULEPATH /vol0004/apps/oss/spack-v0.21/share/spack/modules
+++ local IFS=:
+++ '[' bash = zsh ']'
+++ for pth in $2
+++ for systype in ${_sp_compatible_sys_types}
+++ _spack_pathadd MODULEPATH /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx
+++ _pa_varname=PATH
+++ _pa_new_path=MODULEPATH
+++ '[' -n /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx ']'
+++ _pa_varname=MODULEPATH
+++ _pa_new_path=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx
+++ eval '_pa_oldvalue=${MODULEPATH:-}'
++++ _pa_oldvalue=
+++ _pa_canonical=::
+++ '[' -d /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx ']'
+++ '[' :: = :: ']'
+++ '[' -n '' ']'
+++ export MODULEPATH=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx
+++ MODULEPATH=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx
+++ for systype in ${_sp_compatible_sys_types}
+++ _spack_pathadd MODULEPATH /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.2a
+++ _pa_varname=PATH
+++ _pa_new_path=MODULEPATH
+++ '[' -n /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.2a ']'
+++ _pa_varname=MODULEPATH
+++ _pa_new_path=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.2a
+++ eval '_pa_oldvalue=${MODULEPATH:-}'
++++ _pa_oldvalue=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx
+++ _pa_canonical=:/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx:
+++ '[' -d /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.2a ']'
+++ for systype in ${_sp_compatible_sys_types}
+++ _spack_pathadd MODULEPATH /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.1a
+++ _pa_varname=PATH
+++ _pa_new_path=MODULEPATH
+++ '[' -n /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.1a ']'
+++ _pa_varname=MODULEPATH
+++ _pa_new_path=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.1a
+++ eval '_pa_oldvalue=${MODULEPATH:-}'
++++ _pa_oldvalue=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx
+++ _pa_canonical=:/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx:
+++ '[' -d /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-armv8.1a ']'
+++ for systype in ${_sp_compatible_sys_types}
+++ _spack_pathadd MODULEPATH /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-aarch64
+++ _pa_varname=PATH
+++ _pa_new_path=MODULEPATH
+++ '[' -n /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-aarch64 ']'
+++ _pa_varname=MODULEPATH
+++ _pa_new_path=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-aarch64
+++ eval '_pa_oldvalue=${MODULEPATH:-}'
++++ _pa_oldvalue=/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx
+++ _pa_canonical=:/vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-a64fx:
+++ '[' -d /vol0004/apps/oss/spack-v0.21/share/spack/modules/linux-rhel8-aarch64 ']'
+++ test bash = bash
+++ source /vol0004/apps/oss/spack/share/spack/spack-completion.bash
++++ test -n ''
++++ complete -o bashdefault -o default -F _bash_completion_spack spack
++++ complete -o bashdefault -o default -F _bash_completion_spack spacktivate
++++ SPACK_ALIASES='concretise:concretize;containerise:containerize;rm:remove'
+++ unset _sp_initializing
+++ export _sp_initializing
++ spack load /zzcm3je
++ : this is a shell function from: /vol0004/apps/oss/spack/share/spack/setup-env.sh
++ : the real spack script is here: /vol0004/apps/oss/spack/bin/spack
++ _spack_shell_wrapper load /zzcm3je
++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
++ eval 'if [ -n "${DYLD_LIBRARY_PATH-}" ]; then export SPACK_DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}; fi'
+++ '[' -n '' ']'
++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
++ eval 'if [ -n "${DYLD_FALLBACK_LIBRARY_PATH-}" ]; then export SPACK_DYLD_FALLBACK_LIBRARY_PATH=${DYLD_FALLBACK_LIBRARY_PATH}; fi'
+++ '[' -n '' ']'
++ '[' -n '' ']'
++ _sp_flags=
++ '[' '!' -z x ']'
++ '[' load '!=' load ']'
++ '[' -n '' ']'
++ '[' '' '!=' '' ']'
++ _sp_subcommand=
++ '[' '!' -z x ']'
++ _sp_subcommand=load
++ shift
++ case $_sp_subcommand in
++ _a=' /zzcm3je'
++ '[' ' /zzcm3je' '!=' ' /zzcm3je' ']'
++ '[' ' /zzcm3je' '!=' ' /zzcm3je' ']'
++ '[' ' /zzcm3je' '!=' ' /zzcm3je' ']'
++ '[' ' /zzcm3je' '!=' ' /zzcm3je' ']'
++ '[' ' /zzcm3je' '!=' ' /zzcm3je' ']'
+++ SPACK_COLOR=always
+++ command spack load --sh /zzcm3je
+++ spack load --sh /zzcm3je
++ stdout='export CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq;
+export CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs;
+export LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib;
+export MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:;
+export PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin;
+export PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig;
+export SPACK_LOADED_HASHES=zzcm3jeqpy4xx6cock6xaew6fknrkdme;'
++ eval 'export CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq;
+export CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs;
+export LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib;
+export MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:;
+export PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin;
+export PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig;
+export SPACK_LOADED_HASHES=zzcm3jeqpy4xx6cock6xaew6fknrkdme;'
+++ export CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq
+++ CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq
+++ export CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ export C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ export INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ export LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs
+++ LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs
+++ export LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib
+++ LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib
+++ export MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:
+++ MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:
+++ export PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig
+++ PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig
+++ export SPACK_LOADED_HASHES=zzcm3jeqpy4xx6cock6xaew6fknrkdme
+++ SPACK_LOADED_HASHES=zzcm3jeqpy4xx6cock6xaew6fknrkdme
++ return 0
++ spack load py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx
++ : this is a shell function from: /vol0004/apps/oss/spack/share/spack/setup-env.sh
++ : the real spack script is here: /vol0004/apps/oss/spack/bin/spack
++ _spack_shell_wrapper load py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx
++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
++ eval 'if [ -n "${DYLD_LIBRARY_PATH-}" ]; then export SPACK_DYLD_LIBRARY_PATH=${DYLD_LIBRARY_PATH}; fi'
+++ '[' -n '' ']'
++ for var in DYLD_LIBRARY_PATH DYLD_FALLBACK_LIBRARY_PATH
++ eval 'if [ -n "${DYLD_FALLBACK_LIBRARY_PATH-}" ]; then export SPACK_DYLD_FALLBACK_LIBRARY_PATH=${DYLD_FALLBACK_LIBRARY_PATH}; fi'
+++ '[' -n '' ']'
++ '[' -n '' ']'
++ _sp_flags=
++ '[' '!' -z x ']'
++ '[' load '!=' load ']'
++ '[' -n '' ']'
++ '[' '' '!=' '' ']'
++ _sp_subcommand=
++ '[' '!' -z x ']'
++ _sp_subcommand=load
++ shift
++ case $_sp_subcommand in
++ _a=' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx'
++ '[' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' '!=' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' ']'
++ '[' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' '!=' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' ']'
++ '[' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' '!=' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' ']'
++ '[' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' '!=' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' ']'
++ '[' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' '!=' ' py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx' ']'
+++ SPACK_COLOR=always
+++ command spack load --sh py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx
+++ spack load --sh py-pip@23.1.2%fj@4.11.1 arch=linux-rhel8-a64fx
++ stdout='export CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq;
+export CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs;
+export LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib;
+export MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:;
+export PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin;
+export PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig;
+export PYTHONPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib/python3.11/site-packages;
+export SPACK_LOADED_HASHES=hvopmisdiytawv5etm2bz6svku6py75s:zzcm3jeqpy4xx6cock6xaew6fknrkdme;'
++ eval 'export CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq;
+export CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include;
+export LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs;
+export LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib;
+export MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:;
+export PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin;
+export PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig;
+export PYTHONPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib/python3.11/site-packages;
+export SPACK_LOADED_HASHES=hvopmisdiytawv5etm2bz6svku6py75s:zzcm3jeqpy4xx6cock6xaew6fknrkdme;'
+++ export CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq
+++ CMAKE_PREFIX_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq
+++ export CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ CPLUS_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ export C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ C_INCLUDE_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ export INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ INCLUDE=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/include
+++ export LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs
+++ LD_LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/opt/FJSVxtclanga/tcsds-1.2.36/lib64:/opt/FJSVxos/mmm/lib64:/.singularity.d/libs:/.singularity.d/libs
+++ export LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib
+++ LIBRARY_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib64:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib
+++ export MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:
+++ MANPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/share/man:
+++ export PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig
+++ PKG_CONFIG_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/lib/pkgconfig
+++ export PYTHONPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib/python3.11/site-packages
+++ PYTHONPATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/lib/python3.11/site-packages
+++ export SPACK_LOADED_HASHES=hvopmisdiytawv5etm2bz6svku6py75s:zzcm3jeqpy4xx6cock6xaew6fknrkdme
+++ SPACK_LOADED_HASHES=hvopmisdiytawv5etm2bz6svku6py75s:zzcm3jeqpy4xx6cock6xaew6fknrkdme
++ return 0
++ cd /usr/local
++ python -m venv llm
++ source /usr/local/llm/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ '[' -n /bin/sh -o -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=/usr/local/llm
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ PATH=/usr/local/llm/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.11.1/py-pip-23.1.2-hvopmisdiytawv5etm2bz6svku6py75s/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack-v0.21/opt/spack/linux-rhel8-a64fx/fj-4.10.0/python-3.11.6-qbmpmn2uxu4oe3qoawxbizp7awqlgkcq/bin:/vol0004/apps/oss/spack/bin:/opt/FJSVxtclanga/tcsds-1.2.36/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(llm) '
+++ export PS1
+++ VIRTUAL_ENV_PROMPT='(llm) '
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n /bin/sh -o -n '' ']'
+++ hash -r
++ pip install torch==2.5.0
+Collecting torch==2.5.0
+  Downloading torch-2.5.0-cp311-cp311-manylinux2014_aarch64.whl (91.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.8/91.8 MB 16.7 MB/s eta 0:00:00
+Collecting filelock (from torch==2.5.0)
+  Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+Collecting typing-extensions>=4.8.0 (from torch==2.5.0)
+  Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Collecting networkx (from torch==2.5.0)
+  Downloading networkx-3.4.2-py3-none-any.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 34.0 MB/s eta 0:00:00
+Collecting jinja2 (from torch==2.5.0)
+  Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 17.6 MB/s eta 0:00:00
+Collecting fsspec (from torch==2.5.0)
+  Downloading fsspec-2024.10.0-py3-none-any.whl (179 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 179.6/179.6 kB 20.1 MB/s eta 0:00:00
+Collecting sympy==1.13.1 (from torch==2.5.0)
+  Downloading sympy-1.13.1-py3-none-any.whl (6.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 35.1 MB/s eta 0:00:00
+Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch==2.5.0)
+  Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 30.1 MB/s eta 0:00:00
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.5.0)
+  Downloading MarkupSafe-3.0.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (23 kB)
+Installing collected packages: mpmath, typing-extensions, sympy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+Successfully installed MarkupSafe-3.0.2 filelock-3.16.1 fsspec-2024.10.0 jinja2-3.1.4 mpmath-1.3.0 networkx-3.4.2 sympy-1.13.1 torch-2.5.0 typing-extensions-4.12.2
+
+[notice] A new release of pip is available: 23.1.2 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
++ pip install deepspeed
+Collecting deepspeed
+  Downloading deepspeed-0.15.4.tar.gz (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 31.0 MB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting hjson (from deepspeed)
+  Downloading hjson-3.1.0-py3-none-any.whl (54 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 54.0/54.0 kB 9.0 MB/s eta 0:00:00
+Collecting msgpack (from deepspeed)
+  Downloading msgpack-1.1.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (396 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 396.1/396.1 kB 26.2 MB/s eta 0:00:00
+Collecting ninja (from deepspeed)
+  Downloading ninja-1.11.1.1-py2.py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 17.7 MB/s eta 0:00:00
+Collecting numpy (from deepspeed)
+  Downloading numpy-2.1.3-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.9/13.9 MB 32.4 MB/s eta 0:00:00
+Collecting packaging>=20.0 (from deepspeed)
+  Downloading packaging-24.2-py3-none-any.whl (65 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.5/65.5 kB 10.9 MB/s eta 0:00:00
+Collecting psutil (from deepspeed)
+  Downloading psutil-6.1.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (288 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 288.8/288.8 kB 24.4 MB/s eta 0:00:00
+Collecting py-cpuinfo (from deepspeed)
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Collecting pydantic>=2.0.0 (from deepspeed)
+  Downloading pydantic-2.9.2-py3-none-any.whl (434 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 434.9/434.9 kB 28.8 MB/s eta 0:00:00
+Requirement already satisfied: torch in ./llm/lib/python3.11/site-packages (from deepspeed) (2.5.0)
+Collecting tqdm (from deepspeed)
+  Downloading tqdm-4.67.0-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.6/78.6 kB 12.4 MB/s eta 0:00:00
+Collecting annotated-types>=0.6.0 (from pydantic>=2.0.0->deepspeed)
+  Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.23.4 (from pydantic>=2.0.0->deepspeed)
+  Downloading pydantic_core-2.23.4-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 34.2 MB/s eta 0:00:00
+Requirement already satisfied: typing-extensions>=4.6.1 in ./llm/lib/python3.11/site-packages (from pydantic>=2.0.0->deepspeed) (4.12.2)
+Requirement already satisfied: filelock in ./llm/lib/python3.11/site-packages (from torch->deepspeed) (3.16.1)
+Requirement already satisfied: networkx in ./llm/lib/python3.11/site-packages (from torch->deepspeed) (3.4.2)
+Requirement already satisfied: jinja2 in ./llm/lib/python3.11/site-packages (from torch->deepspeed) (3.1.4)
+Requirement already satisfied: fsspec in ./llm/lib/python3.11/site-packages (from torch->deepspeed) (2024.10.0)
+Requirement already satisfied: sympy==1.13.1 in ./llm/lib/python3.11/site-packages (from torch->deepspeed) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./llm/lib/python3.11/site-packages (from sympy==1.13.1->torch->deepspeed) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./llm/lib/python3.11/site-packages (from jinja2->torch->deepspeed) (3.0.2)
+Building wheels for collected packages: deepspeed
+  Building wheel for deepspeed (pyproject.toml): started
+  Building wheel for deepspeed (pyproject.toml): finished with status 'done'
+  Created wheel for deepspeed: filename=deepspeed-0.15.4-py3-none-any.whl size=1525321 sha256=2ba0d1ac358874ce773dbffc1b91663f0c803b07aaff773bc3da276055f50ce4
+  Stored in directory: /root/.cache/pip/wheels/9f/b7/07/035dfeaae31b5766822083a749891e45aab9c72d25a78b7dd0
+Successfully built deepspeed
+Installing collected packages: py-cpuinfo, ninja, hjson, tqdm, pydantic-core, psutil, packaging, numpy, msgpack, annotated-types, pydantic, deepspeed
+Successfully installed annotated-types-0.7.0 deepspeed-0.15.4 hjson-3.1.0 msgpack-1.1.0 ninja-1.11.1.1 numpy-2.1.3 packaging-24.2 psutil-6.1.0 py-cpuinfo-9.0.0 pydantic-2.9.2 pydantic-core-2.23.4 tqdm-4.67.0
+
+[notice] A new release of pip is available: 23.1.2 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
++ pip install numpy pydantic accelerate bitsandbytes datasets optimum transformers evaluate scikit-learn pyspark trl wandb
+Requirement already satisfied: numpy in ./llm/lib/python3.11/site-packages (2.1.3)
+Requirement already satisfied: pydantic in ./llm/lib/python3.11/site-packages (2.9.2)
+Collecting accelerate
+  Downloading accelerate-1.1.1-py3-none-any.whl (333 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 333.2/333.2 kB 25.0 MB/s eta 0:00:00
+Collecting bitsandbytes
+  Downloading bitsandbytes-0.42.0-py3-none-any.whl (105.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 105.0/105.0 MB 21.6 MB/s eta 0:00:00
+Collecting datasets
+  Downloading datasets-3.1.0-py3-none-any.whl (480 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 480.6/480.6 kB 28.9 MB/s eta 0:00:00
+Collecting optimum
+  Downloading optimum-1.23.3-py3-none-any.whl (424 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 424.1/424.1 kB 28.0 MB/s eta 0:00:00
+Collecting transformers
+  Downloading transformers-4.46.3-py3-none-any.whl (10.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 35.3 MB/s eta 0:00:00
+Collecting evaluate
+  Downloading evaluate-0.4.3-py3-none-any.whl (84 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 84.0/84.0 kB 12.9 MB/s eta 0:00:00
+Collecting scikit-learn
+  Downloading scikit_learn-1.5.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (12.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 33.9 MB/s eta 0:00:00
+Collecting pyspark
+  Downloading pyspark-3.5.3.tar.gz (317.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 317.3/317.3 MB 3.3 MB/s eta 0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting trl
+  Downloading trl-0.12.1-py3-none-any.whl (310 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.9/310.9 kB 24.8 MB/s eta 0:00:00
+Collecting wandb
+  Downloading wandb-0.18.7-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (15.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.2/15.2 MB 30.6 MB/s eta 0:00:00
+Requirement already satisfied: annotated-types>=0.6.0 in ./llm/lib/python3.11/site-packages (from pydantic) (0.7.0)
+Requirement already satisfied: pydantic-core==2.23.4 in ./llm/lib/python3.11/site-packages (from pydantic) (2.23.4)
+Requirement already satisfied: typing-extensions>=4.6.1 in ./llm/lib/python3.11/site-packages (from pydantic) (4.12.2)
+Collecting huggingface-hub>=0.21.0 (from accelerate)
+  Downloading huggingface_hub-0.26.2-py3-none-any.whl (447 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 447.5/447.5 kB 28.7 MB/s eta 0:00:00
+Requirement already satisfied: packaging>=20.0 in ./llm/lib/python3.11/site-packages (from accelerate) (24.2)
+Requirement already satisfied: psutil in ./llm/lib/python3.11/site-packages (from accelerate) (6.1.0)
+Collecting pyyaml (from accelerate)
+  Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (736 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 736.8/736.8 kB 32.0 MB/s eta 0:00:00
+Collecting safetensors>=0.4.3 (from accelerate)
+  Downloading safetensors-0.4.5-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (441 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 441.1/441.1 kB 28.3 MB/s eta 0:00:00
+Requirement already satisfied: torch>=1.10.0 in ./llm/lib/python3.11/site-packages (from accelerate) (2.5.0)
+Collecting scipy (from bitsandbytes)
+  Downloading scipy-1.14.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (35.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.6/35.6 MB 20.9 MB/s eta 0:00:00
+Requirement already satisfied: filelock in ./llm/lib/python3.11/site-packages (from datasets) (3.16.1)
+Collecting pyarrow>=15.0.0 (from datasets)
+  Downloading pyarrow-18.0.0-cp311-cp311-manylinux_2_28_aarch64.whl (38.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.6/38.6 MB 15.6 MB/s eta 0:00:00
+Collecting dill<0.3.9,>=0.3.0 (from datasets)
+  Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.3/116.3 kB 15.5 MB/s eta 0:00:00
+Collecting pandas (from datasets)
+  Downloading pandas-2.2.3-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (15.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.6/15.6 MB 31.5 MB/s eta 0:00:00
+Collecting requests>=2.32.2 (from datasets)
+  Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 10.6 MB/s eta 0:00:00
+Requirement already satisfied: tqdm>=4.66.3 in ./llm/lib/python3.11/site-packages (from datasets) (4.67.0)
+Collecting xxhash (from datasets)
+  Downloading xxhash-3.5.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (221 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 221.6/221.6 kB 21.7 MB/s eta 0:00:00
+Collecting multiprocess<0.70.17 (from datasets)
+  Downloading multiprocess-0.70.16-py311-none-any.whl (143 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 143.5/143.5 kB 17.4 MB/s eta 0:00:00
+Collecting fsspec[http]<=2024.9.0,>=2023.1.0 (from datasets)
+  Downloading fsspec-2024.9.0-py3-none-any.whl (179 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 179.3/179.3 kB 20.5 MB/s eta 0:00:00
+Collecting aiohttp (from datasets)
+  Downloading aiohttp-3.11.3-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 34.3 MB/s eta 0:00:00
+Collecting coloredlogs (from optimum)
+  Downloading coloredlogs-15.0.1-py2.py3-none-any.whl (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 kB 7.6 MB/s eta 0:00:00
+Requirement already satisfied: sympy in ./llm/lib/python3.11/site-packages (from optimum) (1.13.1)
+Collecting regex!=2019.12.17 (from transformers)
+  Downloading regex-2024.11.6-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (792 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 792.1/792.1 kB 31.7 MB/s eta 0:00:00
+Collecting tokenizers<0.21,>=0.20 (from transformers)
+  Downloading tokenizers-0.20.3-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 35.2 MB/s eta 0:00:00
+Collecting joblib>=1.2.0 (from scikit-learn)
+  Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 301.8/301.8 kB 23.8 MB/s eta 0:00:00
+Collecting threadpoolctl>=3.1.0 (from scikit-learn)
+  Downloading threadpoolctl-3.5.0-py3-none-any.whl (18 kB)
+Collecting py4j==0.10.9.7 (from pyspark)
+  Downloading py4j-0.10.9.7-py2.py3-none-any.whl (200 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.5/200.5 kB 20.2 MB/s eta 0:00:00
+Collecting rich (from trl)
+  Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 kB 23.6 MB/s eta 0:00:00
+Collecting click!=8.0.0,>=7.1 (from wandb)
+  Downloading click-8.1.7-py3-none-any.whl (97 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 97.9/97.9 kB 14.6 MB/s eta 0:00:00
+Collecting docker-pycreds>=0.4.0 (from wandb)
+  Downloading docker_pycreds-0.4.0-py2.py3-none-any.whl (9.0 kB)
+Collecting gitpython!=3.1.29,>=1.0.0 (from wandb)
+  Downloading GitPython-3.1.43-py3-none-any.whl (207 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.3/207.3 kB 21.6 MB/s eta 0:00:00
+Collecting platformdirs (from wandb)
+  Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+Collecting protobuf!=4.21.0,!=5.28.0,<6,>=3.19.0 (from wandb)
+  Downloading protobuf-5.28.3-cp38-abi3-manylinux2014_aarch64.whl (316 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 316.5/316.5 kB 24.7 MB/s eta 0:00:00
+Collecting sentry-sdk>=2.0.0 (from wandb)
+  Downloading sentry_sdk-2.18.0-py2.py3-none-any.whl (317 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 317.5/317.5 kB 25.7 MB/s eta 0:00:00
+Collecting setproctitle (from wandb)
+  Downloading setproctitle-1.3.4-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (31 kB)
+Requirement already satisfied: setuptools in ./llm/lib/python3.11/site-packages (from wandb) (65.5.0)
+Collecting six>=1.4.0 (from docker-pycreds>=0.4.0->wandb)
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting aiohappyeyeballs>=2.3.0 (from aiohttp->datasets)
+  Downloading aiohappyeyeballs-2.4.3-py3-none-any.whl (14 kB)
+Collecting aiosignal>=1.1.2 (from aiohttp->datasets)
+  Downloading aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
+Collecting attrs>=17.3.0 (from aiohttp->datasets)
+  Downloading attrs-24.2.0-py3-none-any.whl (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.0/63.0 kB 10.4 MB/s eta 0:00:00
+Collecting frozenlist>=1.1.1 (from aiohttp->datasets)
+  Downloading frozenlist-1.5.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (276 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 276.4/276.4 kB 24.9 MB/s eta 0:00:00
+Collecting multidict<7.0,>=4.5 (from aiohttp->datasets)
+  Downloading multidict-6.1.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (131 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.1/131.1 kB 17.3 MB/s eta 0:00:00
+Collecting propcache>=0.2.0 (from aiohttp->datasets)
+  Downloading propcache-0.2.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (236 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 236.2/236.2 kB 22.9 MB/s eta 0:00:00
+Collecting yarl<2.0,>=1.17.0 (from aiohttp->datasets)
+  Downloading yarl-1.17.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (340 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 340.1/340.1 kB 26.0 MB/s eta 0:00:00
+Collecting gitdb<5,>=4.0.1 (from gitpython!=3.1.29,>=1.0.0->wandb)
+  Downloading gitdb-4.0.11-py3-none-any.whl (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.7/62.7 kB 10.3 MB/s eta 0:00:00
+Collecting charset-normalizer<4,>=2 (from requests>=2.32.2->datasets)
+  Downloading charset_normalizer-3.4.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (138 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 138.2/138.2 kB 17.9 MB/s eta 0:00:00
+Collecting idna<4,>=2.5 (from requests>=2.32.2->datasets)
+  Downloading idna-3.10-py3-none-any.whl (70 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 11.3 MB/s eta 0:00:00
+Collecting urllib3<3,>=1.21.1 (from requests>=2.32.2->datasets)
+  Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 126.3/126.3 kB 17.0 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17 (from requests>=2.32.2->datasets)
+  Downloading certifi-2024.8.30-py3-none-any.whl (167 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.3/167.3 kB 19.7 MB/s eta 0:00:00
+Requirement already satisfied: networkx in ./llm/lib/python3.11/site-packages (from torch>=1.10.0->accelerate) (3.4.2)
+Requirement already satisfied: jinja2 in ./llm/lib/python3.11/site-packages (from torch>=1.10.0->accelerate) (3.1.4)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./llm/lib/python3.11/site-packages (from sympy->optimum) (1.3.0)
+Collecting humanfriendly>=9.1 (from coloredlogs->optimum)
+  Downloading humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 86.8/86.8 kB 13.1 MB/s eta 0:00:00
+Collecting python-dateutil>=2.8.2 (from pandas->datasets)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 22.6 MB/s eta 0:00:00
+Collecting pytz>=2020.1 (from pandas->datasets)
+  Downloading pytz-2024.2-py2.py3-none-any.whl (508 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 508.0/508.0 kB 28.2 MB/s eta 0:00:00
+Collecting tzdata>=2022.7 (from pandas->datasets)
+  Downloading tzdata-2024.2-py2.py3-none-any.whl (346 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 346.6/346.6 kB 25.3 MB/s eta 0:00:00
+Collecting markdown-it-py>=2.2.0 (from rich->trl)
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 13.3 MB/s eta 0:00:00
+Collecting pygments<3.0.0,>=2.13.0 (from rich->trl)
+  Downloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 32.6 MB/s eta 0:00:00
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython!=3.1.29,>=1.0.0->wandb)
+  Downloading smmap-5.0.1-py3-none-any.whl (24 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->trl)
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in ./llm/lib/python3.11/site-packages (from jinja2->torch>=1.10.0->accelerate) (3.0.2)
+Building wheels for collected packages: pyspark
+  Building wheel for pyspark (pyproject.toml): started
+  Building wheel for pyspark (pyproject.toml): finished with status 'done'
+  Created wheel for pyspark: filename=pyspark-3.5.3-py2.py3-none-any.whl size=317923959 sha256=5de9f29b581dd1d04a567d93ccc32f7ab7d70a54ac3fa0f16d3e0890f7d03e23
+  Stored in directory: /root/.cache/pip/wheels/97/f5/c0/947e2c0942b361ffe58651f36bd7f13772675b3863fd63d1b1
+Successfully built pyspark
+Installing collected packages: pytz, py4j, xxhash, urllib3, tzdata, threadpoolctl, smmap, six, setproctitle, scipy, safetensors, regex, pyyaml, pyspark, pygments, pyarrow, protobuf, propcache, platformdirs, multidict, mdurl, joblib, idna, humanfriendly, fsspec, frozenlist, dill, click, charset-normalizer, certifi, attrs, aiohappyeyeballs, yarl, sentry-sdk, scikit-learn, requests, python-dateutil, multiprocess, markdown-it-py, gitdb, docker-pycreds, coloredlogs, bitsandbytes, aiosignal, rich, pandas, huggingface-hub, gitpython, aiohttp, wandb, tokenizers, accelerate, transformers, datasets, trl, optimum, evaluate
+  Attempting uninstall: fsspec
+    Found existing installation: fsspec 2024.10.0
+    Uninstalling fsspec-2024.10.0:
+      Successfully uninstalled fsspec-2024.10.0
+Successfully installed accelerate-1.1.1 aiohappyeyeballs-2.4.3 aiohttp-3.11.3 aiosignal-1.3.1 attrs-24.2.0 bitsandbytes-0.42.0 certifi-2024.8.30 charset-normalizer-3.4.0 click-8.1.7 coloredlogs-15.0.1 datasets-3.1.0 dill-0.3.8 docker-pycreds-0.4.0 evaluate-0.4.3 frozenlist-1.5.0 fsspec-2024.9.0 gitdb-4.0.11 gitpython-3.1.43 huggingface-hub-0.26.2 humanfriendly-10.0 idna-3.10 joblib-1.4.2 markdown-it-py-3.0.0 mdurl-0.1.2 multidict-6.1.0 multiprocess-0.70.16 optimum-1.23.3 pandas-2.2.3 platformdirs-4.3.6 propcache-0.2.0 protobuf-5.28.3 py4j-0.10.9.7 pyarrow-18.0.0 pygments-2.18.0 pyspark-3.5.3 python-dateutil-2.9.0.post0 pytz-2024.2 pyyaml-6.0.2 regex-2024.11.6 requests-2.32.3 rich-13.9.4 safetensors-0.4.5 scikit-learn-1.5.2 scipy-1.14.1 sentry-sdk-2.18.0 setproctitle-1.3.4 six-1.16.0 smmap-5.0.1 threadpoolctl-3.5.0 tokenizers-0.20.3 transformers-4.46.3 trl-0.12.1 tzdata-2024.2 urllib3-2.2.3 wandb-0.18.7 xxhash-3.5.0 yarl-1.17.2
+
+[notice] A new release of pip is available: 23.1.2 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
++ pip install aiohttp attrs certifi charset-normalizer dill filelock frozenlist GitPython idna joblib MarkupSafe multidict multiprocess packaging pandas protobuf psutil pyarrow python-dateutil pytz PyYAML regex requests scipy sentencepiece sentry-sdk setuptools sympy tqdm typing_extensions tzdata urllib3 xxhash yarl
+Requirement already satisfied: aiohttp in ./llm/lib/python3.11/site-packages (3.11.3)
+Requirement already satisfied: attrs in ./llm/lib/python3.11/site-packages (24.2.0)
+Requirement already satisfied: certifi in ./llm/lib/python3.11/site-packages (2024.8.30)
+Requirement already satisfied: charset-normalizer in ./llm/lib/python3.11/site-packages (3.4.0)
+Requirement already satisfied: dill in ./llm/lib/python3.11/site-packages (0.3.8)
+Requirement already satisfied: filelock in ./llm/lib/python3.11/site-packages (3.16.1)
+Requirement already satisfied: frozenlist in ./llm/lib/python3.11/site-packages (1.5.0)
+Requirement already satisfied: GitPython in ./llm/lib/python3.11/site-packages (3.1.43)
+Requirement already satisfied: idna in ./llm/lib/python3.11/site-packages (3.10)
+Requirement already satisfied: joblib in ./llm/lib/python3.11/site-packages (1.4.2)
+Requirement already satisfied: MarkupSafe in ./llm/lib/python3.11/site-packages (3.0.2)
+Requirement already satisfied: multidict in ./llm/lib/python3.11/site-packages (6.1.0)
+Requirement already satisfied: multiprocess in ./llm/lib/python3.11/site-packages (0.70.16)
+Requirement already satisfied: packaging in ./llm/lib/python3.11/site-packages (24.2)
+Requirement already satisfied: pandas in ./llm/lib/python3.11/site-packages (2.2.3)
+Requirement already satisfied: protobuf in ./llm/lib/python3.11/site-packages (5.28.3)
+Requirement already satisfied: psutil in ./llm/lib/python3.11/site-packages (6.1.0)
+Requirement already satisfied: pyarrow in ./llm/lib/python3.11/site-packages (18.0.0)
+Requirement already satisfied: python-dateutil in ./llm/lib/python3.11/site-packages (2.9.0.post0)
+Requirement already satisfied: pytz in ./llm/lib/python3.11/site-packages (2024.2)
+Requirement already satisfied: PyYAML in ./llm/lib/python3.11/site-packages (6.0.2)
+Requirement already satisfied: regex in ./llm/lib/python3.11/site-packages (2024.11.6)
+Requirement already satisfied: requests in ./llm/lib/python3.11/site-packages (2.32.3)
+Requirement already satisfied: scipy in ./llm/lib/python3.11/site-packages (1.14.1)
+Collecting sentencepiece
+  Downloading sentencepiece-0.2.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 25.9 MB/s eta 0:00:00
+Requirement already satisfied: sentry-sdk in ./llm/lib/python3.11/site-packages (2.18.0)
+Requirement already satisfied: setuptools in ./llm/lib/python3.11/site-packages (65.5.0)
+Requirement already satisfied: sympy in ./llm/lib/python3.11/site-packages (1.13.1)
+Requirement already satisfied: tqdm in ./llm/lib/python3.11/site-packages (4.67.0)
+Requirement already satisfied: typing_extensions in ./llm/lib/python3.11/site-packages (4.12.2)
+Requirement already satisfied: tzdata in ./llm/lib/python3.11/site-packages (2024.2)
+Requirement already satisfied: urllib3 in ./llm/lib/python3.11/site-packages (2.2.3)
+Requirement already satisfied: xxhash in ./llm/lib/python3.11/site-packages (3.5.0)
+Requirement already satisfied: yarl in ./llm/lib/python3.11/site-packages (1.17.2)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in ./llm/lib/python3.11/site-packages (from aiohttp) (2.4.3)
+Requirement already satisfied: aiosignal>=1.1.2 in ./llm/lib/python3.11/site-packages (from aiohttp) (1.3.1)
+Requirement already satisfied: propcache>=0.2.0 in ./llm/lib/python3.11/site-packages (from aiohttp) (0.2.0)
+Requirement already satisfied: gitdb<5,>=4.0.1 in ./llm/lib/python3.11/site-packages (from GitPython) (4.0.11)
+Requirement already satisfied: numpy>=1.23.2 in ./llm/lib/python3.11/site-packages (from pandas) (2.1.3)
+Requirement already satisfied: six>=1.5 in ./llm/lib/python3.11/site-packages (from python-dateutil) (1.16.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./llm/lib/python3.11/site-packages (from sympy) (1.3.0)
+Requirement already satisfied: smmap<6,>=3.0.1 in ./llm/lib/python3.11/site-packages (from gitdb<5,>=4.0.1->GitPython) (5.0.1)
+Installing collected packages: sentencepiece
+Successfully installed sentencepiece-0.2.0
+
+[notice] A new release of pip is available: 23.1.2 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
++ pip list
+Package            Version
+------------------ -----------
+accelerate         1.1.1
+aiohappyeyeballs   2.4.3
+aiohttp            3.11.3
+aiosignal          1.3.1
+annotated-types    0.7.0
+attrs              24.2.0
+bitsandbytes       0.42.0
+certifi            2024.8.30
+charset-normalizer 3.4.0
+click              8.1.7
+coloredlogs        15.0.1
+datasets           3.1.0
+deepspeed          0.15.4
+dill               0.3.8
+docker-pycreds     0.4.0
+evaluate           0.4.3
+filelock           3.16.1
+frozenlist         1.5.0
+fsspec             2024.9.0
+gitdb              4.0.11
+GitPython          3.1.43
+hjson              3.1.0
+huggingface-hub    0.26.2
+humanfriendly      10.0
+idna               3.10
+Jinja2             3.1.4
+joblib             1.4.2
+markdown-it-py     3.0.0
+MarkupSafe         3.0.2
+mdurl              0.1.2
+mpmath             1.3.0
+msgpack            1.1.0
+multidict          6.1.0
+multiprocess       0.70.16
+networkx           3.4.2
+ninja              1.11.1.1
+numpy              2.1.3
+optimum            1.23.3
+packaging          24.2
+pandas             2.2.3
+pip                23.1.2
+platformdirs       4.3.6
+propcache          0.2.0
+protobuf           5.28.3
+psutil             6.1.0
+py-cpuinfo         9.0.0
+py4j               0.10.9.7
+pyarrow            18.0.0
+pydantic           2.9.2
+pydantic_core      2.23.4
+Pygments           2.18.0
+pyspark            3.5.3
+python-dateutil    2.9.0.post0
+pytz               2024.2
+PyYAML             6.0.2
+regex              2024.11.6
+requests           2.32.3
+rich               13.9.4
+safetensors        0.4.5
+scikit-learn       1.5.2
+scipy              1.14.1
+sentencepiece      0.2.0
+sentry-sdk         2.18.0
+setproctitle       1.3.4
+setuptools         65.5.0
+six                1.16.0
+smmap              5.0.1
+sympy              1.13.1
+threadpoolctl      3.5.0
+tokenizers         0.20.3
+torch              2.5.0
+tqdm               4.67.0
+transformers       4.46.3
+trl                0.12.1
+typing_extensions  4.12.2
+tzdata             2024.2
+urllib3            2.2.3
+wandb              0.18.7
+xxhash             3.5.0
+yarl               1.17.2
+
+[notice] A new release of pip is available: 23.1.2 -> 24.3.1
+[notice] To update, run: pip install --upgrade pip
++ cd /usr/local
++ git clone https://github.com/microsoft/Megatron-DeepSpeed
+Cloning into 'Megatron-DeepSpeed'...
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Creating SIF file...
+INFO:    Build complete: ds.sif
