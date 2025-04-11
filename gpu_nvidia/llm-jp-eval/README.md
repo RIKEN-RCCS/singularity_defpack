@@ -40,7 +40,7 @@ It automatically evaluates Japanese LLMs across multiple datasets.
   - **gemma-3**
   <img src="./images/google-gemma-3.png">
 
-> [Score for all models](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/llm-jp-eval/all_score.csv)  
+> [Score for all models](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/llm-jp-eval/all_score.cvs)  
 > [Best score for each models](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/llm-jp-eval/best.csv)  
 > [Deepseek-R1 distilled model and FT by cyberagent](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/llm-jp-eval/deepseek-r1-distill.csv)  
 > [Google gemma-3 model](https://github.com/RIKEN-RCCS/singularity_defpack/blob/main/gpu_nvidia/llm-jp-eval/google-gemma-3.csv)  
