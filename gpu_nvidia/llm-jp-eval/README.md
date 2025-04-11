@@ -31,15 +31,18 @@ It automatically evaluates Japanese LLMs across multiple datasets.
 
 > [llm-jp/open-japanese-llm-leaderboard](https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard)
 
-<img src="./images/best.png">
+  - Best result for each models
+  <img src="./images/best.png">
 
-<img src="./images/deepseek-r1-distill.png">
+  - cyberagent-DeepSeek-R1-Distill
+  <img src="./images/deepseek-r1-distill.png">
 
-<img src="./images/google-gemma-3.png">
+  - gemma-3
+  <img src="./images/google-gemma-3.png">
 
-> [all_score.csv](./all_score.csv)
-> [best.csv](./best.csv)
-> [deepseek-r1-distill.csv](./best.csv)
-> [google-gemma-3.csv](./google-gemma-3.csv)
+> [Score for all models](./all_score.csv)  
+> [Best score for each models](./best.csv)  
+> [Deepseek-R1 distilled model and FT by cyberagent](./best.csv)  
+> [Google gemma-3 model](./google-gemma-3.csv)  
 
 > The measurement results are unavailable because **DeepSeek-R1-Distill-Qwen-70B** did not complete execution within the job scheduler's 24-hour time limit.
