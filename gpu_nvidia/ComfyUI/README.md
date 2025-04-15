@@ -1,7 +1,7 @@
 # Setup
 
 ## Directory Creation  
-Models and image outputs used by ComfyUI are consolidated under the `ComfyUI` directory located in the home directory.  
+Models and image outputs used by ComfyUI are consolidated under the `ComfyUI` directory located in the home directory.
 When using it for the first time, various subdirectories should be created under the `ComfyUI` directory.
 
 ```bash
@@ -18,7 +18,7 @@ done
 
 ## Downloading Models and Other Files
 
-When using ComfyUI for the first time, no necessary models or resources are available by default.  
+When using ComfyUI for the first time, no necessary models or resources are available by default.
 You will need to download the required files from Hugging Face.
 
 The following script downloads the models for **FLUX1** (image generation) and **Wan2.1** (video generation) in one go.
@@ -87,7 +87,7 @@ def download_model(repo_id, filename, subdir):
             local_dir=target_dir,
             local_dir_use_symlinks=False,
         )
-        print(f"✅ Done: {file_path}\n")
+        print(f"Done: {file_path}\n")
     except Exception as e:
         print(f"Error downloading {filename} from {repo_id}: {e}\n")
 
@@ -114,17 +114,15 @@ singularity run --nv /path/to/ComfyUI.sif
 ## Connecting from a Web Browser
 
 Accessing port **8188** on localhost will connect you to ComfyUI.
-
 ```
 http://localhost:8188
 ```
-
 
 # Sample
 
 ## Text-to-Image
 
-By entering a prompt into the `"clip"` node and executing it, you can generate an image.  
+By entering a prompt into the `"clip"` node and executing it, you can generate an image.
 The more detailed your prompt, the more closely the output will match your intended image.
 
 <img src="./images/t2i.jpg">
@@ -136,9 +134,7 @@ You can reproduce the workflow by dragging and dropping the image below directly
 
 ## Text-to-Video
 
-Enter your prompt for image generation into the `"clip"` under **Positive Prompt**, and specify elements you want to exclude under **Negative Prompt**. Executing this will generate a video.
-
-As with images, more detailed prompts produce results closer to your vision.
+Enter your prompt for image generation into the `"clip"` under **Positive Prompt**, and specify elements you want to exclude under **Negative Prompt**. Executing this will generate a video. As with images, more detailed prompts produce results closer to your vision.
 
 <img src="./images/t2v.jpg">
 
