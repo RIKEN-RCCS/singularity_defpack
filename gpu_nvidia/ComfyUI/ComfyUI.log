@@ -1,0 +1,537 @@
+INFO:    Starting build...
+INFO:    Fetching OCI image...
+INFO:    Extracting OCI image...
+INFO:    Inserting Singularity configuration...
+INFO:    Running setup scriptlet
+INFO:    Running post scriptlet
++ apt-get update
+Get:1 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa  InRelease [1579 B]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble InRelease [256 kB]
+Get:3 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa  Packages [390 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble/restricted arm64 Packages [113 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 Packages [19.0 MB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 Packages [1776 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble/multiverse arm64 Packages [274 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1263 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [1319 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1332 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse arm64 Packages [20.9 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports noble-backports/main arm64 Packages [48.0 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Packages [30.9 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1269 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [948 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [19.0 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1041 kB]
+Fetched 29.5 MB in 8s (3546 kB/s)
+Reading package lists...
+W: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
++ apt-get install -y --no-install-recommends git wget vim build-essential python3 python3-pip
+Reading package lists...
+Building dependency tree...
+Reading state information...
+build-essential is already the newest version (12.10ubuntu1).
+build-essential set to manually installed.
+The following additional packages will be installed:
+  git-man libbrotli1 libcurl3t64-gnutls liberror-perl libgpm2 libgssapi-krb5-2
+  libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libnghttp2-14 libpsl5t64
+  libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib
+  libpython3.12t64 librtmp1 libsodium23 libssh-4 media-types netbase
+  python3-minimal python3-pkg-resources python3-setuptools python3-wheel
+  python3.12 python3.12-minimal tzdata vim-common vim-runtime
+Suggested packages:
+  gettext-base git-daemon-run | git-daemon-sysvinit git-doc git-email git-gui
+  gitk gitweb git-cvs git-mediawiki git-svn gpm krb5-doc krb5-user python3-doc
+  python3-tk python3-venv python-setuptools-doc python3.12-venv python3.12-doc
+  binfmt-support ctags vim-doc vim-scripts
+Recommended packages:
+  less ssh-client krb5-locales publicsuffix python3-dev xxd
+The following NEW packages will be installed:
+  git git-man libbrotli1 libcurl3t64-gnutls liberror-perl libgpm2
+  libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
+  libnghttp2-14 libpsl5t64 libpython3-stdlib libpython3.12-minimal
+  libpython3.12-stdlib libpython3.12t64 librtmp1 libsodium23 libssh-4
+  media-types netbase python3 python3-minimal python3-pip
+  python3-pkg-resources python3-setuptools python3-wheel python3.12
+  python3.12-minimal tzdata vim vim-common vim-runtime wget
+0 upgraded, 35 newly installed, 0 to remove and 42 not upgraded.
+Need to get 26.9 MB of archives.
+After this operation, 120 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libpython3.12-minimal arm64 3.12.3-1ubuntu0.5 [831 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3.12-minimal arm64 3.12.3-1ubuntu0.5 [2254 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3-minimal arm64 3.12.3-0ubuntu2 [27.4 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 media-types all 10.1.0 [27.5 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 netbase all 6.4 [13.1 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 tzdata all 2025b-0ubuntu0.24.04 [276 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libpython3.12-stdlib arm64 3.12.3-1ubuntu0.5 [2037 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3.12 arm64 3.12.3-1ubuntu0.5 [651 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libpython3-stdlib arm64 3.12.3-0ubuntu2 [10.0 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3 arm64 3.12.3-0ubuntu2 [23.0 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libkrb5support0 arm64 1.20.1-6ubuntu2.5 [34.6 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libk5crypto3 arm64 1.20.1-6ubuntu2.5 [85.8 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libkeyutils1 arm64 1.6.3-3build1 [9654 B]
+Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libkrb5-3 arm64 1.20.1-6ubuntu2.5 [349 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libgssapi-krb5-2 arm64 1.20.1-6ubuntu2.5 [142 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3-pkg-resources all 68.1.2-2ubuntu1.1 [168 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 vim-common all 2:9.1.0016-1ubuntu7.8 [386 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libgpm2 arm64 1.20.7-11 [14.7 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libnghttp2-14 arm64 1.59.0-1ubuntu0.2 [74.5 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libpsl5t64 arm64 0.21.2-1.1build1 [57.4 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 wget arm64 1.21.4-1ubuntu4.1 [330 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libbrotli1 arm64 1.1.0-2build2 [339 kB]
+Get:23 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 librtmp1 arm64 2.4+20151223.gitfa8646d.1-2build7 [57.8 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libssh-4 arm64 0.10.6-2build2 [189 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libcurl3t64-gnutls arm64 8.5.0-2ubuntu10.6 [328 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 liberror-perl all 0.17029-2 [25.6 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 git-man all 1:2.43.0-1ubuntu7.2 [1100 kB]
+Get:28 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 git arm64 1:2.43.0-1ubuntu7.2 [3776 kB]
+Get:29 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libpython3.12t64 arm64 3.12.3-1ubuntu0.5 [2281 kB]
+Get:30 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libsodium23 arm64 1.0.18-1build3 [119 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3-setuptools all 68.1.2-2ubuntu1.1 [396 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 python3-wheel all 0.42.0-2 [53.1 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 python3-pip all 24.0+dfsg-1ubuntu1.1 [1317 kB]
+Get:34 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 vim-runtime all 2:9.1.0016-1ubuntu7.8 [7281 kB]
+Get:35 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 vim arm64 2:9.1.0016-1ubuntu7.8 [1814 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 26.9 MB in 14s (1888 kB/s)
+Selecting previously unselected package libpython3.12-minimal:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14660 files and directories currently installed.)
+Preparing to unpack .../libpython3.12-minimal_3.12.3-1ubuntu0.5_arm64.deb ...
+Unpacking libpython3.12-minimal:arm64 (3.12.3-1ubuntu0.5) ...
+Selecting previously unselected package python3.12-minimal.
+Preparing to unpack .../python3.12-minimal_3.12.3-1ubuntu0.5_arm64.deb ...
+Unpacking python3.12-minimal (3.12.3-1ubuntu0.5) ...
+Setting up libpython3.12-minimal:arm64 (3.12.3-1ubuntu0.5) ...
+Setting up python3.12-minimal (3.12.3-1ubuntu0.5) ...
+Selecting previously unselected package python3-minimal.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14971 files and directories currently installed.)
+Preparing to unpack .../0-python3-minimal_3.12.3-0ubuntu2_arm64.deb ...
+Unpacking python3-minimal (3.12.3-0ubuntu2) ...
+Selecting previously unselected package media-types.
+Preparing to unpack .../1-media-types_10.1.0_all.deb ...
+Unpacking media-types (10.1.0) ...
+Selecting previously unselected package netbase.
+Preparing to unpack .../2-netbase_6.4_all.deb ...
+Unpacking netbase (6.4) ...
+Selecting previously unselected package tzdata.
+Preparing to unpack .../3-tzdata_2025b-0ubuntu0.24.04_all.deb ...
+Unpacking tzdata (2025b-0ubuntu0.24.04) ...
+Selecting previously unselected package libpython3.12-stdlib:arm64.
+Preparing to unpack .../4-libpython3.12-stdlib_3.12.3-1ubuntu0.5_arm64.deb ...
+Unpacking libpython3.12-stdlib:arm64 (3.12.3-1ubuntu0.5) ...
+Selecting previously unselected package python3.12.
+Preparing to unpack .../5-python3.12_3.12.3-1ubuntu0.5_arm64.deb ...
+Unpacking python3.12 (3.12.3-1ubuntu0.5) ...
+Selecting previously unselected package libpython3-stdlib:arm64.
+Preparing to unpack .../6-libpython3-stdlib_3.12.3-0ubuntu2_arm64.deb ...
+Unpacking libpython3-stdlib:arm64 (3.12.3-0ubuntu2) ...
+Setting up python3-minimal (3.12.3-0ubuntu2) ...
+Selecting previously unselected package python3.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 15941 files and directories currently installed.)
+Preparing to unpack .../00-python3_3.12.3-0ubuntu2_arm64.deb ...
+Unpacking python3 (3.12.3-0ubuntu2) ...
+Selecting previously unselected package libkrb5support0:arm64.
+Preparing to unpack .../01-libkrb5support0_1.20.1-6ubuntu2.5_arm64.deb ...
+Unpacking libkrb5support0:arm64 (1.20.1-6ubuntu2.5) ...
+Selecting previously unselected package libk5crypto3:arm64.
+Preparing to unpack .../02-libk5crypto3_1.20.1-6ubuntu2.5_arm64.deb ...
+Unpacking libk5crypto3:arm64 (1.20.1-6ubuntu2.5) ...
+Selecting previously unselected package libkeyutils1:arm64.
+Preparing to unpack .../03-libkeyutils1_1.6.3-3build1_arm64.deb ...
+Unpacking libkeyutils1:arm64 (1.6.3-3build1) ...
+Selecting previously unselected package libkrb5-3:arm64.
+Preparing to unpack .../04-libkrb5-3_1.20.1-6ubuntu2.5_arm64.deb ...
+Unpacking libkrb5-3:arm64 (1.20.1-6ubuntu2.5) ...
+Selecting previously unselected package libgssapi-krb5-2:arm64.
+Preparing to unpack .../05-libgssapi-krb5-2_1.20.1-6ubuntu2.5_arm64.deb ...
+Unpacking libgssapi-krb5-2:arm64 (1.20.1-6ubuntu2.5) ...
+Selecting previously unselected package python3-pkg-resources.
+Preparing to unpack .../06-python3-pkg-resources_68.1.2-2ubuntu1.1_all.deb ...
+Unpacking python3-pkg-resources (68.1.2-2ubuntu1.1) ...
+Selecting previously unselected package vim-common.
+Preparing to unpack .../07-vim-common_2%3a9.1.0016-1ubuntu7.8_all.deb ...
+Unpacking vim-common (2:9.1.0016-1ubuntu7.8) ...
+Selecting previously unselected package libgpm2:arm64.
+Preparing to unpack .../08-libgpm2_1.20.7-11_arm64.deb ...
+Unpacking libgpm2:arm64 (1.20.7-11) ...
+Selecting previously unselected package libnghttp2-14:arm64.
+Preparing to unpack .../09-libnghttp2-14_1.59.0-1ubuntu0.2_arm64.deb ...
+Unpacking libnghttp2-14:arm64 (1.59.0-1ubuntu0.2) ...
+Selecting previously unselected package libpsl5t64:arm64.
+Preparing to unpack .../10-libpsl5t64_0.21.2-1.1build1_arm64.deb ...
+Unpacking libpsl5t64:arm64 (0.21.2-1.1build1) ...
+Selecting previously unselected package wget.
+Preparing to unpack .../11-wget_1.21.4-1ubuntu4.1_arm64.deb ...
+Unpacking wget (1.21.4-1ubuntu4.1) ...
+Selecting previously unselected package libbrotli1:arm64.
+Preparing to unpack .../12-libbrotli1_1.1.0-2build2_arm64.deb ...
+Unpacking libbrotli1:arm64 (1.1.0-2build2) ...
+Selecting previously unselected package librtmp1:arm64.
+Preparing to unpack .../13-librtmp1_2.4+20151223.gitfa8646d.1-2build7_arm64.deb ...
+Unpacking librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Selecting previously unselected package libssh-4:arm64.
+Preparing to unpack .../14-libssh-4_0.10.6-2build2_arm64.deb ...
+Unpacking libssh-4:arm64 (0.10.6-2build2) ...
+Selecting previously unselected package libcurl3t64-gnutls:arm64.
+Preparing to unpack .../15-libcurl3t64-gnutls_8.5.0-2ubuntu10.6_arm64.deb ...
+Unpacking libcurl3t64-gnutls:arm64 (8.5.0-2ubuntu10.6) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../16-liberror-perl_0.17029-2_all.deb ...
+Unpacking liberror-perl (0.17029-2) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../17-git-man_1%3a2.43.0-1ubuntu7.2_all.deb ...
+Unpacking git-man (1:2.43.0-1ubuntu7.2) ...
+Selecting previously unselected package git.
+Preparing to unpack .../18-git_1%3a2.43.0-1ubuntu7.2_arm64.deb ...
+Unpacking git (1:2.43.0-1ubuntu7.2) ...
+Selecting previously unselected package libpython3.12t64:arm64.
+Preparing to unpack .../19-libpython3.12t64_3.12.3-1ubuntu0.5_arm64.deb ...
+Unpacking libpython3.12t64:arm64 (3.12.3-1ubuntu0.5) ...
+Selecting previously unselected package libsodium23:arm64.
+Preparing to unpack .../20-libsodium23_1.0.18-1build3_arm64.deb ...
+Unpacking libsodium23:arm64 (1.0.18-1build3) ...
+Selecting previously unselected package python3-setuptools.
+Preparing to unpack .../21-python3-setuptools_68.1.2-2ubuntu1.1_all.deb ...
+Unpacking python3-setuptools (68.1.2-2ubuntu1.1) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../22-python3-wheel_0.42.0-2_all.deb ...
+Unpacking python3-wheel (0.42.0-2) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../23-python3-pip_24.0+dfsg-1ubuntu1.1_all.deb ...
+Unpacking python3-pip (24.0+dfsg-1ubuntu1.1) ...
+Selecting previously unselected package vim-runtime.
+Preparing to unpack .../24-vim-runtime_2%3a9.1.0016-1ubuntu7.8_all.deb ...
+Adding 'diversion of /usr/share/vim/vim91/doc/help.txt to /usr/share/vim/vim91/doc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim91/doc/tags to /usr/share/vim/vim91/doc/tags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:9.1.0016-1ubuntu7.8) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../25-vim_2%3a9.1.0016-1ubuntu7.8_arm64.deb ...
+Unpacking vim (2:9.1.0016-1ubuntu7.8) ...
+Setting up media-types (10.1.0) ...
+Setting up libkeyutils1:arm64 (1.6.3-3build1) ...
+Setting up libsodium23:arm64 (1.0.18-1build3) ...
+Setting up libgpm2:arm64 (1.20.7-11) ...
+Setting up libbrotli1:arm64 (1.1.0-2build2) ...
+Setting up libpsl5t64:arm64 (0.21.2-1.1build1) ...
+Setting up libnghttp2-14:arm64 (1.59.0-1ubuntu0.2) ...
+Setting up libkrb5support0:arm64 (1.20.1-6ubuntu2.5) ...
+Setting up tzdata (2025b-0ubuntu0.24.04) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+Configuring tzdata
+------------------
+
+Please select the geographic area in which you live. Subsequent configuration
+questions will narrow this down by presenting a list of cities, representing
+the time zones in which they are located.
+
+  1. Africa      4. Arctic    7. Australia  10. Pacific
+  2. America     5. Asia      8. Europe     11. Etc
+  3. Antarctica  6. Atlantic  9. Indian     12. Legacy
+Geographic area: 
+Use of uninitialized value $_[1] in join or string at /usr/share/perl5/Debconf/DbDriver/Stack.pm line 112.
+
+Current default time zone: '/UTC'
+Local time is now:      Tue Apr 15 09:00:56 UTC 2025.
+Universal Time is now:  Tue Apr 15 09:00:56 UTC 2025.
+Run 'dpkg-reconfigure tzdata' if you wish to change it.
+
+Use of uninitialized value $val in substitution (s///) at /usr/share/perl5/Debconf/Format/822.pm line 84, <GEN6> line 4.
+Use of uninitialized value $val in concatenation (.) or string at /usr/share/perl5/Debconf/Format/822.pm line 85, <GEN6> line 4.
+Setting up liberror-perl (0.17029-2) ...
+Setting up vim-common (2:9.1.0016-1ubuntu7.8) ...
+Setting up librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Setting up libk5crypto3:arm64 (1.20.1-6ubuntu2.5) ...
+Setting up git-man (1:2.43.0-1ubuntu7.2) ...
+Setting up netbase (6.4) ...
+Setting up libkrb5-3:arm64 (1.20.1-6ubuntu2.5) ...
+Setting up vim-runtime (2:9.1.0016-1ubuntu7.8) ...
+Setting up libpython3.12-stdlib:arm64 (3.12.3-1ubuntu0.5) ...
+Setting up wget (1.21.4-1ubuntu4.1) ...
+Setting up python3.12 (3.12.3-1ubuntu0.5) ...
+Setting up libpython3.12t64:arm64 (3.12.3-1ubuntu0.5) ...
+Setting up libgssapi-krb5-2:arm64 (1.20.1-6ubuntu2.5) ...
+Setting up libssh-4:arm64 (0.10.6-2build2) ...
+Setting up libpython3-stdlib:arm64 (3.12.3-0ubuntu2) ...
+Setting up vim (2:9.1.0016-1ubuntu7.8) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/editor.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/editor.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/editor.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/editor.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/editor.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/editor.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/editor.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/editor.1.gz because associated file /usr/share/man/tr/man1/vim.1.gz (of link group editor) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/ex.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/ex.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/ex.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/ex.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/ex.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/ex.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/ex.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/ex.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/ex.1.gz because associated file /usr/share/man/tr/man1/vim.1.gz (of link group ex) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/vi.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/vi.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/vi.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/vi.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/vi.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/vi.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/vi.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/vi.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/vi.1.gz because associated file /usr/share/man/tr/man1/vim.1.gz (of link group vi) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/view.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/da/man1/view.1.gz because associated file /usr/share/man/da/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/de/man1/view.1.gz because associated file /usr/share/man/de/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/fr/man1/view.1.gz because associated file /usr/share/man/fr/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/it/man1/view.1.gz because associated file /usr/share/man/it/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ja/man1/view.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/pl/man1/view.1.gz because associated file /usr/share/man/pl/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/ru/man1/view.1.gz because associated file /usr/share/man/ru/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: warning: skip creation of /usr/share/man/tr/man1/view.1.gz because associated file /usr/share/man/tr/man1/vim.1.gz (of link group view) doesn't exist
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdiff) in auto mode
+Setting up libcurl3t64-gnutls:arm64 (8.5.0-2ubuntu10.6) ...
+Setting up python3 (3.12.3-0ubuntu2) ...
+running python rtupdate hooks for python3.12...
+running python post-rtupdate hooks for python3.12...
+Setting up python3-wheel (0.42.0-2) ...
+Setting up git (1:2.43.0-1ubuntu7.2) ...
+Setting up python3-pkg-resources (68.1.2-2ubuntu1.1) ...
+Setting up python3-setuptools (68.1.2-2ubuntu1.1) ...
+Setting up python3-pip (24.0+dfsg-1ubuntu1.1) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
++ apt-get clean
++ rm -rf /var/lib/apt/lists/auxfiles /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu2404_sbsa_InRelease /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu2404_sbsa_Packages.lz4 /var/lib/apt/lists/lock /var/lib/apt/lists/partial /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-backports_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-backports_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-backports_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-security_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-security_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-security_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-security_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-security_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-updates_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-updates_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-updates_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-updates_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble-updates_universe_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble_InRelease /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble_main_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble_multiverse_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble_restricted_binary-arm64_Packages.lz4 /var/lib/apt/lists/ports.ubuntu.com_ubuntu-ports_dists_noble_universe_binary-arm64_Packages.lz4
++ pip install --break-system-packages --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+Looking in indexes: https://download.pytorch.org/whl/nightly/cu128
+Collecting torch
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250414%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (28 kB)
+Collecting torchvision
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250414-cp312-cp312-linux_aarch64.whl.metadata (6.2 kB)
+Collecting torchaudio
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torchaudio-2.6.0.dev20250414-cp312-cp312-linux_aarch64.whl.metadata (6.7 kB)
+Collecting filelock (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/filelock-3.16.1-py3-none-any.whl (16 kB)
+Collecting typing-extensions>=4.10.0 (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from torch) (68.1.2)
+Collecting sympy>=1.13.3 (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/sympy-1.13.3-py3-none-any.whl (6.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 92.9 MB/s eta 0:00:00
+Collecting networkx (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/networkx-3.4.2-py3-none-any.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 112.0 MB/s eta 0:00:00
+Collecting jinja2 (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/jinja2-3.1.4-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 92.9 MB/s eta 0:00:00
+Collecting fsspec (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/fsspec-2024.10.0-py3-none-any.whl (179 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 179.6/179.6 kB 97.7 MB/s eta 0:00:00
+Collecting pytorch-triton==3.3.0+git96316ce5 (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/pytorch_triton-3.3.0%2Bgit96316ce5-cp312-cp312-linux_aarch64.whl.metadata (1.6 kB)
+Collecting numpy (from torchvision)
+  Downloading https://download.pytorch.org/whl/nightly/numpy-2.1.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 110.1 MB/s eta 0:00:00
+Collecting torch
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250413%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (28 kB)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision)
+  Downloading https://download.pytorch.org/whl/nightly/pillow-11.0.0-cp312-cp312-manylinux_2_28_aarch64.whl (4.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 110.6 MB/s eta 0:00:00
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
+  Downloading https://download.pytorch.org/whl/nightly/mpmath-1.3.0-py3-none-any.whl (536 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 107.3 MB/s eta 0:00:00
+Collecting MarkupSafe>=2.0 (from jinja2->torch)
+  Downloading https://download.pytorch.org/whl/nightly/MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (29 kB)
+Downloading https://download.pytorch.org/whl/nightly/pytorch_triton-3.3.0%2Bgit96316ce5-cp312-cp312-linux_aarch64.whl (142.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.1/142.1 MB 66.4 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250414-cp312-cp312-linux_aarch64.whl (9.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 112.3 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250413%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl (2848.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 GB 7.4 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/nightly/cu128/torchaudio-2.6.0.dev20250414-cp312-cp312-linux_aarch64.whl (3.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 111.7 MB/s eta 0:00:00
+Installing collected packages: mpmath, typing-extensions, sympy, pytorch-triton, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision, torchaudio
+Successfully installed MarkupSafe-2.1.5 filelock-3.16.1 fsspec-2024.10.0 jinja2-3.1.4 mpmath-1.3.0 networkx-3.4.2 numpy-2.1.2 pillow-11.0.0 pytorch-triton-3.3.0+git96316ce5 sympy-1.13.3 torch-2.8.0.dev20250413+cu128 torchaudio-2.6.0.dev20250414 torchvision-0.22.0.dev20250414 typing-extensions-4.12.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
++ cd /opt
++ git clone https://github.com/comfyanonymous/ComfyUI.git
+Cloning into 'ComfyUI'...
++ cd ComfyUI
++ pip install --break-system-packages -r requirements.txt
+Collecting comfyui-frontend-package==1.15.13 (from -r requirements.txt (line 1))
+  Downloading comfyui_frontend_package-1.15.13-py3-none-any.whl.metadata (118 bytes)
+Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 2)) (2.8.0.dev20250413+cu128)
+Collecting torchsde (from -r requirements.txt (line 3))
+  Downloading torchsde-0.2.6-py3-none-any.whl.metadata (5.3 kB)
+Requirement already satisfied: torchvision in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 4)) (0.22.0.dev20250414)
+Requirement already satisfied: torchaudio in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 5)) (2.6.0.dev20250414)
+Requirement already satisfied: numpy>=1.25.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 6)) (2.1.2)
+Collecting einops (from -r requirements.txt (line 7))
+  Downloading einops-0.8.1-py3-none-any.whl.metadata (13 kB)
+Collecting transformers>=4.28.1 (from -r requirements.txt (line 8))
+  Downloading transformers-4.51.3-py3-none-any.whl.metadata (38 kB)
+Collecting tokenizers>=0.13.3 (from -r requirements.txt (line 9))
+  Downloading tokenizers-0.21.1-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.8 kB)
+Collecting sentencepiece (from -r requirements.txt (line 10))
+  Downloading sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.7 kB)
+Collecting safetensors>=0.4.2 (from -r requirements.txt (line 11))
+  Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.8 kB)
+Collecting aiohttp>=3.11.8 (from -r requirements.txt (line 12))
+  Downloading aiohttp-3.11.16-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.7 kB)
+Collecting yarl>=1.18.0 (from -r requirements.txt (line 13))
+  Downloading yarl-1.19.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (71 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.8/71.8 kB 27.6 MB/s eta 0:00:00
+Collecting pyyaml (from -r requirements.txt (line 14))
+  Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (2.1 kB)
+Requirement already satisfied: Pillow in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 15)) (11.0.0)
+Collecting scipy (from -r requirements.txt (line 16))
+  Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 30.6 MB/s eta 0:00:00
+Collecting tqdm (from -r requirements.txt (line 17))
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 45.4 MB/s eta 0:00:00
+Collecting psutil (from -r requirements.txt (line 18))
+  Downloading psutil-7.0.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (22 kB)
+Collecting kornia>=0.7.1 (from -r requirements.txt (line 21))
+  Downloading kornia-0.8.0-py2.py3-none-any.whl.metadata (17 kB)
+Collecting spandrel (from -r requirements.txt (line 22))
+  Downloading spandrel-0.4.1-py3-none-any.whl.metadata (15 kB)
+Collecting soundfile (from -r requirements.txt (line 23))
+  Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_aarch64.whl.metadata (16 kB)
+Collecting av (from -r requirements.txt (line 24))
+  Downloading av-14.3.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.7 kB)
+Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.16.1)
+Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (4.12.2)
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from torch->-r requirements.txt (line 2)) (68.1.2)
+Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (1.13.3)
+Requirement already satisfied: networkx in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.1.4)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (2024.10.0)
+Requirement already satisfied: pytorch-triton==3.3.0+git96316ce5 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.3.0+git96316ce5)
+Collecting trampoline>=0.1.2 (from torchsde->-r requirements.txt (line 3))
+  Downloading trampoline-0.1.2-py3-none-any.whl.metadata (10 kB)
+Collecting huggingface-hub<1.0,>=0.30.0 (from transformers>=4.28.1->-r requirements.txt (line 8))
+  Downloading huggingface_hub-0.30.2-py3-none-any.whl.metadata (13 kB)
+Collecting packaging>=20.0 (from transformers>=4.28.1->-r requirements.txt (line 8))
+  Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting regex!=2019.12.17 (from transformers>=4.28.1->-r requirements.txt (line 8))
+  Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 kB 28.4 MB/s eta 0:00:00
+Collecting requests (from transformers>=4.28.1->-r requirements.txt (line 8))
+  Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting aiohappyeyeballs>=2.3.0 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+  Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.1.2 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+  Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)
+Collecting attrs>=17.3.0 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+  Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+  Downloading frozenlist-1.5.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (13 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+  Downloading multidict-6.4.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (5.3 kB)
+Collecting propcache>=0.2.0 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+  Downloading propcache-0.3.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
+Collecting idna>=2.0 (from yarl>=1.18.0->-r requirements.txt (line 13))
+  Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Collecting kornia_rs>=0.1.0 (from kornia>=0.7.1->-r requirements.txt (line 21))
+  Downloading kornia_rs-0.1.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
+Collecting cffi>=1.0 (from soundfile->-r requirements.txt (line 23))
+  Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (1.5 kB)
+Collecting pycparser (from cffi>=1.0->soundfile->-r requirements.txt (line 23))
+  Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch->-r requirements.txt (line 2)) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch->-r requirements.txt (line 2)) (2.1.5)
+Collecting charset-normalizer<4,>=2 (from requests->transformers>=4.28.1->-r requirements.txt (line 8))
+  Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (35 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->transformers>=4.28.1->-r requirements.txt (line 8))
+  Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests->transformers>=4.28.1->-r requirements.txt (line 8))
+  Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+Downloading comfyui_frontend_package-1.15.13-py3-none-any.whl (34.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.9/34.9 MB 99.0 MB/s eta 0:00:00
+Downloading torchsde-0.2.6-py3-none-any.whl (61 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 kB 45.2 MB/s eta 0:00:00
+Downloading einops-0.8.1-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 46.2 MB/s eta 0:00:00
+Downloading transformers-4.51.3-py3-none-any.whl (10.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 110.6 MB/s eta 0:00:00
+Downloading tokenizers-0.21.1-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 107.4 MB/s eta 0:00:00
+Downloading sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 110.3 MB/s eta 0:00:00
+Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (459 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 459.5/459.5 kB 103.1 MB/s eta 0:00:00
+Downloading aiohttp-3.11.16-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 106.7 MB/s eta 0:00:00
+Downloading yarl-1.19.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (344 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 344.4/344.4 kB 91.8 MB/s eta 0:00:00
+Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (739 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 739.2/739.2 kB 97.0 MB/s eta 0:00:00
+Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (35.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 98.7 MB/s eta 0:00:00
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 53.4 MB/s eta 0:00:00
+Downloading psutil-7.0.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (279 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 279.5/279.5 kB 79.0 MB/s eta 0:00:00
+Downloading kornia-0.8.0-py2.py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 102.8 MB/s eta 0:00:00
+Downloading spandrel-0.4.1-py3-none-any.whl (305 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 305.2/305.2 kB 98.4 MB/s eta 0:00:00
+Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_aarch64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 107.8 MB/s eta 0:00:00
+Downloading av-14.3.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (33.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 33.7/33.7 MB 96.7 MB/s eta 0:00:00
+Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
+Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 44.7 MB/s eta 0:00:00
+Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (478 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 478.9/478.9 kB 105.5 MB/s eta 0:00:00
+Downloading frozenlist-1.5.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (282 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 282.6/282.6 kB 88.3 MB/s eta 0:00:00
+Downloading huggingface_hub-0.30.2-py3-none-any.whl (481 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 481.4/481.4 kB 105.7 MB/s eta 0:00:00
+Downloading idna-3.10-py3-none-any.whl (70 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 50.6 MB/s eta 0:00:00
+Downloading kornia_rs-0.1.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 108.6 MB/s eta 0:00:00
+Downloading multidict-6.4.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.4/224.4 kB 84.8 MB/s eta 0:00:00
+Downloading packaging-24.2-py3-none-any.whl (65 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.5/65.5 kB 48.8 MB/s eta 0:00:00
+Downloading propcache-0.3.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (243 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.0/243.0 kB 79.3 MB/s eta 0:00:00
+Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (794 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 795.0/795.0 kB 108.2 MB/s eta 0:00:00
+Downloading trampoline-0.1.2-py3-none-any.whl (5.2 kB)
+Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 48.2 MB/s eta 0:00:00
+Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 166.4/166.4 kB 93.0 MB/s eta 0:00:00
+Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (140 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.4/140.4 kB 82.9 MB/s eta 0:00:00
+Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.7/128.7 kB 83.8 MB/s eta 0:00:00
+Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.6/117.6 kB 83.4 MB/s eta 0:00:00
+Installing collected packages: trampoline, sentencepiece, urllib3, tqdm, scipy, safetensors, regex, pyyaml, pycparser, psutil, propcache, packaging, multidict, kornia_rs, idna, frozenlist, einops, comfyui-frontend-package, charset-normalizer, certifi, av, attrs, aiohappyeyeballs, yarl, requests, cffi, aiosignal, torchsde, soundfile, kornia, huggingface-hub, aiohttp, tokenizers, spandrel, transformers
+Successfully installed aiohappyeyeballs-2.6.1 aiohttp-3.11.16 aiosignal-1.3.2 attrs-25.3.0 av-14.3.0 certifi-2025.1.31 cffi-1.17.1 charset-normalizer-3.4.1 comfyui-frontend-package-1.15.13 einops-0.8.1 frozenlist-1.5.0 huggingface-hub-0.30.2 idna-3.10 kornia-0.8.0 kornia_rs-0.1.8 multidict-6.4.3 packaging-24.2 propcache-0.3.1 psutil-7.0.0 pycparser-2.22 pyyaml-6.0.2 regex-2024.11.6 requests-2.32.3 safetensors-0.5.3 scipy-1.15.2 sentencepiece-0.2.0 soundfile-0.13.1 spandrel-0.4.1 tokenizers-0.21.1 torchsde-0.2.6 tqdm-4.67.1 trampoline-0.1.2 transformers-4.51.3 urllib3-2.4.0 yarl-1.19.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+INFO:    Adding environment to container
+INFO:    Adding runscript
+INFO:    Creating SIF file...
+INFO:    Build complete: ComfyUI.sif

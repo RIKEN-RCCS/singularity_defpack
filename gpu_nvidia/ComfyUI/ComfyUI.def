@@ -1,0 +1,30 @@
+Bootstrap: docker
+From: nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04
+
+%setup
+
+%post
+  apt-get update && apt-get install -y --no-install-recommends \
+      git \
+      wget \
+      vim \
+      build-essential \
+      python3 python3-pip \
+      && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+  pip install --break-system-packages --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+
+  cd /opt
+  git clone https://github.com/comfyanonymous/ComfyUI.git
+  cd ComfyUI
+  pip install --break-system-packages -r requirements.txt
+
+%environment
+  export PATH=/usr/local/cuda/bin:/opt/ComfyUI:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+  export NVIDIA_VISIBLE_DEVICES=all
+  export NVIDIA_DRIVER_CAPABILITIES=compute,utility
+
+%runscript
+  cd /opt/ComfyUI
+  python3 main.py --listen --base-directory $HOME/ComfyUI
