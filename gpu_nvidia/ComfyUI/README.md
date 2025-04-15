@@ -123,7 +123,8 @@ http://localhost:8188
 ## Text-to-Image
 
 By entering a prompt into the `"clip"` node and executing it, you can generate an image.
-The more detailed your prompt, the more closely the output will match your intended image.
+The more detailed your prompt, the more closely the output will match your intended image.  
+It takes 17sec to execute prompt at NVIDIA GH200.
 
 <img src="./images/t2i.jpg">
 
@@ -134,7 +135,8 @@ You can reproduce the workflow by dragging and dropping the image below directly
 
 ## Text-to-Video
 
-Enter your prompt for image generation into the `"clip"` under **Positive Prompt**, and specify elements you want to exclude under **Negative Prompt**. Executing this will generate a video. As with images, more detailed prompts produce results closer to your vision.
+Enter your prompt for image generation into the `"clip"` under **Positive Prompt**, and specify elements you want to exclude under **Negative Prompt**. Executing this will generate a video. As with images, more detailed prompts produce results closer to your vision.  
+It takes 93sec to execute prompt at NVIDIA GH200.
 
 <img src="./images/t2v.jpg">
 
