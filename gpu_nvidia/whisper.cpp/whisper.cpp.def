@@ -1,0 +1,62 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/pytorch:23.11-py3
+
+%setup
+  mkdir ${SINGULARITY_ROOTFS}/lvs0
+
+%post
+    apt-get update && apt-get install -y --no-install-recommends \
+        wget \
+        vim \
+        ffmpeg \
+        build-essential \
+        && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+    pip install --no-cache-dir --upgrade pip setuptools wheel
+    pip install faster-whisper
+
+    cd /opt
+    git clone https://github.com/ggerganov/whisper.cpp.git
+    mkdir whisper.cpp/build && cd whisper.cpp
+    cmake -B build -DGGML_CUDA=1 -DCMAKE_CUDA_ARCHITECTURES="90"
+    cmake --build build -j --config Release
+    cd build && make install
+
+    cd /opt/whisper.cpp
+    curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    apt install -y nodejs
+    npm install -g npm@11.3.0
+    npm install -g textlint
+    npm install -g \
+      textlint-rule-preset-ja-technical-writing \
+      textlint-rule-preset-jtf-style \
+      textlint-rule-preset-ja-spacing \
+      textlint-filter-rule-comments \
+      textlint-rule-spellcheck-tech-word \
+      textlint-rule-prh \
+      textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet \
+      textlint-rule-ja-hiragana-keishikimeishi \
+      textlint-rule-ja-hiragana-fukushi \
+      textlint-rule-ja-hiragana-hojodoushi \
+      textlint-rule-ja-unnatural-alphabet \
+      textlint-rule-prefer-tari-tari \
+      textlint-rule-general-novel-style-ja \
+      textlint-rule-period-in-list-item \
+      textlint-rule-footnote-order \
+      textlint-rule-ng-word \
+      textlint-rule-abbr-within-parentheses
+    curl -O https://raw.githubusercontent.com/prh/rules/master/media/WEB+DB_PRESS.yml
+
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    . ~/.cargo/env
+    pip install "spacy<3.7.0"
+    pip install ja-ginza
+
+%test
+    python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"
+
+%environment
+    export PATH=/usr/local/cuda/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:$LD_LIBRARY_PATH
+    export NVIDIA_VISIBLE_DEVICES=all
+    export NVIDIA_DRIVER_CAPABILITIES=compute,utility
