@@ -75,6 +75,47 @@ if __name__ == "__main__":
     output_path.write_text(result, encoding="utf-8")
 ```
 
+## Preparing the `.textlintrc` File
+
+Create a configuration file for textlint as `.textlintrc` in the current directory.
+
+```
+{
+  "filters": {
+    "comments": true
+  },
+  "rules": {
+    "preset-ja-technical-writing": true,
+    "preset-jtf-style": true,
+    "preset-ja-spacing": true,
+
+    "spellcheck-tech-word": true,
+    "prh": {
+      "rulePaths": [
+        "/opt/whisper.cpp/WEB+DB_PRESS.yml"
+      ]
+    },
+
+    "no-mixed-zenkaku-and-hankaku-alphabet": true,
+    "ja-hiragana-keishikimeishi": true,
+    "ja-hiragana-fukushi": true,
+    "ja-hiragana-hojodoushi": true,
+    "ja-unnatural-alphabet": true,
+    "prefer-tari-tari": true,
+    "general-novel-style-ja": true,
+    "period-in-list-item": true,
+    "footnote-order": true,
+    "ng-word": {
+      "list": [
+        "差別用語",
+        "不適切表現"
+      ]
+    },
+    "abbr-within-parentheses": true
+  }
+}
+```
+
 # Running Transcription
 
 Use `whisper.cpp` to transcribe the audio, adjust line breaks using spaCy, and perform proofreading with `textlint`.
@@ -90,14 +131,13 @@ The final output will be saved as `$INPUT.txt`.
 
 
 **The best balance of speed and accuracy was achieved with `ggml-large-v3-turbo.bin`.
-On GH200, transcribing about 1 hour and 30 minutes of audio took only about 2 minutes, and the final output closely matched the original audio.
-Kotoba Technologies' Kotoba-Whisper was also tested, but it showed issues in accuracy, such as omissions and misordered segments.**
+On NVIDIA GH200, transcribing about 1 hour and 30 minutes of audio took only about 2 minutes, and the final output closely matched the original audio.**
 
 
 # Benchmark Test
 
 The execution time of various models was compared using the `whisper-bench` command.
-The tests were run on a GH200, with flash attention enabled via `whisper-bench` options.
+The tests were run on NVIDIA GH200, with flash attention enabled via `whisper-bench` options.
 
 ## Model: ggml-kotoba-whisper-v2.0.bin
 
