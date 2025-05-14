@@ -14,6 +14,7 @@ From: nvcr.io/nvidia/pytorch:23.11-py3
 
     pip install --no-cache-dir --upgrade pip setuptools wheel
     pip install faster-whisper
+    pip install -U yt-dlp
 
     cd /opt
     git clone https://github.com/ggerganov/whisper.cpp.git
