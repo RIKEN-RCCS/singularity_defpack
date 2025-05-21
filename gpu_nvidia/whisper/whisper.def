@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: nvcr.io/nvidia/pytorch:23.11-py3
+From: nvidia/cuda:12.8.0-runtime-ubuntu22.04
 
 %setup
   mkdir ${SINGULARITY_ROOTFS}/lvs0
@@ -10,20 +10,20 @@ From: nvcr.io/nvidia/pytorch:23.11-py3
         vim \
         ffmpeg \
         build-essential \
+        curl \
+        python3-dev python3-pip python3-pkgconfig python3-venv \
         && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-    pip install --no-cache-dir --upgrade pip setuptools wheel
-    pip install faster-whisper
-    pip install -U yt-dlp
+    pip3 install numpy==1.24.4
 
-    cd /opt
-    git clone https://github.com/ggerganov/whisper.cpp.git
-    mkdir whisper.cpp/build && cd whisper.cpp
-    cmake -B build -DGGML_CUDA=1 -DCMAKE_CUDA_ARCHITECTURES="90"
-    cmake --build build -j --config Release
-    cd build && make install
+    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
-    cd /opt/whisper.cpp
+    pip3 install --no-cache-dir --upgrade pip setuptools wheel
+    pip3 install faster-whisper openai-whisper
+    pip3 install -U yt-dlp
+    pip3 install pyannote.audio
+
+    mkdir /opt/textlint && cd /opt/textlint
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
     apt install -y nodejs
     npm install -g npm@11.3.0
@@ -48,13 +48,13 @@ From: nvcr.io/nvidia/pytorch:23.11-py3
       textlint-rule-abbr-within-parentheses
     curl -O https://raw.githubusercontent.com/prh/rules/master/media/WEB+DB_PRESS.yml
 
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    . ~/.cargo/env
-    pip install "spacy<3.7.0"
-    pip install ja-ginza
+#   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+#   . ~/.cargo/env
+#   pip install "spacy<3.7.0"
+#   pip install ja-ginza
 
 %test
-    python -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"
+    python3 -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"
 
 %environment
     export PATH=/usr/local/cuda/bin:$PATH
