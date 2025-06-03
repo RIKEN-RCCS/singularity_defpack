@@ -5,30 +5,30 @@ INFO:    Inserting Singularity configuration...
 INFO:    Running setup scriptlet
 INFO:    Running post scriptlet
 + apt-get update
-Get:1 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa  InRelease [1579 B]
-Get:2 http://ports.ubuntu.com/ubuntu-ports noble InRelease [256 kB]
-Get:3 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa  Packages [390 kB]
-Get:4 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease [256 kB]
+Get:2 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa  InRelease [1579 B]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease [126 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease [126 kB]
+Get:5 https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa  Packages [558 kB]
 Get:6 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease [126 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports noble/restricted arm64 Packages [113 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 Packages [19.0 MB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 Packages [1776 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 Packages [19.0 MB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 Packages [1776 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble/restricted arm64 Packages [113 kB]
 Get:10 http://ports.ubuntu.com/ubuntu-ports noble/multiverse arm64 Packages [274 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1263 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [1319 kB]
-Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1332 kB]
-Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse arm64 Packages [20.9 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble-updates/restricted arm64 Packages [1780 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 Packages [1345 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble-updates/multiverse arm64 Packages [21.1 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 Packages [1412 kB]
 Get:15 http://ports.ubuntu.com/ubuntu-ports noble-backports/main arm64 Packages [48.0 kB]
-Get:16 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Packages [30.9 kB]
-Get:17 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1269 kB]
-Get:18 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [948 kB]
-Get:19 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [19.0 kB]
-Get:20 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1041 kB]
-Fetched 29.5 MB in 8s (3546 kB/s)
+Get:16 http://ports.ubuntu.com/ubuntu-ports noble-backports/universe arm64 Packages [31.8 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports noble-security/multiverse arm64 Packages [19.3 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports noble-security/universe arm64 Packages [1051 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports noble-security/restricted arm64 Packages [1730 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports noble-security/main arm64 Packages [1095 kB]
+Fetched 30.9 MB in 7s (4197 kB/s)
 Reading package lists...
 W: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/sbsa/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
-+ apt-get install -y --no-install-recommends git wget vim build-essential python3 python3-pip
++ apt-get install -y --no-install-recommends git wget vim build-essential python3 python3-pip socat
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -38,7 +38,7 @@ The following additional packages will be installed:
   git-man libbrotli1 libcurl3t64-gnutls liberror-perl libgpm2 libgssapi-krb5-2
   libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0 libnghttp2-14 libpsl5t64
   libpython3-stdlib libpython3.12-minimal libpython3.12-stdlib
-  libpython3.12t64 librtmp1 libsodium23 libssh-4 media-types netbase
+  libpython3.12t64 librtmp1 libsodium23 libssh-4 libwrap0 media-types netbase
   python3-minimal python3-pkg-resources python3-setuptools python3-wheel
   python3.12 python3.12-minimal tzdata vim-common vim-runtime
 Suggested packages:
@@ -52,13 +52,13 @@ The following NEW packages will be installed:
   git git-man libbrotli1 libcurl3t64-gnutls liberror-perl libgpm2
   libgssapi-krb5-2 libk5crypto3 libkeyutils1 libkrb5-3 libkrb5support0
   libnghttp2-14 libpsl5t64 libpython3-stdlib libpython3.12-minimal
-  libpython3.12-stdlib libpython3.12t64 librtmp1 libsodium23 libssh-4
+  libpython3.12-stdlib libpython3.12t64 librtmp1 libsodium23 libssh-4 libwrap0
   media-types netbase python3 python3-minimal python3-pip
   python3-pkg-resources python3-setuptools python3-wheel python3.12
-  python3.12-minimal tzdata vim vim-common vim-runtime wget
-0 upgraded, 35 newly installed, 0 to remove and 42 not upgraded.
-Need to get 26.9 MB of archives.
-After this operation, 120 MB of additional disk space will be used.
+  python3.12-minimal socat tzdata vim vim-common vim-runtime wget
+0 upgraded, 37 newly installed, 0 to remove and 48 not upgraded.
+Need to get 27.3 MB of archives.
+After this operation, 122 MB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libpython3.12-minimal arm64 3.12.3-1ubuntu0.5 [831 kB]
 Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3.12-minimal arm64 3.12.3-1ubuntu0.5 [2254 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3-minimal arm64 3.12.3-0ubuntu2 [27.4 kB]
@@ -89,13 +89,15 @@ Get:27 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 git-man all
 Get:28 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 git arm64 1:2.43.0-1ubuntu7.2 [3776 kB]
 Get:29 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libpython3.12t64 arm64 3.12.3-1ubuntu0.5 [2281 kB]
 Get:30 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libsodium23 arm64 1.0.18-1build3 [119 kB]
-Get:31 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3-setuptools all 68.1.2-2ubuntu1.1 [396 kB]
-Get:32 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 python3-wheel all 0.42.0-2 [53.1 kB]
-Get:33 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 python3-pip all 24.0+dfsg-1ubuntu1.1 [1317 kB]
-Get:34 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 vim-runtime all 2:9.1.0016-1ubuntu7.8 [7281 kB]
-Get:35 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 vim arm64 2:9.1.0016-1ubuntu7.8 [1814 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libwrap0 arm64 7.6.q-33 [48.5 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3-setuptools all 68.1.2-2ubuntu1.1 [396 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 python3-wheel all 0.42.0-2 [53.1 kB]
+Get:34 http://ports.ubuntu.com/ubuntu-ports noble-updates/universe arm64 python3-pip all 24.0+dfsg-1ubuntu1.1 [1317 kB]
+Get:35 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 vim-runtime all 2:9.1.0016-1ubuntu7.8 [7281 kB]
+Get:36 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 vim arm64 2:9.1.0016-1ubuntu7.8 [1814 kB]
+Get:37 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 socat arm64 1.8.0.0-4build3 [372 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 26.9 MB in 14s (1888 kB/s)
+Fetched 27.3 MB in 9s (3046 kB/s)
 Selecting previously unselected package libpython3.12-minimal:arm64.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 14660 files and directories currently installed.)
 Preparing to unpack .../libpython3.12-minimal_3.12.3-1ubuntu0.5_arm64.deb ...
@@ -192,23 +194,29 @@ Unpacking libpython3.12t64:arm64 (3.12.3-1ubuntu0.5) ...
 Selecting previously unselected package libsodium23:arm64.
 Preparing to unpack .../20-libsodium23_1.0.18-1build3_arm64.deb ...
 Unpacking libsodium23:arm64 (1.0.18-1build3) ...
+Selecting previously unselected package libwrap0:arm64.
+Preparing to unpack .../21-libwrap0_7.6.q-33_arm64.deb ...
+Unpacking libwrap0:arm64 (7.6.q-33) ...
 Selecting previously unselected package python3-setuptools.
-Preparing to unpack .../21-python3-setuptools_68.1.2-2ubuntu1.1_all.deb ...
+Preparing to unpack .../22-python3-setuptools_68.1.2-2ubuntu1.1_all.deb ...
 Unpacking python3-setuptools (68.1.2-2ubuntu1.1) ...
 Selecting previously unselected package python3-wheel.
-Preparing to unpack .../22-python3-wheel_0.42.0-2_all.deb ...
+Preparing to unpack .../23-python3-wheel_0.42.0-2_all.deb ...
 Unpacking python3-wheel (0.42.0-2) ...
 Selecting previously unselected package python3-pip.
-Preparing to unpack .../23-python3-pip_24.0+dfsg-1ubuntu1.1_all.deb ...
+Preparing to unpack .../24-python3-pip_24.0+dfsg-1ubuntu1.1_all.deb ...
 Unpacking python3-pip (24.0+dfsg-1ubuntu1.1) ...
 Selecting previously unselected package vim-runtime.
-Preparing to unpack .../24-vim-runtime_2%3a9.1.0016-1ubuntu7.8_all.deb ...
+Preparing to unpack .../25-vim-runtime_2%3a9.1.0016-1ubuntu7.8_all.deb ...
 Adding 'diversion of /usr/share/vim/vim91/doc/help.txt to /usr/share/vim/vim91/doc/help.txt.vim-tiny by vim-runtime'
 Adding 'diversion of /usr/share/vim/vim91/doc/tags to /usr/share/vim/vim91/doc/tags.vim-tiny by vim-runtime'
 Unpacking vim-runtime (2:9.1.0016-1ubuntu7.8) ...
 Selecting previously unselected package vim.
-Preparing to unpack .../25-vim_2%3a9.1.0016-1ubuntu7.8_arm64.deb ...
+Preparing to unpack .../26-vim_2%3a9.1.0016-1ubuntu7.8_arm64.deb ...
 Unpacking vim (2:9.1.0016-1ubuntu7.8) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../27-socat_1.8.0.0-4build3_arm64.deb ...
+Unpacking socat (1.8.0.0-4build3) ...
 Setting up media-types (10.1.0) ...
 Setting up libkeyutils1:arm64 (1.6.3-3build1) ...
 Setting up libsodium23:arm64 (1.0.18-1build3) ...
@@ -238,15 +246,17 @@ Geographic area:
 Use of uninitialized value $_[1] in join or string at /usr/share/perl5/Debconf/DbDriver/Stack.pm line 112.
 
 Current default time zone: '/UTC'
-Local time is now:      Tue Apr 15 09:00:56 UTC 2025.
-Universal Time is now:  Tue Apr 15 09:00:56 UTC 2025.
+Local time is now:      Mon May 26 11:47:05 UTC 2025.
+Universal Time is now:  Mon May 26 11:47:05 UTC 2025.
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
 Use of uninitialized value $val in substitution (s///) at /usr/share/perl5/Debconf/Format/822.pm line 84, <GEN6> line 4.
 Use of uninitialized value $val in concatenation (.) or string at /usr/share/perl5/Debconf/Format/822.pm line 85, <GEN6> line 4.
 Setting up liberror-perl (0.17029-2) ...
 Setting up vim-common (2:9.1.0016-1ubuntu7.8) ...
+Setting up libwrap0:arm64 (7.6.q-33) ...
 Setting up librtmp1:arm64 (2.4+20151223.gitfa8646d.1-2build7) ...
+Setting up socat (1.8.0.0-4build3) ...
 Setting up libk5crypto3:arm64 (1.20.1-6ubuntu2.5) ...
 Setting up git-man (1:2.43.0-1ubuntu7.2) ...
 Setting up netbase (6.4) ...
@@ -319,11 +329,11 @@ Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
 + pip install --break-system-packages --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
 Looking in indexes: https://download.pytorch.org/whl/nightly/cu128
 Collecting torch
-  Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250414%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (28 kB)
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250525%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (30 kB)
 Collecting torchvision
-  Downloading https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250414-cp312-cp312-linux_aarch64.whl.metadata (6.2 kB)
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250525-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (6.2 kB)
 Collecting torchaudio
-  Downloading https://download.pytorch.org/whl/nightly/cu128/torchaudio-2.6.0.dev20250414-cp312-cp312-linux_aarch64.whl.metadata (6.7 kB)
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torchaudio-2.6.0.dev20250525-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (7.2 kB)
 Collecting filelock (from torch)
   Downloading https://download.pytorch.org/whl/nightly/filelock-3.16.1-py3-none-any.whl (16 kB)
 Collecting typing-extensions>=4.10.0 (from torch)
@@ -331,205 +341,230 @@ Collecting typing-extensions>=4.10.0 (from torch)
 Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from torch) (68.1.2)
 Collecting sympy>=1.13.3 (from torch)
   Downloading https://download.pytorch.org/whl/nightly/sympy-1.13.3-py3-none-any.whl (6.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 92.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 111.3 MB/s eta 0:00:00
 Collecting networkx (from torch)
   Downloading https://download.pytorch.org/whl/nightly/networkx-3.4.2-py3-none-any.whl (1.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 112.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 112.1 MB/s eta 0:00:00
 Collecting jinja2 (from torch)
   Downloading https://download.pytorch.org/whl/nightly/jinja2-3.1.4-py3-none-any.whl (133 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 92.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.3/133.3 kB 99.4 MB/s eta 0:00:00
 Collecting fsspec (from torch)
   Downloading https://download.pytorch.org/whl/nightly/fsspec-2024.10.0-py3-none-any.whl (179 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 179.6/179.6 kB 97.7 MB/s eta 0:00:00
-Collecting pytorch-triton==3.3.0+git96316ce5 (from torch)
-  Downloading https://download.pytorch.org/whl/nightly/pytorch_triton-3.3.0%2Bgit96316ce5-cp312-cp312-linux_aarch64.whl.metadata (1.6 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 179.6/179.6 kB 98.6 MB/s eta 0:00:00
+Collecting pytorch-triton==3.3.1+gitc8757738 (from torch)
+  Downloading https://download.pytorch.org/whl/nightly/pytorch_triton-3.3.1%2Bgitc8757738-cp312-cp312-linux_aarch64.whl.metadata (1.6 kB)
 Collecting numpy (from torchvision)
   Downloading https://download.pytorch.org/whl/nightly/numpy-2.1.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 110.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.6/13.6 MB 109.2 MB/s eta 0:00:00
 Collecting torch
-  Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250413%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (28 kB)
+  Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250524%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (30 kB)
 Collecting pillow!=8.3.*,>=5.3.0 (from torchvision)
   Downloading https://download.pytorch.org/whl/nightly/pillow-11.0.0-cp312-cp312-manylinux_2_28_aarch64.whl (4.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 110.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 111.3 MB/s eta 0:00:00
 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch)
   Downloading https://download.pytorch.org/whl/nightly/mpmath-1.3.0-py3-none-any.whl (536 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 107.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 110.7 MB/s eta 0:00:00
 Collecting MarkupSafe>=2.0 (from jinja2->torch)
   Downloading https://download.pytorch.org/whl/nightly/MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (29 kB)
-Downloading https://download.pytorch.org/whl/nightly/pytorch_triton-3.3.0%2Bgit96316ce5-cp312-cp312-linux_aarch64.whl (142.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.1/142.1 MB 66.4 MB/s eta 0:00:00
-Downloading https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250414-cp312-cp312-linux_aarch64.whl (9.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 112.3 MB/s eta 0:00:00
-Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250413%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl (2848.0 MB)
+Downloading https://download.pytorch.org/whl/nightly/pytorch_triton-3.3.1%2Bgitc8757738-cp312-cp312-linux_aarch64.whl (144.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.2/144.2 MB 65.4 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/nightly/cu128/torchvision-0.22.0.dev20250525-cp312-cp312-manylinux_2_28_aarch64.whl (9.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 112.1 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/nightly/cu128/torch-2.8.0.dev20250524%2Bcu128-cp312-cp312-manylinux_2_28_aarch64.whl (2822.7 MB)
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 GB 7.4 MB/s eta 0:00:00
-Downloading https://download.pytorch.org/whl/nightly/cu128/torchaudio-2.6.0.dev20250414-cp312-cp312-linux_aarch64.whl (3.8 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 111.7 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/nightly/cu128/torchaudio-2.6.0.dev20250525-cp312-cp312-manylinux_2_28_aarch64.whl (4.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 107.9 MB/s eta 0:00:00
 Installing collected packages: mpmath, typing-extensions, sympy, pytorch-triton, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision, torchaudio
-Successfully installed MarkupSafe-2.1.5 filelock-3.16.1 fsspec-2024.10.0 jinja2-3.1.4 mpmath-1.3.0 networkx-3.4.2 numpy-2.1.2 pillow-11.0.0 pytorch-triton-3.3.0+git96316ce5 sympy-1.13.3 torch-2.8.0.dev20250413+cu128 torchaudio-2.6.0.dev20250414 torchvision-0.22.0.dev20250414 typing-extensions-4.12.2
+Successfully installed MarkupSafe-2.1.5 filelock-3.16.1 fsspec-2024.10.0 jinja2-3.1.4 mpmath-1.3.0 networkx-3.4.2 numpy-2.1.2 pillow-11.0.0 pytorch-triton-3.3.1+gitc8757738 sympy-1.13.3 torch-2.8.0.dev20250524+cu128 torchaudio-2.6.0.dev20250525 torchvision-0.22.0.dev20250525 typing-extensions-4.12.2
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 + cd /opt
 + git clone https://github.com/comfyanonymous/ComfyUI.git
 Cloning into 'ComfyUI'...
 + cd ComfyUI
 + pip install --break-system-packages -r requirements.txt
-Collecting comfyui-frontend-package==1.15.13 (from -r requirements.txt (line 1))
-  Downloading comfyui_frontend_package-1.15.13-py3-none-any.whl.metadata (118 bytes)
-Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 2)) (2.8.0.dev20250413+cu128)
-Collecting torchsde (from -r requirements.txt (line 3))
+Collecting comfyui-frontend-package==1.20.5 (from -r requirements.txt (line 1))
+  Downloading comfyui_frontend_package-1.20.5-py3-none-any.whl.metadata (117 bytes)
+Collecting comfyui-workflow-templates==0.1.18 (from -r requirements.txt (line 2))
+  Downloading comfyui_workflow_templates-0.1.18-py3-none-any.whl.metadata (55 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.4/55.4 kB 7.5 MB/s eta 0:00:00
+Requirement already satisfied: torch in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 3)) (2.8.0.dev20250524+cu128)
+Collecting torchsde (from -r requirements.txt (line 4))
   Downloading torchsde-0.2.6-py3-none-any.whl.metadata (5.3 kB)
-Requirement already satisfied: torchvision in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 4)) (0.22.0.dev20250414)
-Requirement already satisfied: torchaudio in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 5)) (2.6.0.dev20250414)
-Requirement already satisfied: numpy>=1.25.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 6)) (2.1.2)
-Collecting einops (from -r requirements.txt (line 7))
+Requirement already satisfied: torchvision in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 5)) (0.22.0.dev20250525)
+Requirement already satisfied: torchaudio in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 6)) (2.6.0.dev20250525)
+Requirement already satisfied: numpy>=1.25.0 in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 7)) (2.1.2)
+Collecting einops (from -r requirements.txt (line 8))
   Downloading einops-0.8.1-py3-none-any.whl.metadata (13 kB)
-Collecting transformers>=4.28.1 (from -r requirements.txt (line 8))
-  Downloading transformers-4.51.3-py3-none-any.whl.metadata (38 kB)
-Collecting tokenizers>=0.13.3 (from -r requirements.txt (line 9))
+Collecting transformers>=4.28.1 (from -r requirements.txt (line 9))
+  Downloading transformers-4.52.3-py3-none-any.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.2/40.2 kB 15.0 MB/s eta 0:00:00
+Collecting tokenizers>=0.13.3 (from -r requirements.txt (line 10))
   Downloading tokenizers-0.21.1-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.8 kB)
-Collecting sentencepiece (from -r requirements.txt (line 10))
+Collecting sentencepiece (from -r requirements.txt (line 11))
   Downloading sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.7 kB)
-Collecting safetensors>=0.4.2 (from -r requirements.txt (line 11))
+Collecting safetensors>=0.4.2 (from -r requirements.txt (line 12))
   Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.8 kB)
-Collecting aiohttp>=3.11.8 (from -r requirements.txt (line 12))
-  Downloading aiohttp-3.11.16-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.7 kB)
-Collecting yarl>=1.18.0 (from -r requirements.txt (line 13))
-  Downloading yarl-1.19.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (71 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.8/71.8 kB 27.6 MB/s eta 0:00:00
-Collecting pyyaml (from -r requirements.txt (line 14))
+Collecting aiohttp>=3.11.8 (from -r requirements.txt (line 13))
+  Downloading aiohttp-3.12.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.6 kB)
+Collecting yarl>=1.18.0 (from -r requirements.txt (line 14))
+  Downloading yarl-1.20.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (72 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.4/72.4 kB 35.9 MB/s eta 0:00:00
+Collecting pyyaml (from -r requirements.txt (line 15))
   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (2.1 kB)
-Requirement already satisfied: Pillow in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 15)) (11.0.0)
-Collecting scipy (from -r requirements.txt (line 16))
-  Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (61 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 30.6 MB/s eta 0:00:00
-Collecting tqdm (from -r requirements.txt (line 17))
+Requirement already satisfied: Pillow in /usr/local/lib/python3.12/dist-packages (from -r requirements.txt (line 16)) (11.0.0)
+Collecting scipy (from -r requirements.txt (line 17))
+  Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.0/62.0 kB 34.5 MB/s eta 0:00:00
+Collecting tqdm (from -r requirements.txt (line 18))
   Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 45.4 MB/s eta 0:00:00
-Collecting psutil (from -r requirements.txt (line 18))
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 39.7 MB/s eta 0:00:00
+Collecting psutil (from -r requirements.txt (line 19))
   Downloading psutil-7.0.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (22 kB)
-Collecting kornia>=0.7.1 (from -r requirements.txt (line 21))
-  Downloading kornia-0.8.0-py2.py3-none-any.whl.metadata (17 kB)
-Collecting spandrel (from -r requirements.txt (line 22))
+Collecting kornia>=0.7.1 (from -r requirements.txt (line 22))
+  Downloading kornia-0.8.1-py2.py3-none-any.whl.metadata (17 kB)
+Collecting spandrel (from -r requirements.txt (line 23))
   Downloading spandrel-0.4.1-py3-none-any.whl.metadata (15 kB)
-Collecting soundfile (from -r requirements.txt (line 23))
+Collecting soundfile (from -r requirements.txt (line 24))
   Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_aarch64.whl.metadata (16 kB)
-Collecting av (from -r requirements.txt (line 24))
-  Downloading av-14.3.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.7 kB)
-Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.16.1)
-Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (4.12.2)
-Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from torch->-r requirements.txt (line 2)) (68.1.2)
-Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (1.13.3)
-Requirement already satisfied: networkx in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.4.2)
-Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.1.4)
-Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (2024.10.0)
-Requirement already satisfied: pytorch-triton==3.3.0+git96316ce5 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 2)) (3.3.0+git96316ce5)
-Collecting trampoline>=0.1.2 (from torchsde->-r requirements.txt (line 3))
+Collecting av>=14.2.0 (from -r requirements.txt (line 25))
+  Downloading av-14.4.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.6 kB)
+Collecting pydantic~=2.0 (from -r requirements.txt (line 26))
+  Downloading pydantic-2.11.5-py3-none-any.whl.metadata (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.2/67.2 kB 36.6 MB/s eta 0:00:00
+Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 3)) (3.16.1)
+Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 3)) (4.12.2)
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from torch->-r requirements.txt (line 3)) (68.1.2)
+Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 3)) (1.13.3)
+Requirement already satisfied: networkx in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 3)) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 3)) (3.1.4)
+Requirement already satisfied: fsspec in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 3)) (2024.10.0)
+Requirement already satisfied: pytorch-triton==3.3.1+gitc8757738 in /usr/local/lib/python3.12/dist-packages (from torch->-r requirements.txt (line 3)) (3.3.1+gitc8757738)
+Collecting trampoline>=0.1.2 (from torchsde->-r requirements.txt (line 4))
   Downloading trampoline-0.1.2-py3-none-any.whl.metadata (10 kB)
-Collecting huggingface-hub<1.0,>=0.30.0 (from transformers>=4.28.1->-r requirements.txt (line 8))
-  Downloading huggingface_hub-0.30.2-py3-none-any.whl.metadata (13 kB)
-Collecting packaging>=20.0 (from transformers>=4.28.1->-r requirements.txt (line 8))
-  Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
-Collecting regex!=2019.12.17 (from transformers>=4.28.1->-r requirements.txt (line 8))
+Collecting huggingface-hub<1.0,>=0.30.0 (from transformers>=4.28.1->-r requirements.txt (line 9))
+  Downloading huggingface_hub-0.32.1-py3-none-any.whl.metadata (14 kB)
+Collecting packaging>=20.0 (from transformers>=4.28.1->-r requirements.txt (line 9))
+  Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting regex!=2019.12.17 (from transformers>=4.28.1->-r requirements.txt (line 9))
   Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (40 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 kB 28.4 MB/s eta 0:00:00
-Collecting requests (from transformers>=4.28.1->-r requirements.txt (line 8))
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.5/40.5 kB 24.7 MB/s eta 0:00:00
+Collecting requests (from transformers>=4.28.1->-r requirements.txt (line 9))
   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
-Collecting aiohappyeyeballs>=2.3.0 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp>=3.11.8->-r requirements.txt (line 13))
   Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
-Collecting aiosignal>=1.1.2 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+Collecting aiosignal>=1.1.2 (from aiohttp>=3.11.8->-r requirements.txt (line 13))
   Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)
-Collecting attrs>=17.3.0 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+Collecting attrs>=17.3.0 (from aiohttp>=3.11.8->-r requirements.txt (line 13))
   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
-Collecting frozenlist>=1.1.1 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
-  Downloading frozenlist-1.5.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (13 kB)
-Collecting multidict<7.0,>=4.5 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
-  Downloading multidict-6.4.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (5.3 kB)
-Collecting propcache>=0.2.0 (from aiohttp>=3.11.8->-r requirements.txt (line 12))
+Collecting frozenlist>=1.1.1 (from aiohttp>=3.11.8->-r requirements.txt (line 13))
+  Downloading frozenlist-1.6.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (16 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp>=3.11.8->-r requirements.txt (line 13))
+  Downloading multidict-6.4.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (5.3 kB)
+Collecting propcache>=0.2.0 (from aiohttp>=3.11.8->-r requirements.txt (line 13))
   Downloading propcache-0.3.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
-Collecting idna>=2.0 (from yarl>=1.18.0->-r requirements.txt (line 13))
+Collecting idna>=2.0 (from yarl>=1.18.0->-r requirements.txt (line 14))
   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
-Collecting kornia_rs>=0.1.0 (from kornia>=0.7.1->-r requirements.txt (line 21))
-  Downloading kornia_rs-0.1.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (10 kB)
-Collecting cffi>=1.0 (from soundfile->-r requirements.txt (line 23))
+Collecting kornia_rs>=0.1.9 (from kornia>=0.7.1->-r requirements.txt (line 22))
+  Downloading kornia_rs-0.1.9-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (11 kB)
+Collecting cffi>=1.0 (from soundfile->-r requirements.txt (line 24))
   Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (1.5 kB)
-Collecting pycparser (from cffi>=1.0->soundfile->-r requirements.txt (line 23))
+Collecting annotated-types>=0.6.0 (from pydantic~=2.0->-r requirements.txt (line 26))
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.33.2 (from pydantic~=2.0->-r requirements.txt (line 26))
+  Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.8 kB)
+Collecting typing-inspection>=0.4.0 (from pydantic~=2.0->-r requirements.txt (line 26))
+  Downloading typing_inspection-0.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=1.0->soundfile->-r requirements.txt (line 24))
   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
-Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch->-r requirements.txt (line 2)) (1.3.0)
-Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch->-r requirements.txt (line 2)) (2.1.5)
-Collecting charset-normalizer<4,>=2 (from requests->transformers>=4.28.1->-r requirements.txt (line 8))
-  Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (35 kB)
-Collecting urllib3<3,>=1.21.1 (from requests->transformers>=4.28.1->-r requirements.txt (line 8))
+Collecting hf-xet<2.0.0,>=1.1.2 (from huggingface-hub<1.0,>=0.30.0->transformers>=4.28.1->-r requirements.txt (line 9))
+  Downloading hf_xet-1.1.2-cp37-abi3-manylinux_2_28_aarch64.whl.metadata (879 bytes)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch->-r requirements.txt (line 3)) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch->-r requirements.txt (line 3)) (2.1.5)
+Collecting charset-normalizer<4,>=2 (from requests->transformers>=4.28.1->-r requirements.txt (line 9))
+  Downloading charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (35 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->transformers>=4.28.1->-r requirements.txt (line 9))
   Downloading urllib3-2.4.0-py3-none-any.whl.metadata (6.5 kB)
-Collecting certifi>=2017.4.17 (from requests->transformers>=4.28.1->-r requirements.txt (line 8))
-  Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
-Downloading comfyui_frontend_package-1.15.13-py3-none-any.whl (34.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 34.9/34.9 MB 99.0 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17 (from requests->transformers>=4.28.1->-r requirements.txt (line 9))
+  Downloading certifi-2025.4.26-py3-none-any.whl.metadata (2.5 kB)
+Downloading comfyui_frontend_package-1.20.5-py3-none-any.whl (9.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.2/9.2 MB 108.2 MB/s eta 0:00:00
+Downloading comfyui_workflow_templates-0.1.18-py3-none-any.whl (56.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.7/56.7 MB 89.8 MB/s eta 0:00:00
 Downloading torchsde-0.2.6-py3-none-any.whl (61 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 kB 45.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 kB 43.0 MB/s eta 0:00:00
 Downloading einops-0.8.1-py3-none-any.whl (64 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 46.2 MB/s eta 0:00:00
-Downloading transformers-4.51.3-py3-none-any.whl (10.4 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 110.6 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.4/64.4 kB 38.5 MB/s eta 0:00:00
+Downloading transformers-4.52.3-py3-none-any.whl (10.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.5/10.5 MB 110.8 MB/s eta 0:00:00
 Downloading tokenizers-0.21.1-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 107.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 109.6 MB/s eta 0:00:00
 Downloading sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.3 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 110.3 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 106.1 MB/s eta 0:00:00
 Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (459 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 459.5/459.5 kB 103.1 MB/s eta 0:00:00
-Downloading aiohttp-3.11.16-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 106.7 MB/s eta 0:00:00
-Downloading yarl-1.19.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (344 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 344.4/344.4 kB 91.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 459.5/459.5 kB 94.0 MB/s eta 0:00:00
+Downloading aiohttp-3.12.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 109.4 MB/s eta 0:00:00
+Downloading yarl-1.20.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (343 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 344.0/344.0 kB 105.4 MB/s eta 0:00:00
 Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (739 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 739.2/739.2 kB 97.0 MB/s eta 0:00:00
-Downloading scipy-1.15.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (35.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 98.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 739.2/739.2 kB 101.3 MB/s eta 0:00:00
+Downloading scipy-1.15.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (35.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 98.5 MB/s eta 0:00:00
 Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 53.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 54.2 MB/s eta 0:00:00
 Downloading psutil-7.0.0-cp36-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (279 kB)
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 279.5/279.5 kB 79.0 MB/s eta 0:00:00
-Downloading kornia-0.8.0-py2.py3-none-any.whl (1.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 102.8 MB/s eta 0:00:00
+Downloading kornia-0.8.1-py2.py3-none-any.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 107.4 MB/s eta 0:00:00
 Downloading spandrel-0.4.1-py3-none-any.whl (305 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 305.2/305.2 kB 98.4 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 305.2/305.2 kB 69.6 MB/s eta 0:00:00
 Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_aarch64.whl (1.2 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 107.8 MB/s eta 0:00:00
-Downloading av-14.3.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (33.7 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 33.7/33.7 MB 96.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 101.4 MB/s eta 0:00:00
+Downloading av-14.4.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (33.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 33.8/33.8 MB 98.5 MB/s eta 0:00:00
+Downloading pydantic-2.11.5-py3-none-any.whl (444 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 444.2/444.2 kB 107.0 MB/s eta 0:00:00
+Downloading pydantic_core-2.33.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 111.7 MB/s eta 0:00:00
 Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
 Downloading aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
 Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 44.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 49.8 MB/s eta 0:00:00
 Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (478 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 478.9/478.9 kB 105.5 MB/s eta 0:00:00
-Downloading frozenlist-1.5.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (282 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 282.6/282.6 kB 88.3 MB/s eta 0:00:00
-Downloading huggingface_hub-0.30.2-py3-none-any.whl (481 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 481.4/481.4 kB 105.7 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 478.9/478.9 kB 93.5 MB/s eta 0:00:00
+Downloading frozenlist-1.6.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (316 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 316.4/316.4 kB 103.9 MB/s eta 0:00:00
+Downloading huggingface_hub-0.32.1-py3-none-any.whl (509 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 509.4/509.4 kB 106.3 MB/s eta 0:00:00
 Downloading idna-3.10-py3-none-any.whl (70 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 50.6 MB/s eta 0:00:00
-Downloading kornia_rs-0.1.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.8 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 108.6 MB/s eta 0:00:00
-Downloading multidict-6.4.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (224 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.4/224.4 kB 84.8 MB/s eta 0:00:00
-Downloading packaging-24.2-py3-none-any.whl (65 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.5/65.5 kB 48.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 53.4 MB/s eta 0:00:00
+Downloading kornia_rs-0.1.9-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 109.3 MB/s eta 0:00:00
+Downloading multidict-6.4.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (224 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.7/224.7 kB 78.2 MB/s eta 0:00:00
+Downloading packaging-25.0-py3-none-any.whl (66 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 51.1 MB/s eta 0:00:00
 Downloading propcache-0.3.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (243 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.0/243.0 kB 79.3 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.0/243.0 kB 78.9 MB/s eta 0:00:00
 Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (794 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 795.0/795.0 kB 108.2 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 795.0/795.0 kB 109.1 MB/s eta 0:00:00
 Downloading trampoline-0.1.2-py3-none-any.whl (5.2 kB)
+Downloading typing_inspection-0.4.1-py3-none-any.whl (14 kB)
 Downloading requests-2.32.3-py3-none-any.whl (64 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 48.2 MB/s eta 0:00:00
-Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 166.4/166.4 kB 93.0 MB/s eta 0:00:00
-Downloading charset_normalizer-3.4.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (140 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.4/140.4 kB 82.9 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 52.1 MB/s eta 0:00:00
+Downloading certifi-2025.4.26-py3-none-any.whl (159 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.6/159.6 kB 93.5 MB/s eta 0:00:00
+Downloading charset_normalizer-3.4.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (143 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 143.8/143.8 kB 65.4 MB/s eta 0:00:00
+Downloading hf_xet-1.1.2-cp37-abi3-manylinux_2_28_aarch64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 109.0 MB/s eta 0:00:00
 Downloading urllib3-2.4.0-py3-none-any.whl (128 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.7/128.7 kB 83.8 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.7/128.7 kB 65.4 MB/s eta 0:00:00
 Downloading pycparser-2.22-py3-none-any.whl (117 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.6/117.6 kB 83.4 MB/s eta 0:00:00
-Installing collected packages: trampoline, sentencepiece, urllib3, tqdm, scipy, safetensors, regex, pyyaml, pycparser, psutil, propcache, packaging, multidict, kornia_rs, idna, frozenlist, einops, comfyui-frontend-package, charset-normalizer, certifi, av, attrs, aiohappyeyeballs, yarl, requests, cffi, aiosignal, torchsde, soundfile, kornia, huggingface-hub, aiohttp, tokenizers, spandrel, transformers
-Successfully installed aiohappyeyeballs-2.6.1 aiohttp-3.11.16 aiosignal-1.3.2 attrs-25.3.0 av-14.3.0 certifi-2025.1.31 cffi-1.17.1 charset-normalizer-3.4.1 comfyui-frontend-package-1.15.13 einops-0.8.1 frozenlist-1.5.0 huggingface-hub-0.30.2 idna-3.10 kornia-0.8.0 kornia_rs-0.1.8 multidict-6.4.3 packaging-24.2 propcache-0.3.1 psutil-7.0.0 pycparser-2.22 pyyaml-6.0.2 regex-2024.11.6 requests-2.32.3 safetensors-0.5.3 scipy-1.15.2 sentencepiece-0.2.0 soundfile-0.13.1 spandrel-0.4.1 tokenizers-0.21.1 torchsde-0.2.6 tqdm-4.67.1 trampoline-0.1.2 transformers-4.51.3 urllib3-2.4.0 yarl-1.19.0
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.6/117.6 kB 84.0 MB/s eta 0:00:00
+Installing collected packages: trampoline, sentencepiece, urllib3, typing-inspection, tqdm, scipy, safetensors, regex, pyyaml, pydantic-core, pycparser, psutil, propcache, packaging, multidict, kornia_rs, idna, hf-xet, frozenlist, einops, comfyui-workflow-templates, comfyui-frontend-package, charset-normalizer, certifi, av, attrs, annotated-types, aiohappyeyeballs, yarl, requests, pydantic, cffi, aiosignal, torchsde, soundfile, kornia, huggingface-hub, aiohttp, tokenizers, spandrel, transformers
+Successfully installed aiohappyeyeballs-2.6.1 aiohttp-3.12.0 aiosignal-1.3.2 annotated-types-0.7.0 attrs-25.3.0 av-14.4.0 certifi-2025.4.26 cffi-1.17.1 charset-normalizer-3.4.2 comfyui-frontend-package-1.20.5 comfyui-workflow-templates-0.1.18 einops-0.8.1 frozenlist-1.6.0 hf-xet-1.1.2 huggingface-hub-0.32.1 idna-3.10 kornia-0.8.1 kornia_rs-0.1.9 multidict-6.4.4 packaging-25.0 propcache-0.3.1 psutil-7.0.0 pycparser-2.22 pydantic-2.11.5 pydantic-core-2.33.2 pyyaml-6.0.2 regex-2024.11.6 requests-2.32.3 safetensors-0.5.3 scipy-1.15.3 sentencepiece-0.2.0 soundfile-0.13.1 spandrel-0.4.1 tokenizers-0.21.1 torchsde-0.2.6 tqdm-4.67.1 trampoline-0.1.2 transformers-4.52.3 typing-inspection-0.4.1 urllib3-2.4.0 yarl-1.20.0
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 INFO:    Adding environment to container
 INFO:    Adding runscript
