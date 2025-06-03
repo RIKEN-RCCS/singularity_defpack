@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: nvcr.io/nvidia/pytorch:24.05-py3
+From: nvidia/cuda:12.8.0-devel-ubuntu22.04
 
 %setup
   mkdir ${SINGULARITY_ROOTFS}/lvs0
@@ -7,6 +7,13 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
 %post
   apt-get update && apt-get install -y --no-install-recommends \
       wget \
+      git \
+      curl \
+      ca-certificates \
+      gnupg \
+      pkg-config \
+      libopenblas-dev \
+      libssl-dev \
       vim \
       build-essential \
       libcurl4-openssl-dev \
@@ -16,12 +23,37 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
       tesseract-ocr-jpn \
       poppler-utils \
       swig \
+      python3 \
+      python3-pip \
       python3-dev \
+      python3-venv \
       && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-  mkdir /opt/uv
-  export UV_INSTALL_DIR=/opt/uv
-  curl -LsSf https://astral.sh/uv/install.sh | sh
+  pip3 install --upgrade pip
+  pip3 install "numpy<2.0"
+
+  export PATH=/usr/local/cuda/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+  export CUDA_HOME=/usr/local/cuda
+
+  cd /opt
+  mkdir /opt/cmake
+  wget https://github.com/Kitware/CMake/releases/download/v3.29.2/cmake-3.29.2-linux-aarch64.sh
+  chmod +x cmake-3.29.2-linux-aarch64.sh
+  ./cmake-3.29.2-linux-aarch64.sh --prefix=/opt/cmake --skip-license
+  export PATH=/opt/cmake/bin:$PATH
+  cmake --version
+  rm cmake-3.29.2-linux-aarch64.sh
+
+  cd /opt
+  git clone https://github.com/gflags/gflags.git
+  cd gflags
+  cmake -B build -DCMAKE_INSTALL_PREFIX=/usr/local
+  cd build
+  make -j32
+  make install
+  cd /opt
+  rm -rf gflags
 
   cd /opt
   git clone https://github.com/ggerganov/llama.cpp.git
@@ -34,54 +66,21 @@ From: nvcr.io/nvidia/pytorch:24.05-py3
   rm -rf llama.cpp
 
   cd /opt
-  export VERSION=1.22.6 OS=linux ARCH=arm64 && \
-    wget https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz && \
-    tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz && \
-    rm go$VERSION.$OS-$ARCH.tar.gz
-
-  curl -fsSL https://ollama.com/install.sh | sh
-
-  cd /opt
-  git clone https://github.com/ollama/ollama.git
-  cd ollama
-  cmake -B build
-  cmake --build build --verbose -j32
-  cmake --install build
-
-  cd /opt
-  git clone https://github.com/apache/tika.git
-  cd tika
-  mvn clean install -DskipTests
-
-  pip uninstall -y opencv opencv-python
-  rm -rf /usr/local/lib/python3.10/dist-packages/cv2/
-  pip install opencv-python pytesseract pdf2image
-  pip install duckduckgo-search==7.5.3
-
-  cd /opt
   git clone https://github.com/facebookresearch/faiss.git
   cd faiss
   cmake -B build .
   make -C build -j faiss
   make -C build -j swigfaiss
-  (cd build/faiss/python && python setup.py install)
+  (cd build/faiss/python && python3 setup.py install)
   make -C build install
 
-  pip install langchain sentence-transformers
-  pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu123
-  pip install -U langchain-community
-  pip install -U langchain-huggingface
-
-  pip uninstall -y numpy
-  pip install "numpy<2.0"
-
-  cd /opt
-  git clone https://github.com/open-webui/pipelines.git
-  cd pipelines
-  pip install -r requirements.txt
+  pip3 install langchain sentence-transformers
+  pip3 install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu123
+  pip3 install -U langchain-community
+  pip3 install -U langchain-huggingface
 
 %environment
-  export PATH=/usr/local/cuda/bin:/opt/uv/bin:/usr/local/go/bin:$PATH
+  export PATH=/usr/local/cuda/bin:/opt/uv/bin:/usr/local/go/bin:/opt/cmake/bin:$PATH
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/lib:$LD_LIBRARY_PATH
   export NVIDIA_VISIBLE_DEVICES=all
   export NVIDIA_DRIVER_CAPABILITIES=compute,utility
