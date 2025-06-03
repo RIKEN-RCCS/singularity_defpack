@@ -7,6 +7,7 @@ From: nvidia/cuda:12.8.0-runtime-ubuntu22.04
 %post
     apt-get update && apt-get install -y --no-install-recommends \
         wget \
+        git \
         vim \
         ffmpeg \
         build-essential \
@@ -19,8 +20,8 @@ From: nvidia/cuda:12.8.0-runtime-ubuntu22.04
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
     pip3 install --no-cache-dir --upgrade pip setuptools wheel
-    pip3 install faster-whisper openai-whisper
-    pip3 install -U yt-dlp
+    pip3 install gradio gradio-tools python-multipart
+    pip3 install silero-vad faster-whisper openai-whisper
     pip3 install pyannote.audio
 
     mkdir /opt/textlint && cd /opt/textlint
@@ -47,11 +48,6 @@ From: nvidia/cuda:12.8.0-runtime-ubuntu22.04
       textlint-rule-ng-word \
       textlint-rule-abbr-within-parentheses
     curl -O https://raw.githubusercontent.com/prh/rules/master/media/WEB+DB_PRESS.yml
-
-#   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-#   . ~/.cargo/env
-#   pip install "spacy<3.7.0"
-#   pip install ja-ginza
 
 %test
     python3 -c "import torch; print(f'PyTorch version: {torch.__version__}'); print(f'CUDA available: {torch.cuda.is_available()}'); print(f'CUDA version: {torch.version.cuda}')"

@@ -1,0 +1,10 @@
+version: 1
+rules:
+  - expected: できる
+    patterns: [出来る]
+  - expected: してください
+    patterns: [して下さい]
+  - expected: いたします
+    patterns: [致します]
+  - expected: ""
+    patterns: [はい、, えっと, ちょっと, まあ, なんか, じゃあ, うんと, うーんと, なんだっけ]
