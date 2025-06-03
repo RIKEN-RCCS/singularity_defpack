@@ -150,8 +150,8 @@ rules:
     patterns: [知識上流]
   - expected: 生成AI
     patterns: [セセイヤー, SSAI]
-  - expected: ウェコシステム
-    patterns: [エコシステム]
+  - expected: エコシステム
+    patterns: [ウェコシステム]
   - expected: ガラパゴス
     patterns: [ガラバドス]
   - expected: 産業競争力
