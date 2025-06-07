@@ -296,3 +296,13 @@ rules:
     patterns: [乗らった]
   - expected: ある程度
     patterns: [あんたら]
+  - expected: テストベッド
+    patterns: [テストペット]
+  - expected: OpenACC
+    patterns: [オープンACC]
+  - expected: CUDA
+    patterns: [GUDA]
+  - expected: パイプライン
+    patterns: [パイプライム]
+  - expected: run.sh
+    patterns: [ラン。ch]
