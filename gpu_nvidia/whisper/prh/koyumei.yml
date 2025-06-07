@@ -126,3 +126,7 @@ rules:
     patterns: [自動シム]
   - expected: SIMD
     patterns: [シムド]
+  - expected: ScoreP
+    patterns: [スコアP]
+  - expected: Caliper
+    patterns: [キャリパー]
