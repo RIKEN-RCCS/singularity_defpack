@@ -334,8 +334,6 @@ rules:
     patterns: [先鮮化]
   - expected: 外注
     patterns: [外中]
-  - expected: SIMD
-    patterns: [SIM-D]
   - expected: リニアソルバ
     patterns: [リニアソルボ]
   - expected: 後者
