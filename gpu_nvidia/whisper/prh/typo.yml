@@ -6,14 +6,22 @@ rules:
     patterns: [情況]
   - expected: 利用
     patterns: [利用う]
+  - expected: 気象・気候
+    patterns: [気象機構]
   - expected: 次世代
     patterns: [時世]
+  - expected: デマケ
+    patterns: [出負け]
+  - expected: 計算基礎科学
+    patterns: [計算規則学]
   - expected: 推定
     patterns: [推計]
   - expected: 視野に
     patterns: [シェアに]
   - expected: 議事録
     patterns: [虹ろ君, ニジロー君]
+  - expected: 漏れ聞いて
+    patterns: [盛り切って]
   - expected: 倍率
     patterns: [バイリス]
   - expected: 云々かんぬん
@@ -299,10 +307,48 @@ rules:
   - expected: テストベッド
     patterns: [テストペット]
   - expected: OpenACC
-    patterns: [オープンACC]
+    patterns: [オープンACC, オープンCC]
   - expected: CUDA
-    patterns: [GUDA]
+    patterns: [GUDA, CUDAー]
+  - expected: CUDA化
+    patterns: [空高]
   - expected: パイプライン
     patterns: [パイプライム]
   - expected: run.sh
     patterns: [ラン。ch]
+  - expected: 二つ
+    patterns: [ふとつ]
+  - expected: どのタイミング
+    patterns: [ノロダイミング]
+  - expected: ないし
+    patterns: [内車]
+  - expected: 科学技術計算
+    patterns: [関係付けさん]
+  - expected: リクワイアメント
+    patterns: [リクエイメント]
+  - expected: 体制図
+    patterns: [対戦図]
+  - expected: ポスドク
+    patterns: [ポストコ, ポス属]
+  - expected: 先鋭化
+    patterns: [先鮮化]
+  - expected: 外注
+    patterns: [外中]
+  - expected: SIMD
+    patterns: [SIM-D]
+  - expected: リニアソルバ
+    patterns: [リニアソルボ]
+  - expected: 後者
+    patterns: [校舎]
+  - expected: 物理系
+    patterns: [物理研]
+  - expected: バッター
+    patterns: [また]
+  - expected: メーリングリスト
+    patterns: [メール室]
+  - expected: 科研費
+    patterns: [課金費]
+  - expected: 自助努力
+    patterns: [事情努力]
+  - expected: 彼ら
+    patterns: [カフラ]
