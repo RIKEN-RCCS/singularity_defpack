@@ -71,7 +71,7 @@ rules:
   - expected: CI/CD
     patterns: [CICD, CICG]
   - expected: ベンチマーク
-    patterns: [ベンチバーク]
+    patterns: [ベンチバーク, ベンシマーク]
   - expected: HPCアプリケーション
     patterns: [hpアプリケーション, 一社ベンチマーク, hpcアプリケーション, FPCアプリケーション, フィッシャーアプリケーション]
   - expected: WG
