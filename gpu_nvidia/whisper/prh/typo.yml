@@ -71,7 +71,7 @@ rules:
   - expected: CI/CD
     patterns: [CICD, CICG]
   - expected: ベンチマーク
-    patterns: [ベンチバーク, ベンシマーク]
+    patterns: [ベンチバーク, ベンシマーク, ベンチマイク, ベンチバック]
   - expected: HPCアプリケーション
     patterns: [hpアプリケーション, 一社ベンチマーク, hpcアプリケーション, FPCアプリケーション, フィッシャーアプリケーション]
   - expected: WG
@@ -178,6 +178,10 @@ rules:
     patterns: [濃度数]
   - expected: FP8
     patterns: [SP8]
+  - expected: Int
+    patterns: [インド]
+  - expected: FP64
+    patterns: [FB64, F4]
   - expected: 浮動
     patterns: [不動]
   - expected: 産学官
@@ -231,7 +235,7 @@ rules:
   - expected: 2030年
     patterns: [二千三十年]
   - expected: FS
-    patterns: [Face, フェイス]
+    patterns: [Face, フェイス, フィーズビリティスタディ]
   - expected: 松竹
     patterns: [松崎, 幕先]
   - expected: 梅
@@ -343,10 +347,75 @@ rules:
   - expected: また
     patterns: [バッター]
   - expected: メーリングリスト
-    patterns: [メール室]
+    patterns: [メール室, メールリス, メーリングレス]
   - expected: 科研費
     patterns: [課金費]
   - expected: 自助努力
     patterns: [事情努力]
   - expected: 彼ら
     patterns: [カフラ]
+  - expected: 佳境
+    patterns: [過強]
+  - expected: リエゾン
+    patterns: [リエイゾン, リエーゾン, リエイさん]
+  - expected: 重点課題
+    patterns: [充電課題]
+  - expected: バックアップ
+    patterns: [幕府]
+  - expected: インプルーブメント
+    patterns: [インプルーメント]
+  - expected: with
+    patterns: [ウィーズ]
+  - expected: 精緻化
+    patterns: [設置化]
+  - expected: サマリ
+    patterns: [サマリン]
+  - expected: まちまち
+    patterns: [マッチマッチ]
+  - expected: 全系
+    patterns: [全形]
+  - expected: 100倍
+    patterns: [100枚]
+  - expected: かって言ったら
+    patterns: [勝ってたら]
+  - expected: 演算性能
+    patterns: [残性能]
+  - expected: メモリバンド幅
+    patterns: [メモリバンドウィルス]
+  - expected: 謝金
+    patterns: [借金]
+  - expected: ごく一部
+    patterns: [僕一部]
+  - expected: 委嘱
+    patterns: [移植]
+  - expected: 見通しが
+    patterns: [動詞が]
+  - expected: 肩ひじ張らず
+    patterns: [固い支払わず]
+  - expected: 侵食し取って
+    patterns: [進捗しとって]
+  - expected: フォーラム
+    patterns: [オーラム]
+  - expected: 僕が管理者
+    patterns: [僕が会社]
+  - expected: 忘れちゃった
+    patterns: [忘れちゃう]
+  - expected: フレームワーク
+    patterns: [オフレーブワーク]
+  - expected: 粒度
+    patterns: [流度]
+  - expected: 副センター長
+    patterns: [突然立ち上]
+  - expected: 松竹梅とか
+    patterns: [松竹梅寺]
+  - expected: 機密性2
+    patterns: [機密性に]
+  - expected: 機密2
+    patterns: [機密に]
+  - expected: 情シス
+    patterns: [上質]
+  - expected: 第2回
+    patterns: [大理解]
+  - expected: 画一的
+    patterns: [複一的]
+
