@@ -340,8 +340,8 @@ rules:
     patterns: [校舎]
   - expected: 物理系
     patterns: [物理研]
-  - expected: バッター
-    patterns: [また]
+  - expected: また
+    patterns: [バッター]
   - expected: メーリングリスト
     patterns: [メール室]
   - expected: 科研費
