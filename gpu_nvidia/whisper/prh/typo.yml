@@ -83,7 +83,7 @@ rules:
   - expected: コデザイン
     patterns: [小デザイン, 子デザイン, コーデザイン]
   - expected: GPU化
-    patterns: [GPUか]
+    patterns: [GPUか, GPU家庭]
   - expected: トリビアル
     patterns: [トリベル]
   - expected: 限定
@@ -381,7 +381,7 @@ rules:
   - expected: 演算性能
     patterns: [残性能]
   - expected: メモリバンド幅
-    patterns: [メモリバンドウィルス]
+    patterns: [メモリーバンドウィルス]
   - expected: 謝金
     patterns: [借金]
   - expected: ごく一部
@@ -407,7 +407,7 @@ rules:
   - expected: 副センター長
     patterns: [突然立ち上]
   - expected: 松竹梅とか
-    patterns: [松竹梅寺]
+    patterns: [梅竹松寺]
   - expected: 機密性2
     patterns: [機密性に]
   - expected: 機密2
