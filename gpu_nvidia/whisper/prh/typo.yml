@@ -7,7 +7,7 @@ rules:
   - expected: 利用
     patterns: [利用う]
   - expected: 気象・気候
-    patterns: [気象機構]
+    patterns: [気象機構, 化粧機構]
   - expected: 次世代
     patterns: [時世]
   - expected: デマケ
@@ -263,7 +263,7 @@ rules:
   - expected: スキーム
     patterns: [スキム]
   - expected: ないし
-    patterns: [なりし]
+    patterns: [なりし, 内緒や]
   - expected: 内々
     patterns: [ないない]
   - expected: 改善点
@@ -308,12 +308,6 @@ rules:
     patterns: [あんたら]
   - expected: テストベッド
     patterns: [テストペット]
-  - expected: OpenACC
-    patterns: [オープンACC, オープンCC]
-  - expected: CUDA
-    patterns: [GUDA, CUDAー]
-  - expected: CUDA化
-    patterns: [空高]
   - expected: パイプライン
     patterns: [パイプライム]
   - expected: run.sh
@@ -331,11 +325,11 @@ rules:
   - expected: 体制図
     patterns: [対戦図]
   - expected: ポスドク
-    patterns: [ポストコ, ポス属]
+    patterns: [ポストコ, ポス属, ボス属]
   - expected: 先鋭化
     patterns: [先鮮化]
   - expected: 外注
-    patterns: [外中]
+    patterns: [外中, 市街中]
   - expected: リニアソルバ
     patterns: [リニアソルボ]
   - expected: 後者
@@ -510,4 +504,16 @@ rules:
     patterns: [パイアッチャー]
   - expected: 存在する
     patterns: [相続する]
+  - expected: 機械学習
+    patterns: [機械学者]
+  - expected: 実働
+    patterns: [実人]
+  - expected: 別途の予算
+    patterns: [ベッドの予算]
+  - expected: 技術計算
+    patterns: [技術芸術さん]
+  - expected: 科学技術
+    patterns: [閣議図]
+  - expected: 人自身
+    patterns: [自治党事件]
 
