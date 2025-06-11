@@ -15,9 +15,11 @@ rules:
   - expected: 富岳で
     patterns: [深くで]
   - expected: 富士通
-    patterns: [フジツー, フジツール]
+    patterns: [フジツール]
   - expected: 富岳のベースライン
     patterns: [工学のベースライン]
+  - expected: 富岳との倍率
+    patterns: [工学との倍率]
   - expected: 富岳の倍率
     patterns: [工学の倍率]
   - expected: 富岳との性能
@@ -95,7 +97,7 @@ rules:
   - expected: Domke
     patterns: [ドモケ]
   - expected: Domke先生
-    patterns: [ドンカ先生]
+    patterns: [ドンカ先生, どんか先生]
   - expected: Jens
     patterns: [イエス, イエース, YENS]
   - expected: ドーソン
