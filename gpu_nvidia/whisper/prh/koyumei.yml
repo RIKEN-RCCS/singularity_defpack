@@ -5,7 +5,7 @@ rules:
   - expected: 理化学
     patterns: [理科学, 理観]
   - expected: 富岳ネクスト
-    patterns: [フォークネクスト, ワークネックスト, ワークネクスト, 福岡コンネクスト, 不可欠ネクスト, 学ネクスト, 深くなく, マックネクスト, スマックネクスト, ネクスト額, ネクストフォン, Walk Next, 深くのNext]
+    patterns: [ネクストフォーク, フォークネクスト, ワークネックスト, ワークネクスト, 福岡コンネクスト, 不可欠ネクスト, 学ネクスト, 深くなく, マックネクスト, スマックネクスト, ネクスト額, ネクストフォン, Walk Next, 深くのNext]
   - expected: 富岳
     patterns: [ふがく, 不額, 富額, 不枠, 不学, 不楽, 付額, 風学, 5学, 富岡く, 富学, 富賀区, Go Back, フローク, スカーク, フットガーク, フガク, 不膜, 人学, 福岡く, フェルガク, FUGAC, 区画, 風格, フガーク, フガ君, 木学, フグアク, ウワク, グラク, 富賀くん]
   - expected: 東大生研
@@ -45,13 +45,13 @@ rules:
   - expected: TSUBAME
     patterns: [ツバメ]
   - expected: MIYABI
-    patterns: [ニヤビ]
+    patterns: [ニヤビ, 宮城]
   - expected: JICFuS
     patterns: [ジクファス]
   - expected: 東工大
     patterns: [どこだい]
   - expected: 地震研
-    patterns: [地震犬, 自信権]
+    patterns: [地震犬, 自信権, 地震券]
   - expected: 次世代計算基盤
     patterns: [実在計算基盤, 実際計算基盤, 時代計算基盤]
   - expected: 近藤先生
@@ -73,7 +73,7 @@ rules:
   - expected: 佐藤賢斗
     patterns: [佐藤健と, 佐藤健人, 佐藤ケイト, 佐藤玄人, 佐藤圭人]
   - expected: 下川辺
-    patterns: [下川部, 下壁, 志望川部, 下上, 紹介部, 石本川上]
+    patterns: [下川部, 下壁, 志望川部, 下上, 紹介部, 石本川上, 岡部]
   - expected: 中村さん
     patterns: [高村さん]
   - expected: 金森
@@ -158,8 +158,14 @@ rules:
     patterns: [シクル]
   - expected: HIP
     patterns: [ヒップ]
+  - expected: OpenACC
+    patterns: [オープンACC, オープンCC]
   - expected: CUDA
-    patterns: [クーダ, GUDAR]
+    patterns: [クーダ, GUDAR, Cooder, GUDA, CUDAー]
+  - expected: CUDA化
+    patterns: [空高]
+  - expected: OpenACC
+    patterns: [OpenCC]
   - expected: 自動SIMD
     patterns: [自動シム]
   - expected: SIMD
