@@ -1,19 +1,31 @@
 version: 1
 rules:
   - expected: 理研
-    patterns: [利権, 立憲, りけん, り県, 理系, 理権]
+    patterns: [利権, 立憲, りけん, り県, 理系, 理権, リケンター]
   - expected: 理化学
     patterns: [理科学, 理観]
   - expected: 富岳ネクスト
-    patterns: [フォークネクスト, ワークネックスト, ワークネクスト, 福岡コンネクスト, 不可欠ネクスト, 学ネクスト, 深くなく, スマックネクスト, ネクスト額, ネクストフォン, Walk Next, 深くのNext]
+    patterns: [フォークネクスト, ワークネックスト, ワークネクスト, 福岡コンネクスト, 不可欠ネクスト, 学ネクスト, 深くなく, マックネクスト, スマックネクスト, ネクスト額, ネクストフォン, Walk Next, 深くのNext]
   - expected: 富岳
-    patterns: [不額, 富額, 不枠, 不学, 不楽, 付額, 風学, 5学, 富岡く, 富学, 富賀区, Go Back, フローク, スカーク, フットガーク, フガク, 不膜, 人学, 福岡く, フェルガク, FUGAC, 区画, 風格, フガーク, フガ君]
+    patterns: [ふがく, 不額, 富額, 不枠, 不学, 不楽, 付額, 風学, 5学, 富岡く, 富学, 富賀区, Go Back, フローク, スカーク, フットガーク, フガク, 不膜, 人学, 福岡く, フェルガク, FUGAC, 区画, 風格, フガーク, フガ君, 木学, フグアク, ウワク, グラク]
   - expected: 東大生研
     patterns: [東大政権]
   - expected: 富岳の
     patterns: [不悪度]
+  - expected: 富岳で
+    patterns: [深くで]
+  - expected: 富士通
+    patterns: [フジツー, フジツール]
+  - expected: 富岳のベースライン
+    patterns: [工学のベースライン]
+  - expected: 富岳の倍率
+    patterns: [工学の倍率]
+  - expected: 富岳との性能
+    patterns: [工学との性能]
   - expected: R-CCS
-    patterns: [RCCS, RC先生, RCS, アリセス]
+    patterns: [RCCS, RC先生, RCS, アリセス, RCCス]
+  - expected: 運技
+    patterns: [運気]
   - expected: ブルックヘブン
     patterns: [ブルックウェブン]
   - expected: LLNL
@@ -57,7 +69,7 @@ rules:
   - expected: 山口さん
     patterns: [今口さん]
   - expected: 佐藤賢斗
-    patterns: [佐藤健と]
+    patterns: [佐藤健と, 佐藤健人, 佐藤ケイト, 佐藤玄人]
   - expected: 下川辺
     patterns: [下川部, 下壁, 志望川部, 下上, 紹介部, 石本川上]
   - expected: 中村さん
@@ -76,14 +88,18 @@ rules:
     patterns: [吉田先生]
   - expected: 中島研吾
     patterns: [高島健吾]
+  - expected: 西澤さん
+    patterns: [三沢さん]
   - expected: Wahib
     patterns: [WAHIV, WAHIM, ワイフ, ワヒム]
   - expected: Domke
     patterns: [ドモケ]
+  - expected: Domke先生
+    patterns: [ドンカ先生]
   - expected: Jens
     patterns: [イエス, イエース, YENS]
   - expected: ドーソン
-    patterns: [道尊]
+    patterns: [道尊, ローソン]
   - expected: 井上さん
     patterns: [井戸さん]
   - expected: AI for Science
@@ -103,7 +119,7 @@ rules:
   - expected: AskDona
     patterns: [アスクドナー]
   - expected: GENESIS
-    patterns: [ジェネシス, ジェニシス, ジェデシス]
+    patterns: [ジェネシス, ジェニシス, ジェデシス, ジェリス]
   - expected: SALMON
     patterns: [サーモン]
   - expected: Spack
@@ -141,7 +157,7 @@ rules:
   - expected: HIP
     patterns: [ヒップ]
   - expected: CUDA
-    patterns: [クーダ]
+    patterns: [クーダ, GUDAR]
   - expected: 自動SIMD
     patterns: [自動シム]
   - expected: SIMD
@@ -149,11 +165,15 @@ rules:
   - expected: ScoreP
     patterns: [スコアP]
   - expected: Caliper
-    patterns: [キャリパー]
+    patterns: [キャリパー, カリパー]
   - expected: ガウシアン
     patterns: [ガオシアン]
   - expected: ISMAP
     patterns: [イスマップ]
   - expected: Companion
     patterns: [Compania]
+  - expected: Grafana
+    patterns: [グラファー]
+  - expected: FAPP
+    patterns: [SAPP]
 
