@@ -25,7 +25,7 @@ rules:
   - expected: 富岳との性能
     patterns: [工学との性能]
   - expected: R-CCS
-    patterns: [RCCS, RC先生, RCS, アリセス, RCCス]
+    patterns: [RCCS, RC先生, RCS, アリセス, RCCス, ある種先生]
   - expected: 運技
     patterns: [運気]
   - expected: ブルックヘブン
