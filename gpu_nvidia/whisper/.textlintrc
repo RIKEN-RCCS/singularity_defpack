@@ -1,6 +1,8 @@
 {
   "filters": {
-    "comments": true
+    "comments": {
+      "enabled": true
+    },
     "allowlist": {
       "allow": [
         "最強",
