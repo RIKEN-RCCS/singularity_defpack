@@ -516,4 +516,8 @@ rules:
     patterns: [閣議図]
   - expected: 人自身
     patterns: [自治党事件]
+  - expected: 対応アプリ
+    patterns: [対応堀り]
+  - expected: 地震の藤田先生
+    patterns: [自身の藤沢先生]
 
