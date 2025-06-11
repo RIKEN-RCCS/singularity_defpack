@@ -1,8 +1,16 @@
 {
   "filters": {
-    "comments": {
-      "enabled": true
-    },
+    "allowlist": {
+      "allow": [
+        "最強",
+        "常識的",
+        "最も優れた",
+        "知らない",
+        "知らなさそう",
+        "酷い",
+        "方"
+      ]
+    }
   },
   "rules": {
     "preset-ja-technical-writing": true,
