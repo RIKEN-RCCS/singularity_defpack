@@ -506,4 +506,8 @@ rules:
     patterns: [指示を叩いて]
   - expected: 実行確認
     patterns: [自己確認]
+  - expected: 開発者
+    patterns: [パイアッチャー]
+  - expected: 存在する
+    patterns: [相続する]
 
