@@ -1,7 +1,7 @@
 {
   "filters": {
     "comments": true
-    "whitelist": {
+    "allowlist": {
       "allow": [
         "最強",
         "常識的",
