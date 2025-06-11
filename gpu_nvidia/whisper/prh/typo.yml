@@ -71,7 +71,7 @@ rules:
   - expected: CI/CD
     patterns: [CICD, CICG]
   - expected: ベンチマーク
-    patterns: [ベンチバーク, ベンシマーク, ベンチマイク, ベンチバック]
+    patterns: [ベンチバーク, ベンシマーク, ベンチマイク, ベンチバック, ベンジマーク]
   - expected: HPCアプリケーション
     patterns: [hpアプリケーション, 一社ベンチマーク, hpcアプリケーション, FPCアプリケーション, フィッシャーアプリケーション]
   - expected: WG
@@ -99,7 +99,7 @@ rules:
   - expected: ツリー構造
     patterns: [プリ構造]
   - expected: ReadMe
-    patterns: [リードミー]
+    patterns: [リードミー, リードビー, リードミニ]
   - expected: 理研内限定
     patterns: [いけない限定]
   - expected: 定義
@@ -238,8 +238,6 @@ rules:
     patterns: [Face, フェイス, フィーズビリティスタディ]
   - expected: 松竹
     patterns: [松崎, 幕先]
-  - expected: 梅
-    patterns: [埋め]
   - expected: 松ま
     patterns: [松場]
   - expected: 役割分担
@@ -251,7 +249,7 @@ rules:
   - expected: コードを
     patterns: [行動を]
   - expected: NDA
-    patterns: [MDA]
+    patterns: [MDA, NBA]
   - expected: 該非判定
     patterns: [外費判定, 外反転, 外批判定, 外販店]
   - expected: 該当
@@ -386,8 +384,6 @@ rules:
     patterns: [借金]
   - expected: ごく一部
     patterns: [僕一部]
-  - expected: 委嘱
-    patterns: [移植]
   - expected: 見通しが
     patterns: [動詞が]
   - expected: 肩ひじ張らず
@@ -401,13 +397,23 @@ rules:
   - expected: 忘れちゃった
     patterns: [忘れちゃう]
   - expected: フレームワーク
-    patterns: [オフレーブワーク]
+    patterns: [オフレーブワーク, プレモアーカー]
   - expected: 粒度
     patterns: [流度]
   - expected: 副センター長
     patterns: [突然立ち上]
+  - expected: 松竹だ
+    patterns: [小地区だ]
+  - expected: 松竹梅
+    patterns: [小地区場合, 東地区バイ, 小竹場合]
   - expected: 松竹梅とか
     patterns: [梅竹松寺]
+  - expected: 竹では
+    patterns: [地区では]
+  - expected: 松です
+    patterns: [小小です]
+  - expected: 松
+    patterns: [マッツ]
   - expected: 機密性2
     patterns: [機密性に]
   - expected: 機密2
@@ -418,4 +424,86 @@ rules:
     patterns: [大理解]
   - expected: 画一的
     patterns: [複一的]
+  - expected: フィギュアオブメリット
+    patterns: [FOM, フィアオブメリット, フィギュアメリット, FYM, フィギュアオンメリット]
+  - expected: 性能の指標
+    patterns: [性能の支障]
+  - expected: ビルド
+    patterns: [ベルド]
+  - expected: 高度
+    patterns: [オード]
+  - expected: イライラ
+    patterns: [イレイラ]
+  - expected: インプット
+    patterns: [イーポッド]
+  - expected: メモリ転送量
+    patterns: [メモリ原料]
+  - expected: Flops
+    patterns: [ヨンプス]
+  - expected: ですればいいんじゃないん
+    patterns: [デイステレパイントなん]
+  - expected: Makeは
+    patterns: [メグは]
+  - expected: 忙殺
+    patterns: [傍作]
+  - expected: レシピ化
+    patterns: [レシピ感]
+  - expected: テストベッド
+    patterns: [都市とベッド]
+  - expected: コンパイラにして
+    patterns: [コンパイラントして]
+  - expected: 別途外注
+    patterns: [ベッドを外注]
+  - expected: 現実問題
+    patterns: [前日問題]
+  - expected: OpenACCとかぐらい
+    patterns: [1位とかぐらい]
+  - expected: Benchmarkフレームワークの
+    patterns: [ベンチマークプレイラーが]
+  - expected: 親パイプライン
+    patterns: [ウェアパイプライン]
+  - expected: 開発コード
+    patterns: [開発行動]
+  - expected: コマンド
+    patterns: [コマの]
+  - expected: バッチ処理
+    patterns: [バッジ処理]
+  - expected: リポジトリ
+    patterns: [リポジュラ]
+  - expected: 付けにも
+    patterns: [時計にも]
+  - expected: コミュニティ
+    patterns: [オミリティ]
+  - expected: 共有
+    patterns: [教諭]
+  - expected: 止めます
+    patterns: [とで見ます]
+  - expected: 見せては
+    patterns: [店では]
+  - expected: ナレッジ
+    patterns: [ダメ値]
+  - expected: 有償
+    patterns: [優勝]
+  - expected: 長期的
+    patterns: [調理的]
+  - expected: 実行モジュール
+    patterns: [自己モジュール]
+  - expected: a.out
+    patterns: [A10アウト]
+  - expected: 性能を勝手に
+    patterns: [精度を勝手に]
+  - expected: ライフ
+    patterns: [ダーリフ]
+  - expected: お金からむ
+    patterns: [お金からの]
+  - expected: 大慌て
+    patterns: [大当て]
+  - expected: ハッカソン
+    patterns: [ハッカソー]
+  - expected: ISV
+    patterns: [イベンダー, SB]
+  - expected: 尻を叩いて
+    patterns: [指示を叩いて]
+  - expected: 実行確認
+    patterns: [自己確認]
 
