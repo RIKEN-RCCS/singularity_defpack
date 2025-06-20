@@ -32,6 +32,8 @@ From: nvidia/cuda:12.8.0-devel-ubuntu22.04
   pip3 install --upgrade pip
   pip3 install "numpy<2.0"
 
+  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
   export PATH=/usr/local/cuda/bin:$PATH
   export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
   export CUDA_HOME=/usr/local/cuda
@@ -73,11 +75,17 @@ From: nvidia/cuda:12.8.0-devel-ubuntu22.04
   make -C build -j swigfaiss
   (cd build/faiss/python && python3 setup.py install)
   make -C build install
+  cd /opt
+  rm -rf faiss
 
-  pip3 install langchain sentence-transformers
+  pip3 install sentencepiece
+
+  pip3 install langchain sentence-transformers tiktoken
   pip3 install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu123
   pip3 install -U langchain-community
   pip3 install -U langchain-huggingface
+
+  pip3 install gradio gradio-tools python-multipart
 
 %environment
   export PATH=/usr/local/cuda/bin:/opt/uv/bin:/usr/local/go/bin:/opt/cmake/bin:$PATH
