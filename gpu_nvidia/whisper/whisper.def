@@ -9,20 +9,36 @@ From: nvidia/cuda:12.8.0-runtime-ubuntu22.04
         wget \
         git \
         vim \
+        less \
         ffmpeg \
         build-essential \
         curl \
+        python3-setuptools \
+        python3-setuptools-rust \
         python3-dev python3-pip python3-pkgconfig python3-venv \
         && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-    pip3 install numpy==1.24.4
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
+    . $HOME/.cargo/env
+
+    pip3 install --no-cache-dir --upgrade pip setuptools wheel
+
+    pip3 install "numpy<2.0"
 
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 
-    pip3 install --no-cache-dir --upgrade pip setuptools wheel
+    pip3 install datasets>=2.6.1
+    pip3 install git+https://github.com/huggingface/transformers
+    pip3 install librosa
+    pip3 install evaluate>=0.30
+    pip3 install jiwer
+    pip3 install ginza==4.0.5 ja-ginza 
+    pip3 install sortedcontainers~=2.1.0
+    pip3 install accelerate>=0.26.0
+    pip3 install tensorboard
+    pip3 install silero-vad pyannote.audio pydub openai-whisper soundfile
     pip3 install gradio gradio-tools python-multipart
-    pip3 install silero-vad faster-whisper openai-whisper
-    pip3 install pyannote.audio
+    pip3 install deepfilternet
 
     mkdir /opt/textlint && cd /opt/textlint
     curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
